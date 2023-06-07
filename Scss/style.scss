@@ -1,0 +1,138 @@
+@import './variables';
+@import './components';
+
+
+*
+{
+    transition-property: background-color, opacity;
+    transition-duration: 300ms;
+    transition-timing-function: linear;
+}
+
+nav 
+{
+    height: 80px;
+}
+
+.primary_text
+{
+    color: $green-color;
+}
+
+.btn-md-green
+{
+    @include btn(150px, 50px, 44px);
+    background-color: $green-color;
+    border: 1px solid $green-color;
+    color: $white-color;
+    font-weight: 500;
+
+    &:hover
+    {
+        opacity: 75%;
+        color: $text-color;
+    }
+}
+
+.services-card
+{
+    padding: 0px 30px 0px 30px;
+
+    &:hover
+    {
+        background-color: $green-color;
+        color: $white-color;
+        a
+        {
+            color: $white-color;
+        }
+       
+    } 
+}
+
+.services-img
+{
+    margin: 20px 0px 30px 0px;
+}
+
+.odd-section
+{
+    background-color: $offwhite-color;
+    margin: 90px 0px 0px 0px;
+}
+
+.even-section
+{
+    background-color: $white-color;
+    margin: 90px 0px 0px 0px;
+}
+
+.details-section
+{
+    background-color: $green-color;
+    margin: 90px 0px 0px 0px;
+    padding: 80px 0px 80px 0px;
+    color: $white-color;
+}
+
+.btn-lg-green
+{
+    @include btn(auto, 50px, 3px);    
+    min-width: 250px;
+    margin-bottom: 10px;
+    background-color: $green-color;
+    border: 1px solid $green-color;
+    color: $white-color;
+    font-weight: 600;
+
+    &:hover
+    {
+        color: $text-color;
+        opacity: 75%;
+    }
+}
+
+.btn-lg-green-outline
+{
+    @include btn(250px, 50px, 3px);
+    margin-bottom: 10px;
+    background-color: $white-color;
+    border: 0px;
+    border-left: 3px solid $green-color;
+    color: $green-color;
+    font-weight: 600;
+
+    &:hover
+    {
+        color: $white-color;
+        background-color: $green-color;
+    }
+}
+
+.team-img
+{
+    width: 250px;
+    height: 300px;
+    border-radius: 12px;
+    margin-bottom: 18px;
+}
+
+.btn-md-green-secondary
+{
+    @include btn(180px, 50px, 44px);
+    background-color: $offwhite-color;
+    border: 1px solid $offwhite-color;
+    color: $green-color;
+    font-weight: 500;
+
+    &:hover
+    {
+        opacity: 75%;
+        color: $text-color;
+    }
+}
+
+.wrap-text
+{
+    margin: 20px 20% 20px 20%;
+}

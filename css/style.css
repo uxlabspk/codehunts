@@ -1,0 +1,126 @@
+* {
+  -webkit-transition-property: background-color, opacity;
+  transition-property: background-color, opacity;
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+  -webkit-transition-timing-function: linear;
+          transition-timing-function: linear;
+}
+
+nav {
+  height: 80px;
+}
+
+.primary_text {
+  color: #00b982;
+}
+
+.btn-md-green {
+  width: 150px;
+  height: 50px;
+  border-radius: 44px;
+  background-color: #00b982;
+  border: 1px solid #00b982;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.btn-md-green:hover {
+  opacity: 75%;
+  color: #272727;
+}
+
+.services-card {
+  padding: 0px 30px 0px 30px;
+}
+
+.services-card:hover {
+  background-color: #00b982;
+  color: #ffffff;
+}
+
+.services-card:hover a {
+  color: #ffffff;
+}
+
+.services-img {
+  margin: 20px 0px 30px 0px;
+}
+
+.odd-section {
+  background-color: #F8F8F8;
+  margin: 90px 0px 0px 0px;
+}
+
+.even-section {
+  background-color: #ffffff;
+  margin: 90px 0px 0px 0px;
+}
+
+.details-section {
+  background-color: #00b982;
+  margin: 90px 0px 0px 0px;
+  padding: 80px 0px 80px 0px;
+  color: #ffffff;
+}
+
+.btn-lg-green {
+  width: auto;
+  height: 50px;
+  border-radius: 3px;
+  min-width: 250px;
+  margin-bottom: 10px;
+  background-color: #00b982;
+  border: 1px solid #00b982;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.btn-lg-green:hover {
+  color: #272727;
+  opacity: 75%;
+}
+
+.btn-lg-green-outline {
+  width: 250px;
+  height: 50px;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  background-color: #ffffff;
+  border: 0px;
+  border-left: 3px solid #00b982;
+  color: #00b982;
+  font-weight: 600;
+}
+
+.btn-lg-green-outline:hover {
+  color: #ffffff;
+  background-color: #00b982;
+}
+
+.team-img {
+  width: 250px;
+  height: 300px;
+  border-radius: 12px;
+  margin-bottom: 18px;
+}
+
+.btn-md-green-secondary {
+  width: 180px;
+  height: 50px;
+  border-radius: 44px;
+  background-color: #F8F8F8;
+  border: 1px solid #F8F8F8;
+  color: #00b982;
+  font-weight: 500;
+}
+
+.btn-md-green-secondary:hover {
+  opacity: 75%;
+  color: #272727;
+}
+
+.wrap-text {
+  margin: 20px 20% 20px 20%;
+}
+/*# sourceMappingURL=style.css.map */
