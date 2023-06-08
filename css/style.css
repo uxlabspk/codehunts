@@ -1,6 +1,6 @@
 * {
-  -webkit-transition-property: background-color, opacity;
-  transition-property: background-color, opacity;
+  -webkit-transition-property: background-color, opacity, width, height;
+  transition-property: background-color, opacity, width, height;
   -webkit-transition-duration: 300ms;
           transition-duration: 300ms;
   -webkit-transition-timing-function: linear;
@@ -64,23 +64,6 @@ nav {
   color: #ffffff;
 }
 
-.btn-lg-green {
-  width: auto;
-  height: 50px;
-  border-radius: 3px;
-  min-width: 250px;
-  margin-bottom: 10px;
-  background-color: #00b982;
-  border: 1px solid #00b982;
-  color: #ffffff;
-  font-weight: 600;
-}
-
-.btn-lg-green:hover {
-  color: #272727;
-  opacity: 75%;
-}
-
 .btn-lg-green-outline {
   width: 250px;
   height: 50px;
@@ -105,12 +88,16 @@ nav {
   margin-bottom: 18px;
 }
 
+.team-img:hover {
+  cursor: pointer;
+}
+
 .btn-md-green-secondary {
   width: 180px;
   height: 50px;
   border-radius: 44px;
-  background-color: #F8F8F8;
-  border: 1px solid #F8F8F8;
+  background-color: #ffffff;
+  border: 1px solid #ffffff;
   color: #00b982;
   font-weight: 500;
 }
@@ -130,5 +117,14 @@ nav {
   background-color: rgba(255, 255, 255, 0.72);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
           backdrop-filter: saturate(180%) blur(20px);
+}
+
+.team {
+  margin-bottom: 20px;
+}
+
+.lnk a {
+  color: #495057;
+  text-decoration: none;
 }
 /*# sourceMappingURL=style.css.map */
