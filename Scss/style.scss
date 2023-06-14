@@ -107,7 +107,6 @@ nav
 
 .btn-md-green-secondary
 {
-    @include btn(180px, 50px, 44px);    
     @include intractive-btn(30px, $white-color, $green-color);
 	text-decoration: none;
     border: 1px solid $white-color;

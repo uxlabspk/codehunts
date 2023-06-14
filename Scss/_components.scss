@@ -2,9 +2,11 @@
 
 @mixin btn($width, $height, $radius)
 {
-    width: $width;
+    min-width: $width;
     height: $height;
     border-radius: $radius;
+
+    width: fill;
 }
 
 @mixin intractive-btn($radius, $bg-color, $color)

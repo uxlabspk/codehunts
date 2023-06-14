@@ -74,9 +74,12 @@ nav {
 }
 
 .btn-lg-green-outline {
-  width: 250px;
+  min-width: 250px;
   height: 50px;
   border-radius: 3px;
+  width: -webkit-fill-available;
+  width: -moz-available;
+  width: fill;
   margin-bottom: 10px;
   background-color: #ffffff;
   border: 0px;
@@ -102,9 +105,6 @@ nav {
 }
 
 .btn-md-green-secondary {
-  width: 180px;
-  height: 50px;
-  border-radius: 44px;
   position: relative;
   display: inline-block;
   text-align: center;
