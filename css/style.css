@@ -16,13 +16,22 @@ nav {
 }
 
 .btn-md-green {
-  width: 150px;
-  height: 50px;
-  border-radius: 44px;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  overflow: hidden;
+  z-index: 1;
+  border-radius: 30px;
   background-color: #00b982;
-  border: 1px solid #00b982;
   color: #ffffff;
+  padding-left: 35px;
+  padding-right: 35px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-decoration: none;
+  border: 1px solid #00b982;
   font-weight: 500;
+  text-align: center;
 }
 
 .btn-md-green:hover {
@@ -96,10 +105,22 @@ nav {
   width: 180px;
   height: 50px;
   border-radius: 44px;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  overflow: hidden;
+  z-index: 1;
+  border-radius: 30px;
   background-color: #ffffff;
-  border: 1px solid #ffffff;
   color: #00b982;
+  padding-left: 35px;
+  padding-right: 35px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-decoration: none;
+  border: 1px solid #ffffff;
   font-weight: 500;
+  text-align: center;
 }
 
 .btn-md-green-secondary:hover {
@@ -126,22 +147,5 @@ nav {
 .lnk a {
   color: #495057;
   text-decoration: none;
-}
-
-.cbx {
-  background-color: #ffffff;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  width: auto;
-  height: auto;
-  padding: 10px;
-  border-radius: 6px;
-  text-align: center;
-  color: #00b982;
-}
-
-.cbx:hover {
-  background-color: #00b982;
-  color: #ffffff;
-  cursor: pointer;
 }
 /*# sourceMappingURL=style.css.map */

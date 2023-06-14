@@ -6,3 +6,19 @@
     height: $height;
     border-radius: $radius;
 }
+
+@mixin intractive-btn($radius, $bg-color, $color)
+{
+    position: relative;
+	display: inline-block;
+	text-align: center;
+	overflow: hidden;
+	z-index: 1;
+    border-radius: $radius;
+    background-color: $bg-color;
+    color: $color;
+    padding-left: 35px;
+	padding-right: 35px;
+	padding-top: 12px;
+	padding-bottom: 12px;
+}
