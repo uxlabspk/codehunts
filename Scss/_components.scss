@@ -24,3 +24,20 @@
 	padding-top: 12px;
 	padding-bottom: 12px;
 }
+
+@mixin sm-btn($radius, $bg-color, $color)
+{
+    position: relative;
+	display: inline-block;
+	text-align: center;
+	overflow: hidden;
+	z-index: 1;
+    border-radius: $radius;
+    background-color: $bg-color;
+    color: $color;
+    
+    padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
