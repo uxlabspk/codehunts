@@ -6,7 +6,7 @@
     height: $height;
     border-radius: $radius;
 
-    width: fill;
+    width: stretch;
 }
 
 @mixin intractive-btn($radius, $bg-color, $color)

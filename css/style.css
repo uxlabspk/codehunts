@@ -79,7 +79,7 @@ nav {
   border-radius: 3px;
   width: -webkit-fill-available;
   width: -moz-available;
-  width: fill;
+  width: stretch;
   margin-bottom: 10px;
   background-color: #ffffff;
   border: 0px;
@@ -147,5 +147,12 @@ nav {
 .lnk a {
   color: #495057;
   text-decoration: none;
+}
+
+.profile-img {
+  border-radius: 30px;
+  width: 64px;
+  height: 64px;
+  margin: 0px 20px 0px 0px;
 }
 /*# sourceMappingURL=style.css.map */
