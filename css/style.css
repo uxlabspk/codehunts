@@ -88,11 +88,6 @@ nav {
   font-weight: 600;
 }
 
-.btn-lg-green-outline:hover {
-  color: #ffffff;
-  background-color: #00b982;
-}
-
 .team-img {
   width: 250px;
   height: 300px;
@@ -182,5 +177,38 @@ nav {
 .btn-sm-green:hover {
   background-color: #00b982;
   color: #F8F8F8;
+}
+
+input::file-selector-button {
+  background-color: #00b982;
+  border: 1px solid #00b982;
+  border-radius: 4px;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: 400;
+  margin: 5px 20px 15px 0px;
+}
+
+input::file-selector-button:hover {
+  opacity: 80%;
+}
+
+.btn-submit-green {
+  min-width: 250px;
+  height: 50px;
+  border-radius: 4px;
+  width: -webkit-fill-available;
+  width: -moz-available;
+  width: stretch;
+  margin-bottom: 10px;
+  background-color: #00b982;
+  border: 0px;
+  border-left: 3px solid #00b982;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.btn-submit-green:hover {
+  opacity: 80%;
 }
 /*# sourceMappingURL=style.css.map */

@@ -2,81 +2,69 @@
 @import './components';
 
 
-*
-{
+* {
     transition-property: background-color, opacity, width, height;
     transition-duration: 300ms;
     transition-timing-function: linear;
 }
 
-nav 
-{
+nav {
     min-height: 80px;
 }
 
-.primary_text
-{
+.primary_text {
     color: $green-color;
 }
 
-.btn-md-green
-{
-	@include intractive-btn(30px, $green-color, $white-color);
-	text-decoration: none;
+.btn-md-green {
+    @include intractive-btn(30px, $green-color, $white-color);
+    text-decoration: none;
     border: 1px solid $green-color;
     font-weight: 500;
     text-align: center;
 
-    &:hover
-    {
+    &:hover {
         opacity: 75%;
         color: $text-color;
     }
 }
 
-.services-card
-{
+.services-card {
     padding: 0px 30px 0px 30px;
 
-    &:hover
-    {
+    &:hover {
         background-color: $green-color;
         color: $white-color;
-        a
-        {
+
+        a {
             color: $white-color;
         }
-       
-    } 
+
+    }
 }
 
-.services-img
-{
+.services-img {
     margin: 20px 0px 30px 0px;
 }
 
-.odd-section
-{
+.odd-section {
     background-color: $offwhite-color;
     margin: 90px 0px 0px 0px;
 }
 
-.even-section
-{
+.even-section {
     background-color: $white-color;
     margin: 90px 0px 0px 0px;
 }
 
-.details-section
-{
+.details-section {
     background-color: $green-color;
     margin: 90px 0px 0px 0px;
     padding: 80px 0px 80px 0px;
     color: $white-color;
 }
 
-.btn-lg-green-outline
-{
+.btn-lg-green-outline {
     @include btn(250px, 50px, 3px);
     margin-bottom: 10px;
     background-color: $white-color;
@@ -84,89 +72,100 @@ nav
     border-left: 3px solid $green-color;
     color: $green-color;
     font-weight: 600;
-
-    &:hover
-    {
-        color: $white-color;
-        background-color: $green-color;
-    }
 }
 
-.team-img
-{
+.team-img {
     width: 250px;
     height: 300px;
     border-radius: 12px;
     margin-bottom: 18px;
 
-    &:hover
-    {
+    &:hover {
         cursor: pointer;
     }
 }
 
-.btn-md-green-secondary
-{
+.btn-md-green-secondary {
     @include intractive-btn(30px, $white-color, $green-color);
-	text-decoration: none;
+    text-decoration: none;
     border: 1px solid $white-color;
     font-weight: 500;
     text-align: center;
 
-    &:hover
-    {
+    &:hover {
         opacity: 75%;
         color: $text-color;
     }
 }
 
-.wrap-text
-{
+.wrap-text {
     margin: 20px 8% 20px 8%;
 }
 
-.bg-blur
-{
-    box-shadow: 0px 2px 4px 4px rgba(100, 100, 100, 0.15); 
-    background-color: rgba(255,255,255,0.72); 
+.bg-blur {
+    box-shadow: 0px 2px 4px 4px rgba(100, 100, 100, 0.15);
+    background-color: rgba(255, 255, 255, 0.72);
     backdrop-filter: saturate(180%) blur(20px);
 }
 
-.team
-{
+.team {
     margin-bottom: 20px;
 }
 
-.lnk a 
-{
+.lnk a {
     color: #495057;
     text-decoration: none;
 }
 
-.profile-img 
-{
+.profile-img {
     border-radius: 30px;
-    width:64px;
-    height:64px;
+    width: 64px;
+    height: 64px;
     margin: 0px 20px 0px 0px;
 }
 
-.project-thumbnail
-{
+.project-thumbnail {
     height: auto;
 }
 
-.btn-sm-green
-{
-	@include sm-btn(6px, $white-color, $green-color);
-	text-decoration: none;
+.btn-sm-green {
+    @include sm-btn(6px, $white-color, $green-color);
+    text-decoration: none;
     border: 1px solid $green-color;
     font-weight: 500;
     text-align: center;
 
-    &:hover
-    {
+    &:hover {
         background-color: $green-color;
         color: $offwhite-color;
+    }
+}
+
+input::file-selector-button {
+    background-color: $green-color;
+    border: 1px solid $green-color;
+    border-radius: 4px;
+    color: $white-color;
+    cursor: pointer;
+    font-weight: 400;
+    margin: 5px 20px 15px 0px;
+
+    &:hover {
+        opacity: 80%;
+    }
+}
+
+
+.btn-submit-green {
+    @include btn(250px, 50px, 4px);
+    margin-bottom: 10px;
+    background-color: $green-color;
+    border: 0px;
+    border-left: 3px solid $green-color;
+    color: $white-color;
+    font-weight: 600;
+
+    &:hover {
+        opacity: 80%;
     }
 }
