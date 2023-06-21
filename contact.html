@@ -36,7 +36,7 @@
             <a class="nav-link" aria-current="page" href="./index.html">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="./about.html">About Us</a>
+            <a class="nav-link" href="./about.html">About Us</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="./team.html">Team</a>
@@ -61,7 +61,7 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./contact.html">Contact</a>
+            <a class="nav-link active" href="./contact.html">Contact</a>
           </li>
 
         </ul>
@@ -69,29 +69,58 @@
     </div>
   </nav>
 
-  <!-- About CODEHUNTS -->
-  <div class="even-container" style="margin-top: 120px;">
+  <!-- Contact Section -->
+  <div class="even-section" style="margin-top: 120px;">
     <div class="container">
-      <div class="bd-content">
-        <h1>About</h1>
-        <p>CODE HUNT’S is a dedicated team of passionate developers based in Islamabad, Pakistan. We have experience in C++, Python, Java, Android (Java) and web technologies.</p>
+      <!-- Contact form -->
+      <div class="col">
+        <h4 class="mb-3">Contac Us</h4>
+        <form>
+          <div class="row g-3">
+            <div class="col-6">
+              <label for="username" class="form-label">First Name* </label>
+              <input type="text" class="form-control" id="userFirstName" placeholder="Muhammad" required="">
+            </div>
 
-        <h2>Team</h2>
-        <p>CODE HUNT’S is maintained by the <a href="./team.html">founding team</a> with the massive support and involvement of our community.
-          We’re actively looking to grow our team and would love to hear from you if you’re excited to be a part of our team.</p>
+            <div class="col-6">
+              <label for="username" class="form-label">Last Name* </label>
+              <input type="text" class="form-control" id="userLastName" placeholder="Naveed..." required="">
+            </div>
 
-        <h2>History</h2>
-        <p>
-          CODE HUNT'S was orginally started in 2023 by <a href="https://github.com/uxlabspk">Muhammad Naveed</a>, 
-          <a href="#">Hamza Waheed</a>, <a href="#">Muhammad Usama</a> and <a href="#">Muhammad Shazil</a> with the support of old friends.
+            <div class="col-6">
+              <label for="username" class="form-label">Email* </label>
+              <input type="text" class="form-control" id="userEmail" placeholder="codehuntspk@gmail.com" required="">
+            </div>
 
-        <h2>Get involved</h2>
-        <p>Be a part of CODE HUNT'S developers team by simply droping your <a href="./hiring.html">Resume here.</a>
-          </p>
+            <div class="col-6">
+              <label for="countryname" class="form-label">Phone number</label>
+              <input type="tel" class="form-control  " id="contactNumber" placeholder="+923xx-xxxxxxx...">
+            </div>
 
+            <div class="col-md-12">
+              <label for="statename" class="form-label">Project title*</label>
+              <input type="text" class="form-control  " id="projectTitle" placeholder="Web Development, etc..." required="">
+            </div>
+
+            <div class="col-12">
+              <label for="message" class="form-label">Project discription*</label> <br>
+              <textarea rows="12" class="form-control" id="projectDisp" placeholder="write a short description..." required=""></textarea>
+            </div>
+          </div>
+          <br>
+          <span class="figure-caption">
+            Fields marked with * are required.
+          </span>
+          <br> <br>
+          <!-- Submit btn -->
+          <button class="btn-submit-green shadow" type="submit" id="learn-more">Submit</button>
+        </form>
       </div>
     </div>
   </div>
+  </div>
+
+
 
   <!-- Footer -->
   <footer class="bd-footer py-5 mt-5 bg-light">
@@ -144,20 +173,20 @@
           <ul class="list-unstyled lnk">
             <!-- Update Company Links -->
             <li class="mb-2"><a href="mailto: codehuntspk@gmail.com">
-              Email
-            </a></li>
+                Email
+              </a></li>
             <li class="mb-2"><a href="https://github.com/CODE-HUNTS/">
-              Github
-            </a></li>
+                Github
+              </a></li>
             <li class="mb-2"><a href="https://instagram.com/code_hunts/">
-              Instagram
-            </a></li>
+                Instagram
+              </a></li>
             <li class="mb-2"><a href="https://twitter.com/code_hunts/">
-              Twitter
-            </a></li>
-            <li class="mb-2"><a href="tel:+923094617390" itemprop="telephone">
-              Call us
-            </a></li>
+                Twitter
+              </a></li>
+              <li class="mb-2"><a href="tel:+923094617390" itemprop="telephone">
+                Call us
+              </a></li>
           </ul>
         </div>
       </div>
