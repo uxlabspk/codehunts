@@ -16,19 +16,6 @@ nav {
     color: $green-color;
 }
 
-.btn-md-green {
-    @include intractive-btn(30px, $green-color, $white-color);
-    text-decoration: none;
-    border: 1px solid $green-color;
-    font-weight: 500;
-    text-align: center;
-
-    &:hover {
-        opacity: 75%;
-        color: $text-color;
-    }
-}
-
 .services-card {
     padding: 0px 30px 0px 30px;
 
@@ -64,38 +51,12 @@ nav {
     color: $white-color;
 }
 
-.btn-lg-green-outline {
-    @include btn(250px, 50px, 3px);
-    margin-bottom: 10px;
-    background-color: $white-color;
-    border: 0px;
-    border-left: 3px solid $green-color;
-    color: $green-color;
-    font-weight: 600;
-}
-
 .team-img {
     width: 250px;
     height: 300px;
     border-radius: 12px;
     margin-bottom: 18px;
-
-    &:hover {
-        cursor: pointer;
-    }
-}
-
-.btn-md-green-secondary {
-    @include intractive-btn(30px, $white-color, $green-color);
-    text-decoration: none;
-    border: 1px solid $white-color;
-    font-weight: 500;
-    text-align: center;
-
-    &:hover {
-        opacity: 75%;
-        color: $text-color;
-    }
+    object-fit: cover;
 }
 
 .wrap-text {
@@ -128,6 +89,58 @@ nav {
     height: auto;
 }
 
+/*            BUTTONS               */
+
+.btn-md-green {
+    @include intractive-btn(30px, $green-color, $white-color);
+    text-decoration: none;
+    border: 1px solid $green-color;
+    font-weight: 500;
+    text-align: center;
+
+    &:hover {
+        opacity: 75%;
+        color: $text-color;
+    }
+}
+
+.btn-submit-green {
+    @include btn(250px, 50px, 4px);
+    margin-bottom: 10px;
+    background-color: $green-color;
+    border: 0px;
+    border-left: 3px solid $green-color;
+    color: $white-color;
+    font-weight: 600;
+
+    &:hover {
+        opacity: 80%;
+    }
+}
+
+.btn-lg-green-outline {
+    @include btn(250px, 50px, 3px);
+    margin-bottom: 10px;
+    background-color: $white-color;
+    border: 0px;
+    border-left: 3px solid $green-color;
+    color: $green-color;
+    font-weight: 600;
+}
+
+.btn-md-green-secondary {
+    @include intractive-btn(30px, $white-color, $green-color);
+    text-decoration: none;
+    border: 1px solid $white-color;
+    font-weight: 500;
+    text-align: center;
+
+    &:hover {
+        opacity: 75%;
+        color: $text-color;
+    }
+}
+
 .btn-sm-green {
     @include sm-btn(6px, $white-color, $green-color);
     text-decoration: none;
@@ -149,21 +162,6 @@ input::file-selector-button {
     cursor: pointer;
     font-weight: 400;
     margin: 5px 20px 15px 0px;
-
-    &:hover {
-        opacity: 80%;
-    }
-}
-
-
-.btn-submit-green {
-    @include btn(250px, 50px, 4px);
-    margin-bottom: 10px;
-    background-color: $green-color;
-    border: 0px;
-    border-left: 3px solid $green-color;
-    color: $white-color;
-    font-weight: 600;
 
     &:hover {
         opacity: 80%;
