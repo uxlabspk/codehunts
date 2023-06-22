@@ -210,4 +210,8 @@ input::file-selector-button {
 input::file-selector-button:hover {
   opacity: 80%;
 }
+
+.dropdown-item {
+  border-radius: 0.25rem;
+}
 /*# sourceMappingURL=style.css.map */
