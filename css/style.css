@@ -1,10 +1,7 @@
 * {
-  -webkit-transition-property: background-color, opacity, width, height;
   transition-property: background-color, opacity, width, height;
-  -webkit-transition-duration: 300ms;
-          transition-duration: 300ms;
-  -webkit-transition-timing-function: linear;
-          transition-timing-function: linear;
+  transition-duration: 300ms;
+  transition-timing-function: linear;
 }
 
 nav {
@@ -18,12 +15,10 @@ nav {
 .services-card {
   padding: 0px 30px 0px 30px;
 }
-
 .services-card:hover {
   background-color: #00b982;
   color: #ffffff;
 }
-
 .services-card:hover a {
   color: #ffffff;
 }
@@ -63,8 +58,7 @@ nav {
 }
 
 .bg-blur {
-  -webkit-box-shadow: 0px 2px 4px 4px rgba(100, 100, 100, 0.15);
-          box-shadow: 0px 2px 4px 4px rgba(100, 100, 100, 0.15);
+  box-shadow: 0px 2px 4px 4px rgba(100, 100, 100, 0.15);
   background-color: rgba(255, 255, 255, 0.72);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
           backdrop-filter: saturate(180%) blur(20px);
@@ -90,7 +84,25 @@ nav {
   height: auto;
 }
 
-/*            BUTTONS               */
+.card-header-green {
+  padding: 0.5rem 1rem;
+  margin-bottom: 0;
+  background-color: #00b982;
+  border-bottom: 1px solid #00b982;
+  color: #ffffff;
+}
+
+.card img {
+  margin: 6px 6px 0px 6px;
+  height: 250px;
+  border-radius: 6px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/*
+ * BUTTONS
+ */
 .btn-md-green {
   position: relative;
   display: inline-block;
@@ -109,7 +121,6 @@ nav {
   font-weight: 500;
   text-align: center;
 }
-
 .btn-md-green:hover {
   opacity: 75%;
   color: #272727;
@@ -129,7 +140,6 @@ nav {
   color: #ffffff;
   font-weight: 600;
 }
-
 .btn-submit-green:hover {
   opacity: 80%;
 }
@@ -167,7 +177,6 @@ nav {
   font-weight: 500;
   text-align: center;
 }
-
 .btn-md-green-secondary:hover {
   opacity: 75%;
   color: #272727;
@@ -191,10 +200,19 @@ nav {
   font-weight: 500;
   text-align: center;
 }
-
 .btn-sm-green:hover {
   background-color: #00b982;
   color: #F8F8F8;
+}
+
+input::-webkit-file-upload-button {
+  background-color: #00b982;
+  border: 1px solid #00b982;
+  border-radius: 4px;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: 400;
+  margin: 5px 20px 15px 0px;
 }
 
 input::file-selector-button {
@@ -206,12 +224,13 @@ input::file-selector-button {
   font-weight: 400;
   margin: 5px 20px 15px 0px;
 }
-
+input::-webkit-file-upload-button:hover {
+  opacity: 80%;
+}
 input::file-selector-button:hover {
   opacity: 80%;
 }
 
 .dropdown-item {
   border-radius: 0.25rem;
-}
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */

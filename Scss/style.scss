@@ -89,7 +89,29 @@ nav {
     height: auto;
 }
 
-/*            BUTTONS               */
+.card-header-green {
+    padding: 0.5rem 1rem;
+    margin-bottom: 0;
+    background-color: $green-color;
+    border-bottom: 1px solid $green-color;
+    color: $white-color;
+}
+
+.card
+{
+    
+    img 
+    {
+        margin: 6px 6px 0px 6px;
+        height: 250px;
+        border-radius: 6px;
+        object-fit: cover;
+    }
+}
+
+/*
+ * BUTTONS
+ */
 
 .btn-md-green {
     @include intractive-btn(30px, $green-color, $white-color);
@@ -169,7 +191,6 @@ input::file-selector-button {
 }
 
 
-.dropdown-item 
-{
+.dropdown-item {
     border-radius: 0.25rem;
 }
