@@ -23,10 +23,6 @@ nav {
   color: #ffffff;
 }
 
-.services-img {
-  margin: 20px 0px 30px 0px;
-}
-
 .odd-section {
   background-color: #F8F8F8;
   margin: 90px 0px 0px 0px;
@@ -205,16 +201,6 @@ nav {
   color: #F8F8F8;
 }
 
-input::-webkit-file-upload-button {
-  background-color: #00b982;
-  border: 1px solid #00b982;
-  border-radius: 4px;
-  color: #ffffff;
-  cursor: pointer;
-  font-weight: 400;
-  margin: 5px 20px 15px 0px;
-}
-
 input::file-selector-button {
   background-color: #00b982;
   border: 1px solid #00b982;
@@ -223,9 +209,6 @@ input::file-selector-button {
   cursor: pointer;
   font-weight: 400;
   margin: 5px 20px 15px 0px;
-}
-input::-webkit-file-upload-button:hover {
-  opacity: 80%;
 }
 input::file-selector-button:hover {
   opacity: 80%;
