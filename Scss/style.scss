@@ -98,7 +98,7 @@ nav {
     img 
     {
         margin: 6px 6px 0px 6px;
-        height: 250px;
+        height: 280px;
         border-radius: 6px;
         object-fit: cover;
     }
@@ -189,9 +189,9 @@ input::file-selector-button {
 .dropdown-item {
     border-radius: 0.25rem;
 
-    &:hover {
-        background-color: $green-color;
+    &:hover, &:focus {
         color: $white-color;
+        background-color: $green-color;
     }
 }
 

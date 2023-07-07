@@ -90,7 +90,7 @@ nav {
 
 .card img {
   margin: 6px 6px 0px 6px;
-  height: 250px;
+  height: 280px;
   border-radius: 6px;
   -o-object-fit: cover;
      object-fit: cover;
@@ -217,9 +217,9 @@ input::file-selector-button:hover {
 .dropdown-item {
   border-radius: 0.25rem;
 }
-.dropdown-item:hover {
-  background-color: #00b982;
+.dropdown-item:hover, .dropdown-item:focus {
   color: #ffffff;
+  background-color: #00b982;
 }
 
 .acc-button {
