@@ -94,7 +94,7 @@
             <br>
           </div>
           </div>
-        <form>
+        <form id="projectForm">
           <div class="row g-3">
             <div class="col-6">
               <label for="username" class="form-label">First Name* </label>
@@ -116,6 +116,11 @@
               <input type="tel" class="form-control  " id="contactNumber" placeholder="+923xx-xxxxxxx...">
             </div>
 
+            <div class="col-12">
+              <label for="countryname" class="form-label">Company or Organization*</label>
+              <input type="text" class="form-control" id="compName" placeholder="Personal or company name....">
+            </div>
+
             <div class="col-md-12">
               <label for="statename" class="form-label">Project title*</label>
               <input type="text" class="form-control  " id="projectTitle" placeholder="Web Development, etc..." required="">
@@ -123,7 +128,7 @@
 
             <div class="col-12">
               <label for="message" class="form-label">Project discription*</label> <br>
-              <textarea rows="12" class="form-control" id="projectDisp" placeholder="write a short description..." required=""></textarea>
+              <textarea rows="12" class="form-control" id="projectDisp" placeholder="write a short description (200 words)..." required=""></textarea>
             </div>
           </div>
           <br>
@@ -132,7 +137,7 @@
           </span>
           <br> <br>
           <!-- Submit btn -->
-          <button class="btn-submit-green shadow" type="submit" id="learn-more">Submit</button>
+          <button class="btn-submit-green shadow" type="submit" id="submitBtn">Submit</button>
         </form>
       </div>
     </div>
@@ -223,6 +228,76 @@
   </footer>
   <!-- Bootstrap5 JS -->
   <script src="./js/bootstrap.bundle.min.js"></script>
+  <!-- firebase sdk start -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+    import { getDatabase, set, get, update, remove, ref, child } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js";
+   
+    const firebaseConfig = {
+      apiKey: "AIzaSyChrcR0-xEDvjXHy_M4ch0xrYFvDheCcVw",
+      authDomain: "codehunts-c17ba.firebaseapp.com",
+      databaseURL: "https://codehunts-c17ba-default-rtdb.firebaseio.com",
+      projectId: "codehunts-c17ba",
+      storageBucket: "codehunts-c17ba.appspot.com",
+      messagingSenderId: "872020860306",
+      appId: "1:872020860306:web:a52cf417f6ee651279754b"
+    };
+
+    initializeApp(firebaseConfig);
+
+    var db = getDatabase();
+
+    document.getElementById("projectForm").addEventListener("submit", submitform);
+
+    function submitform(e) {
+      e.preventDefault();
+
+      var userfirstName = getElementVal('userFirstName');
+      var uesrlastName = getElementVal('userLastName')
+      var contactNumber = getElementVal('contactNumber');
+      var userEmail = getElementVal('userEmail');
+      var compName = getElementVal('compName');
+      var projectTitle = getElementVal('projectTitle');
+      var projectDis = getElementVal('projectDisp');
+
+      saveData(userfirstName, uesrlastName, userEmail, contactNumber, compName, projectTitle, projectDis);
+
+      document.getElementById("projectForm").reset();
+    }
+
+    const saveData = (userfirstName, userLastName, userEmail, contactNumber, compName ,projectTitle, projectDis) => {
+      let name = null;
+      if (compName == "") name = userfirstName + userLastName + "-Personal";
+      else name = compName;
+
+      set(ref(db, "Projects/" + name + uuidv4()), {
+        Name: userfirstName + " " + userLastName,
+        Email: userEmail,
+        Number: contactNumber,
+        Company: compName,
+        ProjectTitle: projectTitle,
+        ProjectDiscription: projectDis
+      }).then((result) => {
+        alert("Request Sent Sucessfully!");
+      }).catch((err) => {
+        alert(err);
+      });
+    }
+
+
+    const getElementVal = (id) => {
+      return document.getElementById(id).value;
+    }
+
+
+    function uuidv4() {
+      return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+        var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+        return v.toString(16);
+      });
+    }
+  </script>
+  <!-- firebase sdk end -->
 </body>
 
 </html>
