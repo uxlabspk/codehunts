@@ -1,5 +1,10 @@
 @import './variables';
 @import './components';
+@import './fonts';
+
+body {
+    font-family: "SF-Pro-Display";
+}
 
 * {
     transition-property: background-color, opacity, width, height;
@@ -225,4 +230,59 @@ input::file-selector-button {
         background-repeat: no-repeat;
         background-size: 1.25rem;
     }
+}
+
+
+
+// Adding some animation
+.hiddenDown {
+    opacity: 0;
+    filter: blur(3px);
+    transform: translateY(-20%);
+    transition: all $animation-div-time;
+}
+
+.hiddenLeft {
+    opacity: 0;
+    filter: blur(3px);
+    transform: translateX(-10%);
+    transition: all $animation-div-time;
+}
+
+.hiddenRight {
+    opacity: 0;
+    filter: blur(3px);
+    transform: translateX(10%);
+    transition: all $animation-div-time;
+}
+
+.hiddenText {
+    opacity: 0;
+    filter: blur(3px);
+    transition: all $animation-div-time
+}
+
+.hiddenGlow {
+    opacity: 0;
+    filter: blur(3px);
+    transform: translateX(-10%);
+    transition: all $animation-glow-time;
+}
+
+.col:nth-child(2) {
+    transition-delay: $animation-second-subchild;
+}
+
+.col:nth-child(3) {
+    transition-delay: $animation-third-subchild;
+}
+
+.col:nth-child(4) {
+    transition-delay: $animation-fourth-subchild;
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
 }

@@ -1,164 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Status bar color -->
-    <meta name="theme-color" content="#00b982"> <!-- Android -->
-    <meta name="apple-mobile-web-app-status-bar-style" content="#00b982"> <!-- IOS -->
-    
-    <!-- Title -->
-    <title>Code HUNT'S</title>
+  <!-- Status bar color -->
+  <meta name="theme-color" content="#00b982"> <!-- Android -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="#00b982"> <!-- IOS -->
 
-    <!-- Custom Stylesheet -->
-    <link rel="stylesheet" href="./css/style.css">
-    <!-- Bootstrap5 Css -->
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <!-- Box icons CSS -->
-    <link rel="stylesheet" href="./font/bootstrap-icons.css">
+  <!-- Title -->
+  <title>Code HUNT'S</title>
 
-    <!-- SEO Optimization -->
-    <meta name="description" content="CODE HUNT’S is a dedicated team of passionate developers based in Islamabad, Pakistan.">
-    <meta name="keywords" content="Software Company, codehunts, codehunt, bootstrap5, ">
-    <meta name="author" content="Muhammad Naveed">
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="./css/style.css">
+  <!-- Bootstrap5 Css -->
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <!-- Box icons CSS -->
+  <link rel="stylesheet" href="./font/bootstrap-icons.css">
 
-    <!-- logo -->
-    <link rel="icon" href="./assets/favicon.ico">
+  <!-- SEO Optimization -->
+  <meta name="description"
+    content="CODE HUNT’S is a dedicated team of passionate developers based in Islamabad, Pakistan.">
+  <meta name="keywords" content="Software Company, codehunts, codehunt, bootstrap5, ">
+  <meta name="author" content="Muhammad Naveed">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png">
-    <link rel="manifest" href="./assets/site.webmanifest">
+  <!-- logo -->
+  <link rel="icon" href="./assets/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png">
+  <link rel="manifest" href="./assets/site.webmanifest">
+
+  <!-- Animate JS -->
+  <script defer src="./js/animate.js"></script>
 </head>
-<body>
-	<!-- Nav Bar -->
-	<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-blur">
-		<div class="container">
-			<a class="navbar-brand" href="./index.html">
-				<img src="./assets/logo.png" alt="" class="me-3" alt="" height="60px">
-			</a>
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-				data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-				aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav ms-auto">
-					<li class="nav-item">
-						<a class="nav-link active" aria-current="page" href="./index.html">Home</a>
-					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-							data-bs-toggle="dropdown" aria-expanded="false">
-							Services
-						</a>
-						<ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="padding: 4px;">
-							<li><a class="dropdown-item" href="./webDev.html">Web Development</a></li>
-							<li><a class="dropdown-item" href="./appDev.html">App Development</a></li>
-							<li><a class="dropdown-item" href="./itSolution.html">IT Solutions</a></li>
-							<li><a class="dropdown-item" href="./uxui.html">UX/UI Design</a></li>
-						</ul>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="./portfolio.html">Projects</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="./team.html">Our Team</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="./about.html">About Us</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="./contact.html">Contact</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</nav>
 
-      <!-- Hero -->
-      <div class="container">
-        <div class="row flex-lg-row-reverse align-items-center g-5 py-5" style="justify-content: space-evenly; margin-top: 50px;">
-          <div class="col-10 col-sm-8 col-lg-5">
-            <img src="./assets/hero_img.png" class="img-fluid" alt="hero img iphone pic" width="700" height="500" loading="lazy">
-          </div>
-          <div class="col-lg-6">
-            <h1 id="section-heading">Encourage innovation with trusted <span class="primary_text"> Technology Solutions</span></h1>
-            <p id="section-paragraph">Revolutionizing the Future of Software Solutions.</p>
-              <a href="#gettingStarted" class="btn-md-green">
-                <i class="bi-send-fill"> </i>
-                Get Started
-              </a>
+<body>
+  <!-- Nav Bar -->
+  <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-blur hiddenDown">
+    <div class="container">
+      <a class="navbar-brand" href="./index.html">
+        <img src="./assets/logo.png" alt="" class="me-3" alt="" height="60px" loading="lazy">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Services
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="padding: 4px;">
+              <li><a class="dropdown-item" href="./webDev.html">Web Development</a></li>
+              <li><a class="dropdown-item" href="./appDev.html">App Development</a></li>
+              <li><a class="dropdown-item" href="./itSolution.html">IT Solutions</a></li>
+              <li><a class="dropdown-item" href="./uxui.html">UX/UI Design</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./portfolio.html">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./team.html">Our Team</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./about.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <div class="container">
+    <div class="row flex-lg-row-reverse align-items-center g-5 py-5"
+      style="justify-content: space-evenly; margin-top: 50px;">
+      <div class="col-10 col-sm-8 col-lg-5 hiddenRight">
+        <img src="./assets/hero_img.png" class="img-fluid" alt="hero img iphone pic" width="700" height="500"
+          loading="lazy">
+      </div>
+      <div class="col-lg-6 hiddenLeft">
+        <h1 id="section-heading">Encourage innovation with trusted <span class="primary_text"> Technology
+            Solutions</span></h1>
+        <p id="section-paragraph">Revolutionizing the Future of Software Solutions.</p>
+        <a href="#gettingStarted" class="btn-md-green">
+          <i class="bi-send-fill"> </i>
+          Get Started
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Introduction -->
+  <div class="container">
+    <!-- Row -->
+    <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+      <!-- Coloumn -->
+      <div class="col hiddenGlow">
+        <div class="card text-center services-card shadow">
+          <div class="card-body">
+            <img src="./assets/it_solutions.png" style="margin: 20px 0px 30px 0px; max-height: 120px;" />
+            <h5 class="card-title">IT Solution</h5>
+            <p class="card-text">Providing IT Support and free consultency.</p>
+            <a href="./itSolution.html" class="link">Read more</a>
           </div>
         </div>
       </div>
 
-    <!-- Introduction -->
-    <div class="container">
-      <!-- Row -->
-      <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
-        <!-- Coloumn -->
-        <div class="col">
-          <div class="card text-center services-card shadow">
-            <div class="card-body">
-              <img src="./assets/it_solutions.png" style="margin: 20px 0px 30px 0px; max-height: 120px;" />
-              <h5 class="card-title">IT Solution</h5>
-              <p class="card-text">Providing IT Support and free consultency.</p>
-              <a href="./itSolution.html" class="link">Read more</a>
-            </div>
+      <!-- Coloumn -->
+      <div class="col hiddenGlow">
+        <div class="card text-center services-card shadow">
+          <div class="card-body">
+            <img src="./assets/web_designs.png" style="margin: 20px 0px 30px 0px; max-height: 120px;" />
+            <h5 class="card-title">Web Development</h5>
+            <p class="card-text">Introducing Bleading Edge Technologies.</p>
+            <a href="./webDev.html" class="link">Read more</a>
           </div>
         </div>
+      </div>
 
-        <!-- Coloumn -->
-        <div class="col">
-          <div class="card text-center services-card shadow">
-            <div class="card-body">
-              <img src="./assets/web_designs.png" style="margin: 20px 0px 30px 0px; max-height: 120px;" />
-              <h5 class="card-title">Web Development</h5>
-              <p class="card-text">Introducing Bleading Edge Technologies.</p>
-              <a href="./webDev.html" class="link">Read more</a>
-            </div>
-          </div>
-        </div>
-  
-        <!-- Coloumn -->
-        <div class="col">
-          <div class="card text-center services-card shadow">
-            <div class="card-body">
-              <img src="./assets/ux_ui.png" style="margin: 20px 0px 30px 0px; max-height: 120px;" />
-              <h5 class="card-title">UX/UI Designing</h5>
-              <p class="card-text">UX/UI Design is Bridging the Gap Between Users and Technology.</p>
-              <a href="./uxui.html" class="link">Read more</a>
-            </div>
+      <!-- Coloumn -->
+      <div class="col hiddenGlow">
+        <div class="card text-center services-card shadow">
+          <div class="card-body">
+            <img src="./assets/ux_ui.png" style="margin: 20px 0px 30px 0px; max-height: 120px;" />
+            <h5 class="card-title">UX/UI Designing</h5>
+            <p class="card-text">UX/UI Design is Bridging the Gap Between Users and Technology.</p>
+            <a href="./uxui.html" class="link">Read more</a>
           </div>
         </div>
       </div>
     </div>
-    
-    <!-- Web-development Section -->
-    <div class="odd-section">
+  </div>
+
+  <!-- Web-development Section -->
+  <div class="odd-section">
     <div class="container">
       <div class="row flex-lg-row-reverse align-items-center g-5 py-5 " style="justify-content: space-evenly">
-        <div class="col-10 col-sm-8 col-lg-5">
-          <img src="./assets/choose-1.png" class="img-fluid" alt="Web solutions illustration" width="700" height="500" loading="lazy">
+        <div class="col-10 col-sm-8 col-lg-5 hiddenRight">
+          <img src="./assets/choose-1.png" class="img-fluid" alt="Web solutions illustration" width="700" height="500"
+            loading="lazy">
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-6 hiddenDown">
           <h1 id="section-heading">Website Solutions</span></h1>
           <p id="section-paragraph">
-            Our team of experienced web developers and designers will work closely with you to understand your unique requirements and objectives. We believe that a well-designed website not only enhances your brand image but also provides a seamless user experience.
+            Our team of experienced web developers and designers will work closely with you to understand your unique
+            requirements and objectives. We believe that a well-designed website not only enhances your brand image but
+            also provides a seamless user experience.
           </p>
           <div class="row">
             <div class="col">
-              <button class="btn-lg-green-outline shadow" style="cursor: default;">E-Commerce Development</button>
-              <button class="btn-lg-green-outline shadow" style="cursor: default;">WordPress Development</button>
-              <button class="btn-lg-green-outline shadow" style="cursor: default;">Page Speed Optimization</button>
+              <button class="btn-lg-green-outline shadow hiddenGlow" style="cursor: default;">E-Commerce Websites</button>
+              <button class="btn-lg-green-outline shadow hiddenGlow" style="cursor: default;">WordPress Websites</button>
+              <button class="btn-lg-green-outline shadow hiddenGlow" style="cursor: default;">Bootstrap5 Websites</button>
             </div>
             <div class="col">
-              <button class="btn-lg-green-outline shadow" style="cursor: default;">Web Design</button>
-              <button class="btn-lg-green-outline shadow" style="cursor: default;">Network Monitoring</button>
-              <button class="btn-lg-green-outline shadow" style="cursor: default;">Shopify Development</button>
+              <button class="btn-lg-green-outline shadow hiddenGlow" style="cursor: default;">Web Design</button>
+              <button class="btn-lg-green-outline shadow hiddenGlow" style="cursor: default;">Network Monitoring</button>
+              <button class="btn-lg-green-outline shadow hiddenGlow" style="cursor: default;">Shopify Development</button>
             </div>
           </div>
         </div>
@@ -170,26 +180,28 @@
   <div class="even-section">
     <div class="container">
       <div class="row flex-lg-row-reverse align-items-center g-5 py-5 " style="justify-content: space-evenly">
-        <div class="col-lg-6">
+        <div class="col-lg-6 hiddenDown">
           <h1 id="section-heading">Tech Soul for your Business</span></h1>
           <p id="section-paragraph">
-            An effective IT solution provides a comprehensive approach that encompasses hardware, software, networking, security, and support services tailored to the specific needs of an organization.
+            An effective IT solution provides a comprehensive approach that encompasses hardware, software, networking,
+            security, and support services tailored to the specific needs of an organization.
           </p>
           <div class="row">
             <div class="col">
-              <button class="btn-lg-green-outline shadow" style="cursor: default;">Discovery & Strategy</button>
-              <button class="btn-lg-green-outline shadow" style="cursor: default;">IOS apps (Swift)</button>
-              <button class="btn-lg-green-outline shadow" style="cursor: default;">Managed IT Service</button>
+              <button class="btn-lg-green-outline shadow hiddenGlow" style="cursor: default;">Discovery & Strategy</button>
+              <button class="btn-lg-green-outline shadow hiddenGlow" style="cursor: default;">IOS apps (Swift)</button>
+              <button class="btn-lg-green-outline shadow hiddenGlow" style="cursor: default;">Managed IT Service</button>
             </div>
             <div class="col">
-              <button class="btn-lg-green-outline shadow" style="cursor: default;">UX/UI Design</button>
-              <button class="btn-lg-green-outline shadow" style="cursor: default;">Android apps (Java)</button>
-              <button class="btn-lg-green-outline shadow" style="cursor: default;">Cloud Services</button>
+              <button class="btn-lg-green-outline shadow hiddenGlow" style="cursor: default;">UX/UI Design</button>
+              <button class="btn-lg-green-outline shadow hiddenGlow" style="cursor: default;">Android apps (Java)</button>
+              <button class="btn-lg-green-outline shadow hiddenGlow" style="cursor: default;">Cloud Services</button>
             </div>
           </div>
         </div>
-        <div class="col-10 col-sm-8 col-lg-5">
-          <img src="./assets/choose-2.png" class="img-fluid" alt="Tech Business illustration" width="700" height="500" loading="lazy">
+        <div class="col-10 col-sm-8 col-lg-5 hiddenLeft">
+          <img src="./assets/choose-2.png" class="img-fluid" alt="Tech Business illustration" width="700" height="500"
+            loading="lazy">
         </div>
       </div>
     </div>
@@ -199,22 +211,22 @@
   <div class="details-section">
     <div class="container">
       <div class="row text-center">
-        <div class="col-lg-3">          
+        <div class="col-lg-3 hiddenText">
           <h1>2+</h1>
           <h5>Years of Experience</h5>
         </div>
 
-        <div class="col-lg-3">
+        <div class="col-lg-3 hiddenText">
           <h1>07</h1>
           <h5>Completed Projects</h5>
         </div>
 
-        <div class="col-lg-3">
+        <div class="col-lg-3 hiddenText">
           <h1>4+</h1>
           <h5>Employees</h5>
         </div>
 
-        <div class="col-lg-3">
+        <div class="col-lg-3 hiddenText">
           <h1>100+</h1>
           <h5>5 Start Rating</h5>
         </div>
@@ -231,28 +243,28 @@
     <div class="container">
       <div class="row text-center">
         <!-- Team member 1 -->
-        <div class="col-lg-3 team">        
+        <div class="hiddenLeft col-lg-3 team">
           <img src="./assets/team/naveed.jpg" alt="CTO personal photo" class="team-img" />
           <h4>Muhammad Naveed</h4>
           <h6>Software Developer</h6>
         </div>
 
         <!-- Team member 2 -->
-        <div class="col-lg-3 team">
+        <div class="hiddenLeft col-lg-3 team">
           <img src="./assets/team/hamza.jpg" alt="CEO personal photo" class="team-img" />
           <h4>Hamza Waheed</h4>
           <h6>Android Developer</h6>
         </div>
 
         <!-- Team member 3 -->
-        <div class="col-lg-3 team">
+        <div class="hiddenRight col-lg-3 team">
           <img src="./assets/team/Usama.jpg" alt="UX/UI designer personal photo" class="team-img" />
           <h4>Muhammad Usama</h4>
           <h6>UX/UI Designer</h6>
         </div>
 
         <!-- Team member 4 -->
-        <div class="col-lg-3 team">
+        <div class="hiddenRight col-lg-3 team">
           <img src="./assets/team/shazil.jpg" alt="Web developer personal photo" class="team-img" />
           <h4>Muhammad Shazil</h4>
           <h6>Web Developer</h6>
@@ -267,19 +279,19 @@
   <!-- Have a project idea -->
   <div class="details-section" id="gettingStarted">
     <div class="container">
-      <div class="row text-center">
+      <div class="row text-center hiddenText">
         <div class="col-12">
           <h1>Have a project in mind?</h1>
           <p class="wrap-text">
             We thrive on turning your ideas into reality. Whether you have a groundbreaking concept
-             or a specific problem that needs solving, 
-             we are here to transform your vision into a remarkable 
-             digital solution. With our team of skilled developers, designers, 
-             and strategists, we are ready to embark on a collaborative
-              journey with you, bringing expertise, innovation, and cutting-edge
-               technology to the table.
+            or a specific problem that needs solving,
+            we are here to transform your vision into a remarkable
+            digital solution. With our team of skilled developers, designers,
+            and strategists, we are ready to embark on a collaborative
+            journey with you, bringing expertise, innovation, and cutting-edge
+            technology to the table.
           </p>
-          <a href="tel:+923094617390" itemprop="telephone" class="btn-md-green-secondary">
+          <a href="./contact.html" class="btn-md-green-secondary">
             <i class="bi-chat"> </i>
             Contact Us
           </a>
@@ -293,12 +305,14 @@
     <div class="container py-5">
       <div class="row">
         <div class="col-lg-3 mb-3">
-          <a class="d-inline-flex align-items-center mb-2 link-dark text-decoration-none" href="./index.html" aria-label="Bootstrap">
+          <a class="d-inline-flex align-items-center mb-2 link-dark text-decoration-none" href="./index.html"
+            aria-label="Bootstrap">
             <!-- SITE LOGO -->
             <span class="fs-5">Code HUNT'S</span>
           </a>
           <ul class="list-unstyled small text-muted">
-            <li class="mb-2">Designed and built with love using Bootstrap5 and SCSS by Code HUNT'S CTO <a href="https://github.com/uxlabspk/" target="_blank">Muhammad Naveed</a>.</li>
+            <li class="mb-2">Designed and built with love using Bootstrap5 and SCSS by Code HUNT'S CTO <a
+                href="https://github.com/uxlabspk/" target="_blank">Muhammad Naveed</a>.</li>
             <li class="mb-2">Currently v1.0.0</li>
           </ul>
         </div>
@@ -337,34 +351,37 @@
           <ul class="list-unstyled lnk">
             <!-- Update Company Links -->
             <li class="mb-2"><a href="mailto: codehuntspk@gmail.com">
-              Email
-            </a></li>
+                Email
+              </a></li>
             <li class="mb-2"><a href="https://github.com/CODE-HUNTS/">
-              Github
-            </a></li>
+                Github
+              </a></li>
             <li class="mb-2"><a href="https://instagram.com/code_hunts/">
-              Instagram
-            </a></li>
+                Instagram
+              </a></li>
             <li class="mb-2"><a href="https://twitter.com/code_hunts/">
-              Twitter
-            </a></li>
+                Twitter
+              </a></li>
             <li class="mb-2"><a href="tel:+923094617390" itemprop="telephone">
-              Call us
-            </a></li>
+                Call us
+              </a></li>
           </ul>
         </div>
       </div>
     </div>
-    <div class="container"><hr></div>
+    <div class="container">
+      <hr>
+    </div>
   </footer>
   <!-- Privacy Notice -->
   <footer class="footer mt-auto py-3 bg-light">
     <div class="container">
       <p class="float-end"><a href="#">Back to top</a></p>
-    <p>© 2023 Uxlabspk, Inc. · <a href="./terms.html" target="_blank">Terms.</a></p>
+      <p>© 2023 Uxlabspk, Inc. · <a href="./terms.html" target="_blank">Terms.</a></p>
     </div>
   </footer>
-    <!-- Bootstrap5 JS -->    
-    <script src="./js/bootstrap.bundle.min.js"></script>
+  <!-- Bootstrap5 JS -->
+  <script src="./js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
