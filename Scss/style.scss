@@ -4,6 +4,7 @@
 
 body {
     font-family: "SF-Pro-Display";
+    margin: 0px;
 }
 
 * {
@@ -97,16 +98,49 @@ nav {
     color: $white-color;
 }
 
-.card
-{
-    img 
-    {
+.card {
+    img {
         margin: 6px 6px 0px 6px;
         height: 280px;
         border-radius: 6px;
         object-fit: cover;
     }
 }
+
+.social-link {
+    margin: 0px 15px 0px 0px;
+    color: $green-color;
+    text-decoration: none;
+
+    &:hover {
+        color: $green-color
+    }
+}
+
+.social-links {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+
+    a {
+        background-color: $green-color;
+        color: $white-color;
+        line-height: 1;
+        padding: 8px 0px;
+        margin-right: 8px;
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+        text-align: center;
+        font-size: 20px;
+
+        &:hover {
+            opacity: 80%;
+            color: $white-color;
+        }
+    }
+}  
 
 /*
  * BUTTONS
@@ -238,35 +272,28 @@ input::file-selector-button {
 .hiddenDown {
     opacity: 0;
     filter: blur(3px);
-    transform: translateY(-20%);
+    transform: translateY(-10%);
     transition: all $animation-div-time;
 }
 
 .hiddenLeft {
     opacity: 0;
     filter: blur(3px);
-    transform: translateX(-10%);
+    transform: translateX(-5%);
     transition: all $animation-div-time;
 }
 
 .hiddenRight {
     opacity: 0;
     filter: blur(3px);
-    transform: translateX(10%);
+    transform: translateX(5%); 
     transition: all $animation-div-time;
 }
 
 .hiddenText {
     opacity: 0;
     filter: blur(3px);
-    transition: all $animation-div-time
-}
-
-.hiddenGlow {
-    opacity: 0;
-    filter: blur(3px);
-    transform: translateX(-10%);
-    transition: all $animation-glow-time;
+    transition: all $animation-div-time;
 }
 
 .col:nth-child(2) {
