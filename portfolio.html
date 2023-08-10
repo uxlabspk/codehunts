@@ -31,10 +31,13 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png">
     <link rel="manifest" href="./assets/site.webmanifest">
+
+    <!-- animation JS -->
+    <script defer src="./js/animate.js"></script> 
 </head>
 <body>
 	<!-- Nav Bar -->
-	<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-blur">
+	<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-blur hiddenDown">
 		<div class="container">
 			<a class="navbar-brand" href="./index.html">
 				<img src="./assets/logo.png" alt="" class="me-3" alt="" height="60px">
@@ -55,10 +58,9 @@
 							Services
 						</a>
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="padding: 4px;">
-							<li><a class="dropdown-item" href="./webDev.html">Web Development</a></li>
-							<li><a class="dropdown-item" href="./appDev.html">App Development</a></li>
-							<li><a class="dropdown-item" href="./itSolution.html">IT Solutions</a></li>
-							<li><a class="dropdown-item" href="./uxui.html">UX/UI Design</a></li>
+              <li><a class="dropdown-item" href="./webDev.html">Web Development</a></li>
+              <li><a class="dropdown-item" href="./appDev.html">App Development</a></li>
+              <li><a class="dropdown-item" href="./uxui.html">Graphics Designing</a></li>
 						</ul>
 					</li>
 					<li class="nav-item">
@@ -81,22 +83,11 @@
       <!-- Portfolio Section Header -->
       <div class="even-section" style="margin-top: 120px;">
         <div class="container">
-          <div class="row py-lg-5 text-center">
+          <div class="row py-lg-5 text-center hiddenText">
             <div class="col-lg-6 col-md-8 mx-auto">
-              <h1 class="fw-light">Our Projects</h1>
+              <h1>Our Projects</h1>
               <p class="lead text-muted">
-                All of our projects are opensource so, you can view and change as per your need
-                but, don't forget to let us known before changing or hacking.
-              </p>
-              <p>
-                <a href="https://github.com/uxlabspk" class="btn-md-green shadow my-2" style="width: 180px;">
-                  <i class="bi-github"> </i>
-                  Visit github
-                </a>
-                <a href="tel:+923094617390" itemprop="telephone" class="btn-md-green-secondary shadow my-2" style="width: 180px;">
-                  <i class="bi-telephone"> </i>
-                  Contact
-                </a>
+                These projects includes Android apps, Websites based on bootstrap5 and Scss, IOS apps.
               </p>
             </div>
           </div>
@@ -108,20 +99,16 @@
         <div class="container">
           <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
             <!-- Project Card Started -->
-            <div class="col">
+            <div class="col hiddenDown">
               <div class="card shadow-sm">
                 <img src="./assets/projects/WindeployQt.png" alt="">
                 <div class="card-body">
                   <h3>WindeployQt</h3>
                   <p class="card-text">A GUI Application for deploying Qt based applications to microsoft windows.</p>
                   <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <!-- Project url -->
-                      <a href="https://github.com/uxlabspk/WindeployQt" class="btn-sm-green">View</a>
-                    </div>
                     <div class="text-muted small">
                       <i class="bi-tags"> </i>
-                      C++, GUI
+                      GUI, C++
                     </div>
                   </div>
                 </div>
@@ -130,20 +117,16 @@
             <!-- Project Card Ended -->
 
             <!-- Project Card Started -->
-            <div class="col">
+            <div class="col hiddenDown">
               <div class="card shadow-sm">
                 <img src="./assets/projects/NotePad.png" alt="">
                 <div class="card-body">
                   <h3>QNotePad</h3>
                   <p class="card-text">A notepad application base on Qt framework compatible with windows, macOS and Linux.</p>
                   <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <!-- Project url -->
-                      <a href="https://github.com/uxlabspk/QNotepad" class="btn-sm-green">View</a>
-                    </div>
                     <div class="text-muted small">
                       <i class="bi-tags"> </i>
-                      C++, GUI
+                      GUI, C++
                     </div>
                   </div>
                 </div>
@@ -152,20 +135,16 @@
             <!-- Project Card Ended -->
 
             <!-- Project Card Started -->
-            <div class="col">
+            <div class="col hiddenDown">
               <div class="card shadow-sm">
                 <img src="./assets/projects/btn_Css_view1.png" alt="">
                 <div class="card-body">
                   <h3>Button CSS Generator</h3>
                   <p class="card-text">A GUI Application for generating css code for buttons.</p>
                   <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <!-- Project url -->
-                      <a href="https://github.com/uxlabspk/BtnGenerator" class="btn-sm-green">View</a>
-                    </div>
                     <div class="text-muted small">
                       <i class="bi-tags"> </i>
-                      C++, GUI
+                      GUI, C++
                     </div>
                   </div>
                 </div>
@@ -174,20 +153,16 @@
             <!-- Project Card Ended -->
 
             <!-- Project Card Started -->
-            <div class="col">
+            <div class="col hiddenDown">
               <div class="card shadow-sm">
                 <img src="./assets/projects/BMI_View1.png" alt="">
                 <div class="card-body">
                   <h3>BMI Calculator</h3>
                   <p class="card-text">A GUI Application for calculating BMI of the user.</p>
                   <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <!-- Project url -->
-                      <a href="https://github.com/uxlabspk/BMI" class="btn-sm-green">View</a>
-                    </div>
                     <div class="text-muted small">
                       <i class="bi-tags"> </i>
-                      C++, GUI
+                      GUI, C++
                     </div>
                   </div>
                 </div>
@@ -196,18 +171,13 @@
             <!-- Project Card Ended -->
 
             <!-- Project Card Started -->
-            <div class="col">
+            <div class="col hiddenDown">
               <div class="card shadow-sm">
                 <img src="./assets/projects/tr.png" alt="">
                 <div class="card-body">
                   <h3>Trading Room</h3>
                   <p class="card-text">A Trading room website template in bootstrap5</p>
                   <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <!-- Project url -->
-                      <!-- TODO: GET THE CORRECT URL -->
-                      <a href="https://github.com/uxlabspk/BMI" class="btn-sm-green">View</a>
-                    </div>
                     <div class="text-muted small">
                       <i class="bi-tags"> </i>
                       Bootstrap5, Js
@@ -219,17 +189,13 @@
             <!-- Project Card Ended -->
 
             <!-- Project Card Started -->
-            <div class="col">
+            <div class="col hiddenDown">
               <div class="card shadow-sm">
                 <img src="./assets/projects/colorlabs.png" alt="">
                 <div class="card-body">
                   <h3>Color Lab</h3>
                   <p class="card-text">A Vanilla JS based project to generate random colors for Web Developers and UI Designers.</p>
                   <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <!-- Project url -->
-                      <a href="https://github.com/uxlabspk/colorlab/" class="btn-sm-green">View</a>
-                    </div>
                     <div class="text-muted small">
                       <i class="bi-tags"> </i>
                       Bootstrap5, Vanilla JS
@@ -241,20 +207,16 @@
             <!-- Project Card Ended -->
 
             <!-- Project Card Started -->
-            <div class="col">
+            <div class="col hiddenDown">
               <div class="card shadow-sm">
-                <img src="./assets/projects/portfolio.png" alt="">
+                <img src="./assets/projects/seo.png" alt="">
                 <div class="card-body">
-                  <h3>Portfolio</h3>
-                  <p class="card-text">A Bootstrap5 based single webpage to show case your skills.</p>
+                  <h3>SEO Campaign</h3>
+                  <p class="card-text">A SEO compaign website template.</p>
                   <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <!-- Project url -->
-                      <a href="https://github.com/uxlabspk/portfolio/" class="btn-sm-green">View</a>
-                    </div>
                     <div class="text-muted small">
                       <i class="bi-tags"> </i>
-                      Bootstrap5, CSS3
+                      Bootstrap5, SCSS
                     </div>
                   </div>
                 </div>
@@ -262,86 +224,132 @@
             </div>
             <!-- Project Card Ended -->
 
+
+            <!-- Project Card Started -->
+            <div class="col hiddenDown">
+              <div class="card shadow-sm">
+                <img src="./assets/projects/codecraft.jpg" alt="">
+                <div class="card-body">
+                  <h3>Code Craft</h3>
+                  <p class="card-text">A UX/UI Designing and Research agency.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="text-muted small">
+                      <i class="bi-tags"> </i>
+                      Bootstrap5, SCSS
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Project Card Ended -->
+
+
+            <!-- Project Card Started -->
+            <div class="col hiddenDown">
+              <div class="card shadow-sm">
+                <img src="./assets/projects/cloudmeeting.svg" alt="">
+                <div class="card-body">
+                  <h3>Cloud Meeting</h3>
+                  <p class="card-text">An Android based E-Learning platform.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="text-muted small">
+                      <i class="bi-tags"> </i>
+                      Android app, Java
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Project Card Ended -->
+
+            <!-- Project Card Started -->
+            <div class="col hiddenDown">
+              <div class="card shadow-sm">
+                <img src="./assets/projects/musica.svg" alt="">
+                <div class="card-body">
+                  <h3>MÚSICA</h3>
+                  <p class="card-text">A mobile based media player UX/UI Design.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="text-muted small">
+                      <i class="bi-tags"> </i>
+                      UX/UI Design, Figma
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Project Card Ended -->
+
+
           </div>
         </div>
       </div>
 
-  <!-- Footer -->
-  <footer class="bd-footer py-5 mt-5 bg-light">
-    <div class="container py-5">
-      <div class="row">
-        <div class="col-lg-3 mb-3">
-          <a class="d-inline-flex align-items-center mb-2 link-dark text-decoration-none" href="./index.html" aria-label="Bootstrap">
-            <!-- SITE LOGO -->
-            <span class="fs-5">Code HUNT'S</span>
-          </a>
-          <ul class="list-unstyled small text-muted">
-            <li class="mb-2">Designed and built with love using Bootstrap5 and SCSS by Code HUNT'S CTO <a href="https://github.com/uxlabspk/" target="_blank">Muhammad Naveed</a>.</li>
-            <li class="mb-2">Currently v1.0.0</li>
-          </ul>
-        </div>
-        <div class="col-6 col-lg-2 offset-lg-1 mb-3">
-          <h5>Links</h5>
-          <ul class="list-unstyled lnk">
-            <li class="mb-2"><a href="./index.html">Home</a></li>
-            <li class="mb-2"><a href="./team.html">Our Team</a></li>
-            <li class="mb-2"><a href="./publication.html">Publications</a></li>
-            <li class="mb-2"><a href="./hiring.html">Carrers</a></li>
-          </ul>
-        </div>
-        <div class="col-6 col-lg-2 mb-3">
-          <h5>Services</h5>
-          <ul class="list-unstyled lnk">
-            <li class="mb-2"><a href="./itSolution.html">IT Solution</a></li>
-            <li class="mb-2"><a href="./webDev.html">Web Development</a></li>
-            <li class="mb-2"><a href="./appDev.html">App Development</a></li>
-            <li class="mb-2"><a href="./uxui.html">UX/UI Designs</a></li>
-          </ul>
-        </div>
-        <div class="col-6 col-lg-2 mb-3">
-          <h5>Projects</h5>
-          <ul class="list-unstyled lnk">
-            <!-- Update the correct portfolio projects -->
-            <li class="mb-2"><a href="https://github.com/uxlabspk/cloudmeeting/">Cloud Meeting (Java)</a></li>
-            <li class="mb-2"><a href="https://github.com/uxlabspk/WindeployQt/">WindeployQt (C++)</a></li>
-            <li class="mb-2"><a href="https://github.com/uxlabspk/cloudmeeting/">CSS Generator (C++)</a></li>
-            <li class="mb-2"><a href="https://github.com/uxlabspk/cloudmeeting/">Uxlabspk (Bootstrap5)</a></li>
-            <li class="mb-2"><a href="https://github.com/uxlabspk/cloudmeeting/">BMI Calculator (C++)</a></li>
-            <li class="mb-2"><a href="https://github.com/uxlabspk/">View all</a></li>
-          </ul>
-        </div>
-        <div class="col-6 col-lg-2 mb-3">
-          <h5>Online</h5>
-          <ul class="list-unstyled lnk">
-            <!-- Update Company Links -->
-            <li class="mb-2"><a href="mailto: codehuntspk@gmail.com">
-              Email
-            </a></li>
-            <li class="mb-2"><a href="https://github.com/CODE-HUNTS/">
-              Github
-            </a></li>
-            <li class="mb-2"><a href="https://instagram.com/code_hunts/">
-              Instagram
-            </a></li>
-            <li class="mb-2"><a href="https://twitter.com/code_hunts/">
-              Twitter
-            </a></li>
-            <li class="mb-2"><a href="tel:+923094617390" itemprop="telephone">
-              Call us
-            </a></li>
-          </ul>
+    <!-- Footer -->
+    <footer class="bd-footer py-5 mt-5 bg-light">
+      <div class="container py-5">
+        <div class="row">
+          <!-- Company Name -->
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <a class="d-inline-flex align-items-center mb-2 link-dark text-decoration-none" href="./index.html">
+              <h5 class="fs-5">Code HUNT'S</h5>
+            </a>
+            <p class="text-muted">
+              Islamabad, Pakistan. <br><br>
+              <strong>Phone:</strong> <a href="tel:+923094617390" itemprop="telephone">+923094617390</a><br>
+              <strong>Email:</strong> <a href="mailto: codehuntspk@gmail.com">codehuntspk@gmail.com</a><br>
+            </p>
+          </div>
+  
+          <!-- UserFull Links -->
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h5>Useful Links</h5>
+            <ul class="list-unstyled lnk">
+              <li class="mb-2"><a href="./index.html"><i class="bi-link"></i> Home</a></li>
+              <li class="mb-2"><a href="/team.html"><i class="bi-link"></i> Our Team</a></li>
+              <li class="mb-2"><a href="./about.html"><i class="bi-link"></i> About us</a></li>
+              <li class="mb-2"><a href="./contact.html"><i class="bi-link"></i> Contact us</a></li>
+              <li class="mb-2"><a href="./hiring.html"><i class="bi-link"></i> Carrers</a></li>
+            </ul>
+          </div>
+  
+          <!-- Services  -->
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h5>Our Services</h5>
+            <ul class="list-unstyled lnk">
+              <li class="mb-2"><a href="./webDev.html#bootstrap"><i class="bi-link"></i> Bootstrap5</a></li>
+              <li class="mb-2"><a href="./webDev.html#WordPress"><i class="bi-link"></i> WordPress</a></li>
+              <li class="mb-2"><a href="./appDev.html#winapps"><i class="bi-link"></i> Windows apps</a></li>
+              <li class="mb-2"><a href="./appDev.html#androidapps"><i class="bi-link"></i> Android apps</a></li>
+              <li class="mb-2"><a href="./appDev.html#iosapps"><i class="bi-link"></i> IOS apps</a></li>
+              <li class="mb-2"><a href="./uxui.html#uxui"><i class="bi-link"></i> UX/UI Designing</a></li>
+              <li class="mb-2"><a href="./uxui.html#graphics"><i class="bi-link"></i> Graphics Designing</a></li>
+              <li class="mb-2"><a href="./uxui.html#logo"><i class="bi-link"></i> Logo Designing</a></li>
+            </ul>
+          </div>
+  
+          <!-- Social Network -->
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h5>Our Social Networks</h5>
+            <p class="text-muted">A group of passionate developers, designers and problem solvers.</p>
+            <div class="social-links mt-3">
+              <a href="https://twitter.com/code_hunts/"><i class="bi-twitter"></i></a>
+              <a href="https://web.facebook.com/people/Code-Hunts/100094255579069/"><i class="bi-facebook"></i></a>
+              <a href="https://instagram.com/code_hunts/"><i class="bi-instagram"></i></a>
+              <a href="https://www.youtube.com/@CodeHUNTS"><i class="bi-youtube"></i></a>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="container"><hr></div>
-  </footer>
-  <!-- Privacy Notice -->
-  <footer class="footer mt-auto py-3 bg-light">
-    <div class="container">
-      <p class="float-end"><a href="#">Back to top</a></p>
-    <p>© 2023 Uxlabspk, Inc. · <a href="./terms.html" target="_blank">Terms.</a></p>
-    </div>
-  </footer>
+  
+    </footer>
+    <!-- Privacy Notice -->
+    <footer class="footer  py-3 bg-dark text-light">
+      <div class="container mt-3">
+        <p class="float-end"><a href="#" style="color: white;">Back to top</a></p>
+        <p>© 2023 CodeHUNT'S, Inc. · <a href="./terms.html" target="_blank" style="color: white;">Terms.</a></p>
+      </div>
+    </footer>
     <!-- Bootstrap5 JS -->    
     <script src="./js/bootstrap.bundle.min.js"></script>
 </body>

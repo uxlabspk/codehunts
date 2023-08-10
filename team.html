@@ -33,11 +33,13 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png">
   <link rel="manifest" href="./assets/site.webmanifest">
+  <!-- animation JS -->
+  <script defer src="./js/animate.js"></script>
 </head>
 
 <body>
   <!-- Nav Bar -->
-  <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-blur">
+  <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-blur hiddenDown">
     <div class="container">
       <a class="navbar-brand" href="./index.html">
         <img src="./assets/logo.png" alt="" class="me-3" alt="" height="60px">
@@ -59,8 +61,7 @@
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="padding: 4px;">
               <li><a class="dropdown-item" href="./webDev.html">Web Development</a></li>
               <li><a class="dropdown-item" href="./appDev.html">App Development</a></li>
-              <li><a class="dropdown-item" href="./itSolution.html">IT Solutions</a></li>
-              <li><a class="dropdown-item" href="./uxui.html">UX/UI Design</a></li>
+              <li><a class="dropdown-item" href="./uxui.html">Graphics Designing</a></li>
             </ul>
           </li>
           <li class="nav-item">
@@ -83,7 +84,7 @@
   <!-- Our team section -->
   <div class="even-container" style="margin-top: 120px;">
     <div class="container">
-      <div class="row py-lg-5 text-center">
+      <div class="row py-lg-5 text-center hiddenText">
         <div class="col-lg-6 col-md-8 mx-auto">
           <h1 class="">Meet our team</h1>
           <p class="lead text-muted">
@@ -94,113 +95,83 @@
       </div>
 
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-        <!-- Card 1 CEO -->
-        <div class="col">
+        <!-- Card 1 -->
+        <div class="col hiddenDown">
           <div class="card shadow">
-            <img src="./assets/team/hamza.jpg" alt="">
+            <img src="./assets/team/hamza.jpg" loading="lazy" alt="">
             <div class="card-body">
               <h3 class="card-text">
                 Hamza Waheed
               </h3>
-              <p>CEO, Android developer</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <a href="" style="margin-right: 20px;"><i class="bi-twitter"> </i></a>
-                  <a href="" style="margin-right: 20px;"><i class="bi-instagram"> </i></a>
-                  <a href="" style="margin-right: 20px;"><i class="bi-github"> </i></a>
-                </div>
-              </div>
+              <p>Android developer</p>
+              <a href="#" class="btn-sm-green-rounded">Profile</a>
             </div>
           </div>
         </div>
         <!-- End -->
 
-        <!-- Card 2 CTO -->
-        <div class="col">
+        <!-- Card 2 -->
+        <div class="col hiddenDown">
           <div class="card shadow">
-            <img src="./assets/team/naveed.jpg" alt="">
+            <img src="./assets/team/naveed.jpg" loading="lazy" alt="">
             <div class="card-body">
               <h3 class="card-text">
                 Muhammad Naveed
               </h3>
-              <p>CTO, Software developer</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <a href="" style="margin-right: 20px;"><i class="bi-twitter"> </i></a>
-                  <a href="" style="margin-right: 20px;"><i class="bi-reddit"> </i></a>
-                  <a href="" style="margin-right: 20px;"><i class="bi-github"> </i></a>
-                </div>
-              </div>
+              <p>Software Engineer</p>
+              <a href="#" class="btn-sm-green-rounded">Profile</a>
             </div>
           </div>
         </div>
         <!-- End -->
 
-        <!-- Card 2 UX/UI -->
-        <div class="col">
+        <!-- Card 3 -->
+        <div class="col hiddenDown">
           <div class="card shadow">
-            <img src="./assets/team/Usama.jpg" alt="">
+            <img src="./assets/team/Usama.jpg" loading="lazy" alt="">
             <div class="card-body">
               <h3 class="card-text">
                 Muhammad Usama
               </h3>
               <p>UX/UI Designer</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <a href="" style="margin-right: 20px;"><i class="bi-twitter"> </i></a>
-                  <a href="" style="margin-right: 20px;"><i class="bi-instagram"> </i></a>
-                  <a href="" style="margin-right: 20px;"><i class="bi-github"> </i></a>
-                </div>
-              </div>
+              <a href="#" class="btn-sm-green-rounded">Profile</a>
             </div>
           </div>
         </div>
         <!-- End -->
 
-        <!-- Card 2 WEB -->
-        <div class="col">
+        <!-- Card 4 -->
+        <div class="col hiddenDown">
           <div class="card shadow">
-            <img src="./assets/team/shazil.jpg" alt="">
+            <img src="./assets/team/shazil.jpg" loading="lazy" alt="">
             <div class="card-body">
               <h3 class="card-text">
                 Muhammad Shazil
               </h3>
               <p>Web developer</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <a href="" style="margin-right: 20px;"><i class="bi-twitter"> </i></a>
-                  <a href="" style="margin-right: 20px;"><i class="bi-instagram"> </i></a>
-                  <a href="" style="margin-right: 20px;"><i class="bi-github"> </i></a>
-                </div>
-              </div>
+              <a href="#" class="btn-sm-green-rounded">Profile</a>
             </div>
           </div>
         </div>
         <!-- End -->
 
-        <!-- Card 2 WordPress -->
-        <div class="col">
+        <!-- Card 5 -->
+        <div class="col hiddenDown">
           <div class="card shadow">
-            <img src="./assets/team/talat.jpg" alt="">
+            <img src="./assets/team/talat.jpg" loading="lazy" alt="">
             <div class="card-body">
               <h3 class="card-text">
                 Talat Mehmood
               </h3>
               <p>WordPress developer</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <a href="" style="margin-right: 20px;"><i class="bi-twitter"> </i></a>
-                  <a href="" style="margin-right: 20px;"><i class="bi-instagram"> </i></a>
-                  <a href="" style="margin-right: 20px;"><i class="bi-github"> </i></a>
-                </div>
-              </div>
+              <a href="#" class="btn-sm-green-rounded">Profile</a>
             </div>
           </div>
         </div>
         <!-- End -->
 
-        <!-- Card 2 Flutter -->
-        <div class="col">
+        <!-- Card 6 -->
+        <div class="col hiddenDown">
           <div class="card shadow">
             <img src="./assets/team/Ehsan.jpg" alt="">
             <div class="card-body">
@@ -208,34 +179,22 @@
                 Ehsan Danish
               </h3>
               <p>Flutter Expert</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <a href="" style="margin-right: 20px;"><i class="bi-twitter"> </i></a>
-                  <a href="" style="margin-right: 20px;"><i class="bi-instagram"> </i></a>
-                  <a href="" style="margin-right: 20px;"><i class="bi-github"> </i></a>
-                </div>
-              </div>
+              <a href="#" class="btn-sm-green-rounded">Profile</a>
             </div>
           </div>
         </div>
         <!-- End -->
 
-        <!-- Card 2 WEB -->
-        <div class="col">
+        <!-- Card 7 -->
+        <div class="col hiddenDown">
           <div class="card shadow">
-            <img src="./assets/team/Ashan.jpg" alt="">
+            <img src="./assets/team/Ashan.jpg" loading="lazy" alt="">
             <div class="card-body">
               <h3 class="card-text">
                 Ashan Shahid
               </h3>
               <p>IT Expert</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <a href="" style="margin-right: 20px;"><i class="bi-twitter"> </i></a>
-                  <a href="" style="margin-right: 20px;"><i class="bi-instagram"> </i></a>
-                  <a href="" style="margin-right: 20px;"><i class="bi-github"> </i></a>
-                </div>
-              </div>
+              <a href="#" class="btn-sm-green-rounded">Profile</a>
             </div>
           </div>
         </div>
@@ -246,86 +205,71 @@
         href="./hiring.html">Resume here.</p>
     </div>
   </div>
-  <!-- Footer -->
-  <footer class="bd-footer py-5 mt-5 bg-light">
-    <div class="container py-5">
-      <div class="row">
-        <div class="col-lg-3 mb-3">
-          <a class="d-inline-flex align-items-center mb-2 link-dark text-decoration-none" href="./index.html"
-            aria-label="Bootstrap">
-            <!-- SITE LOGO -->
-            <span class="fs-5">Code HUNT'S</span>
-          </a>
-          <ul class="list-unstyled small text-muted">
-            <li class="mb-2">Designed and built with love using Bootstrap5 and SCSS by Code HUNT'S CTO <a
-                href="https://github.com/uxlabspk/" target="_blank">Muhammad Naveed</a>.</li>
-            <li class="mb-2">Currently v1.0.0</li>
-          </ul>
-        </div>
-        <div class="col-6 col-lg-2 offset-lg-1 mb-3">
-          <h5>Links</h5>
-          <ul class="list-unstyled lnk">
-            <li class="mb-2"><a href="./index.html">Home</a></li>
-            <li class="mb-2"><a href="./team.html">Our Team</a></li>
-            <li class="mb-2"><a href="./publication.html">Publications</a></li>
-            <li class="mb-2"><a href="./hiring.html">Carrers</a></li>
-          </ul>
-        </div>
-        <div class="col-6 col-lg-2 mb-3">
-          <h5>Services</h5>
-          <ul class="list-unstyled lnk">
-            <li class="mb-2"><a href="./itSolution.html">IT Solution</a></li>
-            <li class="mb-2"><a href="./webDev.html">Web Development</a></li>
-            <li class="mb-2"><a href="./appDev.html">App Development</a></li>
-            <li class="mb-2"><a href="./uxui.html">UX/UI Designs</a></li>
-          </ul>
-        </div>
-        <div class="col-6 col-lg-2 mb-3">
-          <h5>Projects</h5>
-          <ul class="list-unstyled lnk">
-            <!-- Update the correct portfolio projects -->
-            <li class="mb-2"><a href="https://github.com/uxlabspk/cloudmeeting/">Cloud Meeting (Java)</a></li>
-            <li class="mb-2"><a href="https://github.com/uxlabspk/WindeployQt/">WindeployQt (C++)</a></li>
-            <li class="mb-2"><a href="https://github.com/uxlabspk/cloudmeeting/">CSS Generator (C++)</a></li>
-            <li class="mb-2"><a href="https://github.com/uxlabspk/cloudmeeting/">Uxlabspk (Bootstrap5)</a></li>
-            <li class="mb-2"><a href="https://github.com/uxlabspk/cloudmeeting/">BMI Calculator (C++)</a></li>
-            <li class="mb-2"><a href="https://github.com/uxlabspk/">View all</a></li>
-          </ul>
-        </div>
-        <div class="col-6 col-lg-2 mb-3">
-          <h5>Online</h5>
-          <ul class="list-unstyled lnk">
-            <!-- Update Company Links -->
-            <li class="mb-2"><a href="mailto: codehuntspk@gmail.com">
-                Email
-              </a></li>
-            <li class="mb-2"><a href="https://github.com/CODE-HUNTS/">
-                Github
-              </a></li>
-            <li class="mb-2"><a href="https://instagram.com/code_hunts/">
-                Instagram
-              </a></li>
-            <li class="mb-2"><a href="https://twitter.com/code_hunts/">
-                Twitter
-              </a></li>
-            <li class="mb-2"><a href="tel:+923094617390" itemprop="telephone">
-                Call us
-              </a></li>
-          </ul>
+    <!-- Footer -->
+    <footer class="bd-footer py-5 mt-5 bg-light">
+      <div class="container py-5">
+        <div class="row">
+          <!-- Company Name -->
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <a class="d-inline-flex align-items-center mb-2 link-dark text-decoration-none" href="./index.html">
+              <h5 class="fs-5">Code HUNT'S</h5>
+            </a>
+            <p class="text-muted">
+              Islamabad, Pakistan. <br><br>
+              <strong>Phone:</strong> <a href="tel:+923094617390" itemprop="telephone">+923094617390</a><br>
+              <strong>Email:</strong> <a href="mailto: codehuntspk@gmail.com">codehuntspk@gmail.com</a><br>
+            </p>
+          </div>
+  
+          <!-- UserFull Links -->
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h5>Useful Links</h5>
+            <ul class="list-unstyled lnk">
+              <li class="mb-2"><a href="./index.html"><i class="bi-link"></i> Home</a></li>
+              <li class="mb-2"><a href="/team.html"><i class="bi-link"></i> Our Team</a></li>
+              <li class="mb-2"><a href="./about.html"><i class="bi-link"></i> About us</a></li>
+              <li class="mb-2"><a href="./contact.html"><i class="bi-link"></i> Contact us</a></li>
+              <li class="mb-2"><a href="./hiring.html"><i class="bi-link"></i> Carrers</a></li>
+            </ul>
+          </div>
+  
+          <!-- Services  -->
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h5>Our Services</h5>
+            <ul class="list-unstyled lnk">
+              <li class="mb-2"><a href="./webDev.html#bootstrap"><i class="bi-link"></i> Bootstrap5</a></li>
+              <li class="mb-2"><a href="./webDev.html#WordPress"><i class="bi-link"></i> WordPress</a></li>
+              <li class="mb-2"><a href="./appDev.html#winapps"><i class="bi-link"></i> Windows apps</a></li>
+              <li class="mb-2"><a href="./appDev.html#androidapps"><i class="bi-link"></i> Android apps</a></li>
+              <li class="mb-2"><a href="./appDev.html#iosapps"><i class="bi-link"></i> IOS apps</a></li>
+              <li class="mb-2"><a href="./uxui.html#uxui"><i class="bi-link"></i> UX/UI Designing</a></li>
+              <li class="mb-2"><a href="./uxui.html#graphics"><i class="bi-link"></i> Graphics Designing</a></li>
+              <li class="mb-2"><a href="./uxui.html#logo"><i class="bi-link"></i> Logo Designing</a></li>
+            </ul>
+          </div>
+  
+          <!-- Social Network -->
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h5>Our Social Networks</h5>
+            <p class="text-muted">A group of passionate developers, designers and problem solvers.</p>
+            <div class="social-links mt-3">
+              <a href="https://twitter.com/code_hunts/"><i class="bi-twitter"></i></a>
+              <a href="https://web.facebook.com/people/Code-Hunts/100094255579069/"><i class="bi-facebook"></i></a>
+              <a href="https://instagram.com/code_hunts/"><i class="bi-instagram"></i></a>
+              <a href="https://www.youtube.com/@CodeHUNTS"><i class="bi-youtube"></i></a>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="container">
-      <hr>
-    </div>
-  </footer>
-  <!-- Privacy Notice -->
-  <footer class="footer mt-auto py-3 bg-light">
-    <div class="container">
-      <p class="float-end"><a href="#">Back to top</a></p>
-      <p>© 2023 Uxlabspk, Inc. · <a href="./terms.html" target="_blank">Terms.</a></p>
-    </div>
-  </footer>
+  
+    </footer>
+    <!-- Privacy Notice -->
+    <footer class="footer  py-3 bg-dark text-light">
+      <div class="container mt-3">
+        <p class="float-end"><a href="#" style="color: white;">Back to top</a></p>
+        <p>© 2023 CodeHUNT'S, Inc. · <a href="./terms.html" target="_blank" style="color: white;">Terms.</a></p>
+      </div>
+    </footer>
   <!-- Bootstrap5 JS -->
   <script src="./js/bootstrap.bundle.min.js"></script>
 </body>

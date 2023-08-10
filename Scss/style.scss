@@ -234,6 +234,19 @@ nav {
     }
 }
 
+.btn-sm-green-rounded {
+    @include sm-btn(4px, $green-color, $white-color);
+    text-decoration: none;
+    border: 1px solid $green-color;
+    font-weight: 500;
+    text-align: center; 
+
+    &:hover {
+        color: $white-color;
+        opacity: 70%;
+    }
+}
+
 .btn-sm-green {
     @include sm-btn(6px, $white-color, $green-color);
     text-decoration: none;
