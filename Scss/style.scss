@@ -140,7 +140,45 @@ nav {
             color: $white-color;
         }
     }
-}  
+}
+
+.featurette-image {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    object-fit: cover;
+}
+
+.featurette-divider {
+    margin: 5rem 0;
+}
+
+.featurette-heading {
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -.05rem;
+}
+
+
+/* RESPONSIVE CSS */
+@media (min-width: 40em) {
+    .featurette-heading {
+        font-size: 50px;
+    }
+}
+
+@media (min-width: 62em) {
+    .featurette-heading {
+        margin-top: 1rem;
+    }
+}
+
+@media (width <= 600px) {
+    .featurette-divider {
+        margin: 1rem 0;
+    }
+}
 
 /*
  * BUTTONS
@@ -227,7 +265,8 @@ input::file-selector-button {
 .dropdown-item {
     border-radius: 0.25rem;
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
         color: $white-color;
         background-color: $green-color;
     }
@@ -247,7 +286,7 @@ input::file-selector-button {
     border-radius: 0px;
     overflow-anchor: none;
 
-   
+
     &:not(.collapsed) {
         color: $green-color;
         background-color: $offwhite-color;
@@ -286,7 +325,7 @@ input::file-selector-button {
 .hiddenRight {
     opacity: 0;
     filter: blur(3px);
-    transform: translateX(5%); 
+    transform: translateX(5%);
     transition: all $animation-div-time;
 }
 
@@ -311,5 +350,5 @@ input::file-selector-button {
 .show {
     opacity: 1;
     filter: blur(0);
-    transform: translateX(0);
+    transform: translate(0%, 0%);
 }
