@@ -421,10 +421,6 @@ input::file-selector-button:hover {
   transition-delay: 300ms;
 }
 
-.col:nth-child(4) {
-  transition-delay: 400ms;
-}
-
 .show {
   opacity: 1;
   filter: blur(0);
