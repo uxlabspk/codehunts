@@ -52,12 +52,42 @@ nav {
     color: $white-color;
 }
 
+.team-img-cover {
+    width: 250px;
+    height: 300px;
+    border-radius: 12px;
+    margin-bottom: 18px;
+    object-fit: cover;
+}
+
 .team-img {
     width: 250px;
     height: 300px;
     border-radius: 12px;
     margin-bottom: 18px;
     object-fit: cover;
+}
+
+// Team members image width.
+
+@media (width < 1200px) {
+    .team-img {
+        width: 200px;
+        height: 250px;
+        border-radius: 12px;
+        margin-bottom: 18px;
+        object-fit: cover;
+    }
+}
+
+@media (width < 600px) {
+    .team-img {
+        width: 250px;
+        height: 300px;
+        border-radius: 12px;
+        margin-bottom: 18px;
+        object-fit: cover;
+    }
 }
 
 .wrap-text {

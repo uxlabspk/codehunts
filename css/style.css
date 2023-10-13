@@ -49,6 +49,15 @@ nav {
   color: #ffffff;
 }
 
+.team-img-cover {
+  width: 250px;
+  height: 300px;
+  border-radius: 12px;
+  margin-bottom: 18px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .team-img {
   width: 250px;
   height: 300px;
@@ -58,6 +67,26 @@ nav {
      object-fit: cover;
 }
 
+@media (width < 1200px) {
+  .team-img {
+    width: 200px;
+    height: 250px;
+    border-radius: 12px;
+    margin-bottom: 18px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
+@media (width < 600px) {
+  .team-img {
+    width: 250px;
+    height: 300px;
+    border-radius: 12px;
+    margin-bottom: 18px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
 .wrap-text {
   margin: 20px 8% 20px 8%;
 }
