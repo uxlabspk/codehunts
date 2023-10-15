@@ -3,11 +3,11 @@
 @import './fonts';
 
 body {
-    font-family: "SF-Pro-Display";
     margin: 0px;
 }
 
 * {
+    font-family: SF-Pro-Display;
     transition-property: background-color, opacity, width, height;
     transition-duration: 300ms;
     transition-timing-function: linear;
