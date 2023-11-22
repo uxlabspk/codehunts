@@ -6,10 +6,32 @@ body {
   margin: 0px;
 }
 
+/**
+ * scrollbar style
+ */
+body::-webkit-scrollbar {
+  width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #ffffff;
+  border-left: 1px solid #f5f5f5;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: hsl(0, 0%, 80%);
+  border: 3px solid #ffffff;
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: hsl(0, 0%, 70%);
+}
+
 * {
   font-family: SF-Pro-Display;
   transition-property: background-color, opacity, width, height;
-  transition-duration: 100ms;
+  transition-duration: 400ms;
   transition-timing-function: ease-in-out;
 }
 
@@ -376,16 +398,6 @@ nav {
   color: #ffffff;
 }
 
-input::-webkit-file-upload-button {
-  background-color: #00b982;
-  border: 1px solid #00b982;
-  border-radius: 4px;
-  color: #ffffff;
-  cursor: pointer;
-  font-weight: 400;
-  margin: 5px 20px 15px 0px;
-}
-
 input::file-selector-button {
   background-color: #00b982;
   border: 1px solid #00b982;
@@ -394,9 +406,6 @@ input::file-selector-button {
   cursor: pointer;
   font-weight: 400;
   margin: 5px 20px 15px 0px;
-}
-input::-webkit-file-upload-button:hover {
-  opacity: 80%;
 }
 input::file-selector-button:hover {
   opacity: 80%;
@@ -443,28 +452,28 @@ input::file-selector-button:hover {
 .hiddenDown {
   opacity: 0;
   filter: blur(3px);
-  transform: translateY(-10%);
-  transition: all 0.7s ease-in;
+  transform: translateY(-10px);
+  transition: all 0.7s ease-in-out;
 }
 
 .hiddenLeft {
   opacity: 0;
   filter: blur(3px);
-  transform: translateX(-5%);
-  transition: all 0.7s ease-in;
+  transform: translateX(-10px);
+  transition: all 0.7s ease-in-out;
 }
 
 .hiddenRight {
   opacity: 0;
   filter: blur(3px);
-  transform: translateX(5%);
-  transition: all 0.7s ease-in;
+  transform: translateX(10px);
+  transition: all 0.7s ease-in-out;
 }
 
 .hiddenText {
   opacity: 0;
   filter: blur(3px);
-  transition: all 0.7s ease-in;
+  transition: all 0.7s ease-in-out;
 }
 
 .col:nth-child(2) {
@@ -478,5 +487,5 @@ input::file-selector-button:hover {
 .show {
   opacity: 1;
   filter: blur(0);
-  transform: translate(0%, 0%);
-}
+  transform: translate(0px);
+}/*# sourceMappingURL=style.css.map */
