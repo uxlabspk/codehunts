@@ -1,6 +1,6 @@
 @font-face {
-  font-family: "SF-Pro-Display";
-  src: url("../font/SF-Pro-Display-Regular.otf");
+  font-family: "helvetica";
+  src: url("../font/helvetica.ttf");
 }
 body {
   margin: 0px;
@@ -29,10 +29,22 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 * {
-  font-family: SF-Pro-Display;
+  font-family: helvetica;
   transition-property: background-color, opacity, width, height;
   transition-duration: 400ms;
   transition-timing-function: ease-in-out;
+}
+
+*::-moz-selection {
+  background-color: #00b982;
+  color: #ffffff;
+  opacity: 90%;
+}
+
+*::selection {
+  background-color: #00b982;
+  color: #ffffff;
+  opacity: 90%;
 }
 
 nav {
