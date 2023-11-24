@@ -424,6 +424,29 @@ input::file-selector-button {
     }
 }
 
+.btt {
+    color: $white-color;
+    background-color: $green-color;
+    font-size: 32px;
+    line-height: 0;
+    visibility: hidden;
+    position: fixed;
+    right: 40px;
+    bottom: 40px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+
+    &.active {
+        visibility: visible;
+    }
+
+    &:hover {
+        color: white;
+        background-color: #00865e;
+    }
+}
+
 
 // Adding some animation
 .hiddenDown {

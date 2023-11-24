@@ -465,6 +465,27 @@ input::file-selector-button:hover {
   background-size: 1.25rem;
 }
 
+.btt {
+  color: #ffffff;
+  background-color: #00b982;
+  font-size: 32px;
+  line-height: 0;
+  visibility: hidden;
+  position: fixed;
+  right: 40px;
+  bottom: 40px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+.btt.active {
+  visibility: visible;
+}
+.btt:hover {
+  color: white;
+  background-color: #00865e;
+}
+
 .hiddenDown {
   opacity: 0;
   filter: blur(3px);
