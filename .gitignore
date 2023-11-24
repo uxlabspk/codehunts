@@ -64,3 +64,9 @@ node_modules/
 
 # dotenv environment variables file
 .env
+
+# Ignoring the mdbgo.io configurations and google verification file
+*.json
+.mdb
+*.xml
+google6d0aa350773b513e.html
