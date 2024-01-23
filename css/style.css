@@ -2,6 +2,10 @@
   font-family: "helvetica";
   src: url("../font/helvetica.ttf");
 }
+@font-face {
+  font-family: "urdu";
+  src: url("../font/asunaskh.ttf");
+}
 body {
   margin: 0px;
 }
@@ -11,6 +15,7 @@ body {
  */
 body::-webkit-scrollbar {
   width: 12px;
+  font-family: helvetica;
 }
 
 body::-webkit-scrollbar-track {
@@ -45,6 +50,20 @@ body::-webkit-scrollbar-thumb:hover {
   background-color: #00b982;
   color: #ffffff;
   opacity: 90%;
+}
+
+.header {
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #f4f5f8;
+  font-size: 18px;
+  text-align: center;
+}
+.header p {
+  margin: 0px;
 }
 
 nav {
@@ -126,7 +145,7 @@ nav {
 }
 
 .bg-blur {
-  box-shadow: 0px 2px 4px 4px rgba(100, 100, 100, 0.15);
+  box-shadow: 0px 2px 4px 0px rgba(100, 100, 100, 0.15);
   background-color: rgba(255, 255, 255, 0.72);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
           backdrop-filter: saturate(180%) blur(20px);

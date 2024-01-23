@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="138.572"
+   height="39.647"
+   viewBox="0 0 138.572 39.647"
+   version="1.1"
+   id="svg10"
+   sodipodi:docname="logo_text.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs14" />
+  <sodipodi:namedview
+     id="namedview12"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="5.1050702"
+     inkscape:cx="52.888597"
+     inkscape:cy="21.938974"
+     inkscape:window-width="1366"
+     inkscape:window-height="716"
+     inkscape:window-x="0"
+     inkscape:window-y="28"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Group_1" />
+  <g
+     id="Group_1"
+     data-name="Group 1"
+     transform="translate(-228.428 -24.353)">
+    <text
+       id="Uxlabspk"
+       font-size="20px"
+       font-family="SFUIText-Semibold, 'SF UI  Text'"
+       font-weight="600"
+       x="275.46881"
+       y="52.820164"><tspan
+         x="275.46881"
+         y="52.820164"
+         id="tspan2">Uxlabspk</tspan></text>
+    <g
+       id="logo"
+       transform="rotate(82,121.69002,166.04236)">
+      <path
+         id="Oval"
+         d="m 10.482,25.212 c 0,0 10.608,-7.355 10.6,-13.706 C 21.074,5.155 16.887,0 10.535,0 4.183,0 0,5.142 0,11.492 c 0,6.35 10.482,13.72 10.482,13.72 z"
+         transform="rotate(-41,18.49902,6.9165)"
+         fill="#4ea6ff" />
+      <path
+         id="Oval-2"
+         data-name="Oval"
+         d="m 7.63,18.384 c 0,0 7.741,-5.373 7.744,-10 C 15.377,3.757 12.324,0 7.693,0 3.062,0 0,3.759 0,8.39 c 0,4.631 7.63,9.994 7.63,9.994 z"
+         transform="rotate(-138,18.038154,19.857282)"
+         fill="#4ea6ff" />
+      <path
+         id="Oval-3"
+         data-name="Oval"
+         d="m 3.7,8.934 c 0,0 3.758,-2.61 3.759,-4.861 A 3.793,3.793 0 0 0 3.734,0 3.8,3.8 0 0 0 0,4.076 c 0,2.251 3.7,4.858 3.7,4.858 z"
+         transform="matrix(0.407,0.914,-0.914,0.407,31.952,19.873)"
+         fill="#4ea6ff" />
+    </g>
+  </g>
+</svg>

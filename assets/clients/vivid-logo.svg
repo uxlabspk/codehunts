@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="Layer_1"
+   data-name="Layer 1"
+   viewBox="0 0 162.29 74"
+   version="1.1"
+   sodipodi:docname="vivid-logo.svg"
+   inkscape:version="1.3.2 (091e20ef0f, 2023-11-25, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview8"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="3.7090533"
+     inkscape:cx="81.152784"
+     inkscape:cy="36.936649"
+     inkscape:window-width="1366"
+     inkscape:window-height="706"
+     inkscape:window-x="0"
+     inkscape:window-y="32"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Layer_1" />
+  <defs
+     id="defs1">
+    <style
+       id="style1">.cls-1,.cls-2{fill:#4da9d0;}.cls-2,.cls-4{font-size:18.78px;font-family:AgencyFB-Bold, Agency FB;font-weight:700;}.cls-3{letter-spacing:0.1em;}.cls-4{letter-spacing:0.1em;}.cls-5{letter-spacing:0em;}</style>
+  </defs>
+  <title
+     id="title1">vivid-logo</title>
+  <path
+     d="M32.48,57H56.1L32.48,111.78,8.85,57H20.67L32.48,83.65,39,68.84H26.57Z"
+     transform="translate(-8.85 -57)"
+     id="path1" />
+  <path
+     d="M68.25,57V98.46H56.44V57Z"
+     transform="translate(-8.85 -57)"
+     id="path2" />
+  <path
+     class="cls-1"
+     d="M92.21,57h23.63L92.21,111.78,68.59,57H80.4L92.21,83.65l6.56-14.81H86.31Z"
+     transform="translate(-8.85 -57)"
+     id="path3" />
+  <path
+     class="cls-1"
+     d="M128,57V98.46H116.18V57Z"
+     transform="translate(-8.85 -57)"
+     id="path4" />
+  <path
+     d="M132.76,68.84V57h20.67q17.72,0,17.72,20.73T153.43,98.46H132.76V71.81h11.81v14.8h8.86q5.91,0,5.9-8.88t-5.9-8.89Z"
+     transform="translate(-8.85 -57)"
+     id="path5" />
+  <text
+     class="cls-2"
+     id="text6"
+     x="-1.29"
+     y="70.239998"><tspan
+       class="cls-3"
+       id="tspan5"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'SF Pro Display';-inkscape-font-specification:'SF Pro Display Bold'">Billing</tspan></text>
+  <text
+     class="cls-4"
+     id="text8"
+     x="69.113251"
+     y="70.127983"><tspan
+       xml:space="preserve"
+       id="tspan7"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'SF Pro Display';-inkscape-font-specification:'SF Pro Display Bold'"> Solutions</tspan></text>
+</svg>
