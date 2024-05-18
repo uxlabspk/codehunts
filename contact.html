@@ -47,7 +47,7 @@
 	<nav class="navbar navbar-expand-lg sticky-top navbar-light bg-blur hiddenDown">
 		<div class="container ">
 			<a class="navbar-brand" href="./index.html">
-				<img src="./assets/logo.png" alt="" class="me-3" alt="" height="60px">
+				<img src="./assets/logo.png" class="me-3" alt="" height="60px">
 			</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
 				data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -88,59 +88,59 @@
 	</nav>
 
 	<!-- Contact Section -->
-	<div class="even-section" style="margin-top: 20px !important;">
+	<div class="even-section" style="margin-top: 0px !important;">
 		<div class="container col-xxl-8 px-4">
 			<!-- Contact form -->
-			<div class="col hiddenText">
+			<div class="col hiddenText mt-5">
 				<div class="row py-lg-5 text-center ">
 					<div class="col-lg-10 mx-auto">
-						<h1 class="">Have a project in mind?</h1>
-						<p class="lead text-muted">
+						<h1>Have a project in mind?</h1>
+						<p class="lh-lg text-muted">
 							Yes, share your idea with us and bring life to your ideas with leading technologies.
 						</p>
 						<br>
 					</div>
 				</div>
-				<form id="projectForm">
+				<form id="contactForm" action="mail.php" method="post" class="mt-3">
 					<div class="row g-3">
-						<div class="col-6">
+						<div class="col-md-6 col-sm-12">
 							<label for="username" class="form-label">First Name* </label>
-							<input type="text" class="form-control" id="userFirstName" placeholder="Muhammad"
+							<input type="text" class="form-control" id="userFirstName" name="userFirstName" placeholder="Muhammad"
 								required="">
 						</div>
 
-						<div class="col-6">
+						<div class="col-md-6 col-sm-12">
 							<label for="username" class="form-label">Last Name* </label>
-							<input type="text" class="form-control" id="userLastName" placeholder="Naveed..."
+							<input type="text" class="form-control" id="userLastName" name="userLastName" placeholder="Naveed..."
 								required="">
 						</div>
 
-						<div class="col-6">
+						<div class="col-md-6 col-sm-12">
 							<label for="username" class="form-label">Email* </label>
-							<input type="text" class="form-control" id="userEmail" placeholder="codehuntspk@gmail.com"
+							<input type="text" class="form-control" id="userEmail" name="userEmail" placeholder="contact@codehuntspk.com"
 								required="">
 						</div>
 
-						<div class="col-6">
-							<label for="countryname" class="form-label">Phone number</label>
-							<input type="tel" class="form-control  " id="contactNumber" placeholder="+923xx-xxxxxxx...">
+						<div class="col-md-6 col-sm-12 ">
+							<label for="countryname" class="form-label">Phone number* </label>
+							<input type="tel" class="form-control" id="contactNumber" name="contactNumber" placeholder="+923xx-xxxxxxx..." required="">
 						</div>
 
-						<div class="col-12">
+						<div class="col-md-12">
 							<label for="countryname" class="form-label">Company or Organization*</label>
-							<input type="text" class="form-control" id="compName"
+							<input type="text" class="form-control" id="compName" name="compName"
 								placeholder="Personal or company name....">
 						</div>
 
 						<div class="col-md-12">
 							<label for="statename" class="form-label">Project title*</label>
-							<input type="text" class="form-control  " id="projectTitle"
+							<input type="text" class="form-control" id="projectTitle" name="projectTitle"
 								placeholder="Web Development, etc..." required="">
 						</div>
 
 						<div class="col-12">
-							<label for="message" class="form-label">Project discription*</label> <br>
-							<textarea rows="12" class="form-control" id="projectDisp"
+							<label for="message" class="form-label">Project description*</label> <br>
+							<textarea rows="12" class="form-control" id="projectDisp" name="projectDisp"
 								placeholder="write a short description (200 words)..." required=""></textarea>
 						</div>
 					</div>
@@ -148,13 +148,13 @@
 					<span class="figure-caption">
 						Fields marked with * are required.
 					</span>
-					<br> <br>
 					<!-- Submit btn -->
-					<button class="btn-submit-green shadow" type="submit" id="submitBtn">Submit</button>
+					<button class="btn-submit-green shadow mt-3" type="submit" id="submitBtn">Submit</button>
 				</form>
+				<div class="text-center w-100 mt-3" id="responseMessage">
+				</div>
 			</div>
 		</div>
-	</div>
 	</div>
 
 
@@ -169,8 +169,7 @@
 					</a>
 					<p class="text-muted">
 						I-10 sector 2 <br> Islamabad, Pakistan. <br><br>
-						<strong>Phone:</strong> <a href="tel:+923094617390" itemprop="telephone">+923094617390</a><br>
-						<strong>Email:</strong> <a href="mailto: codehuntspk@gmail.com">codehuntspk@gmail.com</a><br>
+						<i class="bi bi-mailbox"> </i><strong>Email:</strong> <a href="mailto: contact@codehuntspk.com">contact@codehuntspk.com</a><br>
 					</p>
 				</div>
 
@@ -182,8 +181,6 @@
 						<li class="mb-2"><a href="/team.html"><i class="bi-link"></i> Our Team</a></li>
 						<li class="mb-2"><a href="./about.html"><i class="bi-link"></i> About us</a></li>
 						<li class="mb-2"><a href="./contact.html"><i class="bi-link"></i> Contact us</a></li>
-						<!-- <li class="mb-2"><a href="./hiring.html"><i class="bi-link"></i> Carrers</a></li> -->
-						<!-- <li class="mb-2"><a href="./learning.html"><i class="bi-link"></i> Learning</a></li> -->
 					</ul>
 				</div>
 
@@ -236,76 +233,28 @@
 	<!-- Bootstrap5 JS -->
 	<script src=" ./js/bootstrap.bundle.min.js"></script>
 	<script src="./js/app.js"></script>
-	<!-- firebase sdk start -->
-	<script type="module">
-		import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
-		import { getDatabase, set, get, update, remove, ref, child } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js";
 
-		const firebaseConfig = {
-			apiKey: "AIzaSyChrcR0-xEDvjXHy_M4ch0xrYFvDheCcVw",
-			authDomain: "codehunts-c17ba.firebaseapp.com",
-			databaseURL: "https://codehunts-c17ba-default-rtdb.firebaseio.com",
-			projectId: "codehunts-c17ba",
-			storageBucket: "codehunts-c17ba.appspot.com",
-			messagingSenderId: "872020860306",
-			appId: "1:872020860306:web:a52cf417f6ee651279754b"
-		};
+	<!-- message sending script -->
+	<script>        
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent default form submission
+            var form = event.target;
+            var formData = new FormData(form);
 
-		initializeApp(firebaseConfig);
+            // Send form data to PHP script using AJAX
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", form.action, true);
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    document.getElementById("responseMessage").innerHTML = "<p class=\"text-success\">" + xhr.responseText + "</p>";
+                } else {
+                    document.getElementById("responseMessage").innerHTML = "<p class=\"text-danger\">" + xhr.statusText + "</p>";
+                }
+            };
+            xhr.send(formData);
+        });
+    </script>
 
-		var db = getDatabase();
-
-		document.getElementById("projectForm").addEventListener("submit", submitform);
-
-		function submitform(e) {
-			e.preventDefault();
-
-			var userfirstName = getElementVal('userFirstName');
-			var uesrlastName = getElementVal('userLastName')
-			var contactNumber = getElementVal('contactNumber');
-			var userEmail = getElementVal('userEmail');
-			var compName = getElementVal('compName');
-			var projectTitle = getElementVal('projectTitle');
-			var projectDis = getElementVal('projectDisp');
-
-			saveData(userfirstName, uesrlastName, userEmail, contactNumber, compName, projectTitle, projectDis);
-
-			document.getElementById("projectForm").reset();
-		}
-
-		const saveData = (userfirstName, userLastName, userEmail, contactNumber, compName, projectTitle, projectDis) => {
-			let name = null;
-			if (compName == "") name = userfirstName + userLastName + "-Personal";
-			else name = compName;
-
-			set(ref(db, "Projects/" + name + uuidv4()), {
-				Name: userfirstName + " " + userLastName,
-				Email: userEmail,
-				Number: contactNumber,
-				Company: compName,
-				ProjectTitle: projectTitle,
-				ProjectDiscription: projectDis
-			}).then((result) => {
-				alert("Request Sent Sucessfully!");
-			}).catch((err) => {
-				alert(err);
-			});
-		}
-
-
-		const getElementVal = (id) => {
-			return document.getElementById(id).value;
-		}
-
-
-		function uuidv4() {
-			return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
-				var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
-				return v.toString(16);
-			});
-		}
-	</script>
-	<!-- firebase sdk end -->
 </body>
 
 </html>
