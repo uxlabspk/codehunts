@@ -1,8 +1,8 @@
 
 
 
-Scss/
-*.php
+/Scss/
+/php/
 robots.txt
 sitemap.xml
 .htaccess
