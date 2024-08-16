@@ -6,3 +6,4 @@
 robots.txt
 sitemap.xml
 .htaccess
+/uploads/*
