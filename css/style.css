@@ -276,9 +276,43 @@ nav {
   background-color: #ffffff;
 }
 
+/* 
+ * Line Edit
+ */
+.inputField {
+  background-color: #F8F8F8;
+  border: 2px solid #F8F8F8;
+  border-radius: 6px 0px 0px 6px;
+  height: 42px;
+  padding: 4px 12px;
+  outline: none;
+  width: 400px;
+  color: #444444;
+}
+.inputField:focus {
+  border: 2px solid #00855d;
+}
+
 /*
  * BUTTONS
  */
+.btn-login {
+  min-width: 250px;
+  height: 42px;
+  border-radius: 4px;
+  width: -webkit-fill-available;
+  width: -moz-available;
+  width: stretch;
+  background-color: #F8F8F8;
+  border: 2px solid #00855d;
+  color: #00855d;
+  font-weight: 600;
+}
+.btn-login:hover {
+  background-color: #00855d;
+  color: #ffffff;
+}
+
 .btn-md-green {
   position: relative;
   display: inline-block;

@@ -1,5 +1,5 @@
 <?php
-include 'php/blogs_details.php';
+include 'php/details.php';
 ?>
 
 <!DOCTYPE html>
