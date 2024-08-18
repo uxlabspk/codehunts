@@ -98,7 +98,7 @@
                 <div class="col-lg-6 col-md-8 mx-auto">
                     <h1>Our Blogs</h1>
                     <p class="lh-lg text-muted">
-                        These projects includes Websites, Android apps, Windows apps and UX/UI Designs.
+                        Get latest updates and future announcements here.
                     </p>
                 </div>
             </div>
@@ -108,6 +108,11 @@
     <!-- blog cards -->
     <div class="container">
         <div id="blog-list" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3"></div>
+        <div id="loading" class="text-center">
+            <div class="spinner-border text-success" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
     </div>
 
     <!-- Footer -->
@@ -335,6 +340,7 @@
                             </div>
                         </div>
                         `
+                        document.getElementById('loading').style = 'display: none';
                         blogList.innerHTML += card;
                     });
                 });

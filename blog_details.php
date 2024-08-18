@@ -6,7 +6,7 @@ include 'php/details.php';
 <html lang="en">
 
 <head>
-    <title><?php echo $slug; ?> | Code Hunts</title>
+    <title><?php echo $slug; ?> | by <?php echo $author; ?> | Code Hunts</title>
     <meta name="description" content="Code hunts is a leading software development company in Islamabad Pakistan.">
     <meta name="keywords" content="Software Company, software engineers, code hunts, Code HUNT'S">
     <meta name="author" content="Muhammad Naveed">
