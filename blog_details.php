@@ -1,8 +1,29 @@
+<?php
+include 'php/db.php';
+include 'php/Parsedown.php';
+
+$mdView = new Parsedown();
+
+$slug = $_GET['slug'];
+
+$sql = "Select * from blogs where slug='$slug'";
+$result = $connection->query($sql);
+$row = $result->fetch_assoc();
+
+$author = $row['author'];
+
+$countSql = "Select count(title) as totalPosts from blogs where author='$author'";
+$postCounts = $connection->query($countSql)->fetch_assoc()['totalPosts'];
+
+$connection->close();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>Blogs | Code HUNT'S</title>
+    <title><?php echo $slug; ?> | Code Hunts</title>
     <meta name="description" content="Code hunts is a leading software development company in Islamabad Pakistan.">
     <meta name="keywords" content="Software Company, software engineers, code hunts, Code HUNT'S">
     <meta name="author" content="Muhammad Naveed">
@@ -91,25 +112,28 @@
         </div>
     </nav>
 
-    <!-- Blogs Section -->
-    <div class="even-section" style="margin-top: 0px !important;">
-        <div class="container ">
-            <div class="row py-lg-5 text-center hiddenText  mt-5">
-                <div class="col-lg-6 col-md-8 mx-auto">
-                    <h1>Our Blogs</h1>
-                    <p class="lh-lg text-muted">
-                        These projects includes Websites, Android apps, Windows apps and UX/UI Designs.
-                    </p>
+    <!-- Blogs Details Section -->
+    <div class="container my-5">
+        <div class="row py-lg-5 text-start">
+            <div class="col mx-auto">
+                <h1><?php echo $row['title']; ?></h1>
+                <div class="d-flex flex-column align-items-start justify-content-start">
+                    <span class="text-muted"><?php echo $row['author']; ?></span>
+                    <span class="text-muted"><?php echo $postCounts; ?> Blogs</span>
+                    <span class="text-muted"><?php echo $row['created_at']; ?></span>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- blog cards -->
-    <div class="container">
-        <div id="blog-list" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3"></div>
+    <div class="container text-center">
+        <img src="<?php echo $row['imageDir']; ?>" class="img-fluid rounded" alt="" />
+        <p class="mt-3 text-muted text-underline"><?php echo $row['alt']; ?></p>
     </div>
 
+    <div class="container my-5">
+        <p><?php echo $mdView->text($row['content']); ?></p>
+    </div>
     <!-- Footer -->
     <footer class="bd-footer py-5 mt-5 bg-light">
         <div class="container col-xxl-8 px-4 py-5">
@@ -302,45 +326,6 @@
                 d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5" />
         </svg>
     </a>
-
-    <script>
-        function truncateString(str, maxLength = 80) {
-            if (str.length > maxLength)
-                return str.slice(0, maxLength) + '...';
-            else
-                return str;
-        }
-
-        document.addEventListener("DOMContentLoaded", function () {
-            fetch('php/fetch_blogs.php')
-                .then(response => response.json())
-                .then(blogs => {
-                    const blogList = document.getElementById('blog-list');
-                    blogs.forEach(blog => {
-                        const card = `
-                        <div class="col">
-                            <div class="card shadow-sm" style="height: 550px;">
-                                    <img src="${blog.imageDir}" alt="" />
-                                    <div class="card-body d-flex flex-column align-items-center justify-content-between">
-                                        <div>
-                                            <h3 class="card-title">${truncateString(blog.title, maxLength = 30)}</h3>
-                                            <p class="card-text">${truncateString(blog.content)}</p>
-                                            <div class="d-flex align-items-center justify-content-between">
-                                                <p class="fs-6 text-muted">${blog.author}</p>
-                                                <p class="fs-6 text-muted">${blog.created_at}</p>
-                                            </div>
-                                        </div>
-                                        <a href="blog_details.php?slug=${blog.slug}" class="w-100 btn-sm-green">Read more</a>
-                                    </div>
-                            </div>
-                        </div>
-                        `
-                        blogList.innerHTML += card;
-                    });
-                });
-        });
-    </script>
-
 </body>
 
 </html>
