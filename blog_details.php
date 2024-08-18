@@ -1,22 +1,5 @@
 <?php
-include 'php/db.php';
-include 'php/Parsedown.php';
-
-$mdView = new Parsedown();
-
-$slug = $_GET['slug'];
-
-$sql = "Select * from blogs where slug='$slug'";
-$result = $connection->query($sql);
-$row = $result->fetch_assoc();
-
-$author = $row['author'];
-
-$countSql = "Select count(title) as totalPosts from blogs where author='$author'";
-$postCounts = $connection->query($countSql)->fetch_assoc()['totalPosts'];
-
-$connection->close();
-
+include 'php/blogs_details.php';
 ?>
 
 <!DOCTYPE html>
