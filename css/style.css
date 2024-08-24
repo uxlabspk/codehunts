@@ -415,6 +415,29 @@ nav {
   opacity: 70%;
 }
 
+.btn-sm-red-rounded {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  overflow: hidden;
+  z-index: 1;
+  border-radius: 4px;
+  background-color: #E93E8C;
+  color: #ffffff;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  text-decoration: none;
+  border: 1px solid #E93E8C;
+  font-weight: 600;
+  text-align: center;
+}
+.btn-sm-red-rounded:hover {
+  color: #ffffff;
+  opacity: 70%;
+}
+
 .btn-sm-green {
   position: relative;
   display: inline-block;

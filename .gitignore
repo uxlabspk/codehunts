@@ -8,3 +8,4 @@ sitemap.xml
 .htaccess
 /uploads/*
 /admin/*
+/blogs/*
