@@ -1,1 +1,42 @@
 @import "tailwindcss";
+
+/* Scroll Bar */
+body::-webkit-scrollbar {
+    width: 12px;
+}
+body::-webkit-scrollbar-track {
+    background: #ffffff;
+    border-left: 1px solid #F8F8F8;
+}
+body::-webkit-scrollbar-thumb {
+    background: hsl(0, 0%, 80%);
+    border: 3px solid #ffffff;
+    border-radius: 10px;
+}
+body::-webkit-scrollbar-thumb:hover {
+    background: hsl(0, 0%, 70%);
+}
+
+/* Importing fonts */
+@font-face {
+    font-family: 'Google Sans';
+    src: url('/public/fonts/ProductSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'STIX Two Text';
+    src: url('/public/fonts/STIXTwoText-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Custom Styles */
+body {
+    font-family: 'Google Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'STIX Two Text', sans-serif;
+}
