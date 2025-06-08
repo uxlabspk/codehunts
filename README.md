@@ -1,12 +1,32 @@
-# React + Vite
+# Code Hunts
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Code hunts is a leading software development company in Islamabad Pakistan. A group of passionate software developers, designers and problem solvers.
 
-Currently, two official plugins are available:
+## What we Offers
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<ul>
+    <li>Web Development.</li>
+    <li>Mobile App Development.</li>
+    <li>Graphics Designing.</li>
+    <li>UX/UI Designing.</li>
+    <li>Search Engine Optimization (SEO).</li>
+</ul>
 
-## Expanding the ESLint configuration
+## Source Code
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+This Repository contains the working copy of [Code Hunts](https://codehuntspk.com/).
+
+## Contact Details
+
+Email : [contact@codehuntspk.com](mailto:contact@codehuntspk.com) <br>
+Website: [Codehunts](https://codehuntspk.com/)
+
+## Social links
+
+Connect us today for latest updates and announcements.
+
+[X](https://x.com/code_hunts/) <br>
+[Facebook](https://web.facebook.com/people/Code-Hunts/100094255579069/) <br>
+[Instagram](https://instagram.com/code_hunts/) <br>
+[Youtube](https://www.youtube.com/@CodeHUNTS) <br>
+[LinkedIn](https://www.linkedin.com/in/code-hunt-s-3566a728b/)
