@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
-import FilledButton from "./FilledButton.jsx";
+import FilledButton from "./Buttons/FilledButton.jsx";
 
 export default function NavBar() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -42,7 +42,7 @@ export default function NavBar() {
 
                     {/* CTA Button */}
                     <div className="hidden lg:block">
-                        <FilledButton text={"Let's Talk"} to={"/lets-talk"} />
+                        <FilledButton text={"Let's Talk"} to={"/lets-talk"} style={"px-5 py-2"} />
                     </div>
 
                     {/* Mobile menu button */}

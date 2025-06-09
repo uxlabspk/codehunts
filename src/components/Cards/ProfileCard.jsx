@@ -2,7 +2,7 @@ import React from 'react';
 
 const ProfileCard = ({img, name, bio}) => {
     return (
-        <div className="group w-full h-[400px] rounded-2xl shadow-xl relative overflow-hidden flex flex-col justify-end">
+        <div className="group w-full h-[400px] rounded-2xl shadow-xl relative overflow-hidden flex flex-col justify-end cursor-pointer">
             {/* Background Image */}
             <div
                 className="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-105"

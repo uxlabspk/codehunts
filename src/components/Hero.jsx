@@ -1,4 +1,5 @@
-import FilledButton from "./FilledButton.jsx";
+import FilledButton from "./Buttons/FilledButton.jsx";
+import OutlineButton from "./Buttons/OutlineButton.jsx";
 
 
 export default function Hero() {
@@ -12,7 +13,10 @@ export default function Hero() {
                     We are a leading software development company dedicated to providing cutting-edge solutions
                     tailored to meet your specific business needs.
                 </p>
-                <FilledButton text={"Get Started"} to={"/"} />
+                <div className="flex items-center justify-center gap-2 flex-col sm:flex-row">
+                    <FilledButton text={"Get Started"} to={"/"} style={"px-8 py-3 sm:w-42 w-96"} />
+                    <OutlineButton text={"Trustpilot"} to={"/"} style={"px-8 py-3 sm:w-42 w-96"} />
+                </div>
             </div>
         </section>
 

@@ -1,12 +1,12 @@
 import NavBar from "../components/NavBar.jsx";
 import {Helmet} from "react-helmet-async";
 import Hero from "../components/Hero.jsx";
-import ServiceCard from "../components/ServiceCard.jsx";
+import ServiceCard from "../components/Cards/ServiceCard.jsx";
 import aboutImage from "../assets/home/about.png";
-import ProjectCard from "../components/ProjectCard.jsx";
-import ProfileCard from "../components/ProfileCard.jsx";
+import ProjectCard from "../components/Cards/ProjectCard.jsx";
+import ProfileCard from "../components/Cards/ProfileCard.jsx";
 import Footer from "../components/Footer.jsx";
-import BackToTop from "../components/BackToTop.jsx";
+import BackToTop from "../components/Buttons/BackToTop.jsx";
 
 
 export default function Home() {

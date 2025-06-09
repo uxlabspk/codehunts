@@ -116,9 +116,9 @@ export default function Footer() {
                 <div className="container mt-3 max-w-6xl mx-auto px-4">
                     <span id="year">© 2023 - {new Date().getFullYear()} CodeHUNT'S, Inc. · </span>
                     <span>
-          <a href="/terms" target="_blank" rel="noopener noreferrer" className="text-light hover:underline">
-            Terms
-          </a>.
+          <a href="/terms" target="_blank" rel="noopener noreferrer" className="text-light underline">
+            Terms.
+          </a>
         </span>
                 </div>
             </div>
