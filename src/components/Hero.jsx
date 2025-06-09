@@ -16,10 +16,22 @@ export default function Hero() {
                 <div className="flex items-center justify-center gap-2 flex-col sm:flex-row">
                     <FilledButton text={"Get Started"} to={"/"} style={"px-8 py-3 sm:w-42 w-96"} />
                 </div>
+                <div className="mt-4">
+                    <a
+                        href="https://www.trustpilot.com/evaluate/codehuntspk.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex underline items-center text-sm text-gray-600 hover:text-green-600 transition-colors"
+                    >
+                        {/*<img*/}
+                        {/*    src="https://cdn.trustpilot.net/brand-assets/4.4.0/stars/stars-4.svg"*/}
+                        {/*    alt="Trustpilot rating"*/}
+                        {/*    className="w-24 h-auto mr-2"*/}
+                        {/*/>*/}
+                        Review us on Trustpilot
+                    </a>
+                </div>
 
-                <p className={'text-gray-600 mt-4'}>
-                    Review us on Trustpilot
-                </p>
             </div>
         </section>
 
