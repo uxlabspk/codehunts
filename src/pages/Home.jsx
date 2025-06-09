@@ -4,6 +4,9 @@ import Hero from "../components/Hero.jsx";
 import ServiceCard from "../components/ServiceCard.jsx";
 import aboutImage from "../assets/home/about.png";
 import ProjectCard from "../components/ProjectCard.jsx";
+import ProfileCard from "../components/ProfileCard.jsx";
+import Footer from "../components/Footer.jsx";
+import BackToTop from "../components/BackToTop.jsx";
 
 
 export default function Home() {
@@ -99,10 +102,10 @@ export default function Home() {
                                 consultants work closely with you to deliver solutions that not only meet your current
                                 needs but also scale with your future growth.
                             </p>
-                            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                                We pride ourselves on delivering high-quality, maintainable code that stands the test of
-                                time, ensuring your investment continues to provide value for years to come.
-                            </p>
+                            {/*<p className="text-lg text-gray-600 mb-8 leading-relaxed">*/}
+                            {/*    We pride ourselves on delivering high-quality, maintainable code that stands the test of*/}
+                            {/*    time, ensuring your investment continues to provide value for years to come.*/}
+                            {/*</p>*/}
 
                             <ul className="space-y-3">
                                 <li className="flex items-center text-gray-700">
@@ -141,23 +144,97 @@ export default function Home() {
             <section id="portfolio" className="py-20 bg-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
-                        <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Our Portfolio</h2>
+                        <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Our Team</h2>
                         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                            Discover some of our recent projects that showcase our expertise and commitment to
-                            excellence.
+                            Meet the talented professionals behind our success—dedicated, skilled, and passionate about
+                            delivering exceptional results.
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <ProjectCard img={'/public/img/projects/dialcabbies.jpg'} title={"Dial Cabbies"} description={"A taxi service based in Durham, United Kingdoms website."} />
-                        <ProjectCard img={'/public/img/projects/vivid.jpg'} title={"Dial Cabbies"} description={"A taxi service based in Durham, United Kingdoms website."} />
-                        <ProjectCard img={'/public/img/projects/shdriving.jpg'} title={"shdriving"} description={"A taxi service based in Durham, United Kingdoms website."} />
+                    {/*<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">*/}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                        <ProfileCard img={'/public/img/team/naveed.png'} name={'Muhammad Naveed'}
+                                     bio={'Software Engineer'}/>
+                        <ProfileCard img={'/public/img/team/hamza.png'} name={'Hamza Waheed'}
+                                     bio={'Software Engineer'}/>
+                        <ProfileCard img={'/public/img/team/Usama.png'} name={'Muhammad Usama'} bio={'SEO Expert'}/>
+                        <ProfileCard img={'/public/img/team/shazil.png'} name={'Muhammad Shazil'}
+                                     bio={'Web Developer'}/>
                     </div>
                 </div>
             </section>
 
+            {/* Contact */}
+            <section id="contact" className="py-20 bg-gray-50">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center mb-16">
+                        <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
+                        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                            Ready to transform your business with innovative software solutions? Let's discuss your
+                            project.
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+                        <div>
+                            <h3 className="text-2xl font-semibold text-gray-900 mb-6">Contact Information</h3>
+                            <p className="text-gray-600 mb-8 leading-relaxed">
+                                We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+                            </p>
+
+                            <div className="space-y-4">
+                                <div className="flex items-center">
+                                    <span className="text-2xl mr-4">📧</span>
+                                    <span className="text-gray-700">contact@codehuntspk.com</span>
+                                </div>
+                                <div className="flex items-center">
+                                    <span className="text-2xl mr-4">📞</span>
+                                    <span className="text-gray-700">+92 XXX XXXXXXX</span>
+                                </div>
+                                <div className="flex items-center">
+                                    <span className="text-2xl mr-4">📍</span>
+                                    <span className="text-gray-700">I-10/2 Islamabad, Pakistan</span>
+                                </div>
+                            </div>
+                        </div>
 
 
+                        <div className="bg-white p-8 rounded-2xl shadow-lg">
+                            <form className="space-y-6" id="contactForm">
+                                <div>
+                                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+                                    <input type="text" id="name" name="name" required className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-800 focus:border-amber-800 transition-colors duration-200"/>
+                                </div>
+
+                                <div>
+                                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                                    <input type="email" id="email" name="email" required className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-800 focus:border-amber-800 transition-colors duration-200"/>
+                                </div>
+
+                                <div>
+                                    <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">Subject</label>
+                                    <input type="text" id="subject" name="subject" required className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-800 focus:border-amber-800 transition-colors duration-200"/>
+                                </div>
+
+                                <div>
+                                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                                    <textarea id="message" name="message" rows="5" required className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-800 focus:border-amber-800 transition-colors duration-200 resize-none"></textarea>
+                                </div>
+
+                                <button type="submit" className="w-full bg-amber-800 hover:bg-amber-900 text-white py-3 px-6 rounded-lg cursor-pointer">
+                                    Send Message
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Footer */}
+            <Footer />
+
+            <BackToTop />
         </>
     );
 }   

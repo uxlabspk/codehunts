@@ -3,7 +3,7 @@ import FilledButton from "./FilledButton.jsx";
 
 export default function Hero() {
     return (
-        <section id="home" className="bg-orange-50 sm:h-[90vh] h-[80vh] flex items-center justify-center">
+        <section id="home" className="bg-gray-50 sm:h-[90vh] h-[80vh] flex items-center justify-center">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
                     Innovative Software Solutions for Your Business
