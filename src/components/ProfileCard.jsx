@@ -2,30 +2,70 @@ import React from 'react';
 
 const ProfileCard = ({img, name, bio}) => {
     return (
-        <div
-            className="w-full h-[400px] rounded-[32px] shadow-xl relative overflow-hidden flex flex-col justify-end">
+        <div className="group w-full h-[400px] rounded-2xl shadow-xl relative overflow-hidden flex flex-col justify-end">
+            {/* Background Image */}
             <div
-                className="absolute inset-0 bg-cover bg-center"
-                style={{backgroundImage: `url(${img})`}}>
+                className="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-105"
+                style={{ backgroundImage: `url(${img})` }}
+            />
 
+            {/* Hover Overlay with Icons */}
+            <div className="absolute inset-0 bg-black/30 backdrop-blur-sm opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300 z-20">
+                <div className="flex gap-6 text-white text-2xl">
+                    <a href="https://www.linkedin.com/company/code-hunts" aria-label="LinkedIn"
+                       className="text-white">
+                        <LinkedInIcon/>
+                    </a>
+
+                    <a href="https://www.linkedin.com/company/code-hunts" aria-label="LinkedIn"
+                       className="text-white">
+                        <TwitterIcon/>
+                    </a>
+
+                    <a href="https://www.linkedin.com/company/code-hunts" aria-label="LinkedIn"
+                       className="text-white">
+                        <GitHubIcon/>
+                    </a>
+                </div>
             </div>
 
-            <div className="relative z-10 p-6 bg-white/40 backdrop-blur">
-                <div className="flex items-center gap-2 ">
-                    <span className="text-2xl font-semibold text-gray-900">{name}</span>
-                    {/*<span>*/}
-                    {/*    <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">*/}
-                    {/*        <path d="M11.5283 1.5999C11.7686 1.29437 12.2314 1.29437 12.4717 1.5999L14.2805 3.90051C14.4309 4.09173 14.6818 4.17325 14.9158 4.10693L17.7314 3.3089C18.1054 3.20292 18.4799 3.475 18.4946 3.86338L18.6057 6.78783C18.615 7.03089 18.77 7.24433 18.9984 7.32823L21.7453 8.33761C22.1101 8.47166 22.2532 8.91189 22.0368 9.23478L20.4078 11.666C20.2724 11.8681 20.2724 12.1319 20.4078 12.334L22.0368 14.7652C22.2532 15.0881 22.1101 15.5283 21.7453 15.6624L18.9984 16.6718C18.77 16.7557 18.615 16.9691 18.6057 17.2122L18.4946 20.1366C18.4799 20.525 18.1054 20.7971 17.7314 20.6911L14.9158 19.8931C14.6818 19.8267 14.4309 19.9083 14.2805 20.0995L12.4717 22.4001C12.2314 22.7056 11.7686 22.7056 11.5283 22.4001L9.71949 20.0995C9.56915 19.9083 9.31823 19.8267 9.08421 19.8931L6.26856 20.6911C5.89463 20.7971 5.52014 20.525 5.50539 20.1366L5.39427 17.2122C5.38503 16.9691 5.22996 16.7557 5.00164 16.6718L2.25467 15.6624C1.88986 15.5283 1.74682 15.0881 1.96317 14.7652L3.59221 12.334C3.72761 12.1319 3.72761 11.8681 3.59221 11.666L1.96317 9.23478C1.74682 8.91189 1.88986 8.47166 2.25467 8.33761L5.00165 7.32823C5.22996 7.24433 5.38503 7.03089 5.39427 6.78783L5.50539 3.86338C5.52014 3.475 5.89463 3.20292 6.26857 3.3089L9.08421 4.10693C9.31823 4.17325 9.56915 4.09173 9.71949 3.90051L11.5283 1.5999Z" stroke="#0080ff" strokeWidth="1.5"/>*/}
-                    {/*        <path d="M9 12L11 14L15 10" stroke="#0080ff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>*/}
-                    {/*    </svg>*/}
-                    {/*</span>*/}
+            {/* Content */}
+            <div className="relative z-10 p-6 bg-white/40 backdrop-blur group-hover:hidden">
+                <div className="flex items-center gap-2">
+                    <span className="text-2xl text-gray-900">{name}</span>
                 </div>
-                <p className="text-gray-700 mt-2 text-base">
-                    {bio}
-                </p>
+                <p className="text-gray-700 mt-2 text-base">{bio}</p>
             </div>
         </div>
     );
 };
+
+
+const TwitterIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+        <path
+            d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
+    </svg>
+);
+
+const GitHubIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
+        0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52
+        -.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2
+        -3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82
+        .64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08
+        2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01
+        1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+    </svg>
+);
+
+
+const LinkedInIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+        <path
+            d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
+    </svg>
+);
 
 export default ProfileCard;

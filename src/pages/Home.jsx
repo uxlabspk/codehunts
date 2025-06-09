@@ -153,12 +153,12 @@ export default function Home() {
 
                     {/*<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">*/}
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-                        <ProfileCard img={'/public/img/team/naveed.png'} name={'Muhammad Naveed'}
+                        <ProfileCard img={'img/team/naveed.jpeg'} name={'Muhammad Naveed'}
                                      bio={'Software Engineer'}/>
-                        <ProfileCard img={'/public/img/team/hamza.png'} name={'Hamza Waheed'}
+                        <ProfileCard img={'img/team/hamza.png'} name={'Hamza Waheed'}
                                      bio={'Software Engineer'}/>
-                        <ProfileCard img={'/public/img/team/Usama.png'} name={'Muhammad Usama'} bio={'SEO Expert'}/>
-                        <ProfileCard img={'/public/img/team/shazil.png'} name={'Muhammad Shazil'}
+                        <ProfileCard img={'img/team/Usama.png'} name={'Muhammad Usama'} bio={'SEO Expert'}/>
+                        <ProfileCard img={'img/team/shazil.png'} name={'Muhammad Shazil'}
                                      bio={'Web Developer'}/>
                     </div>
                 </div>
