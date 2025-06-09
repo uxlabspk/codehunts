@@ -15,8 +15,11 @@ export default function Hero() {
                 </p>
                 <div className="flex items-center justify-center gap-2 flex-col sm:flex-row">
                     <FilledButton text={"Get Started"} to={"/"} style={"px-8 py-3 sm:w-42 w-96"} />
-                    <OutlineButton text={"Trustpilot"} to={"/"} style={"px-8 py-3 sm:w-42 w-96"} />
                 </div>
+
+                <p className={'text-gray-600 mt-4'}>
+                    Review us on Trustpilot
+                </p>
             </div>
         </section>
 

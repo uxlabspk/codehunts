@@ -12,56 +12,25 @@ import BackToTop from "../components/Buttons/BackToTop.jsx";
 export default function Home() {
     return (
         <>
+            {/* React Helmet */}
             <Helmet>
                 <title>Innovating Future | Code HUNT'S</title>
-                <meta
-                    name="description"
-                    content="Code HUNT'S, a leading software development company in Islamabad Pakistan. Embraces the power of technology and innovating future."
-                />
-                <meta
-                    name="keywords"
-                    content="Software Company, software engineers, code hunts, Code HUNT'S"
-                />
-                <meta name="author" content="Muhammad Naveed"/>
-                <meta charSet="UTF-8"/>
-                <meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
-                <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-                <meta name="theme-color" content="#00b982"/>
-                <meta
-                    name="apple-mobile-web-app-status-bar-style"
-                    content="#00b982"
-                />
+                <meta name="description" content="Code HUNT'S, a leading software development company in Islamabad Pakistan. Embraces the power of technology and innovating future." />
                 <link rel="canonical" href="https://codehuntspk.com/"/>
-                <meta property="og:locale" content="en_US"/>
-                <meta property="og:site_name" content="Code HUNT'S"/>
-                <meta property="og:type" content="website"/>
                 <meta property="og:title" content="Innovating Future | Code HUNT'S"/>
-                <meta
-                    property="og:description"
-                    content="Code HUNT'S, a leading software development company in Islamabad Pakistan. Embraces the power of technology and innovating future."
-                />
+                <meta property="og:description" content="Code HUNT'S, a leading software development company in Islamabad Pakistan. Embraces the power of technology and innovating future." />
                 <meta property="og:url" content="https://www.codehuntspk.com/"/>
-                <meta
-                    property="og:image"
-                    content="https://codehuntspk.com/assets/Cover.webp"
-                />
-                <meta name="twitter:site" content="@code_hunts"/>
-                <meta
-                    name="twitter:image"
-                    content="https://pbs.twimg.com/profile_banners/1669217983737249792/1686859154/1080x360"
-                />
-                <meta name="twitter:card" content="summary"/>
                 <meta name="twitter:title" content="Innovating Future | Code HUNT'S"/>
-                <meta
-                    name="twitter:description"
-                    content="Code HUNT'S, a leading software development company in Islamabad Pakistan. Embraces the power of technology and innovating future."
-                />
+                <meta name="twitter:description" content="Code HUNT'S, a leading software development company in Islamabad Pakistan. Embraces the power of technology and innovating future." />
             </Helmet>
 
+            {/* NavBar */}
             <NavBar/>
+
+            {/*Hero Section */}
             <Hero/>
 
-            {/* our services */}
+            {/* Services Section */}
             <section id="services" className="py-20 bg-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
@@ -102,10 +71,6 @@ export default function Home() {
                                 consultants work closely with you to deliver solutions that not only meet your current
                                 needs but also scale with your future growth.
                             </p>
-                            {/*<p className="text-lg text-gray-600 mb-8 leading-relaxed">*/}
-                            {/*    We pride ourselves on delivering high-quality, maintainable code that stands the test of*/}
-                            {/*    time, ensuring your investment continues to provide value for years to come.*/}
-                            {/*</p>*/}
 
                             <ul className="space-y-3">
                                 <li className="flex items-center text-gray-700">
@@ -140,7 +105,7 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* Portfolio Section */}
+            {/* Team Section */}
             <section id="portfolio" className="py-20 bg-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
@@ -164,7 +129,7 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* Contact */}
+            {/* Contact Section */}
             <section id="contact" className="py-20 bg-gray-50">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
@@ -234,6 +199,7 @@ export default function Home() {
             {/* Footer */}
             <Footer />
 
+            {/* Back To Top Button */}
             <BackToTop />
         </>
     );
