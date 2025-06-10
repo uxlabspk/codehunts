@@ -12,10 +12,14 @@ import Talk from "./pages/Talk.jsx";
 import SoftwareConsulting from "./pages/SoftwareConsulting.jsx";
 import CloudSolutions from "./pages/CloudSolutions.jsx";
 import NotFound from "./pages/NotFound.jsx";
+import NavBar from "./components/NavBar.jsx";
+import Footer from "./components/Footer.jsx";
+import BackToTop from "./components/Buttons/BackToTop.jsx";
 
 function App() {
     return (
         <Router>
+            <NavBar />
             <Routes>
                 <Route path={"/"} element={<Home />} />
                 <Route path={"/ai"} element={<AI />} />
@@ -31,6 +35,8 @@ function App() {
                 <Route path={"/lets-talk"} element={<Talk />} />
                 <Route path={"/*"} element={<NotFound />} />
             </Routes>
+            <Footer />
+            <BackToTop />
         </Router>
     )  
 }

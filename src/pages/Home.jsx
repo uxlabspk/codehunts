@@ -1,12 +1,8 @@
-import NavBar from "../components/NavBar.jsx";
 import {Helmet} from "react-helmet-async";
 import Hero from "../components/Hero.jsx";
 import ServiceCard from "../components/Cards/ServiceCard.jsx";
 import aboutImage from "../assets/home/about.png";
-import ProjectCard from "../components/Cards/ProjectCard.jsx";
 import ProfileCard from "../components/Cards/ProfileCard.jsx";
-import Footer from "../components/Footer.jsx";
-import BackToTop from "../components/Buttons/BackToTop.jsx";
 
 
 export default function Home() {
@@ -23,9 +19,6 @@ export default function Home() {
                 <meta name="twitter:title" content="Innovating Future | Code HUNT'S"/>
                 <meta name="twitter:description" content="Code HUNT'S, a leading software development company in Islamabad Pakistan. Embraces the power of technology and innovating future." />
             </Helmet>
-
-            {/* NavBar */}
-            <NavBar/>
 
             {/*Hero Section */}
             <Hero/>
@@ -195,12 +188,6 @@ export default function Home() {
                     </div>
                 </div>
             </section>
-
-            {/* Footer */}
-            <Footer />
-
-            {/* Back To Top Button */}
-            <BackToTop />
         </>
     );
 }   
