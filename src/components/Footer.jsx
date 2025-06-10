@@ -27,8 +27,8 @@ export default function Footer() {
                                        className="flex items-center hover:text-orange-500"><LinkIcon/> About Us</a></li>
                                 <li><a href="/contact-us"
                                        className="flex items-center hover:text-orange-500"><LinkIcon/> Contact Us</a></li>
-                                <li><a href="/request-demo"
-                                       className="flex items-center hover:text-orange-500"><LinkIcon/> Request Demo</a></li>
+                                <li><a href="/products"
+                                       className="hidden flex items-center hover:text-orange-500"><LinkIcon/> Our Products</a></li>
                             </ul>
                         </div>
 
