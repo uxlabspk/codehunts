@@ -42,6 +42,9 @@ export default function NavBar() {
                                 <a href="/web-development" className="block px-4 py-2 text-sm hover:bg-gray-100">Web Development</a>
                                 <a href="/app-development" className="block px-4 py-2 text-sm hover:bg-gray-100">App Development</a>
                                 <a href="/graphics-designing" className="block px-4 py-2 text-sm hover:bg-gray-100">Graphics Designing</a>
+                                <a href="/ai" className="block px-4 py-2 text-sm hover:bg-gray-100">AI & Machine Learning</a>
+                                <a href="/software-consulting" className="block px-4 py-2 text-sm hover:bg-gray-100">Software Consulting</a>
+                                <a href="/cloud-solutions" className="block px-4 py-2 text-sm hover:bg-gray-100">Cloud Solutions</a>
                             </div>
                         </div>
 
