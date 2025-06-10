@@ -3,7 +3,7 @@ import FilledButton from "./Buttons/FilledButton.jsx";
 
 export default function Hero() {
     return (
-        <section id="home" className="relative bg-gray-50 sm:h-[90vh] h-[80vh] flex items-center justify-center overflow-hidden">
+        <section id="home" className="relative bg-gray-50 h-screen flex items-center justify-center overflow-hidden">
             {/* Adding Background Animation */}
             <div className="absolute top-1/4 right-0 w-64 h-64 bg-green-300 rounded-full mix-blend-multiply blur-2xl opacity-30 blob-animate z-0"></div>
             <div className="absolute bottom-1/4 left-0 w-80 h-80 bg-blue-300 rounded-full mix-blend-multiply blur-2xl opacity-30 blob-animate z-0"></div>
@@ -21,7 +21,7 @@ export default function Hero() {
                     tailored to meet your specific business needs.
                 </p>
                 <div className="flex items-center justify-center gap-2 flex-col sm:flex-row">
-                    <FilledButton text={"Get Started"} to={"/"} style={"px-8 py-3 sm:w-42 w-96"} />
+                    <FilledButton text={"Get Started"} to={"/"} style={"px-8 py-3 sm:w-42 w-86"} />
                 </div>
                 <div className="mt-4">
                     <a

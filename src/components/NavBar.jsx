@@ -1,4 +1,4 @@
-import { useState } from "react";
+import {useEffect, useState} from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
 import FilledButton from "./Buttons/FilledButton.jsx";
@@ -6,9 +6,20 @@ import FilledButton from "./Buttons/FilledButton.jsx";
 export default function NavBar() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [servicesOpen, setServicesOpen] = useState(false);
+    const [isVisible, setIsVisible] = useState(false);
+
+    // Handle scroll event
+    useEffect(() => {
+        const toggleVisibility = () => {
+            setIsVisible(window.scrollY > 30);
+        };
+
+        window.addEventListener("scroll", toggleVisibility);
+        return () => window.removeEventListener("scroll", toggleVisibility);
+    }, []);
 
     return (
-        <header className="sticky top-0 z-50 bg-gray-50/60 backdrop-blur-md shadow-sm">
+        <header className={`fixed w-full top-0 z-50 backdrop-blur-md ${isVisible ? "bg-gray-50/60 shadow-sm" : ""}`}>
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="flex h-16 items-center justify-between">
                     <a href="/" className="flex items-center space-x-2">
