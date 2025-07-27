@@ -14,6 +14,7 @@ import AI from "@/pages/ai-development.tsx";
 import CloudSolutions from "@/pages/cloud-solutions.tsx";
 import SoftwareConsulting from "@/pages/custom-software.tsx";
 import Header from "@/components/common/header.tsx";
+import Footer from "@/components/common/footer.tsx";
 
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
               <Route path={'/terms'} element={<Terms />} />
               <Route path={'/*'} element={<NotFound />} />
           </Routes>
+          <Footer />
       </BrowserRouter>
   )
 }
