@@ -54,7 +54,7 @@ export default function Header() {
                                     <ul className="grid w-[400px] gap-3 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                                         <li>
                                             <NavigationMenuLink asChild>
-                                                <a href="ai-development" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                                                <a href="/ai-development" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                                                     <div className="text-sm font-medium leading-none">AI Development</div>
                                                     <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                                                         Learn How AI is dominating and how to use it to solve real-world problems.
