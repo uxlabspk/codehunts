@@ -1,11 +1,16 @@
 
 
 
-
 export default function Portfolio() {
     return (
-        <p>
-            Portfolio
-        </p>
+        <>
+            <div className={'absolute mt-20'}>
+
+            </div>
+
+
+
+
+        </>
     )
 }

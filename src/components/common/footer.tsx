@@ -5,7 +5,7 @@ export default function Footer() {
     return (
         <>
             <footer className="py-5 mt-5 bg-black">
-                <div className="container max-w-6xl px-4 py-5 mx-auto">
+                <div className="container px-4 sm:px-0 py-8 mx-auto">
                     <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
                         <div>
                             <a href="/" className="flex items-center mb-4 text-xl font-bold text-dark">
@@ -120,7 +120,7 @@ export default function Footer() {
                 </div>
             </footer>
             <div className="py-3 bg-accent text-white">
-                <div className="container mt-3 max-w-6xl mx-auto px-4">
+                <div className="container mt-3 mx-auto px-4 sm:px-0">
                     <span id="year">© 2023 - {new Date().getFullYear()} CodeHUNT'S, Inc. · </span>
                     <span>
           <a href="/terms" target="_blank" rel="noopener noreferrer" className="text-light underline">

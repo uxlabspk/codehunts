@@ -176,7 +176,7 @@ export default function Header() {
             </div>
 
             <div
-                className={`fixed top-0 left-0 h-full w-full bg-white/80 backdrop-blur z-50 transform transition-transform duration-300 ease-in-out lg:hidden ${
+                className={`fixed top-0 left-0 h-full w-full bg-black/80 backdrop-blur z-50 transform transition-transform duration-300 ease-in-out lg:hidden ${
                     mobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
                 }`}>
                 <div className="flex items-center justify-between p-4 border-b">
@@ -184,7 +184,7 @@ export default function Header() {
 
                     <button
                         onClick={closeMobileMenu}
-                        className="flex items-center justify-center w-8 h-8 rounded-full hover:bg-gray-100"
+                        className="flex items-center justify-center w-8 h-8 rounded-full"
                         aria-label="Close mobile menu"
                     >
                         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
