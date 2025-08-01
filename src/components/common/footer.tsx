@@ -4,7 +4,7 @@ import {GitBranch} from "lucide-react";
 export default function Footer() {
     return (
         <>
-            <footer className="py-5 bg-accent">
+            <footer className="py-5">
                 <div className="container px-4 sm:px-0 py-8 mx-auto">
                     <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
                         <div>
