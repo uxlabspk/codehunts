@@ -6,7 +6,7 @@ import CTASection from "@/components/common/cta-section.tsx";
 export default function Contact() {
   return (
     <>
-      <HeroSection title={'Lets Build Something Amazing Together'} description={'Ready to transform your ideas into powerful software solutions? Our expert team is here to bring your vision to life.'} hasLinks={false} />
+      <HeroSection title={'Lets Build Something Amazing Together'} description={'Ready to transform your ideas into powerful software solutions? Our expert team is here to bring your vision to life.'} hasLinks={false} hasCategory={false} />
       <CompanyStats />
       <ContactSection />
       <CTASection />

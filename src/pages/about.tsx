@@ -12,7 +12,9 @@ export default function About() {
             <HeroSection
                 title={'About Code HUNT\'S'}
                 description={'We\'re a passionate team of developers, designers, and innovators crafting digital experiences that transform businesses and delight users.'}
-                hasLinks={false} />
+                hasLinks={false}
+                hasCategory={false}
+            />
 
             <CompanyStats />
 

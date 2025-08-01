@@ -8,7 +8,7 @@ import {Github, Instagram, Linkedin, Twitter} from "lucide-react";
 export default function Team() {
     return (
         <>
-            <HeroSection title={'Meet Our ExceptionalTeam'} description={'We\'re a passionate group of developers, designers, and innovators dedicated to creating cutting-edge software solutions that drive business success.'} hasLinks={false} />
+            <HeroSection title={'Meet Our ExceptionalTeam'} description={'We\'re a passionate group of developers, designers, and innovators dedicated to creating cutting-edge software solutions that drive business success.'} hasLinks={false} hasCategory={false} />
             <div className={'container mx-auto py-12'}>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
                     <TeamCard

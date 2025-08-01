@@ -16,6 +16,7 @@ const Portfolio: React.FC = () => {
                 title={'Our Portfolio'}
                 description={'Showcasing innovative software solutions that drive business growth and digital transformation'}
                 hasLinks={false}
+                hasCategory={false}
             />
 
             <ProjectCards />
