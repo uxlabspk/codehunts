@@ -12,11 +12,13 @@ import {
     ShoppingCart,
 } from 'lucide-react';
 import CTASection from "@/components/common/cta-section.tsx";
-import UseCase from "@/components/common/usecases.tsx";
+import UseCase from "@/components/services/usecases.tsx";
 import FAQ from "@/components/common/faqa-section.tsx";
-import ProcessStep from "@/components/common/process-steps.tsx";
-import Feature from "@/components/common/features-section.tsx";
+import ProcessStep from "@/components/services/process-steps.tsx";
+import Feature from "@/components/services/features-section.tsx";
 import HeroSection from "@/components/common/hero-section.tsx";
+import ServiceOverview from "@/components/services/service-overview.tsx";
+
 
 
 export default function WebDev() {
@@ -166,43 +168,24 @@ export default function WebDev() {
             />
 
             {/* Service Overview */}
-            <section className="py-20 bg-black">
-                <div className="container mx-auto px-6">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                        <div>
-                            <h2 className="text-3xl font-bold mb-6 ">Professional Web Development Solutions</h2>
-                            <p className="text-lg  mb-6 leading-relaxed">
-                                Your website is often the first impression potential customers have of your business.
-                                We create websites that not only look exceptional but also deliver outstanding performance
-                                and user experience.
-                            </p>
-                            <p className="text-lg  mb-8 leading-relaxed">
-                                From responsive design to complex web applications, we use the latest technologies
-                                and best practices to ensure your website stands out from the competition and
-                                achieves your business objectives.
-                            </p>
-
-                            <div className="grid grid-cols-2 gap-6">
-                                <div className="border-2 shadow-lg p-6 rounded-xl">
-                                    <div className="text-3xl font-bold  mb-2">150+</div>
-                                    <div className="">Websites Delivered</div>
-                                </div>
-                                <div className="border-2 shadow-lg p-6 rounded-xl">
-                                    <div className="text-3xl font-bold  mb-2">99%</div>
-                                    <div className="">Client Satisfaction</div>
-                                </div>
-                            </div>
+            <ServiceOverview
+                title={'Professional Web Development Solutions'}
+                description={'Your website is often the first impression potential customers have of your business.We create websites that not only look exceptional but also deliver outstanding performance and user experience.'}
+                description2={'From responsive design to complex web applications, we use the latest technologies and best practices to ensure your website stands out from the competition and achieves your business objectives.'}
+                card={
+                    <div className="grid grid-cols-2 gap-6">
+                        <div className="border-2 shadow-lg p-6 rounded-xl">
+                            <div className="text-3xl font-bold  mb-2">150+</div>
+                            <div className="">Websites Delivered</div>
                         </div>
-                        <div className="relative">
-                            <img
-                                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop&crop=entropy&cs=tinysrgb"
-                                alt="Web Development"
-                                className="rounded-2xl shadow-2xl"
-                            />
+                        <div className="border-2 shadow-lg p-6 rounded-xl">
+                            <div className="text-3xl font-bold  mb-2">99%</div>
+                            <div className="">Client Satisfaction</div>
                         </div>
                     </div>
-                </div>
-            </section>
+                }
+                image={'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop&crop=entropy&cs=tinysrgb'}
+            />
 
             {/* Key Features */}
             <section className="py-20 ">
