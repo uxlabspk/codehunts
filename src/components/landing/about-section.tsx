@@ -50,7 +50,7 @@ export default function AboutSection() {
                         <img
                             src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=400&fit=crop"
                             alt="About"
-                            className="w-3/4 rounded-lg"
+                            className="w-full sm:w-3/4 rounded-lg"
                         />
                     </div>
 
