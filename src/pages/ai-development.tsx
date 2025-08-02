@@ -1,14 +1,21 @@
 import HeroSection from "@/components/common/hero-section.tsx";
 import {
     BarChart, Building,
-    ChartNetwork, Heart,
-    LockKeyhole, MessageSquare, ShoppingCart,
-    SlidersVertical, Users,
+    ChartNetwork, DollarSign, Heart,
+    LockKeyhole, MessageSquare,
+    SlidersVertical, Trash2,
     Zap
 } from "lucide-react";
 import ServiceOverview from "@/components/services/service-overview.tsx";
 import Feature from "@/components/services/features-section.tsx";
 import ProcessStep from "@/components/services/process-steps.tsx";
+import CTASection from "@/components/common/cta-section.tsx";
+import UseCase from "@/components/services/usecases.tsx";
+import OurStackSection from "@/components/services/our-stack-section.tsx";
+import TensorFlowIcon from "@/assets/AI_tech_stack/tensorflow.svg"
+import PyTorchIcon from "@/assets/AI_tech_stack/pytorch.svg"
+import KerasIcon from "@/assets/AI_tech_stack/keras.svg"
+import ScikitLearnIcon from "@/assets/AI_tech_stack/scikitlearn.svg"
 
 
 export default function AI() {
@@ -99,18 +106,18 @@ export default function AI() {
             iconColor: "text-indigo-600"
         },
         {
-            icon: <ShoppingCart className="h-6 w-6" />,
+            icon: <DollarSign className="h-6 w-6" />,
             title: "Finance",
-            description: "Full-featured online stores with shopping carts, payment processing, and inventory management.",
-            features: ["Product catalogs", "Secure checkout", "Payment gateways", "Order management"],
+            description: "Fraud detection, algorithmic trading, credit scoring, risk assessment, and personalized financial recommendations. ",
+            features: ["Fraud detection", "Algorithmic trading", "Credit risk analysis"],
             iconBgColor: "bg-purple-100",
             iconColor: "text-purple-600"
         },
         {
-            icon: <Users className="h-6 w-6" />,
-            title: "Web Applications",
-            description: "Interactive web applications that provide specific functionality and enhance user engagement.",
-            features: ["User dashboards", "Real-time features", "Database integration", "API connectivity"],
+            icon: <Trash2 className="h-6 w-6" />,
+            title: "Manufacturing",
+            description: "Predictive maintenance, quality control, supply chain optimization, and production process automation.",
+            features: ["Predictive maintenance", "Quality inspection", "Supply chain optimization"],
             iconBgColor: "bg-blue-100",
             iconColor: "text-blue-600"
         }
@@ -190,7 +197,7 @@ export default function AI() {
                     </div>
 
                     <div className="relative">
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 ">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 ">
                             {processSteps.map((step, index) => (
                                 <ProcessStep key={index} {...step} />
                             ))}
@@ -198,6 +205,50 @@ export default function AI() {
                     </div>
                 </div>
             </section>
+
+            {/* Use Case */}
+            <section className="py-20 ">
+                <div className="container mx-auto px-6">
+                    <div className="text-center mb-16">
+                        <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                            Industry Use Cases
+                        </h2>
+                        <p className="text-xl  max-w-3xl mx-auto">
+                            How AI and machine learning are transforming various industries
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {useCases.map((useCase, index) => (
+                            <UseCase key={index} {...useCase} />
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Our Tec Stack Section */}
+            <section className="py-20 ">
+                <div className="container mx-auto px-6">
+                    <div className="text-center mb-16">
+                        <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                            Our Technology Stack
+                        </h2>
+                        <p className="text-xl  max-w-3xl mx-auto">
+                            We leverage the latest AI and machine learning frameworks and platforms
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <OurStackSection image={TensorFlowIcon} title={'TensorFlow'} />
+                        <OurStackSection image={PyTorchIcon} title={'PyTorch'} />
+                        <OurStackSection image={KerasIcon} title={'Keras'} />
+                        <OurStackSection image={ScikitLearnIcon} title={'Scikit-learn'} />
+                    </div>
+                </div>
+            </section>
+
+            {/* CTA Section */}
+            <CTASection />
         </>
     )
 }
