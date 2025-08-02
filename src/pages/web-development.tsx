@@ -13,7 +13,6 @@ import {
 } from 'lucide-react';
 import CTASection from "@/components/common/cta-section.tsx";
 import UseCase from "@/components/services/usecases.tsx";
-import FAQ from "@/components/common/faqa-section.tsx";
 import ProcessStep from "@/components/services/process-steps.tsx";
 import Feature from "@/components/services/features-section.tsx";
 import HeroSection from "@/components/common/hero-section.tsx";
@@ -132,30 +131,6 @@ export default function WebDev() {
         }
     ];
 
-    const faqs = [
-        {
-            question: "How long does web development typically take?",
-            answer: "Project timelines vary based on complexity and scope. Simple websites take 2-4 weeks, while complex web applications can take 8-16 weeks. We provide detailed timelines during the planning phase and keep you updated throughout development."
-        },
-        {
-            question: "What technologies do you use for web development?",
-            answer: "We use modern technologies including React, Next.js, TypeScript, Node.js, and various databases. Our technology stack is chosen based on your specific needs, ensuring optimal performance and scalability."
-        },
-        {
-            question: "Do you provide ongoing maintenance and support?",
-            answer: "Yes, we offer comprehensive maintenance packages including security updates, performance optimization, content updates, and technical support. Our support plans can be customized to your specific needs."
-        },
-        {
-            question: "Will my website be mobile-friendly?",
-            answer: "Absolutely! All our websites are built with responsive design principles, ensuring they look and function perfectly on all devices - desktops, tablets, and smartphones. Mobile optimization is a standard part of our development process."
-        },
-        {
-            question: "Can you help with website hosting and domain setup?",
-            answer: "Yes, we can assist with hosting recommendations, domain registration, SSL certificates, and deployment. We work with reliable hosting providers and can manage the technical setup for you."
-        }
-    ];
-
-
     return (
         <>
             {/* Hero Section */}
@@ -245,26 +220,6 @@ export default function WebDev() {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {useCases.map((useCase, index) => (
                             <UseCase key={index} {...useCase} />
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* FAQ Section */}
-            <section className="py-20 ">
-                <div className="container mx-auto px-6">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                            Frequently Asked Questions
-                        </h2>
-                        <p className="text-xl max-w-3xl mx-auto">
-                            Answers to common questions about our web development services
-                        </p>
-                    </div>
-
-                    <div className="max-w-4xl mx-auto space-y-6">
-                        {faqs.map((faq, index) => (
-                            <FAQ key={index} {...faq} />
                         ))}
                     </div>
                 </div>
