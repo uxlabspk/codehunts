@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+
+<svg
+   aria-label="Flutter"
+   role="img"
+   viewBox="0 0 512 512"
+   version="1.1"
+   id="svg6"
+   sodipodi:docname="flutter.svg"
+   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview6"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.5625"
+     inkscape:cx="256"
+     inkscape:cy="256"
+     inkscape:window-width="1920"
+     inkscape:window-height="1011"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg6" />
+  <rect
+     width="512"
+     height="512"
+     rx="15%"
+     fill="#e8e9eb"
+     id="rect1"
+     style="fill:#ffffff;fill-opacity:1" />
+  <defs
+     id="defs2">
+    <linearGradient
+       id="f"
+       x1="249"
+       x2="321"
+       y1="401"
+       y2="358"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         stop-opacity=".4"
+         id="stop1" />
+      <stop
+         stop-color="#124793"
+         stop-opacity="0"
+         offset="1"
+         id="stop2" />
+    </linearGradient>
+  </defs>
+  <g
+     fill="#5cc8f8"
+     id="g3">
+    <path
+       d="M191.45,342.89,249.11,401,407.75,241.12H292.4Z"
+       id="path2" />
+    <path
+       d="M292.4,66.69H407.75L162.61,313.82l-57.7-58.13Z"
+       id="path3" />
+  </g>
+  <path
+     fill="#075b9d"
+     d="M249.11,401l43.29,43.59H407.75L306.8,342.89Z"
+     id="path4" />
+  <path
+     d="M334.67,371.16,306.8,342.89,249.11,401Z"
+     fill="url(#f)"
+     id="path5" />
+  <path
+     d="M191.45,342.87l57.69-58.18,57.7,58.15L249.14,401Z"
+     fill="#16b9fd"
+     id="path6" />
+</svg>
