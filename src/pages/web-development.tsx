@@ -17,6 +17,12 @@ import ProcessStep from "@/components/services/process-steps.tsx";
 import Feature from "@/components/services/features-section.tsx";
 import HeroSection from "@/components/common/hero-section.tsx";
 import ServiceOverview from "@/components/services/service-overview.tsx";
+import OurStackSection from "@/components/services/our-stack-section.tsx";
+import NextJS from "@/assets/Web_tech_stack/nextjs.svg";
+import Postgresql from "@/assets/Web_tech_stack/postgresql.svg";
+import ReactJS from "@/assets/Web_tech_stack/react.svg";
+import Php from "@/assets/Web_tech_stack/php.svg";
+import SpringBoot from "@/assets/Web_tech_stack/springboot.svg";
 
 
 
@@ -221,6 +227,28 @@ export default function WebDev() {
                         {useCases.map((useCase, index) => (
                             <UseCase key={index} {...useCase} />
                         ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Our Tec Stack Section */}
+            <section className="py-20 ">
+                <div className="container mx-auto px-6">
+                    <div className="text-center mb-16">
+                        <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                            Our Technology Stack
+                        </h2>
+                        <p className="text-xl  max-w-3xl mx-auto">
+                            We leverage the latest Web development frameworks and platforms
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+                        <OurStackSection image={NextJS} title={'Next.JS'} />
+                        <OurStackSection image={ReactJS} title={'React'} />
+                        <OurStackSection image={Postgresql} title={'Postgresql'} />
+                        <OurStackSection image={SpringBoot} title={'SpringBoot'} />
+                        <OurStackSection image={Php} title={'Php'} />
                     </div>
                 </div>
             </section>
