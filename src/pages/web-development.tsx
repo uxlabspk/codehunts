@@ -13,7 +13,6 @@ import {
 } from 'lucide-react';
 import CTASection from "@/components/common/cta-section.tsx";
 import UseCase from "@/components/services/usecases.tsx";
-import ProcessStep from "@/components/services/process-steps.tsx";
 import Feature from "@/components/services/features-section.tsx";
 import HeroSection from "@/components/common/hero-section.tsx";
 import ServiceOverview from "@/components/services/service-overview.tsx";
@@ -64,49 +63,6 @@ export default function WebDev() {
             title: "Modern Technologies",
             description: "Leverage the latest web technologies and frameworks for cutting-edge functionality and user experience.",
             iconBgColor: "bg-red-100"
-        }
-    ];
-
-    const processSteps = [
-        {
-            number: "1",
-            title: "Discovery & Planning",
-            description: "We start by understanding your business goals, target audience, and project requirements. This phase includes competitor analysis, user research, and detailed project planning.",
-            tags: ["Requirements Analysis", "User Research", "Project Planning"],
-            bgColor: "bg-indigo-100",
-            textColor: "text-indigo-600",
-            tagBgColor: "bg-indigo-100",
-            tagTextColor: "text-indigo-800"
-        },
-        {
-            number: "2",
-            title: "Design & Prototyping",
-            description: "Our designers create wireframes, mockups, and interactive prototypes. We focus on user experience, brand alignment, and conversion optimization.",
-            tags: ["UI/UX Design", "Wireframing", "Prototyping"],
-            bgColor: "bg-purple-100",
-            textColor: "text-purple-600",
-            tagBgColor: "bg-purple-100",
-            tagTextColor: "text-purple-800"
-        },
-        {
-            number: "3",
-            title: "Development & Testing",
-            description: "Our developers build your website using modern technologies and best practices. We conduct thorough testing across devices and browsers.",
-            tags: ["Frontend Development", "Backend Development", "Quality Assurance"],
-            bgColor: "bg-blue-100",
-            textColor: "text-blue-600",
-            tagBgColor: "bg-blue-100",
-            tagTextColor: "text-blue-800"
-        },
-        {
-            number: "4",
-            title: "Launch & Optimization",
-            description: "We deploy your website, monitor performance, and provide ongoing support. Post-launch optimization ensures peak performance and user satisfaction.",
-            tags: ["Deployment", "Performance Monitoring", "Ongoing Support"],
-            bgColor: "bg-green-100",
-            textColor: "text-green-600",
-            tagBgColor: "bg-green-100",
-            tagTextColor: "text-green-800"
         }
     ];
 
@@ -188,32 +144,9 @@ export default function WebDev() {
                 </div>
             </section>
 
-            {/* Development Process */}
-            <section className="py-20 ">
-                <div className="container mx-auto px-6">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                            Our Development Process
-                        </h2>
-                        <p className="text-xl max-w-3xl mx-auto">
-                            A systematic approach that ensures successful delivery of high-quality websites
-                        </p>
-                    </div>
-
-                    <div className="relative">
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 ">
-                            {processSteps.map((step, index) => (
-                                <ProcessStep key={index} {...step} />
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-
             {/* Use Cases */}
             <section className="py-20 ">
-                <div className="container mx-auto px-6">
+                <div className="container mx-auto">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-4xl font-bold mb-4">
                             Website Solutions
@@ -233,7 +166,7 @@ export default function WebDev() {
 
             {/* Our Tec Stack Section */}
             <section className="py-20 ">
-                <div className="container mx-auto px-6">
+                <div className="container mx-auto">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-4xl font-bold mb-4">
                             Our Technology Stack

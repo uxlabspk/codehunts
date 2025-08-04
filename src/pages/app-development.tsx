@@ -16,7 +16,6 @@ import ReactJS from "@/assets/App_tech_stack/react.svg";
 import Flutter from "@/assets/App_tech_stack/flutter.svg";
 import CTASection from "@/components/common/cta-section.tsx";
 import Feature from "@/components/services/features-section.tsx";
-import ProcessStep from "@/components/services/process-steps.tsx";
 
 
 export default function AppDev() {
@@ -57,59 +56,6 @@ export default function AppDev() {
             title: "Media Integration",
             description: "Support for photos, videos, audio, and other media types with editing tools, sharing capabilities, and cloud storage. ",
             iconBgColor: "bg-red-100"
-        }
-    ];
-
-    const processSteps = [
-        {
-            number: "1",
-            title: "Discovery & Planning",
-            description: "We begin with in-depth discussions to understand your business goals, target audience, and app requirements. This phase includes market research, competitor analysis, and detailed feature planning. ",
-            tags: ["Requirements Analysis", "User Research", "Project Planning"],
-            bgColor: "bg-indigo-100",
-            textColor: "text-indigo-600",
-            tagBgColor: "bg-indigo-100",
-            tagTextColor: "text-indigo-800"
-        },
-        {
-            number: "2",
-            title: "UI/UX Design",
-            description: "Our designers create intuitive user interfaces and seamless user experiences. This includes wireframes, mockups, interactive prototypes, and a comprehensive design system. ",
-            tags: ["UI/UX Design", "Wireframing", "Prototyping"],
-            bgColor: "bg-purple-100",
-            textColor: "text-purple-600",
-            tagBgColor: "bg-purple-100",
-            tagTextColor: "text-purple-800"
-        },
-        {
-            number: "3",
-            title: "Development & Testing",
-            description: "Our development team builds the app using agile methodologies, with continuous integration and automated testing. We deliver working software in iterative cycles for your feedback. ",
-            tags: ["Frontend Development", "Backend Development", "Quality Assurance"],
-            bgColor: "bg-blue-100",
-            textColor: "text-blue-600",
-            tagBgColor: "bg-blue-100",
-            tagTextColor: "text-blue-800"
-        },
-        {
-            number: "4",
-            title: "App Store Submission",
-            description: "We handle the entire app store submission process, including optimization of app store listings, screenshots, descriptions, and compliance with platform guidelines. ",
-            tags: ["Deployment", "Performance Monitoring", "Ongoing Support"],
-            bgColor: "bg-green-100",
-            textColor: "text-green-600",
-            tagBgColor: "bg-green-100",
-            tagTextColor: "text-green-800"
-        },
-        {
-            number: "5",
-            title: "Launch & Support",
-            description: "We provide post-launch support, performance monitoring, bug fixes, and feature updates to ensure your app continues to deliver value to users.",
-            tags: ["Deployment", "Performance Monitoring", "Ongoing Support"],
-            bgColor: "bg-green-100",
-            textColor: "text-green-600",
-            tagBgColor: "bg-green-100",
-            tagTextColor: "text-green-800"
         }
     ];
 
@@ -155,7 +101,7 @@ export default function AppDev() {
 
             {/* Key Features */}
             <section className="py-20 ">
-                <div className="container mx-auto px-6">
+                <div className="container mx-auto">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-4xl font-bold mb-4">
                             Key <span className="">Features</span> & Benefits
@@ -173,31 +119,9 @@ export default function AppDev() {
                 </div>
             </section>
 
-            {/* Development Process */}
-            <section className="py-20 ">
-                <div className="container mx-auto px-6">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                            Our Development Process
-                        </h2>
-                        <p className="text-xl max-w-3xl mx-auto">
-                            A systematic approach that ensures successful delivery of high-quality applications.
-                        </p>
-                    </div>
-
-                    <div className="relative">
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 ">
-                            {processSteps.map((step, index) => (
-                                <ProcessStep key={index} {...step} />
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            </section>
-
             {/* Our Tec Stack Section */}
             <section className="py-20 ">
-                <div className="container mx-auto px-6">
+                <div className="container mx-auto">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-4xl font-bold mb-4">
                             Our Technology Stack

@@ -14,7 +14,7 @@ interface ServiceOverviewProps {
 export default function ServiceOverview({ title, description, description2, card, image }: ServiceOverviewProps) {
     return (
         <section className="py-20 bg-black">
-            <div className="container mx-auto px-6">
+            <div className="container mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                     <div>
                         <h2 className="text-3xl font-bold mb-6 ">{title}</h2>
@@ -27,7 +27,7 @@ export default function ServiceOverview({ title, description, description2, card
 
                         {card}
                     </div>
-                    <div className="relative">
+                    <div className="flex items-center justify-end">
                         <img
                             src={image}
                             alt="image of our services"

@@ -8,7 +8,6 @@ import {
 } from "lucide-react";
 import ServiceOverview from "@/components/services/service-overview.tsx";
 import Feature from "@/components/services/features-section.tsx";
-import ProcessStep from "@/components/services/process-steps.tsx";
 import CTASection from "@/components/common/cta-section.tsx";
 import UseCase from "@/components/services/usecases.tsx";
 import OurStackSection from "@/components/services/our-stack-section.tsx";
@@ -55,44 +54,6 @@ export default function AI() {
             title: "AI Integration",
             description: "Seamlessly integrate AI capabilities into your existing systems, applications, and workflows to enhance functionality and user experience.",
             iconBgColor: "bg-red-100"
-        }
-    ];
-
-    const processSteps = [
-        {
-            number: "1",
-            title: "Problem Definition & Data Assessment",
-            description: "We start by clearly defining your business problem and assessing the quality, quantity, and accessibility of your data. This phase determines the feasibility of AI solutions and sets realistic expectations.",
-            bgColor: "bg-indigo-100",
-            textColor: "text-indigo-600",
-        },
-        {
-            number: "2",
-            title: "Data Preparation & Feature Engineering",
-            description: "Our data scientists clean, transform, and enrich your data while creating meaningful features that help the AI model learn effectively. This critical step often determines the success of your AI project.",
-            bgColor: "bg-purple-100",
-            textColor: "text-purple-600",
-        },
-        {
-            number: "3",
-            title: "Model Development & Training",
-            description: "We select appropriate algorithms, train multiple models, and optimize their performance through hyperparameter tuning. Our iterative approach ensures we find the best solution for your specific use case.",
-            bgColor: "bg-blue-100",
-            textColor: "text-blue-600",
-        },
-        {
-            number: "4",
-            title: "Validation & Deployment",
-            description: "We rigorously test the model's performance on unseen data and deploy it into your production environment with proper monitoring, logging, and scalability considerations.",
-            bgColor: "bg-green-100",
-            textColor: "text-green-600",
-        },
-        {
-            number: "5",
-            title: "Continuous Improvement",
-            description: "AI models need to evolve as your data and business needs change. We provide ongoing optimization, retraining, and enhancement to ensure your AI solution continues to deliver value.",
-            bgColor: "bg-orange-100",
-            textColor: "text-orange-600",
         }
     ];
 
@@ -166,7 +127,7 @@ export default function AI() {
 
             {/* Key Features */}
             <section className="py-20 ">
-                <div className="container mx-auto px-6">
+                <div className="container mx-auto">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-4xl font-bold mb-4">
                             Our AI Capabilities
@@ -184,31 +145,9 @@ export default function AI() {
                 </div>
             </section>
 
-            {/* Development Process */}
-            <section className="py-20 ">
-                <div className="container mx-auto px-6">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                            Our AI Development Process
-                        </h2>
-                        <p className="text-xl max-w-3xl mx-auto">
-                            A structured approach to building effective AI and machine learning solutions
-                        </p>
-                    </div>
-
-                    <div className="relative">
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 ">
-                            {processSteps.map((step, index) => (
-                                <ProcessStep key={index} {...step} />
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            </section>
-
             {/* Use Case */}
             <section className="py-20 ">
-                <div className="container mx-auto px-6">
+                <div className="container mx-auto">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-4xl font-bold mb-4">
                             Industry Use Cases
@@ -228,7 +167,7 @@ export default function AI() {
 
             {/* Our Tec Stack Section */}
             <section className="py-20 ">
-                <div className="container mx-auto px-6">
+                <div className="container mx-auto">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-4xl font-bold mb-4">
                             Our Technology Stack
