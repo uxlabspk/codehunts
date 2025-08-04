@@ -3,8 +3,8 @@ import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card.tsx
 
 export default function OurValues() {
     return (
-        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-accent">
-            <div className="max-w-7xl mx-auto">
+        <section className="py-16 bg-accent">
+            <div className="container mx-auto">
                 <div className="text-center mb-12">
                     <h2 className="text-3xl font-bold mb-4">Our Core Values</h2>
                     <p className="max-w-2xl mx-auto">

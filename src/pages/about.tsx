@@ -3,7 +3,6 @@ import CompanyStats from "@/components/common/company-stats.tsx";
 import OurValues from "@/components/common/our-values.tsx";
 import TeamSection from "@/components/landing/team-section.tsx";
 import CTASection from "@/components/common/cta-section.tsx";
-import {Target} from "lucide-react";
 
 
 export default function About() {
@@ -20,7 +19,7 @@ export default function About() {
 
             {/* Our Story Section */}
             <section className="py-20 bg-accent">
-                <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="container mx-auto">
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
                         <div>
                             <h2 className="text-4xl font-bold mb-6">Our Story</h2>
@@ -42,17 +41,6 @@ export default function About() {
                                 alt="Team collaboration"
                                 className="w-full h-80 object-cover rounded-2xl"
                             />
-                            <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl p-6 shadow-xl">
-                                <div className="flex items-center space-x-3">
-                                    <div className="w-12 h-12 bg-gradient-to-r from-green-400 to-blue-500 rounded-full flex items-center justify-center">
-                                        <Target className="w-6 h-6 text-white" />
-                                    </div>
-                                    <div>
-                                        <div className="font-bold text-gray-900">Mission-Driven</div>
-                                        <div className="text-gray-600 text-sm">Since Day One</div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
