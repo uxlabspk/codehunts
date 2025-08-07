@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import {Link} from "react-router-dom";
 import {Button} from "@/components/ui/button.tsx";
-import {GitBranch} from "lucide-react";
+import {GitBranch, Link2} from "lucide-react";
 
 export default function Header() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -59,7 +59,7 @@ export default function Header() {
                                             Services
                                         </NavigationMenuTrigger>
                                         <NavigationMenuContent className="bg-gray-900/95 backdrop-blur-md border border-gray-700 rounded-xl shadow-2xl">
-                                            <div className="p-4">
+                                            <div>
                                                 <ul className="grid w-[400px] gap-2 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                                                     {[
                                                         {
@@ -99,8 +99,8 @@ export default function Header() {
                                                                     href={service.href}
                                                                     className="group block select-none space-y-2 rounded-lg p-4 leading-none no-underline outline-none transition-all duration-200 hover:bg-gray-800/50 hover:shadow-lg focus:bg-gray-800 focus:shadow-lg border border-transparent hover:border-gray-700"
                                                                 >
-                                                                    <div className="text-sm font-semibold leading-none text-white group-hover:text-orange-400 transition-colors duration-200">
-                                                                        {service.title}
+                                                                    <div className="flex gap-3 text-sm font-semibold leading-none text-white group-hover:text-orange-400 transition-colors duration-200">
+                                                                        {service.title} <Link2 />
                                                                     </div>
                                                                     <p className="line-clamp-2 text-sm leading-snug text-gray-400 group-hover:text-gray-300">
                                                                         {service.description}
