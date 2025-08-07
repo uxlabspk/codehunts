@@ -64,21 +64,21 @@ export default function Footer() {
                                 </li>
 
                                 <li>
-                                    <a href="/ai" className="flex items-center hover:text-orange-500">
+                                    <a href="/ai-development" className="flex items-center hover:text-orange-500">
                                         <LinkIcon/>
                                         AI & Machine Learning
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a href="/" className="flex items-center hover:text-orange-500">
+                                    <a href="/custom-software" className="flex items-center hover:text-orange-500">
                                         <LinkIcon/>
-                                        Software Consulting
+                                        Custom Software
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a href="/" className="flex items-center hover:text-orange-500">
+                                    <a href="/cloud-solutions" className="flex items-center hover:text-orange-500">
                                         <LinkIcon/>
                                         Cloud Solutions
                                     </a>
