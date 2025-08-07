@@ -1,6 +1,7 @@
 import HeroSection from "@/components/common/hero-section.tsx";
 import {Podcast} from "lucide-react";
 import ServiceSection from "@/components/landing/services-section.tsx";
+import DemoRequestForm from "@/components/form/DemoRequestForm.tsx";
 
 
 export default function Talk() {
@@ -22,6 +23,9 @@ export default function Talk() {
 
             {/* Service Section */}
             <ServiceSection />
+
+            {/* Demo Form */}
+            <DemoRequestForm />
         </>
     )
 }
