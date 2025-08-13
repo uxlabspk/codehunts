@@ -7,7 +7,7 @@ import {Github, Instagram, Linkedin, Twitter, Users} from "lucide-react";
 
 export default function Team() {
     return (
-        <>
+        <div className='bg-black'>
             <HeroSection
                 title={'Meet Our Exceptional Team'}
                 description={'We\'re a diverse group of innovators, developers, designers, and strategists united by a passion for creating cutting-edge software solutions.'}
@@ -82,6 +82,6 @@ export default function Team() {
             </div>
             <OurValues />
             <CTASection />
-        </>
+        </div>
     )
 }

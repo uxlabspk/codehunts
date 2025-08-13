@@ -25,7 +25,7 @@ export default function About() {
             <CompanyStats />
 
             {/* Our Story Section */}
-            <section className="py-20 bg-accent">
+            <section className="py-20 bg-black">
                 <div className="container mx-auto">
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
                         <div>

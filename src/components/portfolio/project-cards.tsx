@@ -117,7 +117,7 @@ export default function ProjectCards() {
 
 
     return (
-        <div className={'bg-accent'}>
+        <div className={'bg-black'}>
             <div className={'container mx-auto py-8'}>
                 <div className="flex flex-wrap justify-center gap-4 mb-12">
                     {categories.map((category) => {
@@ -145,7 +145,7 @@ export default function ProjectCards() {
                     {filteredProjects.map((project) => (
                         <div
                             key={project.id}
-                            className="bg-black rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer overflow-hidden group"
+                            className="bg-accent rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer overflow-hidden group"
                             onClick={() => setSelectedProject(project)}
                         >
                             <div className="relative overflow-hidden">
