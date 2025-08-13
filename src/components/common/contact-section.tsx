@@ -1,4 +1,7 @@
 import {Button} from "@/components/ui/button.tsx";
+import {Input} from "@/components/ui/input.tsx";
+import {Label} from "@/components/ui/label.tsx";
+import {Textarea} from "@/components/ui/textarea.tsx";
 
 
 export default function ContactSection() {
@@ -41,23 +44,23 @@ export default function ContactSection() {
                     <div className="bg-accent p-8 rounded-2xl shadow-lg">
                         <form className="space-y-6" id="contactForm">
                             <div>
-                                <label htmlFor="name" className="block text-sm font-medium  mb-2">Full Name</label>
-                                <input type="text" id="name" name="name" required className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-800 focus:border-amber-800 transition-colors duration-200"/>
+                                <Label htmlFor="name" className="block mb-2">Full Name</Label>
+                                <Input type="text" id="name" name="name" required placeholder="Enter your full name" />
                             </div>
 
                             <div>
-                                <label htmlFor="email" className="block text-sm font-medium  mb-2">Email Address</label>
-                                <input type="email" id="email" name="email" required className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-800 focus:border-amber-800 transition-colors duration-200"/>
+                                <Label htmlFor="email" className="block mb-2">Email Address</Label>
+                                <Input type="email" id="email" name="email" required placeholder="your.email@example.com" />
                             </div>
 
                             <div>
-                                <label htmlFor="subject" className="block text-sm font-medium  mb-2">Subject</label>
-                                <input type="text" id="subject" name="subject" required className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-800 focus:border-amber-800 transition-colors duration-200"/>
+                                <Label htmlFor="subject" className="block mb-2">Subject</Label>
+                                <Input type="text" id="subject" name="subject" required placeholder="Brief description of your inquiry" />
                             </div>
 
                             <div>
-                                <label htmlFor="message" className="block text-sm font-medium  mb-2">Message</label>
-                                <textarea id="message" name="message" rows={5} required className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-800 focus:border-amber-800 transition-colors duration-200 resize-none"></textarea>
+                                <Label htmlFor="message" className="block mb-2">Message</Label>
+                                <Textarea id="message" name="message" rows={5} required className="resize-none" placeholder="Tell us about your project requirements, timeline, and any specific details..." />
                             </div>
 
                             <Button size={"lg"} type="submit" className="w-full rounded-full">
