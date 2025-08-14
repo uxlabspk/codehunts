@@ -1,6 +1,5 @@
 import {useEffect, useRef} from 'react';
-import {Button} from "@/components/ui/button.tsx";
-import {Link} from "react-router-dom";
+import { Button } from '../ui/button';
 
 interface Star {
     x: number;
@@ -22,36 +21,56 @@ export default function HeroSection() {
         const ctx = canvas.getContext('2d');
         if (!ctx) return;
 
-        // Set canvas size
+        // Set canvas size with proper pixel ratio handling
         const resizeCanvas = () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
+            const dpr = window.devicePixelRatio || 1;
+            const rect = canvas.getBoundingClientRect();
+            
+            canvas.width = rect.width * dpr;
+            canvas.height = rect.height * dpr;
+            
+            ctx.scale(dpr, dpr);
+            canvas.style.width = rect.width + 'px';
+            canvas.style.height = rect.height + 'px';
         };
 
         resizeCanvas();
         window.addEventListener('resize', resizeCanvas);
 
-        // Initialize stars
-        const numStars = 800;
-        const speed = 0.025;
-        const centerX = canvas.width / 2;
-        const centerY = canvas.height / 2;
+        // Initialize stars - reduce count on mobile for better performance
+        const isMobile = window.innerWidth < 768;
+        const numStars = isMobile ? 400 : 800;
+        const speed = isMobile ? 0.02 : 0.025;
+        
+        const getCanvasSize = () => ({
+            width: canvas.getBoundingClientRect().width,
+            height: canvas.getBoundingClientRect().height
+        });
 
         // Create stars
-        starsRef.current = Array.from({ length: numStars }, () => ({
-            x: Math.random() * canvas.width - centerX,
-            y: Math.random() * canvas.height - centerY,
-            z: Math.random() * 1000,
-            prevX: 0,
-            prevY: 0,
-        }));
+        const initializeStars = () => {
+            const { width, height } = getCanvasSize();
+            const centerX = width / 2;
+            const centerY = height / 2;
+            
+            starsRef.current = Array.from({ length: numStars }, () => ({
+                x: Math.random() * width - centerX,
+                y: Math.random() * height - centerY,
+                z: Math.random() * 1000,
+                prevX: 0,
+                prevY: 0,
+            }));
+        };
+
+        initializeStars();
 
         const animate = () => {
+            const { width, height } = getCanvasSize();
             ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillRect(0, 0, width, height);
 
-            const currentCenterX = canvas.width / 2;
-            const currentCenterY = canvas.height / 2;
+            const currentCenterX = width / 2;
+            const currentCenterY = height / 2;
 
             starsRef.current.forEach((star) => {
                 // Store previous position
@@ -63,8 +82,8 @@ export default function HeroSection() {
 
                 // Reset star if it gets too close
                 if (star.z <= 0) {
-                    star.x = Math.random() * canvas.width - currentCenterX;
-                    star.y = Math.random() * canvas.height - currentCenterY;
+                    star.x = Math.random() * width - currentCenterX;
+                    star.y = Math.random() * height - currentCenterY;
                     star.z = 1000;
                 }
 
@@ -74,7 +93,7 @@ export default function HeroSection() {
 
                 // Calculate opacity and size based on distance
                 const opacity = Math.min(1 - star.z / 1000, 1);
-                const size = Math.max(1 - star.z / 1000, 0) * 3;
+                const size = Math.max(1 - star.z / 1000, 0) * (isMobile ? 2 : 3);
 
                 // Draw star trail
                 ctx.strokeStyle = `rgba(255, 255, 255, ${opacity * 0.8})`;
@@ -105,33 +124,35 @@ export default function HeroSection() {
     }, []);
 
     return (
-        <div className="w-full h-screen bg-black overflow-hidden">
+        <div className="w-full h-screen bg-black overflow-hidden relative">
             <canvas
                 ref={canvasRef}
                 className="absolute inset-0 w-full h-full"
             />
 
-            <div className="absolute inset-0 flex items-center justify-center   max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div className="absolute inset-0 flex items-center justify-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <div className="text-center text-white">
-                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
                         Innovative Software Solutions for Your Business
                     </h1>
-                    <p className="text-lg sm:text-xl mb-8 max-w-3xl mx-auto leading-relaxed">
+                    <p className="text-lg md:text-xl mb-8 max-w-3xl mx-auto leading-relaxed">
                         We are a leading software development company dedicated to providing cutting-edge solutions
                         tailored to meet your specific business needs.
                     </p>
-                    <div className="flex items-center justify-center gap-2 flex-col sm:flex-row mt-20">
-                        <Button className={'text-lg px-14 py-6 rounded-full'} >Get Started</Button>
+                    <div className="flex items-center justify-center gap-2 flex-col sm:flex-row sm:mt-12">
+                        <Button className='font-medium rounded-full w-full sm:w-96 py-7 text-lg'>
+                            Get Started
+                        </Button>
                     </div>
                     <div className="mt-4">
-                        <Link
-                            to="https://www.trustpilot.com/evaluate/codehuntspk.com"
+                        <a
+                            href="https://www.trustpilot.com/evaluate/codehuntspk.com"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex underline items-center text-sm  hover:text-green-600 transition-colors"
+                            className="inline-flex underline items-center text-sm hover:text-green-400 transition-colors"
                         >
                             Review us on Trustpilot
-                        </Link>
+                        </a>
                     </div>
                 </div>
             </div>
