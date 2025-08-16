@@ -81,7 +81,7 @@ export default function AppDev() {
                 description={'In today\'s mobile-first world, having a powerful mobile presence is essential for business success. '}
                 description2={' Our mobile app development services create intuitive, high-performance applications that engage users, solve real problems, and drive business growth across iOS and Android platforms. '}
                 card={
-                    <div className="grid grid-cols-3 gap-6">
+                    <div className="grid sm:grid-cols-3 grid-cols-1 gap-6">
                         <div className="border-2 shadow-lg p-6 rounded-xl">
                             <div className="text-3xl font-bold  mb-2">4.8/5</div>
                             <div className="">Average App Store Rating</div>
@@ -100,7 +100,7 @@ export default function AppDev() {
             />
 
             {/* Key Features */}
-            <section className="py-20 bg-black">
+            <section className="py-20 px-4 sm:px-0 bg-black">
                 <div className="container mx-auto">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -120,7 +120,7 @@ export default function AppDev() {
             </section>
 
             {/* Our Tec Stack Section */}
-            <section className="py-20 bg-black">
+            <section className="px-4 sm:py-20 px-4 sm:px-0 bg-black">
                 <div className="container mx-auto">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-4xl font-bold mb-4">
