@@ -77,7 +77,7 @@ export default function CloudSolutions() {
                 description={'In today\'s digital landscape, cloud computing is essential for business agility, scalability, and cost-efficiency.'}
                 description2={' Our cloud services help you leverage the full potential of cloud technology while ensuring security, performance, and seamless integration with your existing systems.'}
                 card={
-                    <div className="grid grid-cols-3 gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                         <div className="border-2 shadow-lg p-6 rounded-xl">
                             <div className="text-3xl font-bold  mb-2">99.99%</div>
                             <div className="">Uptime Guarantee</div>
@@ -96,7 +96,7 @@ export default function CloudSolutions() {
             />
 
             {/* Key Features */}
-            <section className="py-20 bg-black">
+            <section className="py-20 px-4 sm:px-0 bg-black">
                 <div className="container mx-auto">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -116,7 +116,7 @@ export default function CloudSolutions() {
             </section>
 
             {/* Our Tec Stack Section */}
-            <section className="py-20 bg-black">
+            <section className="py-4 sm:py-20 px-4 sm:px-0 bg-black">
                 <div className="container mx-auto">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-4xl font-bold mb-4">
