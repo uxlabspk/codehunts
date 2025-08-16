@@ -79,7 +79,7 @@ export default function CustomSoftware() {
                 description={'Off-the-shelf software rarely addresses all your business requirements. Our custom development approach creates solutions that perfectly align with your workflows, processes, and strategic goals. '}
                 description2={' We work closely with your team to understand your challenges and opportunities, then design and build software that enhances productivity, improves customer experiences, and gives you a competitive edge. '}
                 card={
-                    <div className="grid grid-cols-3 gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                         <div className="border-2 shadow-lg p-6 rounded-xl">
                             <div className="text-3xl font-bold  mb-2">98%</div>
                             <div className="">Client Satisfaction Rate</div>
@@ -98,7 +98,7 @@ export default function CustomSoftware() {
             />
 
             {/* Key Features */}
-            <section className="py-20 bg-black">
+            <section className="py-20 px-4 sm:px-0 bg-black">
                 <div className="container mx-auto">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -118,7 +118,7 @@ export default function CustomSoftware() {
             </section>
 
             {/* Our Tec Stack Section */}
-            <section className="py-20 bg-black">
+            <section className="py-4 sm:py-20 px-4 sm:px-0 bg-black">
                 <div className="container mx-auto">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-4xl font-bold mb-4">
