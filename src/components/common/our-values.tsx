@@ -3,7 +3,7 @@ import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card.tsx
 
 export default function OurValues() {
     return (
-        <section className="py-16 bg-black">
+        <section className="px-4 sm:px-0 py-16 bg-black">
             <div className="container mx-auto">
                 <div className="text-center mb-12">
                     <h2 className="text-3xl font-bold mb-4">Our Core Values</h2>

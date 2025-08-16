@@ -108,7 +108,7 @@ export default function ProjectCards() {
     const categories = [
         { id: 'all', name: 'All Projects', icon: Code },
         { id: 'web', name: 'Web Applications', icon: Globe },
-        { id: 'mobile', name: 'Mobile Apps', icon: Smartphone }
+        { id: 'mobile', name: 'Mobile Apps', icon: Smartphone },
     ];
 
     const filteredProjects = selectedCategory === 'all'
@@ -118,7 +118,7 @@ export default function ProjectCards() {
 
     return (
         <div className={'bg-black'}>
-            <div className={'container mx-auto py-8'}>
+            <div className={'container mx-auto py-8 sm:px-0 px-4'}>
                 <div className="flex flex-wrap justify-center gap-4 mb-12">
                     {categories.map((category) => {
                         const IconComponent = category.icon;

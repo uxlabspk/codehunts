@@ -9,6 +9,7 @@ import {Store} from "lucide-react";
 export default function About() {
     return(
         <>
+            {/* Hero Section */}
             <HeroSection
                 title={'Transforming Ideas Into Digital Reality'}
                 description={'We are a team of passionate developers, designers, and innovators dedicated to creating cutting-edge software solutions that empower businesses worldwide.'}
@@ -22,10 +23,11 @@ export default function About() {
                 }
             />
 
+            {/* Company Statistics Section */}
             <CompanyStats />
 
             {/* Our Story Section */}
-            <section className="py-20 bg-black">
+            <section className="sm:py-20 bg-black px-4 sm:px-0">
                 <div className="container mx-auto">
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
                         <div>
@@ -53,9 +55,13 @@ export default function About() {
                 </div>
             </section>
 
-
+            {/* Team Section */}
             <TeamSection />
+
+            {/* Our Values Section */}
             <OurValues />
+
+            {/* Call To Action Section */}
             <CTASection />
         </>
     )

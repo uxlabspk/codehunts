@@ -8,6 +8,7 @@ import {Github, Instagram, Linkedin, Twitter, Users} from "lucide-react";
 export default function Team() {
     return (
         <div className='bg-black'>
+            {/* Hero Section */}
             <HeroSection
                 title={'Meet Our Exceptional Team'}
                 description={'We\'re a diverse group of innovators, developers, designers, and strategists united by a passion for creating cutting-edge software solutions.'}
@@ -21,7 +22,8 @@ export default function Team() {
                 }
             />
 
-            <div className={'container mx-auto py-12'}>
+            {/* Our Team Section */}
+            <div className={'container mx-auto px-4 sm:py-12 sm:px-0'}>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
                     <TeamCard
                         img={'team/naveed.png'}
@@ -80,7 +82,11 @@ export default function Team() {
                     />
                 </div>
             </div>
+
+            {/* Our Core Values */}
             <OurValues />
+
+            {/* Call To Action */}
             <CTASection />
         </div>
     )

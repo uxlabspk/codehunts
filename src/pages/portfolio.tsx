@@ -11,7 +11,7 @@ const Portfolio: React.FC = () => {
 
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+        <>
             {/* Hero Section */}
             <HeroSection
                 title={'Our Portfolio of Success'}
@@ -26,9 +26,9 @@ const Portfolio: React.FC = () => {
                 }
             />
 
+            {/* Project Cards */}
             <ProjectCards />
-
-        </div>
+        </>
     );
 };
 

@@ -15,6 +15,7 @@ import CloudSolutions from "@/pages/cloud-solutions.tsx";
 import SoftwareConsulting from "@/pages/custom-software.tsx";
 import Header from "@/components/common/header.tsx";
 import Footer from "@/components/common/footer.tsx";
+import BackToTop from "./components/common/back-to-top";
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
               <Route path={'/terms'} element={<Terms />} />
               <Route path={'/*'} element={<NotFound />} />
           </Routes>
+          <BackToTop />
           <Footer />
       </BrowserRouter>
   )
