@@ -72,7 +72,7 @@ export default function EnhancedDemoForm() {
                     </div>
 
 
-                    <div className="bg-accent p-8 rounded-2xl shadow-lg">
+                    <div className="bg-accent px-4 py-6 sm:p-8 rounded-2xl shadow-lg">
                         <form onSubmit={handleSubmit} className="space-y-6">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div className="space-y-2">
