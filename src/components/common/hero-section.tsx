@@ -16,7 +16,7 @@ interface HeroSectionProps {
 
 export default function HeroSection({title, description, hasLinks, linkUrl, linkText, hasCategory, category}: HeroSectionProps) {
     return(
-        <div className={'w-full bg-black overflow-hidden'}>
+        <div className={'w-full bg-black overflow-hidden px-4 sm:px-0'}>
             <div className={'container mx-auto h-[60vh] flex flex-col items-center justify-center text-center'}>
                 {hasCategory && (
                     <div className="inline-flex items-center bg-gray-50 text-gray-900 px-4 py-2 rounded-full text-sm font-medium mb-6">

@@ -15,7 +15,7 @@ export default function ServiceOverview({ title, description, description2, card
     const [imageLoaded, setImageLoaded] = useState(false);
 
     return (
-        <section className="py-20 bg-black">
+        <section className="sm:py-20 px-4 sm:px-0 bg-black">
             <div className="container mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                     <div>
@@ -29,7 +29,7 @@ export default function ServiceOverview({ title, description, description2, card
 
                         {card}
                     </div>
-                    <div className="flex items-center justify-end relative">
+                    <div className="flex items-center sm:justify-center justify-end relative">
                         {!imageLoaded && (
                             <div className="absolute inset-0 rounded-2xl shadow-2xl overflow-hidden">
                                 <div className="animate-pulse w-full h-full bg-gray-800">
