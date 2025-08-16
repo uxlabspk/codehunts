@@ -74,7 +74,7 @@ export default function Graphics() {
                 description={'In today\'s visual world, great design is essential for brand recognition, customer engagement, and business success.'}
                 description2={'Our graphic design services combine creativity with strategy to create compelling visuals that communicate your brand message effectively.'}
                 card={
-                    <div className="grid grid-cols-3 gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                         <div className="border-2 shadow-lg p-6 rounded-xl">
                             <div className="text-3xl font-bold  mb-2">98%</div>
                             <div className="">Client Satisfaction</div>
@@ -93,7 +93,7 @@ export default function Graphics() {
             />
 
             {/* Key Features */}
-            <section className="py-20 bg-black">
+            <section className="py-20 px-4 sm:px-0 bg-black">
                 <div className="container mx-auto">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -113,7 +113,7 @@ export default function Graphics() {
             </section>
 
             {/* Our Tec Stack Section */}
-            <section className="py-20 bg-black">
+            <section className="py-4 sm:py-20 px-4 sm:px-0 bg-black">
                 <div className="container mx-auto">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-4xl font-bold mb-4">
