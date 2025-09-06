@@ -39,7 +39,7 @@ export default function OurValues() {
                             className="text-center p-6 rounded-xl">
                             <CardHeader>
                                 <span className={'text-4xl mb-4'}>{value.icon}</span>
-                                <CardTitle>{value.title}</CardTitle>
+                                <CardTitle className="text-orange-400 text-xl">{value.title}</CardTitle>
                             </CardHeader>
                             <CardContent>
                                 {value.description}

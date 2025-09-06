@@ -1,9 +1,9 @@
 import TeamCard from "@/components/common/team-card.tsx";
-import {Github, Instagram, Linkedin, Twitter} from "lucide-react";
-
+import { Mail } from "lucide-react";
+import { Button } from "../ui/button";
 
 export default function TeamSection() {
-    return(
+    return (
         <section id="portfolio" className="py-20 bg-black">
             <div className="container mx-auto px-4 sm:px-0">
                 <div className="text-center mb-16">
@@ -19,12 +19,16 @@ export default function TeamSection() {
                         img={'team/naveed.png'}
                         name={'Muhammad Naveed'}
                         position={'Software Engineer'}
+                        isVerified={true}
                         socials={
-                            <div className={'flex items-center justify-around px-6'}>
-                                <Linkedin className={'w-5 h-5 text-white'} />
-                                <Twitter className={'w-5 h-5 text-white'} />
-                                <Instagram className={'w-5 h-5 text-white'} />
-                                <Github className={'w-5 h-5 text-white'} />
+                            <div className={'flex flex-col gap-2 items-center justify-around px-6'}>
+                                <p className="text-sm text-center text-gray-400">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus officiis tenetur inventore iusto. Error, sed? Magni totam libero officia minus omnis, cum consequuntur tempore? Autem tempora repellendus architecto ullam. Amet."</p>
+                                <a href="mailto: naveed@codehuntspk.com" className="mt-2">
+                                    <Button variant={"outline"}>
+                                        <Mail />
+                                        Contact
+                                    </Button>
+                                </a>
                             </div>
                         }
                     />
@@ -33,12 +37,16 @@ export default function TeamSection() {
                         img={'team/hamza.png'}
                         name={'Hamza Waheed'}
                         position={'Software Engineer'}
+                        isVerified={true}
                         socials={
-                            <div className={'flex items-center justify-around px-6'}>
-                                <Linkedin className={'w-5 h-5 text-white'} />
-                                <Twitter className={'w-5 h-5 text-white'} />
-                                <Instagram className={'w-5 h-5 text-white'} />
-                                <Github className={'w-5 h-5 text-white'} />
+                            <div className={'flex flex-col gap-2 items-center justify-around px-6'}>
+                                <p className="text-sm text-center text-gray-400">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus officiis tenetur inventore iusto. Error, sed? Magni totam libero officia minus omnis, cum consequuntur tempore? Autem tempora repellendus architecto ullam. Amet."</p>
+                                <a href="mailto: " className="mt-2">
+                                    <Button variant={"outline"}>
+                                        <Mail />
+                                        Contact
+                                    </Button>
+                                </a>
                             </div>
                         }
                     />
@@ -47,12 +55,16 @@ export default function TeamSection() {
                         img={'team/Usama.png'}
                         name={'Muhammad Usama'}
                         position={'SEO Expert'}
+                        isVerified={false}
                         socials={
-                            <div className={'flex items-center justify-around px-6'}>
-                                <Linkedin className={'w-5 h-5 text-white'} />
-                                <Twitter className={'w-5 h-5 text-white'} />
-                                <Instagram className={'w-5 h-5 text-white'} />
-                                <Github className={'w-5 h-5 text-white'} />
+                            <div className={'flex flex-col gap-2 items-center justify-around px-6'}>
+                                <p className="text-sm text-center text-gray-400">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus officiis tenetur inventore iusto. Error, sed? Magni totam libero officia minus omnis, cum consequuntur tempore? Autem tempora repellendus architecto ullam. Amet."</p>
+                                <a href="mailto: " className="mt-2">
+                                    <Button variant={"outline"}>
+                                        <Mail />
+                                        Contact
+                                    </Button>
+                                </a>
                             </div>
                         }
                     />
@@ -61,12 +73,16 @@ export default function TeamSection() {
                         img={'team/shazil-index.png'}
                         name={'Muhammad Shazil'}
                         position={'Web Developer'}
+                        isVerified={true}
                         socials={
-                            <div className={'flex items-center justify-around px-6'}>
-                                <Linkedin className={'w-5 h-5 text-white'} />
-                                <Twitter className={'w-5 h-5 text-white'} />
-                                <Instagram className={'w-5 h-5 text-white'} />
-                                <Github className={'w-5 h-5 text-white'} />
+                            <div className={'flex flex-col gap-2 items-center justify-around px-6'}>
+                                <p className="text-sm text-center text-gray-400">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus officiis tenetur inventore iusto. Error, sed? Magni totam libero officia minus omnis, cum consequuntur tempore? Autem tempora repellendus architecto ullam. Amet."</p>
+                                <a href="mailto: " className="mt-2">
+                                    <Button variant={"outline"}>
+                                        <Mail />
+                                        Contact
+                                    </Button>
+                                </a>
                             </div>
                         }
                     />
