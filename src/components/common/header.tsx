@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import {Link} from "react-router-dom";
 import {Button} from "@/components/ui/button.tsx";
-import {GitBranch, Link2} from "lucide-react";
+import {Link2} from "lucide-react";
 
 export default function Header() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -30,9 +30,9 @@ export default function Header() {
                     <div className="flex items-center justify-between h-full">
 
                         {/* Logo Section */}
-                        <div className="flex items-center space-x-3">
+                        <div className="flex items-center">
                             <div className="relative">
-                                <GitBranch className="w-8 h-8 text-orange-400 drop-shadow-lg" />
+                                <img src="/logo.webp" alt="" className='h-18 w-18' />
                             </div>
                             <div className="flex flex-col">
                                 <h3 className="text-xl font-bold text-white leading-none">
@@ -58,7 +58,7 @@ export default function Header() {
                                         <NavigationMenuTrigger className="bg-transparent text-gray-200 hover:text-white hover:bg-gray-800/50 data-[state=open]:bg-gray-800/50 border-none h-10 px-6 rounded-lg transition-all duration-200">
                                             Services
                                         </NavigationMenuTrigger>
-                                        <NavigationMenuContent className="bg-gray-900/95 backdrop-blur-md border border-gray-700 rounded-xl shadow-2xl">
+                                        <NavigationMenuContent className="bg-gray-900/95 backdrop-blur-md rounded-xl shadow-2xl">
                                             <div>
                                                 <ul className="grid w-[400px] gap-2 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                                                     {[
@@ -160,9 +160,9 @@ export default function Header() {
             >
                 {/* Mobile Header */}
                 <div className="flex items-center justify-between p-6 border-b border-gray-700">
-                    <div className="flex items-center space-x-3">
+                    <div className="flex items-center space-x-1">
                         <div className="relative">
-                            <GitBranch className="w-8 h-8 text-orange-400" />
+                             <img src="/logo.webp" alt="" className='h-18 w-18' />
                         </div>
                         <div className="flex flex-col">
                             <h3 className="text-xl font-bold text-white leading-none">

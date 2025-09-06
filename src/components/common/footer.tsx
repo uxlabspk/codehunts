@@ -1,4 +1,3 @@
-import {GitBranch} from "lucide-react";
 
 
 export default function Footer() {
@@ -8,9 +7,8 @@ export default function Footer() {
                 <div className="container px-4 sm:px-0 py-8 mx-auto">
                     <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
                         <div>
-                            <a href="/" className="flex items-center mb-4 text-xl font-bold text-dark">
-                                {/*<img src="/img/logo.png" alt="Code HUNT'S Logo" loading="lazy" className="h-10 mr-2"/>*/}
-                                <GitBranch className={'mr-2'} />
+                            <a href="/" className="flex flex-col items-start justify-center mb-4 text-xl font-bold text-dark">
+                                <img src="/logo.webp" alt="Code HUNT'S Logo" loading="lazy" className="h-16 -ms-3"/>
                                 <h3 className={'font-medium'}>
                                     Code <span className={'text-orange-400'}>HUNT'S</span>
                                 </h3>

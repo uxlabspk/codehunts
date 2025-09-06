@@ -117,10 +117,10 @@ export default function Graphics() {
                 <div className="container mx-auto">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                            Supported Cloud Platforms
+                            Supported Design Software's
                         </h2>
                         <p className="text-xl  max-w-3xl mx-auto">
-                            We work with all major cloud providers to deliver the best solutions for your business
+                            We work with all major design software's to deliver the best solutions for your business
                         </p>
                     </div>
 
