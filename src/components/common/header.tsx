@@ -131,8 +131,7 @@ export default function Header() {
 
                         <Link to={'/lets-talk'} className={'hidden lg:flex items-center space-x-4'}>
                             <Button
-                                size={'md'}
-                                className={'py-6 px-6 rounded-full'}
+                                className={' rounded-full'}
                             >
                                 Get Started
                             </Button>

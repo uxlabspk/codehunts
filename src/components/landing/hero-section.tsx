@@ -1,5 +1,6 @@
 import {useEffect, useRef} from 'react';
 import { Button } from '../ui/button';
+import {Check, Vote} from "lucide-react";
 
 interface Star {
     x: number;
@@ -139,19 +140,21 @@ export default function HeroSection() {
                         We are a leading software development company dedicated to providing cutting-edge solutions
                         tailored to meet your specific business needs.
                     </p>
-                    <div className="flex items-center justify-center gap-2 flex-col sm:flex-row sm:mt-12">
-                        <Button className='font-medium rounded-full w-full sm:w-96 py-7 text-lg'>
+                    <div className={'grid grid-cols-1 sm:grid-cols-2 gap-3 sm:mt-12 max-w-xl mx-auto'}>
+                        <Button className='flex-1 font-medium rounded-full py-7 text-lg'>
+                            <Check />
                             Get Started
                         </Button>
-                    </div>
-                    <div className="mt-4">
+
                         <a
                             href="https://www.trustpilot.com/evaluate/codehuntspk.com"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex underline items-center text-sm hover:text-green-400 transition-colors"
                         >
-                            Review us on Trustpilot
+                            <Button variant={"outline"} className='font-medium rounded-full  py-7 text-lg  w-full'>
+                                <Vote />
+                                Review us on Trustpilot
+                            </Button>
                         </a>
                     </div>
                 </div>
