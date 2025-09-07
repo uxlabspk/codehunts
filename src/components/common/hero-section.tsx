@@ -17,9 +17,11 @@ interface HeroSectionProps {
 export default function HeroSection({title, description, hasLinks, linkUrl, linkText, hasCategory, category}: HeroSectionProps) {
     return(
         <div className={'w-full bg-black overflow-hidden px-4 sm:px-0'}>
+            {/* Grid Background */}
+            <div className="pointer-events-none absolute inset-0 bg-grid" />
             <div className={'container mx-auto h-[60vh] flex flex-col items-center justify-center text-center'}>
                 {hasCategory && (
-                    <div className="inline-flex items-center bg-gray-50 text-gray-900 px-4 py-2 rounded-full text-sm font-medium mb-6">
+                    <div className="inline-flex items-center bg-transparent border border-gray-50 text-gray-50 px-4 py-2 rounded-full text-sm font-medium mb-6">
                         {category}
                     </div>
                 )}

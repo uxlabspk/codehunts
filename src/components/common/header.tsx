@@ -25,7 +25,7 @@ export default function Header() {
     return (
         <div>
             {/* Main Header */}
-            <header className="fixed w-full h-20 z-50 bg-black/50 backdrop-blur-md border-b border-gray-800/50 shadow-lg">
+            <header className="relative w-full h-20 z-50 bg-black/50 backdrop-blur-md border-b border-gray-800/50 shadow-lg">
                 <div className="container mx-auto px-4 lg:px-0 h-full">
                     <div className="flex items-center justify-between h-full">
 
@@ -36,7 +36,7 @@ export default function Header() {
                             </div>
                             <div className="flex flex-col">
                                 <h3 className="text-xl font-bold text-white leading-none">
-                                    Code <span className="text-orange-400 bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent">HUNT'S</span>
+                                    Code <span className="text-orange-400 bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text">HUNT'S</span>
                                 </h3>
                             </div>
                         </div>
