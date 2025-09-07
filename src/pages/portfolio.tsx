@@ -1,14 +1,10 @@
-
-
 import React from 'react';
 import HeroSection from "@/components/common/hero-section.tsx";
 import ProjectCards from "@/components/portfolio/project-cards.tsx";
 import {BriefcaseBusiness} from "lucide-react";
 
 
-
 const Portfolio: React.FC = () => {
-
 
     return (
         <>

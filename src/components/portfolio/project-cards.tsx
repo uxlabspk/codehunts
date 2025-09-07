@@ -129,8 +129,8 @@ export default function ProjectCards() {
                                 onClick={() => setSelectedCategory(category.id)}
                                 className={`flex items-center px-4 py-6 rounded-full font-medium transition-all duration-200 ${
                                     selectedCategory === category.id
-                                        ? 'bg-orange-400 text-white shadow-lg transform scale-105'
-                                        : 'bg-white text-gray-700 hover:bg-blue-50 shadow-md hover:shadow-lg'
+                                        ? 'bg-orange-400 hover:bg-orange-500 text-white shadow-lg transform scale-105'
+                                        : 'bg-transparent border border-white text-white hover:bg-orange-400 hover:border-orange-400 shadow-md hover:shadow-lg'
                                 }`}
                             >
                                 <IconComponent className="w-5 h-5" />
