@@ -33,7 +33,7 @@ export default function Team() {
                         isVerified={true}
                         socials={
                             <div className={'flex flex-col gap-2 items-center justify-around px-6'}>
-                                <p className="text-sm text-center text-gray-400">"sdfsd"</p>
+                                <p className="text-sm text-center text-gray-400">""</p>
                                 <a href="mailto: naveed@codehuntspk.com" className="mt-2">
                                     <Button variant={"outline"}>
                                         <Mail />
@@ -51,7 +51,7 @@ export default function Team() {
                         isVerified={true}
                         socials={
                             <div className={'flex flex-col gap-2 items-center justify-around px-6'}>
-                                <p className="text-sm text-center text-gray-400">"sdsdf"</p>
+                                <p className="text-sm text-center text-gray-400">""</p>
                                 <a href="mailto: " className="mt-2">
                                     <Button variant={"outline"}>
                                         <Mail />
@@ -69,7 +69,7 @@ export default function Team() {
                         isVerified={false}
                         socials={
                             <div className={'flex flex-col gap-2 items-center justify-around px-6'}>
-                                <p className="text-sm text-center text-gray-400">"sss."</p>
+                                <p className="text-sm text-center text-gray-400">""</p>
                                 <a href="mailto: " className="mt-2">
                                     <Button variant={"outline"}>
                                         <Mail />
@@ -87,7 +87,7 @@ export default function Team() {
                         isVerified={true}
                         socials={
                             <div className={'flex flex-col gap-2 items-center justify-around px-6'}>
-                                <p className="text-sm text-center text-gray-400">"sss"</p>
+                                <p className="text-sm text-center text-gray-400">""</p>
                                 <a href="mailto: " className="mt-2">
                                     <Button variant={"outline"}>
                                         <Mail />
