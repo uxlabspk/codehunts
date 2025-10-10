@@ -6,6 +6,14 @@ import {
     CardTitle
 } from "@/components/ui/card.tsx";
 import {Link} from "react-router-dom";
+import {
+    ChartNetwork,
+    Cloud,
+    Code2,
+    Monitor,
+    Paintbrush,
+    Smartphone
+} from "lucide-react";
 
 
 const ServiceSection = () => {
@@ -23,6 +31,7 @@ const ServiceSection = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <Card>
                         <CardHeader>
+                            <Code2 className={'w-7 h-7 mb-3 text-orange-400'} />
                             <CardTitle>Web Development</CardTitle>
                             <CardDescription>Browser Sites</CardDescription>
                         </CardHeader>
@@ -36,6 +45,7 @@ const ServiceSection = () => {
 
                     <Card>
                         <CardHeader>
+                            <Smartphone className={'w-7 h-7 mb-3 text-orange-400'} />
                             <CardTitle>Mobile App Development</CardTitle>
                             <CardDescription>Mobile Apps</CardDescription>
                         </CardHeader>
@@ -49,6 +59,7 @@ const ServiceSection = () => {
 
                     <Card>
                         <CardHeader>
+                            <Paintbrush className={'w-7 h-7 mb-3 text-orange-400'} />
                             <CardTitle>Graphics Designing</CardTitle>
                             <CardDescription>Digital Illustrations</CardDescription>
                         </CardHeader>
@@ -62,6 +73,7 @@ const ServiceSection = () => {
 
                     <Card>
                         <CardHeader>
+                            <ChartNetwork className={'w-7 h-7 mb-3 text-orange-400'} />
                             <CardTitle>AI & Machine Learning</CardTitle>
                             <CardDescription>Data Driven Insights</CardDescription>
                         </CardHeader>
@@ -75,6 +87,7 @@ const ServiceSection = () => {
 
                     <Card>
                         <CardHeader>
+                            <Monitor className={'w-7 h-7 mb-3 text-orange-400'} />
                             <CardTitle>Software Consulting</CardTitle>
                             <CardDescription>Software Advice's</CardDescription>
                         </CardHeader>
@@ -88,6 +101,7 @@ const ServiceSection = () => {
 
                     <Card>
                         <CardHeader>
+                            <Cloud className={'w-7 h-7 mb-3 text-orange-400'} />
                             <CardTitle>Cloud Solutions</CardTitle>
                             <CardDescription>Scalable MicroServices</CardDescription>
                         </CardHeader>
