@@ -6,17 +6,16 @@ import ContactSection from "@/components/common/contact-section.tsx";
 import CompanyStats from "@/components/common/company-stats.tsx";
 import CTASection from "@/components/common/cta-section.tsx";
 
-
 export default function Home() {
-    return (
-        <>
-            <HeroSection />
-            <CompanyStats />
-            <ServiceSection />
-            <AboutSection />
-            <TeamSection />
-            <ContactSection />
-            <CTASection />
-        </>
-    )
+  return (
+    <>
+      <HeroSection />
+      <CompanyStats />
+      <ServiceSection />
+      <AboutSection />
+      <TeamSection />
+      <ContactSection />
+      <CTASection />
+    </>
+  );
 }

@@ -26,11 +26,11 @@ const BackToTop = () => {
   return (
     <div
       onClick={backToTop}
-      className={`fixed right-4 bottom-4 rounded-full bg-accent p-3 cursor-pointer transition-opacity duration-300 ${
-        hidden ? "opacity-0 pointer-events-none" : "opacity-100"
+      className={`bg-accent fixed right-4 bottom-4 cursor-pointer rounded-full p-3 transition-opacity duration-300 ${
+        hidden ? "pointer-events-none opacity-0" : "opacity-100"
       }`}
     >
-      <ArrowUp className="w-5 h-5" />
+      <ArrowUp className="h-5 w-5" />
     </div>
   );
 };
