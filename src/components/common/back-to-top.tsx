@@ -1,25 +1,38 @@
-
 import { ArrowUp } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const BackToTop = () => {
-    const [hidden, setHidden] = useState(false)
+  const [hidden, setHidden] = useState(true);
 
+  useEffect(() => {
     const checkScroll = () => {
-        if (window.scrollY > 100) setHidden(false);
-        else setHidden(true)
-    }
-
-
-    const backtotop = () => {
-        window.scrollTo(0, 0);
+      if (window.scrollY > 100) setHidden(false);
+      else setHidden(true);
     };
 
-    return (
-        <div onLoad={checkScroll} onClick={backtotop} className={`fixed right-4 bottom-4 rounded-full bg-accent p-4 cursor-pointer ${hidden ? 'hidden' : 'flex'}`}>
-            <ArrowUp className="w-7 h-7" />
-        </div>
-    );
+    window.addEventListener("scroll", checkScroll);
+
+    // Run initially
+    checkScroll();
+
+    // Cleanup
+    return () => window.removeEventListener("scroll", checkScroll);
+  }, []);
+
+  const backToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  return (
+    <div
+      onClick={backToTop}
+      className={`fixed right-4 bottom-4 rounded-full bg-accent p-3 cursor-pointer transition-opacity duration-300 ${
+        hidden ? "opacity-0 pointer-events-none" : "opacity-100"
+      }`}
+    >
+      <ArrowUp className="w-5 h-5" />
+    </div>
+  );
 };
 
 export default BackToTop;
