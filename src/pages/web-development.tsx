@@ -188,9 +188,9 @@ export default function WebDev() {
       <section className="bg-black px-4 py-20 sm:px-0">
         <div className="container mx-auto">
           <div className="mb-16 text-center">
-            <h2 className="mb-4 text-3xl font-bold md:text-4xl">Our Technology Stack</h2>
+            <h2 className="mb-4 text-3xl font-bold md:text-4xl">Technologies We Use</h2>
             <p className="mx-auto max-w-3xl text-xl">
-              We leverage the latest Web development frameworks and platforms
+              Modern frameworks and tools that power fast, scalable web applications
             </p>
           </div>
 

@@ -63,7 +63,7 @@ export default function Graphics() {
       <HeroSection
         title={"Create Stunning Visuals That Captivate Your Audience"}
         description={
-          " Transform your brand with our expert graphic design services. From logos to marketing materials, we create compelling visuals that communicate your message and leave a lasting impression.Creative Design Visual storytelling at its finest"
+          "Transform your brand with our expert graphic design services. From logos to marketing materials, we create compelling visuals that communicate your message and leave a lasting impression through exceptional visual storytelling."
         }
         hasLinks={false}
         hasCategory={true}
@@ -127,10 +127,9 @@ export default function Graphics() {
       <section className="bg-black px-4 py-4 sm:px-0 sm:py-20">
         <div className="container mx-auto">
           <div className="mb-16 text-center">
-            <h2 className="mb-4 text-3xl font-bold md:text-4xl">Supported Design Software's</h2>
+            <h2 className="mb-4 text-3xl font-bold md:text-4xl">Design Tools & Software</h2>
             <p className="mx-auto max-w-3xl text-xl">
-              We work with all major design software's to deliver the best solutions for your
-              business
+              We work with industry-leading design tools to deliver exceptional visual solutions for your business
             </p>
           </div>
 

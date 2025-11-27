@@ -110,7 +110,7 @@ export default function CloudSolutions() {
               Key <span className="">Features</span> & Benefits
             </h2>
             <p className="mx-auto max-w-3xl text-xl">
-              Our web development solutions deliver measurable results that drive business growth
+              Our cloud solutions deliver scalability, security, and cost-efficiency for modern businesses
             </p>
           </div>
 
@@ -126,9 +126,9 @@ export default function CloudSolutions() {
       <section className="bg-black px-4 py-4 sm:px-0 sm:py-20">
         <div className="container mx-auto">
           <div className="mb-16 text-center">
-            <h2 className="mb-4 text-3xl font-bold md:text-4xl">Supported Cloud Platforms</h2>
+            <h2 className="mb-4 text-3xl font-bold md:text-4xl">Cloud Platforms We Support</h2>
             <p className="mx-auto max-w-3xl text-xl">
-              We work with all major cloud providers to deliver the best solutions for your business
+              Multi-cloud expertise across all major cloud providers
             </p>
           </div>
 

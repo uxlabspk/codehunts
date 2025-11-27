@@ -7,7 +7,7 @@ export default function Footer() {
             <div>
               <a
                 href="/"
-                className="text-dark mb-4 flex flex-col items-start justify-center text-xl font-bold"
+                className="text-dark mb-6 flex flex-col items-start justify-center text-xl font-bold"
               >
                 <img
                   src="/logo.webp"
@@ -19,14 +19,18 @@ export default function Footer() {
                   Code <span className={"text-orange-400"}>HUNT'S</span>
                 </h3>
               </a>
-              <p className="text-sm">
-                I-10 sector 2 <br />
-                Islamabad, Pakistan. <br />
-                <br />
-                <a href="mailto:contact@codehuntspk.com" className="hover:underline">
+              <p className="mb-4 max-w-xs text-sm leading-relaxed text-gray-400">
+                Transforming ideas into powerful digital solutions through innovation and expertise.
+              </p>
+              <div className="flex flex-col space-y-2">
+                <span className="text-sm font-semibold text-white">Get in Touch</span>
+                <a 
+                  href="mailto:contact@codehuntspk.com" 
+                  className="text-sm text-orange-400 transition-colors hover:text-orange-300 hover:underline"
+                >
                   contact@codehuntspk.com
                 </a>
-              </p>
+              </div>
             </div>
 
             <div>
@@ -109,11 +113,11 @@ export default function Footer() {
 
             {/* Social Networks */}
             <div>
-              <h2 className="mb-4 text-lg font-bold">Our Social Networks</h2>
-              <p className="mb-4 text-sm">
-                A group of passionate software developers, designers and problem solvers.
+              <h2 className="mb-4 text-lg font-bold">Connect With Us</h2>
+              <p className="mb-4 text-sm leading-relaxed text-gray-400">
+                Follow us for updates, insights, and the latest in software development.
               </p>
-              <div className="flex space-x-4">
+              <div className="flex space-x-3">
                 <a
                   href="https://x.com/code_hunts/"
                   aria-label="Twitter"
@@ -154,19 +158,21 @@ export default function Footer() {
           </div>
         </div>
       </footer>
-      <div className="bg-black py-3 text-white">
-        <div className="container mx-auto mt-3 px-4 sm:px-0">
-          <span id="year">© 2023 - {new Date().getFullYear()} CodeHUNT'S, Inc. · </span>
-          <span>
+      <div className="border-t border-gray-800 bg-black py-6 text-white">
+        <div className="container mx-auto flex flex-col items-center justify-between gap-4 px-4 sm:flex-row sm:px-0">
+          <span className="text-sm text-gray-400">
+            © 2023 - {new Date().getFullYear()} CodeHUNT'S, Inc. All rights reserved.
+          </span>
+          <div className="flex gap-6 text-sm">
             <a
               href="/terms"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-light underline"
+              className="text-gray-400 transition-colors hover:text-orange-400"
             >
-              Terms.
+              Terms & Conditions
             </a>
-          </span>
+          </div>
         </div>
       </div>
     </>

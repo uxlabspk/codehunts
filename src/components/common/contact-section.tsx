@@ -15,25 +15,50 @@ export default function ContactSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
-          <div>
-            <h3 className="mb-6 text-2xl font-semibold">Contact Information</h3>
-            <p className="mb-8 leading-relaxed">
-              We'd love to hear from you. Send us a message and we'll respond as soon as possible.
-            </p>
+        <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2">
+          <div className="space-y-8">
+            <div>
+              <h3 className="mb-4 text-3xl font-bold">Let's Build Something Amazing Together</h3>
+              <p className="text-lg leading-relaxed text-gray-300">
+                Have a project in mind? We're here to turn your ideas into reality with 
+                custom software, AI solutions, and cloud services.
+              </p>
+            </div>
 
-            <div className="space-y-4">
-              <div className="flex items-center">
-                <span className="mr-4 text-2xl">📧</span>
-                <span className="">contact@codehuntspk.com</span>
+            <div className="space-y-6">
+              <div>
+                <h4 className="mb-3 text-xl font-semibold">Why Reach Out?</h4>
+                <ul className="space-y-3 text-gray-300">
+                  <li className="flex items-start">
+                    <span className="mr-3 mt-1 text-primary">✓</span>
+                    <span>Free consultation to discuss your project needs</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-3 mt-1 text-primary">✓</span>
+                    <span>Expert guidance on the best tech stack for your goals</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-3 mt-1 text-primary">✓</span>
+                    <span>Transparent pricing and timeline estimates</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-3 mt-1 text-primary">✓</span>
+                    <span>Quick response within 24 hours</span>
+                  </li>
+                </ul>
               </div>
-              <div className="flex items-center">
-                <span className="mr-4 text-2xl">📞</span>
-                <span className="">+92 XXX XXXXXXX</span>
-              </div>
-              <div className="flex items-center">
-                <span className="mr-4 text-2xl">📍</span>
-                <span className="">I-10/2 Islamabad, Pakistan</span>
+
+              <div className="rounded-xl bg-accent/50 p-6 backdrop-blur-sm">
+                <h4 className="mb-2 font-semibold">Email Us</h4>
+                <a 
+                  href="mailto:contact@codehuntspk.com" 
+                  className="text-lg text-primary hover:underline"
+                >
+                  contact@codehuntspk.com
+                </a>
+                <p className="mt-2 text-sm text-gray-400">
+                  We typically respond within 24 hours
+                </p>
               </div>
             </div>
           </div>

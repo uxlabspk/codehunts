@@ -119,7 +119,7 @@ export default function AppDev() {
               Key <span className="">Features</span> & Benefits
             </h2>
             <p className="mx-auto max-w-3xl text-xl">
-              Our web development solutions deliver measurable results that drive business growth
+              Our mobile app solutions deliver exceptional user experiences that drive engagement and growth
             </p>
           </div>
 
@@ -135,9 +135,9 @@ export default function AppDev() {
       <section className="bg-black px-4 sm:px-0 sm:py-20">
         <div className="container mx-auto">
           <div className="mb-16 text-center">
-            <h2 className="mb-4 text-3xl font-bold md:text-4xl">Our Technology Stack</h2>
+            <h2 className="mb-4 text-3xl font-bold md:text-4xl">Native & Cross-Platform Development</h2>
             <p className="mx-auto max-w-3xl text-xl">
-              We leverage the latest Mobile App development frameworks
+              Building high-performance mobile apps with proven frameworks
             </p>
           </div>
 
