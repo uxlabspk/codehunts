@@ -57,7 +57,7 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a href="/products" className="flex hidden items-center hover:text-orange-500">
+                  <a href="/products" className="hidden items-center hover:text-orange-500">
                     <LinkIcon /> Our Products
                   </a>
                 </li>
