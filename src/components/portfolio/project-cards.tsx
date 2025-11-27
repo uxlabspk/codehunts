@@ -1,54 +1,20 @@
 import { Calendar, Code, ExternalLink, Github, Globe, Smartphone } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Button } from "../ui/button";
-import { config } from "@/config/env";
 import type { Project } from "@/types";
+import { getProjectsByCategory } from "@/data/projects";
 
 export default function ProjectCards() {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [, setSelectedProject] = useState<Project | null>(null);
-  const [projects, setProjects] = useState<Project[]>([]);
-  const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    fetchProjects();
-  }, [selectedCategory]);
-
-  const fetchProjects = async () => {
-    setLoading(true);
-    try {
-      const url = selectedCategory === 'all'
-        ? `${config.api.baseUrl}/api/projects.php`
-        : `${config.api.baseUrl}/api/projects.php?category=${selectedCategory}`;
-
-      const response = await fetch(url);
-      const data = await response.json();
-
-      if (data.success) {
-        setProjects(data.data);
-      }
-    } catch (error) {
-      console.error('Failed to fetch projects:', error);
-    } finally {
-      setLoading(false);
-    }
-  };
+  const projects = getProjectsByCategory(selectedCategory);
 
   const categories = [
     { id: "all", name: "All Projects", icon: Code },
     { id: "web", name: "Web Applications", icon: Globe },
     { id: "mobile", name: "Mobile Apps", icon: Smartphone },
   ];
-
-  if (loading) {
-    return (
-      <div className={"bg-black py-20"}>
-        <div className="flex items-center justify-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-400"></div>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div className={"bg-black"}>
@@ -62,8 +28,8 @@ export default function ProjectCards() {
                 key={category.id}
                 onClick={() => setSelectedCategory(category.id)}
                 className={`flex items-center rounded-full px-4 py-6 font-medium transition-all duration-200 ${selectedCategory === category.id
-                    ? "scale-105 transform bg-orange-400 text-white shadow-lg hover:bg-orange-500"
-                    : "border border-white bg-transparent text-white shadow-md hover:border-orange-400 hover:bg-orange-400 hover:shadow-lg"
+                  ? "scale-105 transform bg-orange-400 text-white shadow-lg hover:bg-orange-500"
+                  : "border border-white bg-transparent text-white shadow-md hover:border-orange-400 hover:bg-orange-400 hover:shadow-lg"
                   }`}
               >
                 <IconComponent className="h-5 w-5" />

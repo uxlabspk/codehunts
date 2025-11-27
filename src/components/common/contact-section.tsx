@@ -3,8 +3,8 @@ import { Button } from "@/components/ui/button.tsx";
 import { Input } from "@/components/ui/input.tsx";
 import { Label } from "@/components/ui/label.tsx";
 import { Textarea } from "@/components/ui/textarea.tsx";
-import { submitFormData } from "@/services/api";
 import { CheckCircle2 } from "lucide-react";
+import { config } from "@/config/env";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -28,15 +28,20 @@ export default function ContactSection() {
     setError("");
 
     try {
-      const result = await submitFormData("/api/contact.php", formData);
+      // Create email content
+      const subject = encodeURIComponent(formData.subject || "Contact Form Submission");
+      const body = encodeURIComponent(
+        `Name: ${formData.name}\n` +
+        `Email: ${formData.email}\n\n` +
+        `Message:\n${formData.message}`
+      );
 
-      if (result.success) {
-        setIsSuccess(true);
-        setFormData({ name: "", email: "", subject: "", message: "" });
-        setTimeout(() => setIsSuccess(false), 5000);
-      } else {
-        setError(result.error || "Failed to submit form. Please try again.");
-      }
+      // Open mailto link
+      window.location.href = `mailto:${config.contact.email}?subject=${subject}&body=${body}`;
+
+      setIsSuccess(true);
+      setFormData({ name: "", email: "", subject: "", message: "" });
+      setTimeout(() => setIsSuccess(false), 5000);
     } catch {
       setError("An unexpected error occurred. Please try again later.");
     } finally {

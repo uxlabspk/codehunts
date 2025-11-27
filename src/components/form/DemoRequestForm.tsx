@@ -12,7 +12,6 @@ import {
 } from "@/components/ui/select";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { validateForm, type ValidationErrors } from "@/lib/validation";
-import { submitFormData } from "@/services/api";
 import { config } from "@/config/env";
 
 interface DemoFormData extends Record<string, string> {
@@ -84,16 +83,26 @@ export default function EnhancedDemoForm() {
     setIsSubmitting(true);
 
     try {
-      const result = await submitFormData("/api/contact.php", formData);
+      // Create email content
+      const subject = encodeURIComponent(`Demo Request - ${formData.service}`);
+      const body = encodeURIComponent(
+        `Name: ${formData.firstName} ${formData.lastName}\n` +
+        `Email: ${formData.email}\n` +
+        `Phone: ${formData.phone}\n` +
+        `Company: ${formData.company}\n` +
+        `Service: ${formData.service}\n` +
+        `Budget: ${formData.budget}\n` +
+        `Timeline: ${formData.timeline}\n\n` +
+        `Message:\n${formData.message}`
+      );
 
-      if (result.success) {
-        setIsSuccess(true);
-        setFormData(initialFormData);
-        // Reset success message after 5 seconds
-        setTimeout(() => setIsSuccess(false), 5000);
-      } else {
-        setErrors({ submit: result.error || "Failed to submit form. Please try again." });
-      }
+      // Open mailto link
+      window.location.href = `mailto:${config.contact.email}?subject=${subject}&body=${body}`;
+
+      setIsSuccess(true);
+      setFormData(initialFormData);
+      // Reset success message after 5 seconds
+      setTimeout(() => setIsSuccess(false), 5000);
     } catch {
       setErrors({ submit: "An unexpected error occurred. Please try again later." });
     } finally {
