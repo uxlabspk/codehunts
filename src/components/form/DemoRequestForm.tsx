@@ -112,24 +112,53 @@ export default function EnhancedDemoForm() {
         </div>
 
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
-          <div>
-            <h3 className="mb-6 text-2xl font-semibold">Contact Information</h3>
-            <p className="mb-8 leading-relaxed">
-              We'd love to hear from you. Send us a message and we'll respond as soon as possible.
-            </p>
+          <div className="space-y-8">
+            <div>
+              <h3 className="mb-4 text-3xl font-bold">Ready to Transform Your Vision Into Reality?</h3>
+              <p className="text-lg leading-relaxed text-gray-300">
+                Schedule a free demo and discover how our innovative solutions can accelerate your business growth 
+                with cutting-edge technology and expert guidance.
+              </p>
+            </div>
 
-            <div className="space-y-4">
-              <div className="flex items-center">
-                <span className="mr-4 text-2xl">📧</span>
-                <span>{config.contact.email}</span>
+            <div className="space-y-6">
+              <div>
+                <h4 className="mb-3 text-xl font-semibold">What You'll Get:</h4>
+                <ul className="space-y-3 text-gray-300">
+                  <li className="flex items-start">
+                    <span className="mr-3 mt-1 text-primary">✓</span>
+                    <span>Personalized demo tailored to your specific business needs</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-3 mt-1 text-primary">✓</span>
+                    <span>Expert consultation on technology stack and implementation strategy</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-3 mt-1 text-primary">✓</span>
+                    <span>Detailed project roadmap with timeline and cost estimates</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-3 mt-1 text-primary">✓</span>
+                    <span>Response within 24 hours from our team of experts</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-3 mt-1 text-primary">✓</span>
+                    <span>No commitment required - completely free consultation</span>
+                  </li>
+                </ul>
               </div>
-              <div className="flex items-center">
-                <span className="mr-4 text-2xl">📞</span>
-                <span>{config.contact.phone}</span>
-              </div>
-              <div className="flex items-center">
-                <span className="mr-4 text-2xl">📍</span>
-                <span>I-10/2 Islamabad, Pakistan</span>
+
+              <div className="rounded-xl bg-accent/50 p-6 backdrop-blur-sm">
+                <h4 className="mb-2 font-semibold">Questions? Email Us</h4>
+                <a 
+                  href={`mailto:${config.contact.email}`}
+                  className="text-lg text-primary hover:underline"
+                >
+                  {config.contact.email}
+                </a>
+                <p className="mt-2 text-sm text-gray-400">
+                  Our team is ready to help you succeed
+                </p>
               </div>
             </div>
           </div>
