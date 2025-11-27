@@ -2,8 +2,7 @@ import CTASection from "@/components/common/cta-section.tsx";
 import OurValues from "@/components/common/our-values.tsx";
 import HeroSection from "@/components/common/hero-section.tsx";
 import TeamCard from "@/components/common/team-card.tsx";
-import { Mail, Users } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Github, Linkedin, Twitter, Users } from "lucide-react";
 
 export default function Team() {
   return (
@@ -31,15 +30,16 @@ export default function Team() {
             img={"team/naveed.png"}
             name={"Muhammad Naveed"}
             position={"Software Engineer"}
-            isVerified={true}
             socials={
-              <div className={"flex flex-col items-center justify-around gap-2 px-6"}>
-                <p className="text-center text-sm text-gray-400">""</p>
-                <a href="mailto: naveed@codehuntspk.com" className="mt-2">
-                  <Button variant={"outline"}>
-                    <Mail />
-                    Contact
-                  </Button>
+              <div className="flex items-center justify-center gap-4">
+                <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary transition-colors">
+                  <Github className="w-5 h-5" />
+                </a>
+                <a href="https://linkedin.com/in/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary transition-colors">
+                  <Linkedin className="w-5 h-5" />
+                </a>
+                <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary transition-colors">
+                  <Twitter className="w-5 h-5" />
                 </a>
               </div>
             }
@@ -48,16 +48,17 @@ export default function Team() {
           <TeamCard
             img={"team/hamza.png"}
             name={"Hamza Waheed"}
-            position={"Software Engineer"}
-            isVerified={true}
+            position={"Data Scientist"}
             socials={
-              <div className={"flex flex-col items-center justify-around gap-2 px-6"}>
-                <p className="text-center text-sm text-gray-400">""</p>
-                <a href="mailto: " className="mt-2">
-                  <Button variant={"outline"}>
-                    <Mail />
-                    Contact
-                  </Button>
+              <div className="flex items-center justify-center gap-4">
+                <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary transition-colors">
+                  <Github className="w-5 h-5" />
+                </a>
+                <a href="https://linkedin.com/in/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary transition-colors">
+                  <Linkedin className="w-5 h-5" />
+                </a>
+                <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary transition-colors">
+                  <Twitter className="w-5 h-5" />
                 </a>
               </div>
             }
@@ -67,15 +68,16 @@ export default function Team() {
             img={"team/Usama.png"}
             name={"Muhammad Usama"}
             position={"SEO Expert"}
-            isVerified={false}
             socials={
-              <div className={"flex flex-col items-center justify-around gap-2 px-6"}>
-                <p className="text-center text-sm text-gray-400">""</p>
-                <a href="mailto: " className="mt-2">
-                  <Button variant={"outline"}>
-                    <Mail />
-                    Contact
-                  </Button>
+              <div className="flex items-center justify-center gap-4">
+                <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary transition-colors">
+                  <Github className="w-5 h-5" />
+                </a>
+                <a href="https://linkedin.com/in/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary transition-colors">
+                  <Linkedin className="w-5 h-5" />
+                </a>
+                <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary transition-colors">
+                  <Twitter className="w-5 h-5" />
                 </a>
               </div>
             }
@@ -85,15 +87,16 @@ export default function Team() {
             img={"team/shazil-index.png"}
             name={"Muhammad Shazil"}
             position={"Web Developer"}
-            isVerified={true}
             socials={
-              <div className={"flex flex-col items-center justify-around gap-2 px-6"}>
-                <p className="text-center text-sm text-gray-400">""</p>
-                <a href="mailto: " className="mt-2">
-                  <Button variant={"outline"}>
-                    <Mail />
-                    Contact
-                  </Button>
+              <div className="flex items-center justify-center gap-4">
+                <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary transition-colors">
+                  <Github className="w-5 h-5" />
+                </a>
+                <a href="https://linkedin.com/in/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary transition-colors">
+                  <Linkedin className="w-5 h-5" />
+                </a>
+                <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary transition-colors">
+                  <Twitter className="w-5 h-5" />
                 </a>
               </div>
             }

@@ -9,6 +9,5 @@ export interface TeamMember {
   img: string;
   name: string;
   position: string;
-  isVerified: boolean;
   socials: React.ReactNode;
 }

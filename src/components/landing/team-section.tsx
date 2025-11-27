@@ -1,6 +1,5 @@
 import TeamCard from "@/components/common/team-card.tsx";
-import { Mail } from "lucide-react";
-import { Button } from "../ui/button";
+import { Github, Linkedin, Twitter } from "lucide-react";
 
 export default function TeamSection() {
   return (
@@ -19,19 +18,16 @@ export default function TeamSection() {
             img={"team/naveed.png"}
             name={"Muhammad Naveed"}
             position={"Software Engineer"}
-            isVerified={true}
             socials={
-              <div className={"flex flex-col items-center justify-around gap-2 px-6"}>
-                <p className="text-center text-sm text-gray-400">
-                  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus officiis
-                  tenetur inventore iusto. Error, sed? Magni totam libero officia minus omnis, cum
-                  consequuntur tempore? Autem tempora repellendus architecto ullam. Amet."
-                </p>
-                <a href="mailto: naveed@codehuntspk.com" className="mt-2">
-                  <Button variant={"outline"}>
-                    <Mail />
-                    Contact
-                  </Button>
+              <div className="flex items-center justify-center gap-4">
+                <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary transition-colors">
+                  <Github className="w-5 h-5" />
+                </a>
+                <a href="https://linkedin.com/in/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary transition-colors">
+                  <Linkedin className="w-5 h-5" />
+                </a>
+                <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary transition-colors">
+                  <Twitter className="w-5 h-5" />
                 </a>
               </div>
             }
@@ -40,20 +36,17 @@ export default function TeamSection() {
           <TeamCard
             img={"team/hamza.png"}
             name={"Hamza Waheed"}
-            position={"Software Engineer"}
-            isVerified={true}
+            position={"Data Scientist"}
             socials={
-              <div className={"flex flex-col items-center justify-around gap-2 px-6"}>
-                <p className="text-center text-sm text-gray-400">
-                  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus officiis
-                  tenetur inventore iusto. Error, sed? Magni totam libero officia minus omnis, cum
-                  consequuntur tempore? Autem tempora repellendus architecto ullam. Amet."
-                </p>
-                <a href="mailto: " className="mt-2">
-                  <Button variant={"outline"}>
-                    <Mail />
-                    Contact
-                  </Button>
+              <div className="flex items-center justify-center gap-4">
+                <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary transition-colors">
+                  <Github className="w-5 h-5" />
+                </a>
+                <a href="https://linkedin.com/in/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary transition-colors">
+                  <Linkedin className="w-5 h-5" />
+                </a>
+                <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary transition-colors">
+                  <Twitter className="w-5 h-5" />
                 </a>
               </div>
             }
@@ -63,19 +56,16 @@ export default function TeamSection() {
             img={"team/Usama.png"}
             name={"Muhammad Usama"}
             position={"SEO Expert"}
-            isVerified={false}
             socials={
-              <div className={"flex flex-col items-center justify-around gap-2 px-6"}>
-                <p className="text-center text-sm text-gray-400">
-                  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus officiis
-                  tenetur inventore iusto. Error, sed? Magni totam libero officia minus omnis, cum
-                  consequuntur tempore? Autem tempora repellendus architecto ullam. Amet."
-                </p>
-                <a href="mailto: " className="mt-2">
-                  <Button variant={"outline"}>
-                    <Mail />
-                    Contact
-                  </Button>
+              <div className="flex items-center justify-center gap-4">
+                <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary transition-colors">
+                  <Github className="w-5 h-5" />
+                </a>
+                <a href="https://linkedin.com/in/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary transition-colors">
+                  <Linkedin className="w-5 h-5" />
+                </a>
+                <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary transition-colors">
+                  <Twitter className="w-5 h-5" />
                 </a>
               </div>
             }
@@ -85,19 +75,16 @@ export default function TeamSection() {
             img={"team/shazil-index.png"}
             name={"Muhammad Shazil"}
             position={"Web Developer"}
-            isVerified={true}
             socials={
-              <div className={"flex flex-col items-center justify-around gap-2 px-6"}>
-                <p className="text-center text-sm text-gray-400">
-                  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus officiis
-                  tenetur inventore iusto. Error, sed? Magni totam libero officia minus omnis, cum
-                  consequuntur tempore? Autem tempora repellendus architecto ullam. Amet."
-                </p>
-                <a href="mailto: " className="mt-2">
-                  <Button variant={"outline"}>
-                    <Mail />
-                    Contact
-                  </Button>
+              <div className="flex items-center justify-center gap-4">
+                <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary transition-colors">
+                  <Github className="w-5 h-5" />
+                </a>
+                <a href="https://linkedin.com/in/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary transition-colors">
+                  <Linkedin className="w-5 h-5" />
+                </a>
+                <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary transition-colors">
+                  <Twitter className="w-5 h-5" />
                 </a>
               </div>
             }
