@@ -84,8 +84,7 @@ export default function EnhancedDemoForm() {
     setIsSubmitting(true);
 
     try {
-      // TODO: Replace with actual API endpoint
-      const result = await submitFormData("/api/contact", formData);
+      const result = await submitFormData("/api/contact.php", formData);
 
       if (result.success) {
         setIsSuccess(true);
@@ -116,7 +115,7 @@ export default function EnhancedDemoForm() {
             <div>
               <h3 className="mb-4 text-3xl font-bold">Ready to Transform Your Vision Into Reality?</h3>
               <p className="text-lg leading-relaxed text-gray-300">
-                Schedule a free demo and discover how our innovative solutions can accelerate your business growth 
+                Schedule a free demo and discover how our innovative solutions can accelerate your business growth
                 with cutting-edge technology and expert guidance.
               </p>
             </div>
@@ -150,7 +149,7 @@ export default function EnhancedDemoForm() {
 
               <div className="rounded-xl bg-accent/50 p-6 backdrop-blur-sm">
                 <h4 className="mb-2 font-semibold">Questions? Email Us</h4>
-                <a 
+                <a
                   href={`mailto:${config.contact.email}`}
                   className="text-lg text-primary hover:underline"
                 >
