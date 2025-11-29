@@ -1,5 +1,5 @@
 import { Github, Linkedin, Twitter } from "lucide-react";
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 
 export interface TeamMember {
   id: number;

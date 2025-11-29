@@ -83,27 +83,33 @@ export default function EnhancedDemoForm() {
     setIsSubmitting(true);
 
     try {
-      // Create email content
-      const subject = encodeURIComponent(`Demo Request - ${formData.service}`);
-      const body = encodeURIComponent(
-        `Name: ${formData.firstName} ${formData.lastName}\n` +
-        `Email: ${formData.email}\n` +
-        `Phone: ${formData.phone}\n` +
-        `Company: ${formData.company}\n` +
-        `Service: ${formData.service}\n` +
-        `Budget: ${formData.budget}\n` +
-        `Timeline: ${formData.timeline}\n\n` +
-        `Message:\n${formData.message}`
-      );
+      // Send form data to PHP API
+      const response = await fetch(`${config.app.url}/api/contact.php`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
-      // Open mailto link
-      window.location.href = `mailto:${config.contact.email}?subject=${subject}&body=${body}`;
+      const result = await response.json();
 
-      setIsSuccess(true);
-      setFormData(initialFormData);
-      // Reset success message after 5 seconds
-      setTimeout(() => setIsSuccess(false), 5000);
-    } catch {
+      if (response.ok && result.success) {
+        setIsSuccess(true);
+        setFormData(initialFormData);
+        // Reset success message after 5 seconds
+        setTimeout(() => setIsSuccess(false), 5000);
+      } else {
+        // Handle validation errors from server
+        if (result.errors) {
+          setErrors(result.errors);
+        } else {
+          setErrors({ submit: result.message || "Failed to submit form. Please try again." });
+        }
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
       setErrors({ submit: "An unexpected error occurred. Please try again later." });
     } finally {
       setIsSubmitting(false);
