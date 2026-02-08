@@ -28,12 +28,16 @@ export default function About() {
       <CompanyStats />
 
       {/* Our Story Section */}
-      <section className="bg-black px-4 sm:px-0 sm:py-20">
-        <div className="container mx-auto">
+      <section className="relative py-24">
+        <div className="section-divider mb-24" />
+        <div className="container mx-auto px-4 lg:px-6">
           <div className="grid items-center gap-16 lg:grid-cols-2">
             <div>
-              <h2 className="mb-6 text-4xl font-bold">Our Story</h2>
-              <div className="space-y-6 text-lg leading-relaxed">
+              <span className="mb-4 inline-block text-sm font-semibold tracking-wider text-primary uppercase">
+                Our Journey
+              </span>
+              <h2 className="mb-6 text-3xl font-bold tracking-tight lg:text-4xl">Our Story</h2>
+              <div className="space-y-5 text-base leading-relaxed text-muted-foreground">
                 <p>
                   Founded in 2023, Code HUNT'S began as a small team of passionate developers with a
                   simple mission: to create software that makes a difference. What started in a
@@ -52,10 +56,12 @@ export default function About() {
               </div>
             </div>
             <div className="relative">
+              <div className="absolute -inset-4 rounded-3xl bg-primary/[0.04] blur-2xl" />
               <img
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=400&fit=crop"
                 alt="Team collaboration"
-                className="h-80 w-full rounded-2xl object-cover"
+                className="relative h-80 w-full rounded-2xl border border-white/[0.06] object-cover"
+                loading="lazy"
               />
             </div>
           </div>

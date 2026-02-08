@@ -86,17 +86,17 @@ export default function Graphics() {
         }
         card={
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
-            <div className="rounded-xl border-2 p-6 shadow-lg">
-              <div className="mb-2 text-3xl font-bold">98%</div>
-              <div className="">Client Satisfaction</div>
+            <div className="rounded-xl border border-white/[0.06] bg-card/50 p-5">
+              <div className="mb-1 text-2xl font-bold text-white">98%</div>
+              <div className="text-sm text-muted-foreground">Client Satisfaction</div>
             </div>
-            <div className="rounded-xl border-2 p-6 shadow-lg">
-              <div className="mb-2 text-3xl font-bold">500+</div>
-              <div className="">Projects Completed</div>
+            <div className="rounded-xl border border-white/[0.06] bg-card/50 p-5">
+              <div className="mb-1 text-2xl font-bold text-white">500+</div>
+              <div className="text-sm text-muted-foreground">Projects Completed</div>
             </div>
-            <div className="rounded-xl border-2 p-6 shadow-lg">
-              <div className="mb-2 text-3xl font-bold">50+</div>
-              <div className="">Happy Clients</div>
+            <div className="rounded-xl border border-white/[0.06] bg-card/50 p-5">
+              <div className="mb-1 text-2xl font-bold text-white">50+</div>
+              <div className="text-sm text-muted-foreground">Happy Clients</div>
             </div>
           </div>
         }
@@ -106,16 +106,20 @@ export default function Graphics() {
       />
 
       {/* Key Features */}
-      <section className="bg-black px-4 py-20 sm:px-0">
-        <div className="container mx-auto">
+      <section className="relative py-24">
+        <div className="section-divider mb-24" />
+        <div className="container mx-auto px-4 lg:px-6">
           <div className="mb-16 text-center">
-            <h2 className="mb-4 text-3xl font-bold md:text-4xl">Our Design Services</h2>
-            <p className="mx-auto max-w-3xl text-xl">
+            <span className="mb-4 inline-block text-sm font-semibold tracking-wider text-primary uppercase">
+              Services
+            </span>
+            <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">Our Design Services</h2>
+            <p className="mx-auto max-w-3xl text-lg text-muted-foreground">
               Comprehensive graphic design solutions for all your business needs
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
             {features.map((feature, index) => (
               <Feature key={index} {...feature} />
             ))}
@@ -124,16 +128,20 @@ export default function Graphics() {
       </section>
 
       {/* Our Tec Stack Section */}
-      <section className="bg-black px-4 py-4 sm:px-0 sm:py-20">
-        <div className="container mx-auto">
+      <section className="relative py-24">
+        <div className="section-divider mb-24" />
+        <div className="container mx-auto px-4 lg:px-6">
           <div className="mb-16 text-center">
-            <h2 className="mb-4 text-3xl font-bold md:text-4xl">Design Tools & Software</h2>
-            <p className="mx-auto max-w-3xl text-xl">
+            <span className="mb-4 inline-block text-sm font-semibold tracking-wider text-primary uppercase">
+              Tools
+            </span>
+            <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">Design Tools & Software</h2>
+            <p className="mx-auto max-w-3xl text-lg text-muted-foreground">
               We work with industry-leading design tools to deliver exceptional visual solutions for your business
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-6">
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-6">
             <OurStackSection image={Photoshop} title={"Photoshop"} />
             <OurStackSection image={Illustrator} title={"Illustration"} />
             <OurStackSection image={Indesign} title={"InDesign"} />

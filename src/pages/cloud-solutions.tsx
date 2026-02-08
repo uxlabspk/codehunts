@@ -83,17 +83,17 @@ export default function CloudSolutions() {
         }
         card={
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
-            <div className="rounded-xl border-2 p-6 shadow-lg">
-              <div className="mb-2 text-3xl font-bold">99.99%</div>
-              <div className="">Uptime Guarantee</div>
+            <div className="rounded-xl border border-white/[0.06] bg-card/50 p-5">
+              <div className="mb-1 text-2xl font-bold text-white">99.99%</div>
+              <div className="text-sm text-muted-foreground">Uptime Guarantee</div>
             </div>
-            <div className="rounded-xl border-2 p-6 shadow-lg">
-              <div className="mb-2 text-3xl font-bold">60%</div>
-              <div className="">Cost Reduction</div>
+            <div className="rounded-xl border border-white/[0.06] bg-card/50 p-5">
+              <div className="mb-1 text-2xl font-bold text-white">60%</div>
+              <div className="text-sm text-muted-foreground">Cost Reduction</div>
             </div>
-            <div className="rounded-xl border-2 p-6 shadow-lg">
-              <div className="mb-2 text-3xl font-bold">24/7</div>
-              <div className="">Support Available</div>
+            <div className="rounded-xl border border-white/[0.06] bg-card/50 p-5">
+              <div className="mb-1 text-2xl font-bold text-white">24/7</div>
+              <div className="text-sm text-muted-foreground">Support Available</div>
             </div>
           </div>
         }
@@ -103,18 +103,22 @@ export default function CloudSolutions() {
       />
 
       {/* Key Features */}
-      <section className="bg-black px-4 py-20 sm:px-0">
-        <div className="container mx-auto">
+      <section className="relative py-24">
+        <div className="section-divider mb-24" />
+        <div className="container mx-auto px-4 lg:px-6">
           <div className="mb-16 text-center">
-            <h2 className="mb-4 text-3xl font-bold md:text-4xl">
-              Key <span className="">Features</span> & Benefits
+            <span className="mb-4 inline-block text-sm font-semibold tracking-wider text-primary uppercase">
+              Features
+            </span>
+            <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">
+              Key Features & Benefits
             </h2>
-            <p className="mx-auto max-w-3xl text-xl">
+            <p className="mx-auto max-w-3xl text-lg text-muted-foreground">
               Our cloud solutions deliver scalability, security, and cost-efficiency for modern businesses
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
             {features.map((feature, index) => (
               <Feature key={index} {...feature} />
             ))}
@@ -123,16 +127,20 @@ export default function CloudSolutions() {
       </section>
 
       {/* Our Tec Stack Section */}
-      <section className="bg-black px-4 py-4 sm:px-0 sm:py-20">
-        <div className="container mx-auto">
+      <section className="relative py-24">
+        <div className="section-divider mb-24" />
+        <div className="container mx-auto px-4 lg:px-6">
           <div className="mb-16 text-center">
-            <h2 className="mb-4 text-3xl font-bold md:text-4xl">Cloud Platforms We Support</h2>
-            <p className="mx-auto max-w-3xl text-xl">
+            <span className="mb-4 inline-block text-sm font-semibold tracking-wider text-primary uppercase">
+              Platforms
+            </span>
+            <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">Cloud Platforms We Support</h2>
+            <p className="mx-auto max-w-3xl text-lg text-muted-foreground">
               Multi-cloud expertise across all major cloud providers
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
             <OurStackSection image={Aws} title={"Amazon Web Services"} />
             <OurStackSection image={Azure} title={"Microsoft Azure"} />
             <OurStackSection image={GoogleCloud} title={"Google Cloud"} />

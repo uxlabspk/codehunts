@@ -8,7 +8,7 @@ import { teamMembers, getSocialIcons } from "@/data/team.tsx";
 export default function Team() {
 
   return (
-    <div className="bg-black">
+    <div>
       {/* Hero Section */}
       <HeroSection
         title={"Meet Our Exceptional Team"}
@@ -26,27 +26,33 @@ export default function Team() {
       />
 
       {/* Our Team Section */}
-      <div className={"container mx-auto px-4 sm:px-0 sm:py-12"}>
-        <div className="mb-16 text-center">
-          <h2 className="mb-4 text-3xl font-bold sm:text-4xl">Our Team</h2>
-          <p className="mx-auto max-w-2xl text-lg">
-            Meet the talented professionals behind our success—dedicated, skilled, and passionate
-            about delivering exceptional results.
-          </p>
-        </div>
+      <section className="relative py-24">
+        <div className="section-divider mb-24" />
+        <div className="container mx-auto px-4 lg:px-6">
+          <div className="mb-16 text-center">
+            <span className="mb-4 inline-block text-sm font-semibold tracking-wider text-primary uppercase">
+              The Team
+            </span>
+            <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">Our Team</h2>
+            <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
+              Meet the talented professionals behind our success — dedicated, skilled, and passionate
+              about delivering exceptional results.
+            </p>
+          </div>
 
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          {teamMembers.map((member) => (
-            <TeamCard
-              key={member.id}
-              img={member.image_url}
-              name={member.name}
-              position={member.position}
-              socials={getSocialIcons(member)}
-            />
-          ))}
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            {teamMembers.map((member) => (
+              <TeamCard
+                key={member.id}
+                img={member.image_url}
+                name={member.name}
+                position={member.position}
+                socials={getSocialIcons(member)}
+              />
+            ))}
+          </div>
         </div>
-      </div>
+      </section>
 
       {/* Our Core Values */}
       <OurValues />

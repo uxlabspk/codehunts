@@ -85,17 +85,17 @@ export default function CustomSoftware() {
         }
         card={
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
-            <div className="rounded-xl border-2 p-6 shadow-lg">
-              <div className="mb-2 text-3xl font-bold">98%</div>
-              <div className="">Client Satisfaction Rate</div>
+            <div className="rounded-xl border border-white/[0.06] bg-card/50 p-5">
+              <div className="mb-1 text-2xl font-bold text-white">98%</div>
+              <div className="text-sm text-muted-foreground">Client Satisfaction Rate</div>
             </div>
-            <div className="rounded-xl border-2 p-6 shadow-lg">
-              <div className="mb-2 text-3xl font-bold">500+</div>
-              <div className="">Projects Delivered</div>
+            <div className="rounded-xl border border-white/[0.06] bg-card/50 p-5">
+              <div className="mb-1 text-2xl font-bold text-white">500+</div>
+              <div className="text-sm text-muted-foreground">Projects Delivered</div>
             </div>
-            <div className="rounded-xl border-2 p-6 shadow-lg">
-              <div className="mb-2 text-3xl font-bold">50+</div>
-              <div className="">Enterprise Clients</div>
+            <div className="rounded-xl border border-white/[0.06] bg-card/50 p-5">
+              <div className="mb-1 text-2xl font-bold text-white">50+</div>
+              <div className="text-sm text-muted-foreground">Enterprise Clients</div>
             </div>
           </div>
         }
@@ -105,16 +105,20 @@ export default function CustomSoftware() {
       />
 
       {/* Key Features */}
-      <section className="bg-black px-4 py-20 sm:px-0">
-        <div className="container mx-auto">
+      <section className="relative py-24">
+        <div className="section-divider mb-24" />
+        <div className="container mx-auto px-4 lg:px-6">
           <div className="mb-16 text-center">
-            <h2 className="mb-4 text-3xl font-bold md:text-4xl">Key Benefits</h2>
-            <p className="mx-auto max-w-3xl text-xl">
+            <span className="mb-4 inline-block text-sm font-semibold tracking-wider text-primary uppercase">
+              Benefits
+            </span>
+            <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">Key Benefits</h2>
+            <p className="mx-auto max-w-3xl text-lg text-muted-foreground">
               Transform your business with our custom software development services
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
             {features.map((feature, index) => (
               <Feature key={index} {...feature} />
             ))}
@@ -123,16 +127,20 @@ export default function CustomSoftware() {
       </section>
 
       {/* Our Tec Stack Section */}
-      <section className="bg-black px-4 py-4 sm:px-0 sm:py-20">
-        <div className="container mx-auto">
+      <section className="relative py-24">
+        <div className="section-divider mb-24" />
+        <div className="container mx-auto px-4 lg:px-6">
           <div className="mb-16 text-center">
-            <h2 className="mb-4 text-3xl font-bold md:text-4xl">Full-Stack Development Capabilities</h2>
-            <p className="mx-auto max-w-3xl text-xl">
+            <span className="mb-4 inline-block text-sm font-semibold tracking-wider text-primary uppercase">
+              Technology
+            </span>
+            <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">Full-Stack Development Capabilities</h2>
+            <p className="mx-auto max-w-3xl text-lg text-muted-foreground">
               End-to-end technology expertise from frontend to cloud infrastructure
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-5">
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-5">
             <OurStackSection image={ReactJs} title={"Frontend"} />
             <OurStackSection image={SpringBoot} title={"Backend"} />
             <OurStackSection image={Android} title={"Mobile"} />

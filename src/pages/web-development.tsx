@@ -130,14 +130,14 @@ export default function WebDev() {
           "From responsive design to complex web applications, we use the latest technologies and best practices to ensure your website stands out from the competition and achieves your business objectives."
         }
         card={
-          <div className="grid grid-cols-2 gap-6">
-            <div className="rounded-xl border-2 p-6 shadow-lg">
-              <div className="mb-2 text-3xl font-bold">150+</div>
-              <div className="">Websites Delivered</div>
+          <div className="grid grid-cols-2 gap-4">
+            <div className="rounded-xl border border-white/[0.06] bg-card/50 p-5">
+              <div className="mb-1 text-2xl font-bold text-white">150+</div>
+              <div className="text-sm text-muted-foreground">Websites Delivered</div>
             </div>
-            <div className="rounded-xl border-2 p-6 shadow-lg">
-              <div className="mb-2 text-3xl font-bold">99%</div>
-              <div className="">Client Satisfaction</div>
+            <div className="rounded-xl border border-white/[0.06] bg-card/50 p-5">
+              <div className="mb-1 text-2xl font-bold text-white">99%</div>
+              <div className="text-sm text-muted-foreground">Client Satisfaction</div>
             </div>
           </div>
         }
@@ -147,18 +147,22 @@ export default function WebDev() {
       />
 
       {/* Key Features */}
-      <section className="bg-black px-4 py-20 sm:px-0">
-        <div className="container mx-auto">
+      <section className="relative py-24">
+        <div className="section-divider mb-24" />
+        <div className="container mx-auto px-4 lg:px-6">
           <div className="mb-16 text-center">
-            <h2 className="mb-4 text-3xl font-bold md:text-4xl">
-              Key <span className="">Features</span> & Benefits
+            <span className="mb-4 inline-block text-sm font-semibold tracking-wider text-primary uppercase">
+              Features
+            </span>
+            <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">
+              Key Features & Benefits
             </h2>
-            <p className="mx-auto max-w-3xl text-xl">
+            <p className="mx-auto max-w-3xl text-lg text-muted-foreground">
               Our web development solutions deliver measurable results that drive business growth
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
             {features.map((feature, index) => (
               <Feature key={index} {...feature} />
             ))}
@@ -167,16 +171,22 @@ export default function WebDev() {
       </section>
 
       {/* Use Cases */}
-      <section className="bg-black px-4 py-4 sm:px-0 sm:py-20">
-        <div className="container mx-auto">
+      <section className="relative py-24">
+        <div className="section-divider mb-24" />
+        <div className="container mx-auto px-4 lg:px-6">
           <div className="mb-16 text-center">
-            <h2 className="mb-4 text-3xl font-bold md:text-4xl">Website Solutions</h2>
-            <p className="mx-auto max-w-3xl text-xl">
+            <span className="mb-4 inline-block text-sm font-semibold tracking-wider text-primary uppercase">
+              Solutions
+            </span>
+            <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">
+              Website Solutions
+            </h2>
+            <p className="mx-auto max-w-3xl text-lg text-muted-foreground">
               Custom web development for various business needs and industries
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
             {useCases.map((useCase, index) => (
               <UseCase key={index} {...useCase} />
             ))}
@@ -185,16 +195,22 @@ export default function WebDev() {
       </section>
 
       {/* Our Tec Stack Section */}
-      <section className="bg-black px-4 py-20 sm:px-0">
-        <div className="container mx-auto">
+      <section className="relative py-24">
+        <div className="section-divider mb-24" />
+        <div className="container mx-auto px-4 lg:px-6">
           <div className="mb-16 text-center">
-            <h2 className="mb-4 text-3xl font-bold md:text-4xl">Technologies We Use</h2>
-            <p className="mx-auto max-w-3xl text-xl">
+            <span className="mb-4 inline-block text-sm font-semibold tracking-wider text-primary uppercase">
+              Technology
+            </span>
+            <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">
+              Technologies We Use
+            </h2>
+            <p className="mx-auto max-w-3xl text-lg text-muted-foreground">
               Modern frameworks and tools that power fast, scalable web applications
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-5">
+          <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-5">
             <OurStackSection image={NextJS} title={"Next.JS"} />
             <OurStackSection image={ReactJS} title={"React"} />
             <OurStackSection image={Postgresql} title={"Postgresql"} />

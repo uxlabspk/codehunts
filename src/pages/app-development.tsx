@@ -92,17 +92,17 @@ export default function AppDev() {
         }
         card={
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
-            <div className="rounded-xl border-2 p-6 shadow-lg">
-              <div className="mb-2 text-3xl font-bold">4.8/5</div>
-              <div className="">Average App Store Rating</div>
+            <div className="rounded-xl border border-white/[0.06] bg-card/50 p-5">
+              <div className="mb-1 text-2xl font-bold text-white">4.8/5</div>
+              <div className="text-sm text-muted-foreground">Average App Store Rating</div>
             </div>
-            <div className="rounded-xl border-2 p-6 shadow-lg">
-              <div className="mb-2 text-3xl font-bold">2M+</div>
-              <div className="">Downloads Across All Apps</div>
+            <div className="rounded-xl border border-white/[0.06] bg-card/50 p-5">
+              <div className="mb-1 text-2xl font-bold text-white">2M+</div>
+              <div className="text-sm text-muted-foreground">Downloads Across All Apps</div>
             </div>
-            <div className="rounded-xl border-2 p-6 shadow-lg">
-              <div className="mb-2 text-3xl font-bold">95%</div>
-              <div className="">User Retention Rate</div>
+            <div className="rounded-xl border border-white/[0.06] bg-card/50 p-5">
+              <div className="mb-1 text-2xl font-bold text-white">95%</div>
+              <div className="text-sm text-muted-foreground">User Retention Rate</div>
             </div>
           </div>
         }
@@ -112,18 +112,22 @@ export default function AppDev() {
       />
 
       {/* Key Features */}
-      <section className="bg-black px-4 py-20 sm:px-0">
-        <div className="container mx-auto">
+      <section className="relative py-24">
+        <div className="section-divider mb-24" />
+        <div className="container mx-auto px-4 lg:px-6">
           <div className="mb-16 text-center">
-            <h2 className="mb-4 text-3xl font-bold md:text-4xl">
-              Key <span className="">Features</span> & Benefits
+            <span className="mb-4 inline-block text-sm font-semibold tracking-wider text-primary uppercase">
+              Features
+            </span>
+            <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">
+              Key Features & Benefits
             </h2>
-            <p className="mx-auto max-w-3xl text-xl">
+            <p className="mx-auto max-w-3xl text-lg text-muted-foreground">
               Our mobile app solutions deliver exceptional user experiences that drive engagement and growth
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
             {features.map((feature, index) => (
               <Feature key={index} {...feature} />
             ))}
@@ -132,16 +136,20 @@ export default function AppDev() {
       </section>
 
       {/* Our Tec Stack Section */}
-      <section className="bg-black px-4 sm:px-0 sm:py-20">
-        <div className="container mx-auto">
+      <section className="relative py-24">
+        <div className="section-divider mb-24" />
+        <div className="container mx-auto px-4 lg:px-6">
           <div className="mb-16 text-center">
-            <h2 className="mb-4 text-3xl font-bold md:text-4xl">Native & Cross-Platform Development</h2>
-            <p className="mx-auto max-w-3xl text-xl">
+            <span className="mb-4 inline-block text-sm font-semibold tracking-wider text-primary uppercase">
+              Technology
+            </span>
+            <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">Native & Cross-Platform Development</h2>
+            <p className="mx-auto max-w-3xl text-lg text-muted-foreground">
               Building high-performance mobile apps with proven frameworks
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
             <OurStackSection image={Android} title={"Kotlin/JetPack Compose"} />
             <OurStackSection image={Ios} title={"Swift/SwiftUI"} />
             <OurStackSection image={ReactJS} title={"React Native"} />

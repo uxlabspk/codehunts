@@ -1,199 +1,23 @@
-export default function Footer() {
-  return (
-    <>
-      <footer className="border-t bg-black py-5">
-        <div className="container mx-auto px-4 py-8 sm:px-0">
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-            <div>
-              <a
-                href="/"
-                className="text-dark mb-6 flex flex-col items-start justify-center text-xl font-bold"
-              >
-                <img
-                  src="/logo.webp"
-                  alt="Code HUNT'S Logo"
-                  loading="lazy"
-                  className="-ms-3 h-16"
-                />
-                <h3 className={"font-medium"}>
-                  Code <span className={"text-orange-400"}>HUNT'S</span>
-                </h3>
-              </a>
-              <p className="mb-4 max-w-xs text-sm leading-relaxed text-gray-400">
-                Transforming ideas into powerful digital solutions through innovation and expertise.
-              </p>
-              <div className="flex flex-col space-y-2">
-                <span className="text-sm font-semibold text-white">Get in Touch</span>
-                <a 
-                  href="mailto:contact@codehuntspk.com" 
-                  className="text-sm text-orange-400 transition-colors hover:text-orange-300 hover:underline"
-                >
-                  contact@codehuntspk.com
-                </a>
-              </div>
-            </div>
+import { Link } from "react-router-dom";
 
-            <div>
-              <h2 className="mb-4 text-lg font-bold">Useful Links</h2>
-              <ul className="space-y-2 text-sm">
-                <li>
-                  <a href="/" className="flex items-center hover:text-orange-500">
-                    <LinkIcon /> Home
-                  </a>
-                </li>
-                <li>
-                  <a href="/our-team" className="flex items-center hover:text-orange-500">
-                    <LinkIcon /> Our Team
-                  </a>
-                </li>
-                <li>
-                  <a href="/about-us" className="flex items-center hover:text-orange-500">
-                    <LinkIcon /> About Us
-                  </a>
-                </li>
-                <li>
-                  <a href="/contact-us" className="flex items-center hover:text-orange-500">
-                    <LinkIcon /> Contact Us
-                  </a>
-                </li>
-                <li>
-                  <a href="/products" className="hidden items-center hover:text-orange-500">
-                    <LinkIcon /> Our Products
-                  </a>
-                </li>
-              </ul>
-            </div>
+const quickLinks = [
+  { href: "/", label: "Home" },
+  { href: "/our-team", label: "Our Team" },
+  { href: "/about-us", label: "About Us" },
+  { href: "/contact-us", label: "Contact Us" },
+  { href: "/portfolio", label: "Portfolio" },
+];
 
-            <div>
-              <h2 className="mb-4 text-lg font-bold">Our Services</h2>
-              <ul className="space-y-2 text-sm">
-                <li>
-                  <a href="/web-development" className="flex items-center hover:text-orange-500">
-                    <LinkIcon />
-                    Web Development
-                  </a>
-                </li>
+const serviceLinks = [
+  { href: "/web-development", label: "Web Development" },
+  { href: "/app-development", label: "Mobile App Development" },
+  { href: "/graphics-designing", label: "Graphics Designing" },
+  { href: "/ai-development", label: "AI & Machine Learning" },
+  { href: "/custom-software", label: "Custom Software" },
+  { href: "/cloud-solutions", label: "Cloud Solutions" },
+];
 
-                <li>
-                  <a href="/app-development" className="flex items-center hover:text-orange-500">
-                    <LinkIcon />
-                    Mobile App Development
-                  </a>
-                </li>
-
-                <li>
-                  <a href="/graphics-designing" className="flex items-center hover:text-orange-500">
-                    <LinkIcon />
-                    Graphics Designing
-                  </a>
-                </li>
-
-                <li>
-                  <a href="/ai-development" className="flex items-center hover:text-orange-500">
-                    <LinkIcon />
-                    AI & Machine Learning
-                  </a>
-                </li>
-
-                <li>
-                  <a href="/custom-software" className="flex items-center hover:text-orange-500">
-                    <LinkIcon />
-                    Custom Software
-                  </a>
-                </li>
-
-                <li>
-                  <a href="/cloud-solutions" className="flex items-center hover:text-orange-500">
-                    <LinkIcon />
-                    Cloud Solutions
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            {/* Social Networks */}
-            <div>
-              <h2 className="mb-4 text-lg font-bold">Connect With Us</h2>
-              <p className="mb-4 text-sm leading-relaxed text-gray-400">
-                Follow us for updates, insights, and the latest in software development.
-              </p>
-              <div className="flex space-x-3">
-                <a
-                  href="https://x.com/code_hunts/"
-                  aria-label="Twitter"
-                  className="hover:text-blue-500"
-                >
-                  <TwitterIcon />
-                </a>
-                <a
-                  href="https://web.facebook.com/people/Code-Hunts/100094255579069/"
-                  aria-label="Facebook"
-                  className="hover:text-blue-700"
-                >
-                  <FacebookIcon />
-                </a>
-                <a
-                  href="https://instagram.com/code_hunts/"
-                  aria-label="Instagram"
-                  className="hover:text-pink-600"
-                >
-                  <InstagramIcon />
-                </a>
-                <a
-                  href="https://www.youtube.com/@CodeHUNTS"
-                  aria-label="YouTube"
-                  className="hover:text-red-600"
-                >
-                  <YouTubeIcon />
-                </a>
-                <a
-                  href="https://www.linkedin.com/company/code-hunts"
-                  aria-label="LinkedIn"
-                  className="hover:text-blue-800"
-                >
-                  <LinkedInIcon />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
-      <div className="border-t border-gray-800 bg-black py-6 text-white">
-        <div className="container mx-auto flex flex-col items-center justify-between gap-4 px-4 sm:flex-row sm:px-0">
-          <span className="text-sm text-gray-400">
-            © 2023 - {new Date().getFullYear()} CodeHUNT'S, Inc. All rights reserved.
-          </span>
-          <div className="flex gap-6 text-sm">
-            <a
-              href="/terms"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-400 transition-colors hover:text-orange-400"
-            >
-              Terms & Conditions
-            </a>
-          </div>
-        </div>
-      </div>
-    </>
-  );
-}
-
-// Reusable SVG Icons
-const LinkIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="16"
-    height="16"
-    fill="currentColor"
-    viewBox="0 0 16 16"
-    className="mr-2"
-  >
-    <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"></path>
-    <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"></path>
-  </svg>
-);
-
+// SVG Icons
 const TwitterIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -253,3 +77,123 @@ const LinkedInIcon = () => (
     <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z" />
   </svg>
 );
+
+const socialLinks = [
+  { href: "https://x.com/code_hunts/", label: "X", icon: TwitterIcon },
+  { href: "https://web.facebook.com/people/Code-Hunts/100094255579069/", label: "Facebook", icon: FacebookIcon },
+  { href: "https://instagram.com/code_hunts/", label: "Instagram", icon: InstagramIcon },
+  { href: "https://www.youtube.com/@CodeHUNTS", label: "YouTube", icon: YouTubeIcon },
+  { href: "https://www.linkedin.com/company/code-hunts", label: "LinkedIn", icon: LinkedInIcon },
+];
+
+export default function Footer() {
+  return (
+    <>
+      <footer className="border-t border-white/[0.06] pt-16 pb-8">
+        <div className="container mx-auto px-4 lg:px-6">
+          <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
+            {/* Brand */}
+            <div className="lg:col-span-1">
+              <Link to="/" className="mb-6 flex items-center gap-1">
+                <img
+                  src="/logo.webp"
+                  alt="Code HUNT'S Logo"
+                  loading="lazy"
+                  className="-ml-2 h-14"
+                />
+                <h3 className="text-lg font-bold">
+                  Code <span className="text-gradient">HUNT'S</span>
+                </h3>
+              </Link>
+              <p className="mb-6 max-w-xs text-sm leading-relaxed text-muted-foreground">
+                Transforming ideas into powerful digital solutions through innovation and expertise.
+              </p>
+              <div className="space-y-1.5">
+                <span className="text-xs font-semibold tracking-wider text-primary uppercase">Get in Touch</span>
+                <a
+                  href="mailto:contact@codehuntspk.com"
+                  className="block text-sm text-muted-foreground transition-colors hover:text-primary"
+                >
+                  contact@codehuntspk.com
+                </a>
+              </div>
+            </div>
+
+            {/* Quick Links */}
+            <div>
+              <h4 className="mb-5 text-sm font-semibold tracking-wider uppercase">Quick Links</h4>
+              <ul className="space-y-3">
+                {quickLinks.map((link, i) => (
+                  <li key={i}>
+                    <Link
+                      to={link.href}
+                      className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Services */}
+            <div>
+              <h4 className="mb-5 text-sm font-semibold tracking-wider uppercase">Services</h4>
+              <ul className="space-y-3">
+                {serviceLinks.map((link, i) => (
+                  <li key={i}>
+                    <Link
+                      to={link.href}
+                      className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Social */}
+            <div>
+              <h4 className="mb-5 text-sm font-semibold tracking-wider uppercase">Connect With Us</h4>
+              <p className="mb-5 text-sm leading-relaxed text-muted-foreground">
+                Follow us for updates, insights, and the latest in software development.
+              </p>
+              <div className="flex gap-2">
+                {socialLinks.map((social, i) => {
+                  const Icon = social.icon;
+                  return (
+                    <a
+                      key={i}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={social.label}
+                      className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/[0.06] text-muted-foreground transition-all duration-300 hover:bg-primary/20 hover:text-primary"
+                    >
+                      <Icon />
+                    </a>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom bar */}
+          <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/[0.06] pt-8 sm:flex-row">
+            <span className="text-xs text-muted-foreground">
+              © 2023 - {new Date().getFullYear()} Code HUNT'S, Inc. All rights reserved.
+            </span>
+            <Link
+              to="/terms"
+              className="text-xs text-muted-foreground transition-colors hover:text-primary"
+            >
+              Terms & Conditions
+            </Link>
+          </div>
+        </div>
+      </footer>
+    </>
+  );
+}
+

@@ -1,54 +1,61 @@
 import React from "react";
-import { Card, CardContent } from "@/components/ui/card";
 import { Star, Users, Briefcase, Calendar } from "lucide-react";
 import { useCountUp, useIntersectionObserver } from "@/hooks/useCountUp";
 
 const stats = [
   {
-    icon: <Calendar className="h-8 w-8 text-blue-600" />,
+    icon: Calendar,
     value: 2,
     suffix: "+",
     label: "Years Experience",
+    color: "text-blue-400",
+    bgColor: "bg-blue-400/10",
   },
   {
-    icon: <Briefcase className="h-8 w-8 text-green-600" />,
+    icon: Briefcase,
     value: 100,
     suffix: "+",
     label: "Projects Completed",
+    color: "text-emerald-400",
+    bgColor: "bg-emerald-400/10",
   },
   {
-    icon: <Star className="h-8 w-8 text-yellow-600" />,
+    icon: Star,
     value: 3.9,
     suffix: "/5",
     label: "Trustpilot Rating",
     decimals: 1,
+    color: "text-amber-400",
+    bgColor: "bg-amber-400/10",
   },
   {
-    icon: <Users className="h-8 w-8 text-purple-600" />,
+    icon: Users,
     value: 150,
     suffix: "+",
     label: "Happy Customers",
+    color: "text-purple-400",
+    bgColor: "bg-purple-400/10",
   },
 ];
 
-// Individual animated stat component
 const AnimatedStat: React.FC<{
   stat: (typeof stats)[0];
   startAnimation: boolean;
 }> = ({ stat, startAnimation }) => {
   const animatedValue = useCountUp(stat.value, 2000, stat.decimals || 0, startAnimation);
+  const Icon = stat.icon;
 
   return (
-    <Card className="p-6 text-center shadow-md">
-      <CardContent>
-        <div className="mb-4 flex justify-center">{stat.icon}</div>
-        <div className="text-4xl font-bold text-gray-900 dark:text-white">
-          {animatedValue}
-          {stat.suffix}
-        </div>
-        <p className="text-sm text-gray-600 dark:text-gray-300">{stat.label}</p>
-      </CardContent>
-    </Card>
+    <div className="group relative overflow-hidden rounded-2xl border border-white/[0.06] bg-card/50 p-6 text-center transition-all duration-500 hover:border-white/[0.12]">
+      <div className={`mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl ${stat.bgColor} transition-transform duration-300 group-hover:scale-110`}>
+        <Icon className={`h-5 w-5 ${stat.color}`} />
+      </div>
+      <div className="text-3xl font-bold text-white">
+        {animatedValue}
+        <span className="text-muted-foreground">{stat.suffix}</span>
+      </div>
+      <p className="mt-1 text-sm text-muted-foreground">{stat.label}</p>
+    </div>
   );
 };
 
@@ -56,16 +63,22 @@ const CompanyStats: React.FC = () => {
   const [sectionRef, isVisible] = useIntersectionObserver<HTMLElement>();
 
   return (
-    <section ref={sectionRef} className="bg-black py-16">
-      <div className="container mx-auto px-4 sm:px-0">
-        <div className="mb-12 text-center">
-          <h2 className="mb-4 text-3xl font-bold md:text-4xl">Our Success Story</h2>
-          <p className="mx-auto max-w-2xl text-lg">
+    <section ref={sectionRef} className="relative py-24">
+      <div className="section-divider mb-24" />
+      <div className="container mx-auto px-4 lg:px-6">
+        <div className="mb-16 text-center">
+          <span className="mb-4 inline-block text-sm font-semibold tracking-wider text-primary uppercase">
+            Our Track Record
+          </span>
+          <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl">
+            Our Success Story
+          </h2>
+          <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
             Numbers that speak for our commitment to excellence and client satisfaction
           </p>
         </div>
 
-        <div className="mx-auto grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div className="mx-auto grid max-w-4xl grid-cols-2 gap-5 lg:grid-cols-4">
           {stats.map((stat, index) => (
             <AnimatedStat key={index} stat={stat} startAnimation={isVisible} />
           ))}

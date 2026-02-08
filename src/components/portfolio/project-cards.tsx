@@ -17,22 +17,22 @@ export default function ProjectCards() {
   ];
 
   return (
-    <div className={"bg-black"}>
-      <div className={"container mx-auto px-4 py-8 sm:px-0"}>
-        <div className="mb-12 flex flex-wrap justify-center gap-4">
+    <div className="py-12">
+      <div className="container mx-auto px-4 lg:px-6">
+        {/* Filter Buttons */}
+        <div className="mb-12 flex flex-wrap justify-center gap-3">
           {categories.map((category) => {
             const IconComponent = category.icon;
             return (
               <Button
-                size={"md"}
                 key={category.id}
                 onClick={() => setSelectedCategory(category.id)}
-                className={`flex items-center rounded-full px-4 py-6 font-medium transition-all duration-200 ${selectedCategory === category.id
-                  ? "scale-105 transform bg-orange-400 text-white shadow-lg hover:bg-orange-500"
-                  : "border border-white bg-transparent text-white shadow-md hover:border-orange-400 hover:bg-orange-400 hover:shadow-lg"
+                className={`rounded-full px-5 py-5 text-sm font-medium transition-all duration-300 ${selectedCategory === category.id
+                    ? "bg-primary text-primary-foreground shadow-lg shadow-primary/25"
+                    : "border border-white/[0.08] bg-transparent text-muted-foreground hover:border-primary/30 hover:text-white"
                   }`}
               >
-                <IconComponent className="h-5 w-5" />
+                <IconComponent className="h-4 w-4" />
                 {category.name}
               </Button>
             );
@@ -40,55 +40,56 @@ export default function ProjectCards() {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => (
             <div
               key={project.id}
-              className="bg-accent group transform cursor-pointer overflow-hidden rounded-2xl shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
+              className="group cursor-pointer overflow-hidden rounded-2xl border border-white/[0.06] bg-card/50 transition-all duration-500 hover:border-white/[0.12] hover:bg-card"
               onClick={() => setSelectedProject(project)}
             >
               <div className="relative overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-110"
+                  className="h-48 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
               </div>
 
-              <div className="p-6">
-                <h3 className="mb-2 text-xl font-bold transition-colors duration-200">
-                  {project.title}
-                </h3>
-                <p className="mb-4 line-clamp-2">{project.description}</p>
+              <div className="p-5">
+                <h3 className="mb-2 text-base font-semibold text-white">{project.title}</h3>
+                <p className="mb-4 line-clamp-2 text-sm text-muted-foreground">
+                  {project.description}
+                </p>
 
-                <div className="mb-4 flex flex-wrap gap-2">
+                <div className="mb-4 flex flex-wrap gap-1.5">
                   {project.tags.slice(0, 3).map((tag, index) => (
                     <span
                       key={index}
-                      className="rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-600"
+                      className="rounded-md bg-white/[0.06] px-2 py-0.5 text-xs font-medium text-muted-foreground"
                     >
                       {tag}
                     </span>
                   ))}
                   {project.tags.length > 3 && (
-                    <span className="rounded-md bg-gray-100 px-2 py-1 text-xs text-gray-600">
-                      +{project.tags.length - 3} more
+                    <span className="rounded-md bg-white/[0.06] px-2 py-0.5 text-xs text-muted-foreground">
+                      +{project.tags.length - 3}
                     </span>
                   )}
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center text-sm">
-                    <Calendar className="mr-1 h-4 w-4" />
+                  <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+                    <Calendar className="h-3.5 w-3.5" />
                     {project.completedDate}
                   </div>
                   <div className="flex gap-2">
                     {project.demoUrl && (
-                      <ExternalLink className="h-5 w-5 transition-colors duration-200" />
+                      <ExternalLink className="h-4 w-4 text-muted-foreground transition-colors hover:text-primary" />
                     )}
                     {project.githubUrl && (
-                      <Github className="h-5 w-5 transition-colors duration-200" />
+                      <Github className="h-4 w-4 text-muted-foreground transition-colors hover:text-primary" />
                     )}
                   </div>
                 </div>

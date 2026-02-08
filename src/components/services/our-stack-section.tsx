@@ -5,11 +5,14 @@ interface OurStackSectionProp {
 
 export default function OurStackSection({ image, title }: OurStackSectionProp) {
   return (
-    <div
-      className={"bg-accent flex flex-col items-center justify-center gap-4 rounded-lg border p-5"}
-    >
-      <img src={image} alt={title} className={"w-16"} />
-      <h1>{title}</h1>
+    <div className="group flex flex-col items-center justify-center gap-3 rounded-2xl border border-white/[0.06] bg-card/50 p-6 transition-all duration-300 hover:border-white/[0.12] hover:bg-card">
+      <img
+        src={image}
+        alt={title}
+        className="w-12 transition-transform duration-300 group-hover:scale-110"
+        loading="lazy"
+      />
+      <span className="text-sm font-medium text-muted-foreground">{title}</span>
     </div>
   );
 }

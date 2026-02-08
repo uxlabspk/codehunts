@@ -1,94 +1,61 @@
 import TeamCard from "@/components/common/team-card.tsx";
 import { Github, Linkedin, Twitter } from "lucide-react";
 
+const teamMembers = [
+  { img: "team/naveed.png", name: "Muhammad Naveed", position: "Software Engineer" },
+  { img: "team/hamza.png", name: "Hamza Waheed", position: "Data Scientist" },
+  { img: "team/Usama.png", name: "Muhammad Usama", position: "SEO Expert" },
+  { img: "team/shazil-index.png", name: "Muhammad Shazil", position: "Web Developer" },
+];
+
+const SocialLinks = () => (
+  <div className="flex items-center justify-center gap-3">
+    {[
+      { icon: Github, href: "https://github.com/" },
+      { icon: Linkedin, href: "https://linkedin.com/in/" },
+      { icon: Twitter, href: "https://twitter.com/" },
+    ].map(({ icon: Icon, href }, i) => (
+      <a
+        key={i}
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/[0.06] text-muted-foreground transition-all duration-300 hover:bg-primary/20 hover:text-primary"
+      >
+        <Icon className="h-4 w-4" />
+      </a>
+    ))}
+  </div>
+);
+
 export default function TeamSection() {
   return (
-    <section id="portfolio" className="bg-black py-20">
-      <div className="container mx-auto px-4 sm:px-0">
+    <section className="relative py-24">
+      <div className="section-divider mb-24" />
+      <div className="container mx-auto px-4 lg:px-6">
         <div className="mb-16 text-center">
-          <h2 className="mb-4 text-3xl font-bold sm:text-4xl">Our Team</h2>
-          <p className="mx-auto max-w-2xl text-lg">
-            Meet the talented professionals behind our success—dedicated, skilled, and passionate
+          <span className="mb-4 inline-block text-sm font-semibold tracking-wider text-primary uppercase">
+            Our People
+          </span>
+          <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
+            Meet Our Team
+          </h2>
+          <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
+            Meet the talented professionals behind our success — dedicated, skilled, and passionate
             about delivering exceptional results.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          <TeamCard
-            img={"team/naveed.png"}
-            name={"Muhammad Naveed"}
-            position={"Software Engineer"}
-            socials={
-              <div className="flex items-center justify-center gap-4">
-                <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary transition-colors">
-                  <Github className="w-5 h-5" />
-                </a>
-                <a href="https://linkedin.com/in/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary transition-colors">
-                  <Linkedin className="w-5 h-5" />
-                </a>
-                <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary transition-colors">
-                  <Twitter className="w-5 h-5" />
-                </a>
-              </div>
-            }
-          />
-
-          <TeamCard
-            img={"team/hamza.png"}
-            name={"Hamza Waheed"}
-            position={"Data Scientist"}
-            socials={
-              <div className="flex items-center justify-center gap-4">
-                <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary transition-colors">
-                  <Github className="w-5 h-5" />
-                </a>
-                <a href="https://linkedin.com/in/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary transition-colors">
-                  <Linkedin className="w-5 h-5" />
-                </a>
-                <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary transition-colors">
-                  <Twitter className="w-5 h-5" />
-                </a>
-              </div>
-            }
-          />
-
-          <TeamCard
-            img={"team/Usama.png"}
-            name={"Muhammad Usama"}
-            position={"SEO Expert"}
-            socials={
-              <div className="flex items-center justify-center gap-4">
-                <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary transition-colors">
-                  <Github className="w-5 h-5" />
-                </a>
-                <a href="https://linkedin.com/in/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary transition-colors">
-                  <Linkedin className="w-5 h-5" />
-                </a>
-                <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary transition-colors">
-                  <Twitter className="w-5 h-5" />
-                </a>
-              </div>
-            }
-          />
-
-          <TeamCard
-            img={"team/shazil-index.png"}
-            name={"Muhammad Shazil"}
-            position={"Web Developer"}
-            socials={
-              <div className="flex items-center justify-center gap-4">
-                <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary transition-colors">
-                  <Github className="w-5 h-5" />
-                </a>
-                <a href="https://linkedin.com/in/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary transition-colors">
-                  <Linkedin className="w-5 h-5" />
-                </a>
-                <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary transition-colors">
-                  <Twitter className="w-5 h-5" />
-                </a>
-              </div>
-            }
-          />
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {teamMembers.map((member, index) => (
+            <TeamCard
+              key={index}
+              img={member.img}
+              name={member.name}
+              position={member.position}
+              socials={<SocialLinks />}
+            />
+          ))}
         </div>
       </div>
     </section>

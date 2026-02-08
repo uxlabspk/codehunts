@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button.tsx";
 import { Input } from "@/components/ui/input.tsx";
 import { Label } from "@/components/ui/label.tsx";
 import { Textarea } from "@/components/ui/textarea.tsx";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, ArrowRight } from "lucide-react";
 import { config } from "@/config/env";
 
 export default function ContactSection() {
@@ -28,7 +28,6 @@ export default function ContactSection() {
     setError("");
 
     try {
-      // Create email content
       const subject = encodeURIComponent(formData.subject || "Contact Form Submission");
       const body = encodeURIComponent(
         `Name: ${formData.name}\n` +
@@ -36,7 +35,6 @@ export default function ContactSection() {
         `Message:\n${formData.message}`
       );
 
-      // Open mailto link
       window.location.href = `mailto:${config.contact.email}?subject=${subject}&body=${body}`;
 
       setIsSuccess(true);
@@ -50,11 +48,17 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="bg-black py-20">
-      <div className="container mx-auto px-4 sm:px-0">
+    <section id="contact" className="relative py-24">
+      <div className="section-divider mb-24" />
+      <div className="container mx-auto px-4 lg:px-6">
         <div className="mb-16 text-center">
-          <h2 className="mb-4 text-3xl font-bold sm:text-4xl">Get In Touch</h2>
-          <p className="mx-auto max-w-2xl text-lg">
+          <span className="mb-4 inline-block text-sm font-semibold tracking-wider text-primary uppercase">
+            Contact
+          </span>
+          <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
+            Get In Touch
+          </h2>
+          <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
             Ready to transform your business with innovative software solutions? Let's discuss your
             project.
           </p>
@@ -63,68 +67,63 @@ export default function ContactSection() {
         <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2">
           <div className="space-y-8">
             <div>
-              <h3 className="mb-4 text-3xl font-bold">Let's Build Something Amazing Together</h3>
-              <p className="text-lg leading-relaxed text-gray-300">
-                Have a project in mind? We're here to turn your ideas into reality with
-                custom software, AI solutions, and cloud services.
+              <h3 className="mb-4 text-2xl font-bold tracking-tight lg:text-3xl">
+                Let's Build Something Amazing Together
+              </h3>
+              <p className="text-lg leading-relaxed text-muted-foreground">
+                Have a project in mind? We're here to turn your ideas into reality with custom
+                software, AI solutions, and cloud services.
               </p>
             </div>
 
-            <div className="space-y-6">
-              <div>
-                <h4 className="mb-3 text-xl font-semibold">Why Reach Out?</h4>
-                <ul className="space-y-3 text-gray-300">
-                  <li className="flex items-start">
-                    <span className="mr-3 mt-1 text-primary">✓</span>
-                    <span>Free consultation to discuss your project needs</span>
+            <div className="space-y-4">
+              <h4 className="text-base font-semibold">Why Reach Out?</h4>
+              <ul className="space-y-3">
+                {[
+                  "Free consultation to discuss your project needs",
+                  "Expert guidance on the best tech stack for your goals",
+                  "Transparent pricing and timeline estimates",
+                  "Quick response within 24 hours",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                    <span className="text-sm text-muted-foreground">{item}</span>
                   </li>
-                  <li className="flex items-start">
-                    <span className="mr-3 mt-1 text-primary">✓</span>
-                    <span>Expert guidance on the best tech stack for your goals</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-3 mt-1 text-primary">✓</span>
-                    <span>Transparent pricing and timeline estimates</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-3 mt-1 text-primary">✓</span>
-                    <span>Quick response within 24 hours</span>
-                  </li>
-                </ul>
-              </div>
+                ))}
+              </ul>
+            </div>
 
-              <div className="rounded-xl bg-accent/50 p-6 backdrop-blur-sm">
-                <h4 className="mb-2 font-semibold">Email Us</h4>
-                <a
-                  href="mailto:contact@codehuntspk.com"
-                  className="text-lg text-primary hover:underline"
-                >
-                  contact@codehuntspk.com
-                </a>
-                <p className="mt-2 text-sm text-gray-400">
-                  We typically respond within 24 hours
-                </p>
-              </div>
+            <div className="rounded-xl border border-white/[0.06] bg-card/50 p-6">
+              <h4 className="mb-1 text-sm font-semibold">Email Us</h4>
+              <a
+                href="mailto:contact@codehuntspk.com"
+                className="text-primary transition-opacity hover:opacity-80"
+              >
+                contact@codehuntspk.com
+              </a>
+              <p className="mt-2 text-xs text-muted-foreground">
+                We typically respond within 24 hours
+              </p>
             </div>
           </div>
 
-          <div className="bg-accent rounded-2xl p-8 shadow-lg">
-            <form className="space-y-6" id="contactForm" onSubmit={handleSubmit}>
+          <div className="rounded-2xl border border-white/[0.06] bg-card/80 p-6 shadow-xl sm:p-8">
+            <form className="space-y-5" id="contactForm" onSubmit={handleSubmit}>
               {isSuccess && (
-                <div className="rounded-md bg-green-50 p-4 flex items-center gap-2 text-green-800">
-                  <CheckCircle2 className="h-5 w-5" />
-                  <p className="text-sm">Message sent successfully! We'll get back to you soon.</p>
+                <div className="flex items-center gap-3 rounded-xl border border-green-500/20 bg-green-500/10 p-4">
+                  <CheckCircle2 className="h-4 w-4 text-green-400" />
+                  <p className="text-sm text-green-400">Message sent successfully!</p>
                 </div>
               )}
 
               {error && (
-                <div className="rounded-md bg-red-50 p-4">
-                  <p className="text-sm text-red-800">{error}</p>
+                <div className="rounded-xl border border-red-500/20 bg-red-500/10 p-4">
+                  <p className="text-sm text-red-400">{error}</p>
                 </div>
               )}
 
               <div>
-                <Label htmlFor="name" className="mb-2 block">
+                <Label htmlFor="name" className="mb-2 block text-sm">
                   Full Name
                 </Label>
                 <Input
@@ -135,11 +134,12 @@ export default function ContactSection() {
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="Enter your full name"
+                  className="rounded-xl"
                 />
               </div>
 
               <div>
-                <Label htmlFor="email" className="mb-2 block">
+                <Label htmlFor="email" className="mb-2 block text-sm">
                   Email Address
                 </Label>
                 <Input
@@ -150,11 +150,12 @@ export default function ContactSection() {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="your.email@example.com"
+                  className="rounded-xl"
                 />
               </div>
 
               <div>
-                <Label htmlFor="subject" className="mb-2 block">
+                <Label htmlFor="subject" className="mb-2 block text-sm">
                   Subject
                 </Label>
                 <Input
@@ -165,11 +166,12 @@ export default function ContactSection() {
                   value={formData.subject}
                   onChange={handleChange}
                   placeholder="Brief description of your inquiry"
+                  className="rounded-xl"
                 />
               </div>
 
               <div>
-                <Label htmlFor="message" className="mb-2 block">
+                <Label htmlFor="message" className="mb-2 block text-sm">
                   Message
                 </Label>
                 <Textarea
@@ -179,13 +181,19 @@ export default function ContactSection() {
                   required
                   value={formData.message}
                   onChange={handleChange}
-                  className="resize-none"
-                  placeholder="Tell us about your project requirements, timeline, and any specific details..."
+                  className="resize-none rounded-xl"
+                  placeholder="Tell us about your project requirements..."
                 />
               </div>
 
-              <Button size={"lg"} type="submit" className="w-full rounded-full" disabled={isSubmitting}>
+              <Button
+                size="lg"
+                type="submit"
+                className="w-full rounded-full shadow-lg shadow-primary/25"
+                disabled={isSubmitting}
+              >
                 {isSubmitting ? "Sending..." : "Send Message"}
+                <ArrowRight className="h-4 w-4" />
               </Button>
             </form>
           </div>

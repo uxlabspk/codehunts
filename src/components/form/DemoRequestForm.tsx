@@ -116,11 +116,15 @@ export default function EnhancedDemoForm() {
     }
   };
   return (
-    <section id="contact" className="bg-black py-20">
-      <div className="container mx-auto px-4 sm:px-0">
+    <section id="contact" className="relative py-24">
+      <div className="section-divider mb-24" />
+      <div className="container mx-auto px-4 lg:px-6">
         <div className="mb-16 text-center">
-          <h2 className="mb-4 text-3xl font-bold sm:text-4xl">Request a Free Demo</h2>
-          <p className="mx-auto max-w-2xl text-lg">
+          <span className="mb-4 inline-block text-sm font-semibold tracking-wider text-primary uppercase">
+            Get Started
+          </span>
+          <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">Request a Free Demo</h2>
+          <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
             Fill out the form below and our team will contact you within 24 hours
           </p>
         </div>
@@ -128,8 +132,8 @@ export default function EnhancedDemoForm() {
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
           <div className="space-y-8">
             <div>
-              <h3 className="mb-4 text-3xl font-bold">Ready to Transform Your Vision Into Reality?</h3>
-              <p className="text-lg leading-relaxed text-gray-300">
+              <h3 className="mb-4 text-3xl font-bold tracking-tight">Ready to Transform Your Vision Into Reality?</h3>
+              <p className="text-lg leading-relaxed text-muted-foreground">
                 Schedule a free demo and discover how our innovative solutions can accelerate your business growth
                 with cutting-edge technology and expert guidance.
               </p>
@@ -138,31 +142,31 @@ export default function EnhancedDemoForm() {
             <div className="space-y-6">
               <div>
                 <h4 className="mb-3 text-xl font-semibold">What You'll Get:</h4>
-                <ul className="space-y-3 text-gray-300">
+                <ul className="space-y-3 text-muted-foreground">
                   <li className="flex items-start">
-                    <span className="mr-3 mt-1 text-primary">✓</span>
+                    <CheckCircle2 className="mr-3 mt-0.5 h-5 w-5 shrink-0 text-primary" />
                     <span>Personalized demo tailored to your specific business needs</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="mr-3 mt-1 text-primary">✓</span>
+                    <CheckCircle2 className="mr-3 mt-0.5 h-5 w-5 shrink-0 text-primary" />
                     <span>Expert consultation on technology stack and implementation strategy</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="mr-3 mt-1 text-primary">✓</span>
+                    <CheckCircle2 className="mr-3 mt-0.5 h-5 w-5 shrink-0 text-primary" />
                     <span>Detailed project roadmap with timeline and cost estimates</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="mr-3 mt-1 text-primary">✓</span>
+                    <CheckCircle2 className="mr-3 mt-0.5 h-5 w-5 shrink-0 text-primary" />
                     <span>Response within 24 hours from our team of experts</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="mr-3 mt-1 text-primary">✓</span>
+                    <CheckCircle2 className="mr-3 mt-0.5 h-5 w-5 shrink-0 text-primary" />
                     <span>No commitment required - completely free consultation</span>
                   </li>
                 </ul>
               </div>
 
-              <div className="rounded-xl bg-accent/50 p-6 backdrop-blur-sm">
+              <div className="rounded-xl border border-white/[0.06] bg-card/50 p-6 backdrop-blur-sm">
                 <h4 className="mb-2 font-semibold">Questions? Email Us</h4>
                 <a
                   href={`mailto:${config.contact.email}`}
@@ -170,14 +174,14 @@ export default function EnhancedDemoForm() {
                 >
                   {config.contact.email}
                 </a>
-                <p className="mt-2 text-sm text-gray-400">
+                <p className="mt-2 text-sm text-muted-foreground">
                   Our team is ready to help you succeed
                 </p>
               </div>
             </div>
           </div>
 
-          <div className="bg-accent rounded-2xl px-4 py-6 shadow-lg sm:p-8">
+          <div className="rounded-2xl border border-white/[0.06] bg-card/50 px-4 py-6 shadow-lg sm:p-8">
             {isSuccess && (
               <div className="mb-6 flex items-center gap-3 rounded-lg border border-green-500/50 bg-green-500/10 p-4">
                 <CheckCircle2 className="h-5 w-5 text-green-500" />

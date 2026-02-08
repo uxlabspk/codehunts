@@ -1,6 +1,5 @@
 import React from "react";
 import { CheckCircle } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card.tsx";
 
 interface UseCaseProps {
   icon: React.ReactNode;
@@ -19,27 +18,23 @@ const UseCase: React.FC<UseCaseProps> = ({
   iconBgColor,
   iconColor,
 }) => (
-  <Card>
-    <CardHeader>
-      <span
-        className={`icon-circle ${iconBgColor} ${iconColor} mb-6 flex h-14 w-14 items-center justify-center rounded-xl transition-all duration-300 hover:scale-110`}
-      >
-        {icon}
-      </span>
-      <CardTitle>{title}</CardTitle>
-    </CardHeader>
-    <CardContent>
-      {description} <br />
-      <ul className="mt-5 space-y-2 text-sm">
-        {features.map((feature, index) => (
-          <li key={index} className="flex items-center">
-            <CheckCircle className="mr-2 h-4 w-4 text-green-500" />
-            {feature}
-          </li>
-        ))}
-      </ul>
-    </CardContent>
-  </Card>
+  <div className="group relative overflow-hidden rounded-2xl border border-white/[0.06] bg-card/50 p-6 transition-all duration-500 hover:border-white/[0.12] hover:bg-card">
+    <div
+      className={`mb-5 flex h-12 w-12 items-center justify-center rounded-xl ${iconBgColor} ${iconColor} transition-transform duration-300 group-hover:scale-110`}
+    >
+      {icon}
+    </div>
+    <h3 className="mb-2 text-base font-semibold text-white">{title}</h3>
+    <p className="mb-4 text-sm leading-relaxed text-muted-foreground">{description}</p>
+    <ul className="space-y-2">
+      {features.map((feature, index) => (
+        <li key={index} className="flex items-center gap-2 text-sm text-muted-foreground">
+          <CheckCircle className="h-3.5 w-3.5 shrink-0 text-emerald-400" />
+          {feature}
+        </li>
+      ))}
+    </ul>
+  </div>
 );
 
 export default UseCase;

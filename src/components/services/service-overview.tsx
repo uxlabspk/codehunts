@@ -18,30 +18,33 @@ export default function ServiceOverview({
   const [imageLoaded, setImageLoaded] = useState(false);
 
   return (
-    <section className="bg-black px-4 sm:px-0 sm:py-20">
-      <div className="container mx-auto">
+    <section className="relative py-24">
+      <div className="section-divider mb-24" />
+      <div className="container mx-auto px-4 lg:px-6">
         <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
           <div>
-            <h2 className="mb-6 text-3xl font-bold">{title}</h2>
-            <p className="mb-6 text-lg leading-relaxed">{description}</p>
-            <p className="mb-8 text-lg leading-relaxed">{description2}</p>
-
+            <h2 className="mb-6 text-2xl font-bold tracking-tight lg:text-3xl">{title}</h2>
+            <p className="mb-4 text-base leading-relaxed text-muted-foreground">{description}</p>
+            <p className="mb-8 text-base leading-relaxed text-muted-foreground">{description2}</p>
             {card}
           </div>
-          <div className="relative flex items-center justify-end sm:justify-center">
-            {!imageLoaded && (
-              <div className="absolute inset-0 overflow-hidden rounded-2xl shadow-2xl">
-                <div className="h-full w-full animate-pulse bg-gray-800">
-                  <div className="animate-shimmer h-full w-full bg-gradient-to-r from-gray-800 via-gray-700 to-gray-800"></div>
+          <div className="relative">
+            {/* Decorative glow */}
+            <div className="absolute -inset-4 rounded-3xl bg-primary/[0.03] blur-2xl" />
+            <div className="relative">
+              {!imageLoaded && (
+                <div className="overflow-hidden rounded-2xl border border-white/[0.06]">
+                  <div className="h-80 w-full animate-pulse bg-card" />
                 </div>
-              </div>
-            )}
-            <img
-              src={image}
-              alt="image of our services"
-              className={`rounded-2xl shadow-2xl transition-opacity duration-300 ${imageLoaded ? "opacity-100" : "opacity-0"}`}
-              onLoad={() => setImageLoaded(true)}
-            />
+              )}
+              <img
+                src={image}
+                alt="Service illustration"
+                className={`w-full rounded-2xl border border-white/[0.06] shadow-2xl transition-opacity duration-500 ${imageLoaded ? "opacity-100" : "opacity-0"}`}
+                onLoad={() => setImageLoaded(true)}
+                loading="lazy"
+              />
+            </div>
           </div>
         </div>
       </div>

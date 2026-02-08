@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button.tsx";
 import React from "react";
+import { ArrowRight } from "lucide-react";
 
 interface HeroSectionProps {
   title: string;
@@ -22,24 +23,34 @@ export default function HeroSection({
   category,
 }: HeroSectionProps) {
   return (
-    <div className={"w-full overflow-hidden bg-black px-4 sm:px-0"}>
+    <div className="relative w-full overflow-hidden">
       {/* Grid Background */}
       <div className="bg-grid pointer-events-none absolute inset-0" />
-      <div
-        className={
-          "container mx-auto flex h-[60vh] flex-col items-center justify-center text-center"
-        }
-      >
+
+      {/* Ambient glow */}
+      <div className="absolute top-1/3 left-1/2 h-[400px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/[0.03] blur-[100px]" />
+
+      <div className="container mx-auto flex min-h-[50vh] flex-col items-center justify-center px-4 py-24 text-center lg:px-6">
         {hasCategory && (
-          <div className="mb-6 inline-flex items-center rounded-full border border-gray-50 bg-transparent px-4 py-2 text-sm font-medium text-gray-50">
+          <div className="mb-6 inline-flex items-center rounded-full border border-primary/20 bg-primary/[0.06] px-4 py-1.5 text-sm font-medium text-primary">
             {category}
           </div>
         )}
-        <h2 className="mb-4 text-3xl font-bold sm:text-4xl">{title}</h2>
-        <p className="mx-auto max-w-2xl text-lg">{description}</p>
+        <h1 className="mb-5 max-w-3xl text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
+          {title}
+        </h1>
+        <p className="mx-auto max-w-2xl text-lg leading-relaxed text-muted-foreground">
+          {description}
+        </p>
         {hasLinks && (
-          <Link to={linkUrl ? linkUrl : ""}>
-            <Button className={"rounded-full px-14 py-6 text-lg"}>{linkText}</Button>
+          <Link to={linkUrl || ""} className="mt-8">
+            <Button
+              size="lg"
+              className="rounded-full px-8 py-6 text-base shadow-lg shadow-primary/25 transition-shadow hover:shadow-primary/40"
+            >
+              {linkText}
+              <ArrowRight className="h-4 w-4" />
+            </Button>
           </Link>
         )}
       </div>

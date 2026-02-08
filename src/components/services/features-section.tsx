@@ -1,5 +1,4 @@
 import React from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card.tsx";
 
 interface FeatureProps {
   icon: React.ReactNode;
@@ -9,17 +8,15 @@ interface FeatureProps {
 }
 
 const Feature: React.FC<FeatureProps> = ({ icon, title, description, iconBgColor }) => (
-  <Card>
-    <CardHeader>
-      <span
-        className={`icon-circle ${iconBgColor} mb-6 flex h-14 w-14 items-center justify-center rounded-xl transition-all duration-300 hover:scale-110`}
-      >
-        {icon}
-      </span>
-      <CardTitle>{title}</CardTitle>
-    </CardHeader>
-    <CardContent>{description}</CardContent>
-  </Card>
+  <div className="group relative overflow-hidden rounded-2xl border border-white/[0.06] bg-card/50 p-6 transition-all duration-500 hover:border-white/[0.12] hover:bg-card">
+    <div
+      className={`mb-5 flex h-12 w-12 items-center justify-center rounded-xl ${iconBgColor} transition-transform duration-300 group-hover:scale-110`}
+    >
+      {icon}
+    </div>
+    <h3 className="mb-2 text-base font-semibold text-white">{title}</h3>
+    <p className="text-sm leading-relaxed text-muted-foreground">{description}</p>
+  </div>
 );
 
 export default Feature;

@@ -126,17 +126,17 @@ export default function AI() {
         }
         card={
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
-            <div className="rounded-xl border-2 p-6 shadow-lg">
-              <div className="mb-2 text-3xl font-bold">92%</div>
-              <div className="">Accuracy Rate</div>
+            <div className="rounded-xl border border-white/[0.06] bg-card/50 p-5">
+              <div className="mb-1 text-2xl font-bold text-white">92%</div>
+              <div className="text-sm text-muted-foreground">Accuracy Rate</div>
             </div>
-            <div className="rounded-xl border-2 p-6 shadow-lg">
-              <div className="mb-2 text-3xl font-bold">70%</div>
-              <div className="">Process Automation</div>
+            <div className="rounded-xl border border-white/[0.06] bg-card/50 p-5">
+              <div className="mb-1 text-2xl font-bold text-white">70%</div>
+              <div className="text-sm text-muted-foreground">Process Automation</div>
             </div>
-            <div className="rounded-xl border-2 p-6 shadow-lg">
-              <div className="mb-2 text-3xl font-bold">50+</div>
-              <div className="">AI Models Deployed</div>
+            <div className="rounded-xl border border-white/[0.06] bg-card/50 p-5">
+              <div className="mb-1 text-2xl font-bold text-white">50+</div>
+              <div className="text-sm text-muted-foreground">AI Models Deployed</div>
             </div>
           </div>
         }
@@ -146,17 +146,21 @@ export default function AI() {
       />
 
       {/* Key Features */}
-      <section className="bg-black px-4 py-20 sm:px-0">
-        <div className="container mx-auto">
+      <section className="relative py-24">
+        <div className="section-divider mb-24" />
+        <div className="container mx-auto px-4 lg:px-6">
           <div className="mb-16 text-center">
-            <h2 className="mb-4 text-3xl font-bold md:text-4xl">Our AI Capabilities</h2>
-            <p className="mx-auto max-w-3xl text-xl">
+            <span className="mb-4 inline-block text-sm font-semibold tracking-wider text-primary uppercase">
+              Capabilities
+            </span>
+            <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">Our AI Capabilities</h2>
+            <p className="mx-auto max-w-3xl text-lg text-muted-foreground">
               Comprehensive artificial intelligence and machine learning services to transform your
               business
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
             {capabilities.map((feature, index) => (
               <Feature key={index} {...feature} />
             ))}
@@ -165,16 +169,20 @@ export default function AI() {
       </section>
 
       {/* Use Case */}
-      <section className="bg-black px-4 py-4 sm:px-0 sm:py-20">
-        <div className="container mx-auto">
+      <section className="relative py-24">
+        <div className="section-divider mb-24" />
+        <div className="container mx-auto px-4 lg:px-6">
           <div className="mb-16 text-center">
-            <h2 className="mb-4 text-3xl font-bold md:text-4xl">Industry Use Cases</h2>
-            <p className="mx-auto max-w-3xl text-xl">
+            <span className="mb-4 inline-block text-sm font-semibold tracking-wider text-primary uppercase">
+              Use Cases
+            </span>
+            <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">Industry Use Cases</h2>
+            <p className="mx-auto max-w-3xl text-lg text-muted-foreground">
               How AI and machine learning are transforming various industries
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
             {useCases.map((useCase, index) => (
               <UseCase key={index} {...useCase} />
             ))}
@@ -183,16 +191,20 @@ export default function AI() {
       </section>
 
       {/* Our Tec Stack Section */}
-      <section className="bg-black px-4 py-20 sm:px-0">
-        <div className="container mx-auto">
+      <section className="relative py-24">
+        <div className="section-divider mb-24" />
+        <div className="container mx-auto px-4 lg:px-6">
           <div className="mb-16 text-center">
-            <h2 className="mb-4 text-3xl font-bold md:text-4xl">AI & ML Frameworks</h2>
-            <p className="mx-auto max-w-3xl text-xl">
+            <span className="mb-4 inline-block text-sm font-semibold tracking-wider text-primary uppercase">
+              Technology
+            </span>
+            <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">AI & ML Frameworks</h2>
+            <p className="mx-auto max-w-3xl text-lg text-muted-foreground">
               Industry-leading frameworks for building intelligent, production-ready AI solutions
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
             <OurStackSection image={TensorFlowIcon} title={"TensorFlow"} />
             <OurStackSection image={PyTorchIcon} title={"PyTorch"} />
             <OurStackSection image={KerasIcon} title={"Keras"} />
