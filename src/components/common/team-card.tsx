@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 interface TeamCardProps {
   img: string;
   name: string;
@@ -7,7 +9,11 @@ interface TeamCardProps {
 
 export default function TeamCard({ img, name, position, socials }: TeamCardProps) {
   return (
-    <div className="group relative overflow-hidden rounded-2xl border border-white/[0.06] bg-card/50 p-6 text-center transition-all duration-500 hover:border-white/[0.12] hover:bg-card">
+    <motion.div
+      whileHover={{ y: -8, scale: 1.02 }}
+      transition={{ duration: 0.3 }}
+      className="group relative overflow-hidden rounded-2xl border border-white/[0.06] bg-card/50 p-6 text-center transition-all duration-500 hover:border-white/[0.12] hover:bg-card"
+    >
       {/* Hover glow */}
       <div className="absolute inset-0 bg-gradient-to-b from-primary/[0.04] to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
@@ -33,6 +39,6 @@ export default function TeamCard({ img, name, position, socials }: TeamCardProps
           {socials}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

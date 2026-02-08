@@ -8,6 +8,7 @@ import GoogleCloud from "@/assets/Cloud_tech_stack/google-cloud.svg";
 import MultiCloud from "@/assets/Cloud_tech_stack/multi-cloud.svg";
 import CTASection from "@/components/common/cta-section.tsx";
 import Feature from "@/components/services/features-section.tsx";
+import { motion } from "framer-motion";
 
 export default function CloudSolutions() {
   const features = [
@@ -106,7 +107,13 @@ export default function CloudSolutions() {
       <section className="relative py-24">
         <div className="section-divider mb-24" />
         <div className="container mx-auto px-4 lg:px-6">
-          <div className="mb-16 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mb-16 text-center"
+          >
             <span className="mb-4 inline-block text-sm font-semibold tracking-wider text-primary uppercase">
               Features
             </span>
@@ -116,11 +123,19 @@ export default function CloudSolutions() {
             <p className="mx-auto max-w-3xl text-lg text-muted-foreground">
               Our cloud solutions deliver scalability, security, and cost-efficiency for modern businesses
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
             {features.map((feature, index) => (
-              <Feature key={index} {...feature} />
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <Feature {...feature} />
+              </motion.div>
             ))}
           </div>
         </div>
@@ -130,7 +145,13 @@ export default function CloudSolutions() {
       <section className="relative py-24">
         <div className="section-divider mb-24" />
         <div className="container mx-auto px-4 lg:px-6">
-          <div className="mb-16 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mb-16 text-center"
+          >
             <span className="mb-4 inline-block text-sm font-semibold tracking-wider text-primary uppercase">
               Platforms
             </span>
@@ -138,13 +159,23 @@ export default function CloudSolutions() {
             <p className="mx-auto max-w-3xl text-lg text-muted-foreground">
               Multi-cloud expertise across all major cloud providers
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
-            <OurStackSection image={Aws} title={"Amazon Web Services"} />
-            <OurStackSection image={Azure} title={"Microsoft Azure"} />
-            <OurStackSection image={GoogleCloud} title={"Google Cloud"} />
-            <OurStackSection image={MultiCloud} title={"Multi-Cloud"} />
+            {[Aws, Azure, GoogleCloud, MultiCloud].map((image, index) => {
+              const titles = ["Amazon Web Services", "Microsoft Azure", "Google Cloud", "Multi-Cloud"];
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                >
+                  <OurStackSection image={image} title={titles[index]} />
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>

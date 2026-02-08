@@ -10,6 +10,7 @@ import Illustrator from "@/assets/Graphics_tech_stack/illustrator.svg";
 import Indesign from "@/assets/Graphics_tech_stack/indesign.svg";
 import Photoshop from "@/assets/Graphics_tech_stack/photoshop.svg";
 import Sketch from "@/assets/Graphics_tech_stack/sketch.svg";
+import { motion } from "framer-motion";
 
 export default function Graphics() {
   const features = [
@@ -109,7 +110,13 @@ export default function Graphics() {
       <section className="relative py-24">
         <div className="section-divider mb-24" />
         <div className="container mx-auto px-4 lg:px-6">
-          <div className="mb-16 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mb-16 text-center"
+          >
             <span className="mb-4 inline-block text-sm font-semibold tracking-wider text-primary uppercase">
               Services
             </span>
@@ -117,11 +124,19 @@ export default function Graphics() {
             <p className="mx-auto max-w-3xl text-lg text-muted-foreground">
               Comprehensive graphic design solutions for all your business needs
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
             {features.map((feature, index) => (
-              <Feature key={index} {...feature} />
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <Feature {...feature} />
+              </motion.div>
             ))}
           </div>
         </div>
@@ -131,7 +146,13 @@ export default function Graphics() {
       <section className="relative py-24">
         <div className="section-divider mb-24" />
         <div className="container mx-auto px-4 lg:px-6">
-          <div className="mb-16 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mb-16 text-center"
+          >
             <span className="mb-4 inline-block text-sm font-semibold tracking-wider text-primary uppercase">
               Tools
             </span>
@@ -139,15 +160,23 @@ export default function Graphics() {
             <p className="mx-auto max-w-3xl text-lg text-muted-foreground">
               We work with industry-leading design tools to deliver exceptional visual solutions for your business
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-6">
-            <OurStackSection image={Photoshop} title={"Photoshop"} />
-            <OurStackSection image={Illustrator} title={"Illustration"} />
-            <OurStackSection image={Indesign} title={"InDesign"} />
-            <OurStackSection image={Figma} title={"Figma"} />
-            <OurStackSection image={Sketch} title={"Sketch"} />
-            <OurStackSection image={AfterEffects} title={"After Effects"} />
+            {[Photoshop, Illustrator, Indesign, Figma, Sketch, AfterEffects].map((image, index) => {
+              const titles = ["Photoshop", "Illustration", "InDesign", "Figma", "Sketch", "After Effects"];
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                >
+                  <OurStackSection image={image} title={titles[index]} />
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>

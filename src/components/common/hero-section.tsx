@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button.tsx";
 import React from "react";
 import { ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 interface HeroSectionProps {
   title: string;
@@ -32,26 +33,47 @@ export default function HeroSection({
 
       <div className="container mx-auto flex min-h-[50vh] flex-col items-center justify-center px-4 py-24 text-center lg:px-6">
         {hasCategory && (
-          <div className="mb-6 inline-flex items-center rounded-full border border-primary/20 bg-primary/[0.06] px-4 py-1.5 text-sm font-medium text-primary">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="mb-6 inline-flex items-center rounded-full border border-primary/20 bg-primary/[0.06] px-4 py-1.5 text-sm font-medium text-primary"
+          >
             {category}
-          </div>
+          </motion.div>
         )}
-        <h1 className="mb-5 max-w-3xl text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="mb-5 max-w-3xl text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl"
+        >
           {title}
-        </h1>
-        <p className="mx-auto max-w-2xl text-lg leading-relaxed text-muted-foreground">
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="mx-auto max-w-2xl text-lg leading-relaxed text-muted-foreground"
+        >
           {description}
-        </p>
+        </motion.p>
         {hasLinks && (
-          <Link to={linkUrl || ""} className="mt-8">
-            <Button
-              size="lg"
-              className="rounded-full px-8 py-6 text-base shadow-lg shadow-primary/25 transition-shadow hover:shadow-primary/40"
-            >
-              {linkText}
-              <ArrowRight className="h-4 w-4" />
-            </Button>
-          </Link>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+          >
+            <Link to={linkUrl || ""} className="mt-8">
+              <Button
+                size="lg"
+                className="rounded-full px-8 py-6 text-base shadow-lg shadow-primary/25 transition-shadow hover:shadow-primary/40"
+              >
+                {linkText}
+                <ArrowRight className="h-4 w-4" />
+              </Button>
+            </Link>
+          </motion.div>
         )}
       </div>
     </div>

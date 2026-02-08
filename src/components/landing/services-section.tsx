@@ -8,6 +8,7 @@ import {
   Paintbrush,
   Smartphone,
 } from "lucide-react";
+import { motion } from "framer-motion";
 
 const services = [
   {
@@ -77,7 +78,13 @@ const ServiceSection = () => {
     <section id="services" className="relative py-24">
       <div className="section-divider mb-24" />
       <div className="container mx-auto px-4 lg:px-6">
-        <div className="mb-16 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-16 text-center"
+        >
           <span className="mb-4 inline-block text-sm font-semibold tracking-wider text-primary uppercase">
             What We Do
           </span>
@@ -88,41 +95,48 @@ const ServiceSection = () => {
             Comprehensive software solutions designed to transform your business operations and
             drive growth.
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
-              <Link
+              <motion.div
                 key={index}
-                to={service.href}
-                className="group relative overflow-hidden rounded-2xl border border-white/[0.06] bg-card/50 p-6 transition-all duration-500 hover:border-white/[0.12] hover:bg-card"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                {/* Hover gradient background */}
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 transition-opacity duration-500 group-hover:opacity-100`}
-                />
+                <Link
+                  to={service.href}
+                  className="group relative overflow-hidden rounded-2xl border border-white/[0.06] bg-card/50 p-6 transition-all duration-500 hover:border-white/[0.12] hover:bg-card hover:scale-[1.02] block"
+                >
+                  {/* Hover gradient background */}
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 transition-opacity duration-500 group-hover:opacity-100`}
+                  />
 
-                <div className="relative z-10">
-                  <div className="mb-5 flex items-center justify-between">
-                    <div
-                      className={`flex h-12 w-12 items-center justify-center rounded-xl bg-white/[0.06] transition-colors duration-300 group-hover:bg-white/[0.1]`}
-                    >
-                      <Icon className={`h-5 w-5 ${service.iconColor}`} />
+                  <div className="relative z-10">
+                    <div className="mb-5 flex items-center justify-between">
+                      <div
+                        className={`flex h-12 w-12 items-center justify-center rounded-xl bg-white/[0.06] transition-colors duration-300 group-hover:bg-white/[0.1]`}
+                      >
+                        <Icon className={`h-5 w-5 ${service.iconColor}`} />
+                      </div>
+                      <ArrowUpRight className="h-5 w-5 text-muted-foreground opacity-0 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-white group-hover:opacity-100" />
                     </div>
-                    <ArrowUpRight className="h-5 w-5 text-muted-foreground opacity-0 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-white group-hover:opacity-100" />
-                  </div>
 
-                  <h3 className="mb-1 text-lg font-semibold text-white">{service.title}</h3>
-                  <p className="mb-3 text-xs font-medium tracking-wider text-primary/80 uppercase">
-                    {service.subtitle}
-                  </p>
-                  <p className="text-sm leading-relaxed text-muted-foreground">
-                    {service.description}
-                  </p>
-                </div>
-              </Link>
+                    <h3 className="mb-1 text-lg font-semibold text-white">{service.title}</h3>
+                    <p className="mb-3 text-xs font-medium tracking-wider text-primary/80 uppercase">
+                      {service.subtitle}
+                    </p>
+                    <p className="text-sm leading-relaxed text-muted-foreground">
+                      {service.description}
+                    </p>
+                  </div>
+                </Link>
+              </motion.div>
             );
           })}
         </div>

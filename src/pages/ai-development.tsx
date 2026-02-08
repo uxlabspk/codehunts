@@ -20,6 +20,7 @@ import TensorFlowIcon from "@/assets/AI_tech_stack/tensorflow.svg";
 import PyTorchIcon from "@/assets/AI_tech_stack/pytorch.svg";
 import KerasIcon from "@/assets/AI_tech_stack/keras.svg";
 import ScikitLearnIcon from "@/assets/AI_tech_stack/scikitlearn.svg";
+import { motion } from "framer-motion";
 
 export default function AI() {
   const capabilities = [
@@ -149,7 +150,13 @@ export default function AI() {
       <section className="relative py-24">
         <div className="section-divider mb-24" />
         <div className="container mx-auto px-4 lg:px-6">
-          <div className="mb-16 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mb-16 text-center"
+          >
             <span className="mb-4 inline-block text-sm font-semibold tracking-wider text-primary uppercase">
               Capabilities
             </span>
@@ -158,11 +165,19 @@ export default function AI() {
               Comprehensive artificial intelligence and machine learning services to transform your
               business
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
             {capabilities.map((feature, index) => (
-              <Feature key={index} {...feature} />
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <Feature {...feature} />
+              </motion.div>
             ))}
           </div>
         </div>
@@ -172,7 +187,13 @@ export default function AI() {
       <section className="relative py-24">
         <div className="section-divider mb-24" />
         <div className="container mx-auto px-4 lg:px-6">
-          <div className="mb-16 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mb-16 text-center"
+          >
             <span className="mb-4 inline-block text-sm font-semibold tracking-wider text-primary uppercase">
               Use Cases
             </span>
@@ -180,11 +201,19 @@ export default function AI() {
             <p className="mx-auto max-w-3xl text-lg text-muted-foreground">
               How AI and machine learning are transforming various industries
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
             {useCases.map((useCase, index) => (
-              <UseCase key={index} {...useCase} />
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <UseCase {...useCase} />
+              </motion.div>
             ))}
           </div>
         </div>
@@ -194,7 +223,13 @@ export default function AI() {
       <section className="relative py-24">
         <div className="section-divider mb-24" />
         <div className="container mx-auto px-4 lg:px-6">
-          <div className="mb-16 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mb-16 text-center"
+          >
             <span className="mb-4 inline-block text-sm font-semibold tracking-wider text-primary uppercase">
               Technology
             </span>
@@ -202,13 +237,23 @@ export default function AI() {
             <p className="mx-auto max-w-3xl text-lg text-muted-foreground">
               Industry-leading frameworks for building intelligent, production-ready AI solutions
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
-            <OurStackSection image={TensorFlowIcon} title={"TensorFlow"} />
-            <OurStackSection image={PyTorchIcon} title={"PyTorch"} />
-            <OurStackSection image={KerasIcon} title={"Keras"} />
-            <OurStackSection image={ScikitLearnIcon} title={"Scikit-learn"} />
+            {[TensorFlowIcon, PyTorchIcon, KerasIcon, ScikitLearnIcon].map((image, index) => {
+              const titles = ["TensorFlow", "PyTorch", "Keras", "Scikit-learn"];
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                >
+                  <OurStackSection image={image} title={titles[index]} />
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>

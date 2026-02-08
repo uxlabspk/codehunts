@@ -1,4 +1,5 @@
 import { Lightbulb, Users, Award, TrendingUp } from "lucide-react";
+import { motion } from "framer-motion";
 
 const values = [
   {
@@ -39,7 +40,13 @@ export default function OurValues() {
     <section className="relative py-24">
       <div className="section-divider mb-24" />
       <div className="container mx-auto px-4 lg:px-6">
-        <div className="mb-16 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-16 text-center"
+        >
           <span className="mb-4 inline-block text-sm font-semibold tracking-wider text-primary uppercase">
             Our Principles
           </span>
@@ -49,13 +56,18 @@ export default function OurValues() {
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
             These principles guide everything we do and define who we are as a team.
           </p>
-        </div>
+        </motion.div>
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {values.map((value, index) => {
             const Icon = value.icon;
             return (
-              <div
+              <motion.div
                 key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ y: -8, scale: 1.02 }}
                 className="group relative overflow-hidden rounded-2xl border border-white/[0.06] bg-card/50 p-6 text-center transition-all duration-500 hover:border-white/[0.12] hover:bg-card"
               >
                 <div
@@ -65,7 +77,7 @@ export default function OurValues() {
                 </div>
                 <h3 className={`mb-2 text-lg font-semibold ${value.color}`}>{value.title}</h3>
                 <p className="text-sm leading-relaxed text-muted-foreground">{value.description}</p>
-              </div>
+              </motion.div>
             );
           })}
         </div>

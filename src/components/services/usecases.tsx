@@ -1,5 +1,6 @@
 import React from "react";
 import { CheckCircle } from "lucide-react";
+import { motion } from "framer-motion";
 
 interface UseCaseProps {
   icon: React.ReactNode;
@@ -18,7 +19,11 @@ const UseCase: React.FC<UseCaseProps> = ({
   iconBgColor,
   iconColor,
 }) => (
-  <div className="group relative overflow-hidden rounded-2xl border border-white/[0.06] bg-card/50 p-6 transition-all duration-500 hover:border-white/[0.12] hover:bg-card">
+  <motion.div
+    whileHover={{ y: -8, scale: 1.02 }}
+    transition={{ duration: 0.3 }}
+    className="group relative overflow-hidden rounded-2xl border border-white/[0.06] bg-card/50 p-6 transition-all duration-500 hover:border-white/[0.12] hover:bg-card"
+  >
     <div
       className={`mb-5 flex h-12 w-12 items-center justify-center rounded-xl ${iconBgColor} ${iconColor} transition-transform duration-300 group-hover:scale-110`}
     >
@@ -34,7 +39,7 @@ const UseCase: React.FC<UseCaseProps> = ({
         </li>
       ))}
     </ul>
-  </div>
+  </motion.div>
 );
 
 export default UseCase;

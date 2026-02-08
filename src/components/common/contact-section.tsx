@@ -5,6 +5,7 @@ import { Label } from "@/components/ui/label.tsx";
 import { Textarea } from "@/components/ui/textarea.tsx";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import { config } from "@/config/env";
+import { motion } from "framer-motion";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -51,7 +52,13 @@ export default function ContactSection() {
     <section id="contact" className="relative py-24">
       <div className="section-divider mb-24" />
       <div className="container mx-auto px-4 lg:px-6">
-        <div className="mb-16 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-16 text-center"
+        >
           <span className="mb-4 inline-block text-sm font-semibold tracking-wider text-primary uppercase">
             Contact
           </span>
@@ -62,10 +69,16 @@ export default function ContactSection() {
             Ready to transform your business with innovative software solutions? Let's discuss your
             project.
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2">
-          <div className="space-y-8">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="space-y-8"
+          >
             <div>
               <h3 className="mb-4 text-2xl font-bold tracking-tight lg:text-3xl">
                 Let's Build Something Amazing Together
@@ -105,9 +118,15 @@ export default function ContactSection() {
                 We typically respond within 24 hours
               </p>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="rounded-2xl border border-white/[0.06] bg-card/80 p-6 shadow-xl sm:p-8">
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="rounded-2xl border border-white/[0.06] bg-card/80 p-6 shadow-xl sm:p-8"
+          >
             <form className="space-y-5" id="contactForm" onSubmit={handleSubmit}>
               {isSuccess && (
                 <div className="flex items-center gap-3 rounded-xl border border-green-500/20 bg-green-500/10 p-4">
@@ -196,7 +215,7 @@ export default function ContactSection() {
                 <ArrowRight className="h-4 w-4" />
               </Button>
             </form>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

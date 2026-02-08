@@ -16,6 +16,7 @@ import ReactJS from "@/assets/App_tech_stack/react.svg";
 import Flutter from "@/assets/App_tech_stack/flutter.svg";
 import CTASection from "@/components/common/cta-section.tsx";
 import Feature from "@/components/services/features-section.tsx";
+import { motion } from "framer-motion";
 
 export default function AppDev() {
   const features = [
@@ -115,7 +116,13 @@ export default function AppDev() {
       <section className="relative py-24">
         <div className="section-divider mb-24" />
         <div className="container mx-auto px-4 lg:px-6">
-          <div className="mb-16 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mb-16 text-center"
+          >
             <span className="mb-4 inline-block text-sm font-semibold tracking-wider text-primary uppercase">
               Features
             </span>
@@ -125,11 +132,19 @@ export default function AppDev() {
             <p className="mx-auto max-w-3xl text-lg text-muted-foreground">
               Our mobile app solutions deliver exceptional user experiences that drive engagement and growth
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
             {features.map((feature, index) => (
-              <Feature key={index} {...feature} />
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <Feature {...feature} />
+              </motion.div>
             ))}
           </div>
         </div>
@@ -139,7 +154,13 @@ export default function AppDev() {
       <section className="relative py-24">
         <div className="section-divider mb-24" />
         <div className="container mx-auto px-4 lg:px-6">
-          <div className="mb-16 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mb-16 text-center"
+          >
             <span className="mb-4 inline-block text-sm font-semibold tracking-wider text-primary uppercase">
               Technology
             </span>
@@ -147,13 +168,23 @@ export default function AppDev() {
             <p className="mx-auto max-w-3xl text-lg text-muted-foreground">
               Building high-performance mobile apps with proven frameworks
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
-            <OurStackSection image={Android} title={"Kotlin/JetPack Compose"} />
-            <OurStackSection image={Ios} title={"Swift/SwiftUI"} />
-            <OurStackSection image={ReactJS} title={"React Native"} />
-            <OurStackSection image={Flutter} title={"Flutter"} />
+            {[Android, Ios, ReactJS, Flutter].map((image, index) => {
+              const titles = ["Kotlin/JetPack Compose", "Swift/SwiftUI", "React Native", "Flutter"];
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                >
+                  <OurStackSection image={image} title={titles[index]} />
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>

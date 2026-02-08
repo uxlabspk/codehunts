@@ -4,6 +4,7 @@ import OurValues from "@/components/common/our-values.tsx";
 import TeamSection from "@/components/landing/team-section.tsx";
 import CTASection from "@/components/common/cta-section.tsx";
 import { Store } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function About() {
   return (
@@ -32,7 +33,12 @@ export default function About() {
         <div className="section-divider mb-24" />
         <div className="container mx-auto px-4 lg:px-6">
           <div className="grid items-center gap-16 lg:grid-cols-2">
-            <div>
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
               <span className="mb-4 inline-block text-sm font-semibold tracking-wider text-primary uppercase">
                 Our Journey
               </span>
@@ -54,8 +60,14 @@ export default function About() {
                   and innovation.
                 </p>
               </div>
-            </div>
-            <div className="relative">
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="relative"
+            >
               <div className="absolute -inset-4 rounded-3xl bg-primary/[0.04] blur-2xl" />
               <img
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=400&fit=crop"
@@ -63,7 +75,7 @@ export default function About() {
                 className="relative h-80 w-full rounded-2xl border border-white/[0.06] object-cover"
                 loading="lazy"
               />
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>

@@ -9,6 +9,7 @@ import Postgresql from "@/assets/Custom_tech_stack/postgresql.svg";
 import ReactJs from "@/assets/Custom_tech_stack/react.svg";
 import SpringBoot from "@/assets/Custom_tech_stack/springboot.svg";
 import CTASection from "@/components/common/cta-section.tsx";
+import { motion } from "framer-motion";
 
 export default function CustomSoftware() {
   const features = [
@@ -108,7 +109,13 @@ export default function CustomSoftware() {
       <section className="relative py-24">
         <div className="section-divider mb-24" />
         <div className="container mx-auto px-4 lg:px-6">
-          <div className="mb-16 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mb-16 text-center"
+          >
             <span className="mb-4 inline-block text-sm font-semibold tracking-wider text-primary uppercase">
               Benefits
             </span>
@@ -116,11 +123,19 @@ export default function CustomSoftware() {
             <p className="mx-auto max-w-3xl text-lg text-muted-foreground">
               Transform your business with our custom software development services
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
             {features.map((feature, index) => (
-              <Feature key={index} {...feature} />
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <Feature {...feature} />
+              </motion.div>
             ))}
           </div>
         </div>
@@ -130,7 +145,13 @@ export default function CustomSoftware() {
       <section className="relative py-24">
         <div className="section-divider mb-24" />
         <div className="container mx-auto px-4 lg:px-6">
-          <div className="mb-16 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mb-16 text-center"
+          >
             <span className="mb-4 inline-block text-sm font-semibold tracking-wider text-primary uppercase">
               Technology
             </span>
@@ -138,14 +159,23 @@ export default function CustomSoftware() {
             <p className="mx-auto max-w-3xl text-lg text-muted-foreground">
               End-to-end technology expertise from frontend to cloud infrastructure
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-5">
-            <OurStackSection image={ReactJs} title={"Frontend"} />
-            <OurStackSection image={SpringBoot} title={"Backend"} />
-            <OurStackSection image={Android} title={"Mobile"} />
-            <OurStackSection image={Postgresql} title={"Database"} />
-            <OurStackSection image={Aws} title={"Cloud"} />
+            {[ReactJs, SpringBoot, Android, Postgresql, Aws].map((image, index) => {
+              const titles = ["Frontend", "Backend", "Mobile", "Database", "Cloud"];
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                >
+                  <OurStackSection image={image} title={titles[index]} />
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>

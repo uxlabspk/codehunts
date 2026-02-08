@@ -4,6 +4,7 @@ import HeroSection from "@/components/common/hero-section.tsx";
 import TeamCard from "@/components/common/team-card.tsx";
 import { Users } from "lucide-react";
 import { teamMembers, getSocialIcons } from "@/data/team.tsx";
+import { motion } from "framer-motion";
 
 export default function Team() {
 
@@ -29,7 +30,13 @@ export default function Team() {
       <section className="relative py-24">
         <div className="section-divider mb-24" />
         <div className="container mx-auto px-4 lg:px-6">
-          <div className="mb-16 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mb-16 text-center"
+          >
             <span className="mb-4 inline-block text-sm font-semibold tracking-wider text-primary uppercase">
               The Team
             </span>
@@ -38,17 +45,24 @@ export default function Team() {
               Meet the talented professionals behind our success — dedicated, skilled, and passionate
               about delivering exceptional results.
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            {teamMembers.map((member) => (
-              <TeamCard
+            {teamMembers.map((member, index) => (
+              <motion.div
                 key={member.id}
-                img={member.image_url}
-                name={member.name}
-                position={member.position}
-                socials={getSocialIcons(member)}
-              />
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <TeamCard
+                  img={member.image_url}
+                  name={member.name}
+                  position={member.position}
+                  socials={getSocialIcons(member)}
+                />
+              </motion.div>
             ))}
           </div>
         </div>

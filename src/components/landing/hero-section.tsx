@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { Button } from "../ui/button";
 import { ArrowRight, Star } from "lucide-react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 interface StarParticle {
   x: number;
@@ -120,23 +121,43 @@ export default function HeroSection() {
 
       <div className="relative z-10 mx-auto max-w-5xl px-4 py-20 text-center sm:px-6 lg:px-8">
         {/* Badge */}
-        <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/[0.06] px-4 py-1.5 text-sm font-medium text-primary">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mb-8 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/[0.06] px-4 py-1.5 text-sm font-medium text-primary"
+        >
           <Star className="h-3.5 w-3.5" />
           Trusted by 150+ businesses worldwide
-        </div>
+        </motion.div>
 
-        <h1 className="mb-6 text-4xl leading-[1.1] font-bold tracking-tight text-white md:text-5xl lg:text-7xl">
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="mb-6 text-4xl leading-[1.1] font-bold tracking-tight text-white md:text-5xl lg:text-7xl"
+        >
           Innovative Software
           <br />
           <span className="text-gradient">Solutions</span> for Your Business
-        </h1>
+        </motion.h1>
 
-        <p className="mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          className="mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl"
+        >
           We craft cutting-edge digital experiences — from web apps to AI solutions — tailored to
           drive your business forward.
-        </p>
+        </motion.p>
 
-        <div className="mx-auto flex max-w-md flex-col justify-center gap-4 sm:flex-row">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.8 }}
+          className="mx-auto flex max-w-md flex-col justify-center gap-4 sm:flex-row"
+        >
           <Link to="/lets-talk">
             <Button
               size="lg"
@@ -161,10 +182,15 @@ export default function HeroSection() {
               Review us on Trustpilot
             </Button>
           </a>
-        </div>
+        </motion.div>
 
         {/* Trust indicators */}
-        <div className="mt-16 flex flex-wrap items-center justify-center gap-8 text-sm text-muted-foreground">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 1 }}
+          className="mt-16 flex flex-wrap items-center justify-center gap-8 text-sm text-muted-foreground"
+        >
           <div className="flex items-center gap-2">
             <div className="h-2 w-2 rounded-full bg-green-500" />
             <span>99% Uptime</span>
@@ -177,7 +203,7 @@ export default function HeroSection() {
             <div className="h-2 w-2 rounded-full bg-blue-500" />
             <span>3.9/5 Trustpilot</span>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

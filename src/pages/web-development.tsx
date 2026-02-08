@@ -21,6 +21,7 @@ import Postgresql from "@/assets/Web_tech_stack/postgresql.svg";
 import ReactJS from "@/assets/Web_tech_stack/react.svg";
 import Php from "@/assets/Web_tech_stack/php.svg";
 import SpringBoot from "@/assets/Web_tech_stack/springboot.svg";
+import { motion } from "framer-motion";
 
 export default function WebDev() {
   const features = [
@@ -150,7 +151,13 @@ export default function WebDev() {
       <section className="relative py-24">
         <div className="section-divider mb-24" />
         <div className="container mx-auto px-4 lg:px-6">
-          <div className="mb-16 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mb-16 text-center"
+          >
             <span className="mb-4 inline-block text-sm font-semibold tracking-wider text-primary uppercase">
               Features
             </span>
@@ -160,11 +167,19 @@ export default function WebDev() {
             <p className="mx-auto max-w-3xl text-lg text-muted-foreground">
               Our web development solutions deliver measurable results that drive business growth
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
             {features.map((feature, index) => (
-              <Feature key={index} {...feature} />
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <Feature {...feature} />
+              </motion.div>
             ))}
           </div>
         </div>
@@ -174,7 +189,13 @@ export default function WebDev() {
       <section className="relative py-24">
         <div className="section-divider mb-24" />
         <div className="container mx-auto px-4 lg:px-6">
-          <div className="mb-16 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mb-16 text-center"
+          >
             <span className="mb-4 inline-block text-sm font-semibold tracking-wider text-primary uppercase">
               Solutions
             </span>
@@ -184,11 +205,19 @@ export default function WebDev() {
             <p className="mx-auto max-w-3xl text-lg text-muted-foreground">
               Custom web development for various business needs and industries
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
             {useCases.map((useCase, index) => (
-              <UseCase key={index} {...useCase} />
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <UseCase {...useCase} />
+              </motion.div>
             ))}
           </div>
         </div>
@@ -198,7 +227,13 @@ export default function WebDev() {
       <section className="relative py-24">
         <div className="section-divider mb-24" />
         <div className="container mx-auto px-4 lg:px-6">
-          <div className="mb-16 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mb-16 text-center"
+          >
             <span className="mb-4 inline-block text-sm font-semibold tracking-wider text-primary uppercase">
               Technology
             </span>
@@ -208,14 +243,23 @@ export default function WebDev() {
             <p className="mx-auto max-w-3xl text-lg text-muted-foreground">
               Modern frameworks and tools that power fast, scalable web applications
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-5">
-            <OurStackSection image={NextJS} title={"Next.JS"} />
-            <OurStackSection image={ReactJS} title={"React"} />
-            <OurStackSection image={Postgresql} title={"Postgresql"} />
-            <OurStackSection image={SpringBoot} title={"SpringBoot"} />
-            <OurStackSection image={Php} title={"Php"} />
+            {[NextJS, ReactJS, Postgresql, SpringBoot, Php].map((image, index) => {
+              const titles = ["Next.JS", "React", "Postgresql", "SpringBoot", "Php"];
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                >
+                  <OurStackSection image={image} title={titles[index]} />
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>

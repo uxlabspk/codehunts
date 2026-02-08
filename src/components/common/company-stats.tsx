@@ -1,6 +1,7 @@
 import React from "react";
 import { Star, Users, Briefcase, Calendar } from "lucide-react";
 import { useCountUp, useIntersectionObserver } from "@/hooks/useCountUp";
+import { motion } from "framer-motion";
 
 const stats = [
   {
@@ -66,7 +67,13 @@ const CompanyStats: React.FC = () => {
     <section ref={sectionRef} className="relative py-24">
       <div className="section-divider mb-24" />
       <div className="container mx-auto px-4 lg:px-6">
-        <div className="mb-16 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-16 text-center"
+        >
           <span className="mb-4 inline-block text-sm font-semibold tracking-wider text-primary uppercase">
             Our Track Record
           </span>
@@ -76,11 +83,19 @@ const CompanyStats: React.FC = () => {
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
             Numbers that speak for our commitment to excellence and client satisfaction
           </p>
-        </div>
+        </motion.div>
 
         <div className="mx-auto grid max-w-4xl grid-cols-2 gap-5 lg:grid-cols-4">
           {stats.map((stat, index) => (
-            <AnimatedStat key={index} stat={stat} startAnimation={isVisible} />
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
+              <AnimatedStat stat={stat} startAnimation={isVisible} />
+            </motion.div>
           ))}
         </div>
       </div>

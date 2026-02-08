@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { type VariantProps } from "class-variance-authority";
+import { motion } from "framer-motion";
 
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/constants/button";
@@ -18,11 +19,18 @@ function Button({
   const Comp = asChild ? Slot : "button";
 
   return (
-    <Comp
-      data-slot="button"
-      className={`cursor-pointer ${cn(buttonVariants({ variant, size, className }))}`}
-      {...props}
-    />
+    <motion.div
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      transition={{ duration: 0.2 }}
+      style={{ display: "inline-block" }}
+    >
+      <Comp
+        data-slot="button"
+        className={`cursor-pointer ${cn(buttonVariants({ variant, size, className }))}`}
+        {...props}
+      />
+    </motion.div>
   );
 }
 
