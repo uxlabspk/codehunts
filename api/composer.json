@@ -1,0 +1,22 @@
+{
+  "name": "codehunts/api",
+  "description": "Backend API for CodeHunts website",
+  "type": "project",
+  "require": {
+    "php": ">=7.4",
+    "phpmailer/phpmailer": "^6.8"
+  },
+  "autoload": {
+    "psr-4": {
+      "CodeHunts\\": "src/"
+    }
+  },
+  "scripts": {
+    "test": "echo 'No tests configured'"
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "sort-packages": true
+  }
+}
