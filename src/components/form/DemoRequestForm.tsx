@@ -116,11 +116,11 @@ export default function EnhancedDemoForm() {
     }
   };
   return (
-    <section id="contact" className="relative py-24">
-      <div className="section-divider mb-24" />
+    <section id="contact" className="relative py-12 sm:py-16 md:py-24">
+      <div className="section-divider mb-12 sm:mb-16 md:mb-24" />
       <div className="container mx-auto px-4 lg:px-6">
-        <div className="mb-16 text-center">
-          <span className="mb-4 inline-block text-sm font-semibold tracking-wider text-primary uppercase">
+        <div className="mb-8 sm:mb-12 md:mb-16 text-center">
+          <span className="mb-3 sm:mb-4 inline-block text-sm font-semibold tracking-wider text-primary uppercase">
             Get Started
           </span>
           <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">Request a Free Demo</h2>

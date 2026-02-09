@@ -147,8 +147,8 @@ export default function AI() {
       />
 
       {/* Key Features */}
-      <section className="relative py-24">
-        <div className="section-divider mb-24" />
+      <section className="relative py-12 sm:py-16 md:py-24">
+        <div className="section-divider mb-12 sm:mb-16 md:mb-24" />
         <div className="container mx-auto px-4 lg:px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -157,7 +157,7 @@ export default function AI() {
             transition={{ duration: 0.6 }}
             className="mb-16 text-center"
           >
-            <span className="mb-4 inline-block text-sm font-semibold tracking-wider text-primary uppercase">
+            <span className="mb-3 sm:mb-4 inline-block text-sm font-semibold tracking-wider text-primary uppercase">
               Capabilities
             </span>
             <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">Our AI Capabilities</h2>
@@ -184,8 +184,8 @@ export default function AI() {
       </section>
 
       {/* Use Case */}
-      <section className="relative py-24">
-        <div className="section-divider mb-24" />
+      <section className="relative py-12 sm:py-16 md:py-24">
+        <div className="section-divider mb-12 sm:mb-16 md:mb-24" />
         <div className="container mx-auto px-4 lg:px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -194,7 +194,7 @@ export default function AI() {
             transition={{ duration: 0.6 }}
             className="mb-16 text-center"
           >
-            <span className="mb-4 inline-block text-sm font-semibold tracking-wider text-primary uppercase">
+            <span className="mb-3 sm:mb-4 inline-block text-sm font-semibold tracking-wider text-primary uppercase">
               Use Cases
             </span>
             <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">Industry Use Cases</h2>
@@ -220,8 +220,8 @@ export default function AI() {
       </section>
 
       {/* Our Tec Stack Section */}
-      <section className="relative py-24">
-        <div className="section-divider mb-24" />
+      <section className="relative py-12 sm:py-16 md:py-24">
+        <div className="section-divider mb-12 sm:mb-16 md:mb-24" />
         <div className="container mx-auto px-4 lg:px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -230,7 +230,7 @@ export default function AI() {
             transition={{ duration: 0.6 }}
             className="mb-16 text-center"
           >
-            <span className="mb-4 inline-block text-sm font-semibold tracking-wider text-primary uppercase">
+            <span className="mb-3 sm:mb-4 inline-block text-sm font-semibold tracking-wider text-primary uppercase">
               Technology
             </span>
             <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">AI & ML Frameworks</h2>

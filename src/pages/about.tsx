@@ -29,10 +29,10 @@ export default function About() {
       <CompanyStats />
 
       {/* Our Story Section */}
-      <section className="relative py-24">
-        <div className="section-divider mb-24" />
+      <section className="relative py-12 sm:py-16 md:py-24">
+        <div className="section-divider mb-12 sm:mb-16 md:mb-24" />
         <div className="container mx-auto px-4 lg:px-6">
-          <div className="grid items-center gap-16 lg:grid-cols-2">
+          <div className="grid items-center gap-8 sm:gap-12 md:gap-16 lg:grid-cols-2">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}

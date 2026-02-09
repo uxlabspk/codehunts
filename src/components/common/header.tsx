@@ -82,8 +82,8 @@ export default function Header() {
       {/* Main Header */}
       <header
         className={`fixed top-0 right-0 left-0 z-50 w-full transition-all duration-500 ${scrolled
-            ? "h-16 border-b border-white/[0.06] bg-background/80 shadow-lg shadow-black/10 backdrop-blur-xl"
-            : "h-20 bg-transparent"
+          ? "h-16 border-b border-white/[0.06] bg-background/80 shadow-lg shadow-black/10 backdrop-blur-xl"
+          : "h-20 bg-transparent"
           }`}
       >
         <div className="container mx-auto flex h-full items-center justify-between px-4 lg:px-6">
@@ -113,7 +113,7 @@ export default function Header() {
                     Services
                   </NavigationMenuTrigger>
                   <NavigationMenuContent className="glass rounded-2xl border-white/[0.06] shadow-2xl">
-                    <ul className="grid w-[400px] gap-1.5 p-3 md:w-[520px] md:grid-cols-2 lg:w-[620px]">
+                    <ul className="grid w-[90vw] max-w-[400px] gap-1.5 p-3 md:max-w-[520px] md:grid-cols-2 lg:max-w-[620px]">
                       {services.map((service, index) => {
                         const Icon = service.icon;
                         return (

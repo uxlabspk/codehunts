@@ -89,9 +89,9 @@ const socialLinks = [
 export default function Footer() {
   return (
     <>
-      <footer className="border-t border-white/[0.06] pt-16 pb-8">
+      <footer className="border-t border-white/[0.06] pt-8 sm:pt-12 md:pt-16 pb-6 sm:pb-8">
         <div className="container mx-auto px-4 lg:px-6">
-          <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-8 sm:gap-10 md:gap-12 md:grid-cols-2 lg:grid-cols-4">
             {/* Brand */}
             <div className="lg:col-span-1">
               <Link to="/" className="mb-6 flex items-center gap-1">
@@ -180,7 +180,7 @@ export default function Footer() {
           </div>
 
           {/* Bottom bar */}
-          <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/[0.06] pt-8 sm:flex-row">
+          <div className="mt-8 sm:mt-10 md:mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/[0.06] pt-6 sm:pt-8 sm:flex-row">
             <span className="text-xs text-muted-foreground">
               © 2023 - {new Date().getFullYear()} Code HUNT'S, Inc. All rights reserved.
             </span>

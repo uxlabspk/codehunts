@@ -31,17 +31,17 @@ const SocialLinks = () => (
 
 export default function TeamSection() {
   return (
-    <section className="relative py-24">
-      <div className="section-divider mb-24" />
+    <section className="relative py-12 sm:py-16 md:py-24">
+      <div className="section-divider mb-12 sm:mb-16 md:mb-24" />
       <div className="container mx-auto px-4 lg:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-16 text-center"
+          className="mb-8 sm:mb-12 md:mb-16 text-center"
         >
-          <span className="mb-4 inline-block text-sm font-semibold tracking-wider text-primary uppercase">
+          <span className="mb-3 sm:mb-4 inline-block text-sm font-semibold tracking-wider text-primary uppercase">
             Our People
           </span>
           <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
@@ -53,7 +53,7 @@ export default function TeamSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-4 sm:gap-5 md:gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {teamMembers.map((member, index) => (
             <motion.div
               key={index}

@@ -18,10 +18,10 @@ export default function ProjectCards() {
   ];
 
   return (
-    <div className="py-12">
+    <div className="py-8 sm:py-10 md:py-12">
       <div className="container mx-auto px-4 lg:px-6">
         {/* Filter Buttons */}
-        <div className="mb-12 flex flex-wrap justify-center gap-3">
+        <div className="mb-8 sm:mb-10 md:mb-12 flex flex-wrap justify-center gap-2 sm:gap-3">
           {categories.map((category) => {
             const IconComponent = category.icon;
             return (
@@ -43,7 +43,7 @@ export default function ProjectCards() {
         {/* Projects Grid */}
         <motion.div
           layout
-          className="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
+          className="grid gap-4 sm:gap-5 md:gap-6 md:grid-cols-2 lg:grid-cols-3"
         >
           <AnimatePresence mode="popLayout">
             {projects.map((project, index) => (

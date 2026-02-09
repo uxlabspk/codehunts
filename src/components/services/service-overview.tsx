@@ -18,10 +18,10 @@ export default function ServiceOverview({
   const [imageLoaded, setImageLoaded] = useState(false);
 
   return (
-    <section className="relative py-24">
-      <div className="section-divider mb-24" />
+    <section className="relative py-12 sm:py-16 md:py-24">
+      <div className="section-divider mb-12 sm:mb-16 md:mb-24" />
       <div className="container mx-auto px-4 lg:px-6">
-        <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
+        <div className="grid grid-cols-1 items-center gap-8 sm:gap-12 md:gap-16 lg:grid-cols-2">
           <div>
             <h2 className="mb-6 text-2xl font-bold tracking-tight lg:text-3xl">{title}</h2>
             <p className="mb-4 text-base leading-relaxed text-muted-foreground">{description}</p>

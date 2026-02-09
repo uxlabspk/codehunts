@@ -117,7 +117,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background" />
 
       {/* Ambient glow */}
-      <div className="absolute top-1/4 left-1/2 h-[500px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/[0.04] blur-[120px]" />
+      <div className="absolute top-1/4 left-1/2 h-[300px] w-[600px] sm:h-[400px] sm:w-[700px] md:h-[500px] md:w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/[0.04] blur-[80px] sm:blur-[100px] md:blur-[120px]" />
 
       <div className="relative z-10 mx-auto max-w-5xl px-4 py-20 text-center sm:px-6 lg:px-8">
         {/* Badge */}
@@ -135,7 +135,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="mb-6 text-4xl leading-[1.1] font-bold tracking-tight text-white md:text-5xl lg:text-7xl"
+          className="mb-4 sm:mb-6 text-3xl sm:text-4xl leading-tight md:text-5xl lg:text-7xl font-bold tracking-tight text-white"
         >
           Innovative Software
           <br />
@@ -146,7 +146,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl"
+          className="mx-auto mb-6 sm:mb-8 md:mb-10 max-w-2xl text-base sm:text-lg leading-relaxed text-muted-foreground md:text-xl"
         >
           We craft cutting-edge digital experiences — from web apps to AI solutions — tailored to
           drive your business forward.
@@ -189,7 +189,7 @@ export default function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 1 }}
-          className="mt-16 flex flex-wrap items-center justify-center gap-8 text-sm text-muted-foreground"
+          className="mt-8 sm:mt-12 md:mt-16 flex flex-wrap items-center justify-center gap-4 sm:gap-6 md:gap-8 text-xs sm:text-sm text-muted-foreground"
         >
           <div className="flex items-center gap-2">
             <div className="h-2 w-2 rounded-full bg-green-500" />
