@@ -192,7 +192,7 @@ export default function Header() {
         onClick={closeMobileMenu}
       />
       <div
-        className={`fixed top-0 right-0 z-50 h-full w-[85%] max-w-sm transform bg-background/95 shadow-2xl shadow-black/50 backdrop-blur-xl transition-transform duration-300 ease-out lg:hidden ${mobileMenuOpen ? "translate-x-0" : "translate-x-full"
+        className={`fixed top-0 right-0 z-50 h-full w-full transform bg-background/20 shadow-2xl shadow-black/50 backdrop-blur-xl transition-transform duration-300 ease-out lg:hidden ${mobileMenuOpen ? "translate-x-0" : "translate-x-full"
           }`}
       >
         {/* Mobile Header */}
@@ -232,14 +232,14 @@ export default function Header() {
               <Link
                 to="/"
                 onClick={closeMobileMenu}
-                className="flex items-center rounded-xl px-4 py-3 text-sm font-medium text-muted-foreground transition-all duration-200 hover:bg-white/[0.06] hover:text-white"
+                className="flex items-center rounded-xl px-4 py-3 font-medium text-muted-foreground transition-all duration-200 hover:bg-white/[0.06] hover:text-white"
               >
                 Home
               </Link>
             </li>
 
             <li className="py-2">
-              <div className="px-4 py-2 text-xs font-semibold tracking-wider text-primary uppercase">
+              <div className="px-4 py-2 text-sm font-semibold tracking-wider text-primary uppercase">
                 Services
               </div>
               <ul className="mt-1 space-y-0.5">
@@ -250,7 +250,7 @@ export default function Header() {
                       <Link
                         to={service.href}
                         onClick={closeMobileMenu}
-                        className="flex items-center gap-3 rounded-xl px-4 py-2.5 text-sm text-muted-foreground transition-all duration-200 hover:bg-white/[0.06] hover:text-white"
+                        className="flex items-center gap-3 ms-8 rounded-xl px-4 py-2.5 text-muted-foreground transition-all duration-200 hover:bg-white/[0.06] hover:text-white"
                       >
                         <Icon className="h-4 w-4 text-primary/60" />
                         {service.title}
@@ -261,7 +261,7 @@ export default function Header() {
               </ul>
             </li>
 
-            <li className="section-divider my-3" />
+            {/* <li className="section-divider my-3" /> */}
 
             {[
               { href: "/portfolio", title: "Portfolio" },
@@ -273,21 +273,21 @@ export default function Header() {
                 <Link
                   to={item.href}
                   onClick={closeMobileMenu}
-                  className="flex items-center rounded-xl px-4 py-3 text-sm font-medium text-muted-foreground transition-all duration-200 hover:bg-white/[0.06] hover:text-white"
+                  className="flex items-center rounded-xl px-4 py-3 font-medium text-muted-foreground transition-all duration-200 hover:bg-white/[0.06] hover:text-white"
                 >
                   {item.title}
                 </Link>
               </li>
             ))}
-          </ul>
 
-          <div className="mt-auto pt-6">
-            <Link to="/lets-talk" onClick={closeMobileMenu}>
-              <Button className="w-full rounded-full py-5 shadow-lg shadow-primary/20">
-                Get Started <ArrowRight className="h-4 w-4" />
-              </Button>
-            </Link>
-          </div>
+            <li className="px-4 py-2">
+              <Link to="/lets-talk" onClick={closeMobileMenu}>
+                <Button className="w-86 rounded-full py-5 shadow-lg shadow-primary/20">
+                  Get Started <ArrowRight className="h-4 w-4" />
+                </Button>
+              </Link>
+            </li>
+          </ul>
         </nav>
       </div>
     </div>
