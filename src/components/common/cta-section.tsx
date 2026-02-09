@@ -5,15 +5,15 @@ import { motion } from "framer-motion";
 
 export default function CTASection() {
   return (
-    <section className="relative py-12 sm:py-16 md:py-24">
-      <div className="section-divider mb-12 sm:mb-16 md:mb-24" />
-      <div className="container mx-auto px-5 sm:px-6 lg:px-8">
+    <section className="relative">
+      <div className="section-divider" />
+      <div className="">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="relative overflow-hidden rounded-2xl sm:rounded-3xl border border-white/[0.06] bg-gradient-to-br from-primary/10 via-card to-card p-8 sm:p-10 md:p-12 lg:p-16 text-center"
+          className="relative overflow-hidden rounded-2xl sm:rounded-3xl border border-white/[0.06] bg-gradient-to-br from-primary/10 via-card to-card px-8 py-32 text-center"
         >
           {/* Background glow effects */}
           <div className="absolute top-0 left-1/4 h-48 w-48 sm:h-64 sm:w-64 rounded-full bg-primary/[0.06] blur-[80px] sm:blur-[100px]" />
@@ -30,7 +30,7 @@ export default function CTASection() {
             <Link to="/contact-us">
               <Button
                 size="lg"
-                className="rounded-full px-10 py-6 text-base font-medium shadow-lg shadow-primary/25 transition-shadow hover:shadow-primary/40"
+                className="w-80  rounded-full px-10 py-6 text-base font-medium shadow-lg shadow-primary/25 transition-shadow hover:shadow-primary/40"
               >
                 Contact Us
                 <ArrowRight className="h-4 w-4" />

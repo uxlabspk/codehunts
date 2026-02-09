@@ -19,7 +19,7 @@ export default function TeamCard({ img, name, position, socials }: TeamCardProps
 
       <div className="relative z-10">
         {/* Profile Image */}
-        <div className="mx-auto mb-5 h-28 w-28 overflow-hidden rounded-2xl border-2 border-white/[0.08] shadow-lg transition-all duration-500 group-hover:border-primary/30 group-hover:shadow-primary/10">
+        <div className="mx-auto mb-5 h-auto w-auto md:h-64 md:w-64 overflow-hidden rounded-2xl border-2 border-white/[0.08] shadow-lg transition-all duration-500 group-hover:border-primary/30 group-hover:shadow-primary/10">
           <img
             src={img}
             alt={name}

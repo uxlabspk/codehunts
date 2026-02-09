@@ -117,8 +117,8 @@ const ServiceSection = () => {
                     className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 transition-opacity duration-500 group-hover:opacity-100`}
                   />
 
-                  <div className="relative z-10">
-                    <div className="mb-5 flex items-center justify-between">
+                  <div className="relative z-10 text-center sm:text-left">
+                    <div className="mb-5 flex items-center justify-center sm:justify-between">
                       <div
                         className={`flex h-12 w-12 items-center justify-center rounded-xl bg-white/[0.06] transition-colors duration-300 group-hover:bg-white/[0.1]`}
                       >

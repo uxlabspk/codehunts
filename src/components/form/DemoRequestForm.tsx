@@ -348,7 +348,8 @@ export default function EnhancedDemoForm() {
                 </div>
               </div>
 
-              <Button type="submit" disabled={isSubmitting} size="lg" className="w-full">
+              <div className="flex items-center justify-center">
+                <Button type="submit" disabled={isSubmitting} size="lg" className="sm:w-100 w-86">
                 {isSubmitting ? (
                   <div className="flex items-center">
                     <div className="mr-3 h-5 w-5 animate-spin rounded-full border-2 border-white/30 border-t-white"></div>
@@ -361,6 +362,7 @@ export default function EnhancedDemoForm() {
                   </div>
                 )}
               </Button>
+              </div>
             </form>
           </div>
         </div>

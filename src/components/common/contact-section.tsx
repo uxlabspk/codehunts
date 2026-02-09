@@ -205,15 +205,17 @@ export default function ContactSection() {
                 />
               </div>
 
-              <Button
+              <div className="w-full flex flex-row items-center justify-center">
+                <Button
                 size="lg"
                 type="submit"
-                className="w-full rounded-full shadow-lg shadow-primary/25"
+                className="sm:w-100 w-86 rounded-full shadow-lg shadow-primary/25"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? "Sending..." : "Send Message"}
                 <ArrowRight className="h-4 w-4" />
               </Button>
+              </div>
             </form>
           </motion.div>
         </div>

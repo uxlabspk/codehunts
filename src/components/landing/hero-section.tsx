@@ -161,7 +161,7 @@ export default function HeroSection() {
           <Link to="/lets-talk">
             <Button
               size="lg"
-              className="w-full rounded-full px-8 py-6 text-base font-medium shadow-lg shadow-primary/25 transition-shadow hover:shadow-primary/40 sm:w-auto"
+              className="w-100 rounded-full px-8 py-6 text-base font-medium shadow-lg shadow-primary/25 transition-shadow hover:shadow-primary/40 sm:w-auto"
             >
               Get Started
               <ArrowRight className="h-4 w-4" />
@@ -176,7 +176,7 @@ export default function HeroSection() {
             <Button
               variant="outline"
               size="lg"
-              className="w-full rounded-full px-8 py-6 text-base font-medium sm:w-auto"
+              className="w-100 rounded-full px-8 py-6 text-base font-medium sm:w-auto"
             >
               <Star className="h-4 w-4" />
               Review us on Trustpilot
