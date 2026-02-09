@@ -228,7 +228,13 @@ export default function Header() {
         {/* Mobile Navigation */}
         <nav className="flex h-[calc(100%-80px)] flex-col overflow-y-auto px-5 sm:px-6 py-6">
           <ul className="space-y-1">
-            <li>
+            <li
+              className={`transform transition-all duration-500 ${mobileMenuOpen
+                  ? "translate-x-0 opacity-100"
+                  : "-translate-x-8 opacity-0"
+                }`}
+              style={{ transitionDelay: mobileMenuOpen ? "100ms" : "0ms" }}
+            >
               <Link
                 to="/"
                 onClick={closeMobileMenu}
@@ -238,7 +244,13 @@ export default function Header() {
               </Link>
             </li>
 
-            <li className="py-2">
+            <li
+              className={`py-2 transform transition-all duration-500 ${mobileMenuOpen
+                  ? "translate-x-0 opacity-100"
+                  : "-translate-x-8 opacity-0"
+                }`}
+              style={{ transitionDelay: mobileMenuOpen ? "150ms" : "0ms" }}
+            >
               <div className="px-4 py-2 text-sm font-semibold tracking-wider text-primary uppercase">
                 Services
               </div>
@@ -246,7 +258,18 @@ export default function Header() {
                 {services.map((service, index) => {
                   const Icon = service.icon;
                   return (
-                    <li key={index}>
+                    <li
+                      key={index}
+                      className={`transform transition-all duration-500 ${mobileMenuOpen
+                          ? "translate-x-0 opacity-100"
+                          : "-translate-x-8 opacity-0"
+                        }`}
+                      style={{
+                        transitionDelay: mobileMenuOpen
+                          ? `${200 + index * 50}ms`
+                          : "0ms",
+                      }}
+                    >
                       <Link
                         to={service.href}
                         onClick={closeMobileMenu}
@@ -269,7 +292,16 @@ export default function Header() {
               { href: "/about-us", title: "About Us" },
               { href: "/contact-us", title: "Contact Us" },
             ].map((item, index) => (
-              <li key={index}>
+              <li
+                key={index}
+                className={`transform transition-all duration-500 ${mobileMenuOpen
+                    ? "translate-x-0 opacity-100"
+                    : "-translate-x-8 opacity-0"
+                  }`}
+                style={{
+                  transitionDelay: mobileMenuOpen ? `${500 + index * 50}ms` : "0ms",
+                }}
+              >
                 <Link
                   to={item.href}
                   onClick={closeMobileMenu}
@@ -280,7 +312,13 @@ export default function Header() {
               </li>
             ))}
 
-            <li className="px-4 py-2">
+            <li
+              className={`px-4 py-2 transform transition-all duration-500 ${mobileMenuOpen
+                  ? "translate-x-0 opacity-100"
+                  : "-translate-x-8 opacity-0"
+                }`}
+              style={{ transitionDelay: mobileMenuOpen ? "700ms" : "0ms" }}
+            >
               <Link to="/lets-talk" onClick={closeMobileMenu}>
                 <Button className="w-86 rounded-full py-5 shadow-lg shadow-primary/20">
                   Get Started <ArrowRight className="h-4 w-4" />
