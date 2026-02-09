@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function NotFound() {
   return (
-    <div className="flex min-h-[calc(100vh-5rem)] w-full flex-col items-center justify-center gap-8 px-4 md:flex-row">
+    <div className="flex min-h-[calc(100vh-5rem)] w-full flex-col items-center justify-center gap-8 px-5 sm:px-6 md:flex-row">
       <img src={NotFoundImg} alt="Not Found" className="w-1/2 opacity-80 lg:w-1/4" />
       <div className="max-w-xs space-y-3 text-center md:max-w-xl md:text-start">
         <h1 className="text-2xl font-bold tracking-tight">

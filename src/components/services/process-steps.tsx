@@ -19,7 +19,7 @@ const ProcessStep: React.FC<ProcessStepProps> = ({
   <motion.div
     whileHover={{ y: -8, scale: 1.02 }}
     transition={{ duration: 0.3 }}
-    className="group relative overflow-hidden rounded-2xl border border-white/[0.06] bg-card/50 p-6 transition-all duration-500 hover:border-white/[0.12] hover:bg-card"
+    className="group relative overflow-hidden rounded-2xl border border-white/[0.06] bg-card/50 p-5 sm:p-6 transition-all duration-500 hover:border-white/[0.12] hover:bg-card"
   >
     <div
       className={`mb-5 flex h-12 w-12 items-center justify-center rounded-full ${bgColor} transition-transform duration-300 group-hover:scale-110`}

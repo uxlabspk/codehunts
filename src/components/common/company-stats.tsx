@@ -47,7 +47,7 @@ const AnimatedStat: React.FC<{
   const Icon = stat.icon;
 
   return (
-    <div className="group relative overflow-hidden rounded-2xl border border-white/[0.06] bg-card/50 p-6 text-center transition-all duration-500 hover:border-white/[0.12]">
+    <div className="group relative overflow-hidden rounded-2xl border border-white/[0.06] bg-card/50 p-5 sm:p-6 text-center transition-all duration-500 hover:border-white/[0.12]">
       <div className={`mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl ${stat.bgColor} transition-transform duration-300 group-hover:scale-110`}>
         <Icon className={`h-5 w-5 ${stat.color}`} />
       </div>
@@ -66,7 +66,7 @@ const CompanyStats: React.FC = () => {
   return (
     <section ref={sectionRef} className="relative py-12 sm:py-16 md:py-24">
       <div className="section-divider mb-12 sm:mb-16 md:mb-24" />
-      <div className="container mx-auto px-4 lg:px-6">
+      <div className="container mx-auto px-5 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

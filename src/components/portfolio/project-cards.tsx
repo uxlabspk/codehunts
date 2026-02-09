@@ -19,7 +19,7 @@ export default function ProjectCards() {
 
   return (
     <div className="py-8 sm:py-10 md:py-12">
-      <div className="container mx-auto px-4 lg:px-6">
+      <div className="container mx-auto px-5 sm:px-6 lg:px-8">
         {/* Filter Buttons */}
         <div className="mb-8 sm:mb-10 md:mb-12 flex flex-wrap justify-center gap-2 sm:gap-3">
           {categories.map((category) => {
@@ -67,7 +67,7 @@ export default function ProjectCards() {
                   <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                 </div>
 
-                <div className="p-5">
+                <div className="p-5 sm:p-6">
                   <h3 className="mb-2 text-base font-semibold text-white">{project.title}</h3>
                   <p className="mb-4 line-clamp-2 text-sm text-muted-foreground">
                     {project.description}

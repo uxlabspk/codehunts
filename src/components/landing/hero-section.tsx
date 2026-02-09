@@ -119,7 +119,7 @@ export default function HeroSection() {
       {/* Ambient glow */}
       <div className="absolute top-1/4 left-1/2 h-[300px] w-[600px] sm:h-[400px] sm:w-[700px] md:h-[500px] md:w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/[0.04] blur-[80px] sm:blur-[100px] md:blur-[120px]" />
 
-      <div className="relative z-10 mx-auto max-w-5xl px-4 py-20 text-center sm:px-6 lg:px-8">
+      <div className="relative z-10 mx-auto max-w-5xl px-5 sm:px-6 md:px-8 lg:px-10 py-20 text-center">
         {/* Badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

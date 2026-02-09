@@ -118,7 +118,7 @@ export default function EnhancedDemoForm() {
   return (
     <section id="contact" className="relative py-12 sm:py-16 md:py-24">
       <div className="section-divider mb-12 sm:mb-16 md:mb-24" />
-      <div className="container mx-auto px-4 lg:px-6">
+      <div className="container mx-auto px-5 sm:px-6 lg:px-8">
         <div className="mb-8 sm:mb-12 md:mb-16 text-center">
           <span className="mb-3 sm:mb-4 inline-block text-sm font-semibold tracking-wider text-primary uppercase">
             Get Started
@@ -166,7 +166,7 @@ export default function EnhancedDemoForm() {
                 </ul>
               </div>
 
-              <div className="rounded-xl border border-white/[0.06] bg-card/50 p-6 backdrop-blur-sm">
+              <div className="rounded-xl border border-white/[0.06] bg-card/50 p-5 sm:p-6 md:p-7 backdrop-blur-sm">
                 <h4 className="mb-2 font-semibold">Questions? Email Us</h4>
                 <a
                   href={`mailto:${config.contact.email}`}
@@ -181,7 +181,7 @@ export default function EnhancedDemoForm() {
             </div>
           </div>
 
-          <div className="rounded-2xl border border-white/[0.06] bg-card/50 px-4 py-6 shadow-lg sm:p-8">
+          <div className="rounded-2xl border border-white/[0.06] bg-card/50 px-5 py-6 sm:px-6 sm:py-8 md:p-8 shadow-lg">
             {isSuccess && (
               <div className="mb-6 flex items-center gap-3 rounded-lg border border-green-500/50 bg-green-500/10 p-4">
                 <CheckCircle2 className="h-5 w-5 text-green-500" />

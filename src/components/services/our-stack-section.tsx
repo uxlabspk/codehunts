@@ -10,7 +10,7 @@ export default function OurStackSection({ image, title }: OurStackSectionProp) {
     <motion.div
       whileHover={{ y: -8, scale: 1.05 }}
       transition={{ duration: 0.3 }}
-      className="group flex flex-col items-center justify-center gap-3 rounded-2xl border border-white/[0.06] bg-card/50 p-6 transition-all duration-300 hover:border-white/[0.12] hover:bg-card"
+      className="group flex flex-col items-center justify-center gap-3 rounded-2xl border border-white/[0.06] bg-card/50 p-5 sm:p-6 transition-all duration-300 hover:border-white/[0.12] hover:bg-card"
     >
       <img
         src={image}

@@ -51,7 +51,7 @@ export default function ContactSection() {
   return (
     <section id="contact" className="relative py-12 sm:py-16 md:py-24">
       <div className="section-divider mb-12 sm:mb-16 md:mb-24" />
-      <div className="container mx-auto px-4 lg:px-6">
+      <div className="container mx-auto px-5 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

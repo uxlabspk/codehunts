@@ -31,7 +31,7 @@ export default function About() {
       {/* Our Story Section */}
       <section className="relative py-12 sm:py-16 md:py-24">
         <div className="section-divider mb-12 sm:mb-16 md:mb-24" />
-        <div className="container mx-auto px-4 lg:px-6">
+        <div className="container mx-auto px-5 sm:px-6 lg:px-8">
           <div className="grid items-center gap-8 sm:gap-12 md:gap-16 lg:grid-cols-2">
             <motion.div
               initial={{ opacity: 0, x: -30 }}

@@ -39,7 +39,7 @@ export default function OurValues() {
   return (
     <section className="relative py-12 sm:py-16 md:py-24">
       <div className="section-divider mb-12 sm:mb-16 md:mb-24" />
-      <div className="container mx-auto px-4 lg:px-6">
+      <div className="container mx-auto px-5 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -68,7 +68,7 @@ export default function OurValues() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ y: -8, scale: 1.02 }}
-                className="group relative overflow-hidden rounded-2xl border border-white/[0.06] bg-card/50 p-6 text-center transition-all duration-500 hover:border-white/[0.12] hover:bg-card"
+                className="group relative overflow-hidden rounded-2xl border border-white/[0.06] bg-card/50 p-5 sm:p-6 text-center transition-all duration-500 hover:border-white/[0.12] hover:bg-card"
               >
                 <div
                   className={`mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-xl ${value.bgColor} transition-transform duration-300 group-hover:scale-110`}

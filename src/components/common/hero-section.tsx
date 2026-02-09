@@ -31,7 +31,7 @@ export default function HeroSection({
       {/* Ambient glow */}
       <div className="absolute top-1/3 left-1/2 h-[400px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/[0.03] blur-[100px]" />
 
-      <div className="container mx-auto flex min-h-[40vh] sm:min-h-[45vh] md:min-h-[50vh] flex-col items-center justify-center px-4 py-12 sm:py-16 md:py-24 text-center lg:px-6">
+      <div className="container mx-auto flex min-h-[40vh] sm:min-h-[45vh] md:min-h-[50vh] flex-col items-center justify-center px-5 sm:px-6 md:px-8 py-12 sm:py-16 md:py-24 text-center">
         {hasCategory && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}

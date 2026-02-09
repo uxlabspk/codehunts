@@ -86,7 +86,7 @@ export default function Header() {
           : "h-20 bg-transparent"
           }`}
       >
-        <div className="container mx-auto flex h-full items-center justify-between px-4 lg:px-6">
+        <div className="container mx-auto flex h-full items-center justify-between px-5 sm:px-6 lg:px-8">
           {/* Logo Section */}
           <Link to="/" className="flex items-center gap-1 transition-opacity hover:opacity-80">
             <img src="/logo.webp" alt="Code HUNT'S" className="h-14 w-14" />
@@ -226,7 +226,7 @@ export default function Header() {
         </div>
 
         {/* Mobile Navigation */}
-        <nav className="flex h-[calc(100%-80px)] flex-col overflow-y-auto px-4 py-6">
+        <nav className="flex h-[calc(100%-80px)] flex-col overflow-y-auto px-5 sm:px-6 py-6">
           <ul className="space-y-1">
             <li>
               <Link
