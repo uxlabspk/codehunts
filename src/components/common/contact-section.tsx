@@ -29,19 +29,32 @@ export default function ContactSection() {
     setError("");
 
     try {
-      const subject = encodeURIComponent(formData.subject || "Contact Form Submission");
-      const body = encodeURIComponent(
-        `Name: ${formData.name}\n` +
-        `Email: ${formData.email}\n\n` +
-        `Message:\n${formData.message}`
-      );
+      // Submit to PHP API
+      const response = await fetch(`${config.app.url}/api/contact.php`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
-      window.location.href = `mailto:${config.contact.email}?subject=${subject}&body=${body}`;
+      const result = await response.json();
 
-      setIsSuccess(true);
-      setFormData({ name: "", email: "", subject: "", message: "" });
-      setTimeout(() => setIsSuccess(false), 5000);
-    } catch {
+      if (response.ok && result.success) {
+        setIsSuccess(true);
+        setFormData({ name: "", email: "", subject: "", message: "" });
+        setTimeout(() => setIsSuccess(false), 5000);
+      } else {
+        // Handle validation errors from server
+        if (result.errors) {
+          setError(Object.values(result.errors).join(' '));
+        } else {
+          setError(result.message || "Failed to submit form. Please try again.");
+        }
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
       setError("An unexpected error occurred. Please try again later.");
     } finally {
       setIsSubmitting(false);
@@ -207,14 +220,14 @@ export default function ContactSection() {
 
               <div className="w-full flex flex-row items-center justify-center">
                 <Button
-                size="lg"
-                type="submit"
-                className="sm:w-100 w-86 rounded-full shadow-lg shadow-primary/25"
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? "Sending..." : "Send Message"}
-                <ArrowRight className="h-4 w-4" />
-              </Button>
+                  size="lg"
+                  type="submit"
+                  className="sm:w-100 w-86 rounded-full shadow-lg shadow-primary/25"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? "Sending..." : "Send Message"}
+                  <ArrowRight className="h-4 w-4" />
+                </Button>
               </div>
             </form>
           </motion.div>
