@@ -30,7 +30,7 @@ export default function ContactSection() {
 
     try {
       // Submit to PHP API
-      const response = await fetch(`${config.app.url}/api/contact.php`, {
+      const response = await fetch(`${config.app.url}/api/mail.php`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

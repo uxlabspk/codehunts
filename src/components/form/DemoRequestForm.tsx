@@ -84,7 +84,7 @@ export default function EnhancedDemoForm() {
 
     try {
       // Send form data to PHP API
-      const response = await fetch(`${config.app.url}/api/contact.php`, {
+      const response = await fetch(`${config.app.url}/api/mail.php`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -350,18 +350,18 @@ export default function EnhancedDemoForm() {
 
               <div className="flex items-center justify-center">
                 <Button type="submit" disabled={isSubmitting} size="lg" className="sm:w-100 w-86">
-                {isSubmitting ? (
-                  <div className="flex items-center">
-                    <div className="mr-3 h-5 w-5 animate-spin rounded-full border-2 border-white/30 border-t-white"></div>
-                    Processing Request...
-                  </div>
-                ) : (
-                  <div className="flex items-center justify-center">
-                    Submit Request
-                    <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-                  </div>
-                )}
-              </Button>
+                  {isSubmitting ? (
+                    <div className="flex items-center">
+                      <div className="mr-3 h-5 w-5 animate-spin rounded-full border-2 border-white/30 border-t-white"></div>
+                      Processing Request...
+                    </div>
+                  ) : (
+                    <div className="flex items-center justify-center">
+                      Submit Request
+                      <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                    </div>
+                  )}
+                </Button>
               </div>
             </form>
           </div>
