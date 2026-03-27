@@ -23,4 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 
-api
+api/.env
+api/.htaccess
+/.env
