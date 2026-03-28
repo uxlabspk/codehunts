@@ -25,5 +25,5 @@ dist-ssr
 
 api/.env
 api/.htaccess
-/.env
+.env
 .htaccess
