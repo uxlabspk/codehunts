@@ -12,6 +12,12 @@ interface LoginPayload {
   user: AdminUser;
 }
 
+type UploadFolder = "projects" | "team";
+
+interface UploadImageResponse {
+  path: string;
+}
+
 const getApiBase = () => `${config.app.url}/api`;
 
 async function request<T>(
@@ -19,13 +25,14 @@ async function request<T>(
   options: RequestInit = {},
   token?: string
 ): Promise<ApiResponse<T>> {
-  const headers: HeadersInit = {
-    "Content-Type": "application/json",
-    ...(options.headers ?? {}),
-  };
+  const isFormData = options.body instanceof FormData;
+  const headers = new Headers(options.headers ?? undefined);
+  if (!isFormData && !headers.has("Content-Type")) {
+    headers.set("Content-Type", "application/json");
+  }
 
   if (token) {
-    headers.Authorization = `Bearer ${token}`;
+    headers.set("Authorization", `Bearer ${token}`);
   }
 
   const response = await fetch(`${getApiBase()}${path}`, {
@@ -165,5 +172,22 @@ export const adminApi = {
       },
       token
     );
+  },
+
+  uploadImage: async (token: string, file: File, folder: UploadFolder): Promise<string> => {
+    const formData = new FormData();
+    formData.append("image", file);
+    formData.append("folder", folder);
+
+    const result = await request<UploadImageResponse>(
+      "/uploads/image.php",
+      {
+        method: "POST",
+        body: formData,
+      },
+      token
+    );
+
+    return result.data.path;
   },
 };

@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState, type FormEvent } from "react";
+import { useCallback, useEffect, useMemo, useState, type ChangeEvent, type FormEvent } from "react";
 import { BriefcaseBusiness, Building2, LogOut, ShieldCheck, Users } from "lucide-react";
 import { useAdminAuth } from "@/contexts/admin-auth-context";
 import { adminApi } from "@/services/admin-api";
@@ -46,12 +46,18 @@ export default function AdminDashboardPage() {
     const [projects, setProjects] = useState<ProjectItem[]>([]);
     const [editingProjectId, setEditingProjectId] = useState<number | null>(null);
     const [projectForm, setProjectForm] = useState<Omit<ProjectItem, "id">>(emptyProjectForm);
+    const [projectImageFile, setProjectImageFile] = useState<File | null>(null);
+    const [isProjectUploading, setIsProjectUploading] = useState(false);
+    const [projectFileInputKey, setProjectFileInputKey] = useState(0);
 
     const [teamMembers, setTeamMembers] = useState<TeamMemberItem[]>([]);
     const [editingTeamId, setEditingTeamId] = useState<number | null>(null);
     const [teamForm, setTeamForm] = useState<Omit<TeamMemberItem, "id"> & { password?: string }>(
         emptyTeamForm
     );
+    const [teamImageFile, setTeamImageFile] = useState<File | null>(null);
+    const [isTeamUploading, setIsTeamUploading] = useState(false);
+    const [teamFileInputKey, setTeamFileInputKey] = useState(0);
 
     const safeToken = token ?? "";
 
@@ -119,18 +125,35 @@ export default function AdminDashboardPage() {
     const resetProjectForm = () => {
         setEditingProjectId(null);
         setProjectForm(emptyProjectForm);
+        setProjectImageFile(null);
+        setProjectFileInputKey((value) => value + 1);
+    };
+
+    const handleProjectImageFileChange = (event: ChangeEvent<HTMLInputElement>) => {
+        const file = event.target.files?.[0] ?? null;
+        setProjectImageFile(file);
     };
 
     const submitProject = async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
 
         try {
+            let imageDir = projectForm.imageDir;
+            if (projectImageFile) {
+                setIsProjectUploading(true);
+                imageDir = await adminApi.uploadImage(safeToken, projectImageFile, "projects");
+            }
+
             if (editingProjectId === null) {
-                const created = await adminApi.createProject(safeToken, projectForm);
+                const created = await adminApi.createProject(safeToken, {
+                    ...projectForm,
+                    imageDir,
+                });
                 setProjects((current) => [created, ...current]);
             } else {
                 const updated = await adminApi.updateProject(safeToken, {
                     ...projectForm,
+                    imageDir,
                     id: editingProjectId,
                 });
                 setProjects((current) => current.map((item) => (item.id === updated.id ? updated : item)));
@@ -140,6 +163,8 @@ export default function AdminDashboardPage() {
             setError(null);
         } catch (requestError) {
             setError(requestError instanceof Error ? requestError.message : "Failed to save project");
+        } finally {
+            setIsProjectUploading(false);
         }
     };
 
@@ -152,6 +177,8 @@ export default function AdminDashboardPage() {
             tags: project.tags,
             url: project.url,
         });
+        setProjectImageFile(null);
+        setProjectFileInputKey((value) => value + 1);
     };
 
     const deleteProject = async (id: number) => {
@@ -170,18 +197,35 @@ export default function AdminDashboardPage() {
     const resetTeamForm = () => {
         setEditingTeamId(null);
         setTeamForm(emptyTeamForm);
+        setTeamImageFile(null);
+        setTeamFileInputKey((value) => value + 1);
+    };
+
+    const handleTeamImageFileChange = (event: ChangeEvent<HTMLInputElement>) => {
+        const file = event.target.files?.[0] ?? null;
+        setTeamImageFile(file);
     };
 
     const submitTeam = async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
 
         try {
+            let profilePic = teamForm.profilePic;
+            if (teamImageFile) {
+                setIsTeamUploading(true);
+                profilePic = await adminApi.uploadImage(safeToken, teamImageFile, "team");
+            }
+
             if (editingTeamId === null) {
-                const created = await adminApi.createTeamMember(safeToken, teamForm);
+                const created = await adminApi.createTeamMember(safeToken, {
+                    ...teamForm,
+                    profilePic,
+                });
                 setTeamMembers((current) => [created, ...current]);
             } else {
                 const updated = await adminApi.updateTeamMember(safeToken, {
                     ...teamForm,
+                    profilePic,
                     id: editingTeamId,
                 });
                 setTeamMembers((current) => current.map((item) => (item.id === updated.id ? updated : item)));
@@ -191,6 +235,8 @@ export default function AdminDashboardPage() {
             setError(null);
         } catch (requestError) {
             setError(requestError instanceof Error ? requestError.message : "Failed to save team member");
+        } finally {
+            setIsTeamUploading(false);
         }
     };
 
@@ -206,6 +252,8 @@ export default function AdminDashboardPage() {
             password: "",
             isAdmin: member.isAdmin,
         });
+        setTeamImageFile(null);
+        setTeamFileInputKey((value) => value + 1);
     };
 
     const deleteTeam = async (id: number) => {
@@ -373,14 +421,15 @@ export default function AdminDashboardPage() {
                                         />
                                     </div>
                                     <div className="space-y-2">
-                                        <Label htmlFor="projectImage">Image Path</Label>
-                                        <Input
-                                            id="projectImage"
-                                            value={projectForm.imageDir}
-                                            onChange={(event) =>
-                                                setProjectForm((current) => ({ ...current, imageDir: event.target.value }))
-                                            }
-                                        />
+                                        <Label htmlFor="projectImage">Project Image</Label>
+                                        <Input id="projectImage" key={projectFileInputKey} type="file" accept="image/*" onChange={handleProjectImageFileChange} />
+                                        <p className="text-xs text-slate-400">
+                                            {projectImageFile
+                                                ? `Selected: ${projectImageFile.name}`
+                                                : projectForm.imageDir
+                                                    ? `Current image: ${projectForm.imageDir}`
+                                                    : "No image selected"}
+                                        </p>
                                     </div>
                                     <div className="space-y-2">
                                         <Label htmlFor="projectTags">Tags</Label>
@@ -415,7 +464,13 @@ export default function AdminDashboardPage() {
                                     </div>
 
                                     <div className="flex gap-2">
-                                        <Button type="submit">{editingProjectId ? "Update Project" : "Create Project"}</Button>
+                                        <Button type="submit" disabled={isProjectUploading}>
+                                            {isProjectUploading
+                                                ? "Uploading..."
+                                                : editingProjectId
+                                                    ? "Update Project"
+                                                    : "Create Project"}
+                                        </Button>
                                         {editingProjectId ? (
                                             <Button type="button" variant="outline" onClick={resetProjectForm}>
                                                 Cancel
@@ -540,14 +595,15 @@ export default function AdminDashboardPage() {
                                         />
                                     </div>
                                     <div className="space-y-2">
-                                        <Label htmlFor="memberProfilePic">Profile Image Path</Label>
-                                        <Input
-                                            id="memberProfilePic"
-                                            value={teamForm.profilePic}
-                                            onChange={(event) =>
-                                                setTeamForm((current) => ({ ...current, profilePic: event.target.value }))
-                                            }
-                                        />
+                                        <Label htmlFor="memberProfilePic">Profile Image</Label>
+                                        <Input id="memberProfilePic" key={teamFileInputKey} type="file" accept="image/*" onChange={handleTeamImageFileChange} />
+                                        <p className="text-xs text-slate-400">
+                                            {teamImageFile
+                                                ? `Selected: ${teamImageFile.name}`
+                                                : teamForm.profilePic
+                                                    ? `Current image: ${teamForm.profilePic}`
+                                                    : "No image selected"}
+                                        </p>
                                     </div>
                                     <div className="space-y-2">
                                         <Label htmlFor="memberPortfolio">Portfolio URL</Label>
@@ -572,7 +628,13 @@ export default function AdminDashboardPage() {
                                     </label>
 
                                     <div className="flex gap-2">
-                                        <Button type="submit">{editingTeamId ? "Update Member" : "Create Member"}</Button>
+                                        <Button type="submit" disabled={isTeamUploading}>
+                                            {isTeamUploading
+                                                ? "Uploading..."
+                                                : editingTeamId
+                                                    ? "Update Member"
+                                                    : "Create Member"}
+                                        </Button>
                                         {editingTeamId ? (
                                             <Button type="button" variant="outline" onClick={resetTeamForm}>
                                                 Cancel
