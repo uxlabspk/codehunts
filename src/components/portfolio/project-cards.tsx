@@ -1,4 +1,4 @@
-import { Calendar, Code, ExternalLink, Github, Globe, Smartphone } from "lucide-react";
+import { Brain, Calendar, Code, ExternalLink, Github, Globe, Palette, Smartphone } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import { Button } from "../ui/button";
 import { projects as fallbackProjects } from "@/data/projects";
@@ -54,8 +54,27 @@ const parseTags = (tags: string) =>
     .map((tag) => tag.trim())
     .filter(Boolean);
 
-const inferCategory = (tags: string[]) => {
+const inferCategory = (tags: string[], initialCategory?: string) => {
+  const normalizedInitial = (initialCategory || "").toLowerCase();
+  if (["web", "mobile", "design", "ai"].includes(normalizedInitial)) {
+    return normalizedInitial;
+  }
+
   const normalized = tags.map((tag) => tag.toLowerCase());
+  const isAi = normalized.some((tag) =>
+    ["ai", "ml", "machine learning", "artificial intelligence", "tensorflow", "openai", "llm"].includes(tag)
+  );
+  if (isAi) {
+    return "ai";
+  }
+
+  const isDesign = normalized.some((tag) =>
+    ["design", "ui", "ux", "figma", "branding", "graphics", "graphic design"].includes(tag)
+  );
+  if (isDesign) {
+    return "design";
+  }
+
   const isMobile = normalized.some((tag) =>
     ["react native", "flutter", "android", "ios", "mobile"].includes(tag)
   );
@@ -130,7 +149,7 @@ export default function ProjectCards() {
       description: project.description,
       image: project.image,
       tags: project.tags,
-      category: project.category,
+      category: inferCategory(project.tags, project.category),
       demoUrl: project.demoUrl,
       githubUrl: project.githubUrl,
       completedDate: project.completedDate,
@@ -146,6 +165,8 @@ export default function ProjectCards() {
     { id: "all", name: "All Projects", icon: Code },
     { id: "web", name: "Web Applications", icon: Globe },
     { id: "mobile", name: "Mobile Apps", icon: Smartphone },
+    { id: "design", name: "Design", icon: Palette },
+    { id: "ai", name: "AI", icon: Brain },
   ];
 
   return (
