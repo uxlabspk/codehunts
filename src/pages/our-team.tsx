@@ -1,12 +1,121 @@
+import { useEffect, useMemo, useState } from "react";
 import CTASection from "@/components/common/cta-section.tsx";
 import OurValues from "@/components/common/our-values.tsx";
 import HeroSection from "@/components/common/hero-section.tsx";
 import TeamCard from "@/components/common/team-card.tsx";
-import { Users } from "lucide-react";
+import { Globe, Github, Linkedin, Twitter, Users } from "lucide-react";
 import { teamMembers, getSocialIcons } from "@/data/team.tsx";
 import { motion } from "framer-motion";
+import { config } from "@/config/env";
+
+interface ApiTeamMember {
+  id: number;
+  profilePic: string;
+  full_name: string;
+  jobTitle: string;
+  portfolioUrl: string;
+}
+
+interface TeamApiResponse {
+  success: boolean;
+  data: ApiTeamMember[];
+}
+
+interface DisplayTeamMember {
+  id: number;
+  name: string;
+  position: string;
+  image_url: string;
+  socials: React.ReactNode;
+}
+
+const buildApiBase = () => {
+  const appUrl = config.app.url.trim().replace(/\/+$/, "");
+  return `${appUrl}/api`;
+};
+
+const resolveImage = (imagePath: string) => {
+  if (!imagePath) {
+    return "team/naveed.png";
+  }
+
+  if (imagePath.startsWith("http://") || imagePath.startsWith("https://") || imagePath.startsWith("/")) {
+    return imagePath;
+  }
+
+  return `${config.app.url.replace(/\/+$/, "")}/${imagePath.replace(/^\/+/, "")}`;
+};
+
+const ApiSocialLinks = ({ portfolioUrl }: { portfolioUrl?: string }) => (
+  <div className="flex items-center justify-center gap-4">
+    {[
+      { icon: Github, href: "https://github.com/" },
+      { icon: Linkedin, href: "https://linkedin.com/in/" },
+      { icon: Twitter, href: "https://twitter.com/" },
+      ...(portfolioUrl ? [{ icon: Globe, href: portfolioUrl }] : []),
+    ].map(({ icon: Icon, href }, index) => (
+      <a
+        key={`${href}-${index}`}
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-gray-400 transition-colors hover:text-primary"
+      >
+        <Icon className="h-5 w-5" />
+      </a>
+    ))}
+  </div>
+);
 
 export default function Team() {
+  const [apiMembers, setApiMembers] = useState<ApiTeamMember[] | null>(null);
+
+  useEffect(() => {
+    const controller = new AbortController();
+
+    const loadTeam = async () => {
+      try {
+        const response = await fetch(`${buildApiBase()}/team/public.php`, {
+          method: "GET",
+          signal: controller.signal,
+        });
+
+        if (!response.ok) {
+          return;
+        }
+
+        const payload = (await response.json()) as TeamApiResponse;
+        if (payload.success && Array.isArray(payload.data)) {
+          setApiMembers(payload.data);
+        }
+      } catch {
+        // Keep static data when API is unavailable.
+      }
+    };
+
+    void loadTeam();
+    return () => controller.abort();
+  }, []);
+
+  const members = useMemo<DisplayTeamMember[]>(() => {
+    if (!apiMembers || apiMembers.length === 0) {
+      return teamMembers.map((member) => ({
+        id: member.id,
+        name: member.name,
+        position: member.position,
+        image_url: member.image_url,
+        socials: getSocialIcons(member),
+      }));
+    }
+
+    return apiMembers.map((member) => ({
+      id: member.id,
+      name: member.full_name,
+      position: member.jobTitle,
+      image_url: resolveImage(member.profilePic),
+      socials: <ApiSocialLinks portfolioUrl={member.portfolioUrl} />,
+    }));
+  }, [apiMembers]);
 
   return (
     <div>
@@ -48,7 +157,7 @@ export default function Team() {
           </motion.div>
 
           <div className="grid grid-cols-1 gap-4 sm:gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            {teamMembers.map((member, index) => (
+            {members.map((member, index) => (
               <motion.div
                 key={member.id}
                 initial={{ opacity: 0, y: 30 }}

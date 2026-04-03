@@ -1,15 +1,146 @@
 import { Calendar, Code, ExternalLink, Github, Globe, Smartphone } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Button } from "../ui/button";
-import type { Project } from "@/types";
-import { getProjectsByCategory } from "@/data/projects";
+import { projects as fallbackProjects } from "@/data/projects";
 import { motion, AnimatePresence } from "framer-motion";
+import { config } from "@/config/env";
+
+interface DisplayProject {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  tags: string[];
+  category: string;
+  demoUrl?: string;
+  githubUrl?: string;
+  completedDate: string;
+}
+
+interface ApiProject {
+  id: number;
+  imageDir: string;
+  title: string;
+  description: string;
+  tags: string;
+  url: string;
+}
+
+interface ProjectsApiResponse {
+  success: boolean;
+  data: ApiProject[];
+}
+
+const buildApiBase = () => {
+  const appUrl = config.app.url.trim().replace(/\/+$/, "");
+  return `${appUrl}/api`;
+};
+
+const resolveImage = (imagePath: string) => {
+  if (!imagePath) {
+    return "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=600&fit=crop";
+  }
+
+  if (imagePath.startsWith("http://") || imagePath.startsWith("https://") || imagePath.startsWith("/")) {
+    return imagePath;
+  }
+
+  return `${config.app.url.replace(/\/+$/, "")}/${imagePath.replace(/^\/+/, "")}`;
+};
+
+const parseTags = (tags: string) =>
+  tags
+    .split(",")
+    .map((tag) => tag.trim())
+    .filter(Boolean);
+
+const inferCategory = (tags: string[]) => {
+  const normalized = tags.map((tag) => tag.toLowerCase());
+  const isMobile = normalized.some((tag) =>
+    ["react native", "flutter", "android", "ios", "mobile"].includes(tag)
+  );
+
+  return isMobile ? "mobile" : "web";
+};
+
+const filterByCategory = (items: DisplayProject[], category: string) => {
+  if (category === "all") {
+    return items;
+  }
+
+  return items.filter((project) => project.category === category);
+};
 
 export default function ProjectCards() {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
-  const [, setSelectedProject] = useState<Project | null>(null);
+  const [, setSelectedProject] = useState<DisplayProject | null>(null);
+  const [apiProjects, setApiProjects] = useState<DisplayProject[] | null>(null);
 
-  const projects = getProjectsByCategory(selectedCategory);
+  useEffect(() => {
+    const controller = new AbortController();
+
+    const loadProjects = async () => {
+      try {
+        const response = await fetch(`${buildApiBase()}/projects/public.php`, {
+          method: "GET",
+          signal: controller.signal,
+        });
+
+        if (!response.ok) {
+          return;
+        }
+
+        const payload = (await response.json()) as ProjectsApiResponse;
+        if (!payload.success || !Array.isArray(payload.data)) {
+          return;
+        }
+
+        const mappedProjects: DisplayProject[] = payload.data.map((project) => {
+          const parsedTags = parseTags(project.tags);
+          return {
+            id: project.id,
+            title: project.title,
+            description: project.description,
+            image: resolveImage(project.imageDir),
+            tags: parsedTags,
+            category: inferCategory(parsedTags),
+            demoUrl: project.url || undefined,
+            completedDate: "Latest",
+          };
+        });
+
+        setApiProjects(mappedProjects);
+      } catch {
+        // Keep fallback projects when API is unavailable.
+      }
+    };
+
+    void loadProjects();
+    return () => controller.abort();
+  }, []);
+
+  const displayProjects = useMemo<DisplayProject[]>(() => {
+    if (apiProjects && apiProjects.length > 0) {
+      return apiProjects;
+    }
+
+    return fallbackProjects.map((project) => ({
+      id: project.id,
+      title: project.title,
+      description: project.description,
+      image: project.image,
+      tags: project.tags,
+      category: project.category,
+      demoUrl: project.demoUrl,
+      githubUrl: project.githubUrl,
+      completedDate: project.completedDate,
+    }));
+  }, [apiProjects]);
+
+  const projects = useMemo(
+    () => filterByCategory(displayProjects, selectedCategory),
+    [displayProjects, selectedCategory]
+  );
 
   const categories = [
     { id: "all", name: "All Projects", icon: Code },

@@ -1,9 +1,24 @@
-import React from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { Star, Users, Briefcase, Calendar } from "lucide-react";
 import { useCountUp, useIntersectionObserver } from "@/hooks/useCountUp";
 import { motion } from "framer-motion";
+import { config } from "@/config/env";
 
-const stats = [
+interface CompanyStatsResponse {
+  success: boolean;
+  data: {
+    totalProject: number;
+    totalEmployees: number;
+    totalRating: number;
+  };
+}
+
+const buildApiBase = () => {
+  const appUrl = config.app.url.trim().replace(/\/+$/, "");
+  return `${appUrl}/api`;
+};
+
+const staticStats = [
   {
     icon: Calendar,
     value: 2,
@@ -40,7 +55,7 @@ const stats = [
 ];
 
 const AnimatedStat: React.FC<{
-  stat: (typeof stats)[0];
+  stat: (typeof staticStats)[0];
   startAnimation: boolean;
 }> = ({ stat, startAnimation }) => {
   const animatedValue = useCountUp(stat.value, 2000, stat.decimals || 0, startAnimation);
@@ -62,6 +77,56 @@ const AnimatedStat: React.FC<{
 
 const CompanyStats: React.FC = () => {
   const [sectionRef, isVisible] = useIntersectionObserver<HTMLElement>();
+  const [apiData, setApiData] = useState<CompanyStatsResponse["data"] | null>(null);
+
+  useEffect(() => {
+    const controller = new AbortController();
+
+    const loadStats = async () => {
+      try {
+        const response = await fetch(`${buildApiBase()}/company/public.php`, {
+          method: "GET",
+          signal: controller.signal,
+        });
+
+        if (!response.ok) {
+          return;
+        }
+
+        const payload = (await response.json()) as CompanyStatsResponse;
+        if (payload.success && payload.data) {
+          setApiData(payload.data);
+        }
+      } catch {
+        // Ignore and keep fallback values if API is unavailable.
+      }
+    };
+
+    void loadStats();
+    return () => controller.abort();
+  }, []);
+
+  const stats = useMemo(() => {
+    const projects = apiData?.totalProject;
+    const employees = apiData?.totalEmployees;
+    const rating = apiData?.totalRating;
+
+    return staticStats.map((stat) => {
+      if (stat.label === "Projects Completed" && typeof projects === "number") {
+        return { ...stat, value: projects };
+      }
+
+      if (stat.label === "Happy Customers" && typeof employees === "number") {
+        return { ...stat, value: employees };
+      }
+
+      if (stat.label === "Trustpilot Rating" && typeof rating === "number") {
+        return { ...stat, value: rating };
+      }
+
+      return stat;
+    });
+  }, [apiData]);
 
   return (
     <section ref={sectionRef} className="relative py-12 sm:py-16 md:py-24">

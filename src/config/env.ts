@@ -1,7 +1,7 @@
 export const config = {
   app: {
     name: import.meta.env.VITE_APP_NAME || "CodeHunts",
-    url: import.meta.env.VITE_APP_URL || "https://codehunts.com",
+    url: import.meta.env.VITE_APP_UR || import.meta.env.VITE_APP_URL || "https://codehunts.com",
   },
   contact: {
     email: import.meta.env.VITE_CONTACT_EMAIL || "contact@codehuntspk.com",
