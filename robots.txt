@@ -1,0 +1,8 @@
+# robots.txt - instructions for web crawlers
+# Disallow API endpoints from being crawled/indexed
+User-agent: *
+Disallow: /api/
+
+# Optionally allow specific public endpoints (uncomment and adjust as needed)
+# Allow: /api/team/public.php
+# Allow: /api/company/public.php
