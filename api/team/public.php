@@ -32,6 +32,8 @@ while ($row = $result->fetch_assoc()) {
     ];
 }
 
+$result->free();
+
 jsonResponse([
     'success' => true,
     'data' => $members,

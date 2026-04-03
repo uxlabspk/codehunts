@@ -47,7 +47,17 @@ if ($stmt === false) {
 }
 
 $stmt->bind_param('sssssssi', $profilePic, $fullName, $jobTitle, $portfolioUrl, $username, $email, $passwordHash, $isAdmin);
-$stmt->execute();
+$executed = $stmt->execute();
+
+if ($executed === false) {
+    $error = $stmt->error;
+    $stmt->close();
+    jsonResponse([
+        'success' => false,
+        'message' => $error !== '' ? 'Failed to create team member: ' . $error : 'Failed to create team member',
+    ], 500);
+}
+
 $id = $db->insert_id;
 $stmt->close();
 
@@ -55,7 +65,7 @@ jsonResponse([
     'success' => true,
     'message' => 'Team member created successfully',
     'data' => [
-        'id' => $id,
+        'id' => (int) $id,
         'profilePic' => $profilePic,
         'full_name' => $fullName,
         'jobTitle' => $jobTitle,

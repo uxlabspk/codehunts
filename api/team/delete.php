@@ -38,8 +38,26 @@ if ($stmt === false) {
 }
 
 $stmt->bind_param('i', $id);
-$stmt->execute();
+$executed = $stmt->execute();
+
+if ($executed === false) {
+    $error = $stmt->error;
+    $stmt->close();
+    jsonResponse([
+        'success' => false,
+        'message' => $error !== '' ? 'Failed to delete team member: ' . $error : 'Failed to delete team member',
+    ], 500);
+}
+
+$affectedRows = $stmt->affected_rows;
 $stmt->close();
+
+if ($affectedRows < 1) {
+    jsonResponse([
+        'success' => false,
+        'message' => 'Team member not found or already deleted',
+    ], 404);
+}
 
 jsonResponse([
     'success' => true,
