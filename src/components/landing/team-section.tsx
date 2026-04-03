@@ -17,6 +17,14 @@ interface TeamApiResponse {
   data: ApiTeamMember[];
 }
 
+interface DisplayTeamMember {
+  id: string | number;
+  img: string;
+  name: string;
+  position: string;
+  portfolioUrl?: string;
+}
+
 const fallbackTeamMembers = [
   { img: "team/naveed.png", name: "Muhammad Naveed", position: "Software Engineer" },
   { img: "team/hamza.png", name: "Hamza Waheed", position: "Data Scientist" },
@@ -92,9 +100,12 @@ export default function TeamSection() {
     return () => controller.abort();
   }, []);
 
-  const teamMembers = useMemo(() => {
+  const teamMembers = useMemo<DisplayTeamMember[]>(() => {
     if (!apiMembers || apiMembers.length === 0) {
-      return fallbackTeamMembers;
+      return fallbackTeamMembers.map((member, index) => ({
+        ...member,
+        id: `fallback-${index}`,
+      }));
     }
 
     return apiMembers.map((member) => ({
@@ -132,7 +143,7 @@ export default function TeamSection() {
         <div className="grid grid-cols-1 gap-4 sm:gap-5 md:gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {teamMembers.map((member, index) => (
             <motion.div
-              key={"id" in member ? member.id : `${member.name}-${index}`}
+              key={member.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -142,7 +153,7 @@ export default function TeamSection() {
                 img={member.img}
                 name={member.name}
                 position={member.position}
-                socials={<SocialLinks portfolioUrl={"portfolioUrl" in member ? member.portfolioUrl : undefined} />}
+                socials={<SocialLinks portfolioUrl={member.portfolioUrl} />}
               />
             </motion.div>
           ))}
