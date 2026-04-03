@@ -73,7 +73,7 @@ if ($extension === null) {
 
 $projectRoot = dirname(__DIR__, 2);
 $relativeDir = 'uploads/' . $folder;
-$targetDir = $projectRoot . '/public/' . $relativeDir;
+$targetDir = $projectRoot . '/' . $relativeDir;
 
 if (!is_dir($targetDir) && !mkdir($targetDir, 0755, true) && !is_dir($targetDir)) {
     jsonResponse([

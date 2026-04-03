@@ -35,7 +35,17 @@ if ($stmt === false) {
 }
 
 $stmt->bind_param('sssss', $imageDir, $title, $description, $tags, $url);
-$stmt->execute();
+$executed = $stmt->execute();
+
+if ($executed === false) {
+    $error = $stmt->error;
+    $stmt->close();
+    jsonResponse([
+        'success' => false,
+        'message' => $error !== '' ? 'Failed to create project: ' . $error : 'Failed to create project',
+    ], 500);
+}
+
 $id = $db->insert_id;
 $stmt->close();
 
@@ -43,7 +53,7 @@ jsonResponse([
     'success' => true,
     'message' => 'Project created successfully',
     'data' => [
-        'id' => $id,
+        'id' => (int) $id,
         'imageDir' => $imageDir,
         'title' => $title,
         'description' => $description,

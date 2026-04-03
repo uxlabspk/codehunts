@@ -36,8 +36,52 @@ if ($stmt === false) {
 }
 
 $stmt->bind_param('sssssi', $imageDir, $title, $description, $tags, $url, $id);
-$stmt->execute();
+$executed = $stmt->execute();
+
+if ($executed === false) {
+    $error = $stmt->error;
+    $stmt->close();
+    jsonResponse([
+        'success' => false,
+        'message' => $error !== '' ? 'Failed to update project: ' . $error : 'Failed to update project',
+    ], 500);
+}
+
+$affectedRows = $stmt->affected_rows;
 $stmt->close();
+
+if ($affectedRows < 1) {
+    $existsStmt = $db->prepare('SELECT id FROM projects WHERE id = ? LIMIT 1');
+    if ($existsStmt === false) {
+        jsonResponse([
+            'success' => false,
+            'message' => 'Failed to verify project after update',
+        ], 500);
+    }
+
+    $existsStmt->bind_param('i', $id);
+    $existsExecuted = $existsStmt->execute();
+
+    if ($existsExecuted === false) {
+        $error = $existsStmt->error;
+        $existsStmt->close();
+        jsonResponse([
+            'success' => false,
+            'message' => $error !== '' ? 'Failed to verify project: ' . $error : 'Failed to verify project',
+        ], 500);
+    }
+
+    $result = $existsStmt->get_result();
+    $exists = $result !== false && $result->num_rows > 0;
+    $existsStmt->close();
+
+    if (!$exists) {
+        jsonResponse([
+            'success' => false,
+            'message' => 'Project not found',
+        ], 404);
+    }
+}
 
 jsonResponse([
     'success' => true,
