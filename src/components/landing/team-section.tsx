@@ -153,7 +153,7 @@ export default function TeamSection() {
                 img={member.img}
                 name={member.name}
                 position={member.position}
-                socials={<SocialLinks portfolioUrl={member.portfolioUrl} />}
+                socials={<></>}
               />
             </motion.div>
           ))}

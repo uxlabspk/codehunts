@@ -128,7 +128,7 @@ export default function HeroSection() {
           className="mb-8 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/[0.06] px-4 py-1.5 text-sm font-medium text-primary"
         >
           <Star className="h-3.5 w-3.5" />
-          Trusted by 150+ businesses worldwide
+          Trusted by businesses worldwide
         </motion.div>
 
         <motion.h1
@@ -161,7 +161,7 @@ export default function HeroSection() {
           <Link to="/lets-talk">
             <Button
               size="lg"
-              className="w-100 rounded-full px-8 py-6 text-base font-medium shadow-lg shadow-primary/25 transition-shadow hover:shadow-primary/40 sm:w-auto"
+              className="w-80 rounded-full px-8 py-6 text-base font-medium shadow-lg shadow-primary/25 transition-shadow hover:shadow-primary/40"
             >
               Get Started
               <ArrowRight className="h-4 w-4" />
@@ -176,33 +176,12 @@ export default function HeroSection() {
             <Button
               variant="outline"
               size="lg"
-              className="w-100 rounded-full px-8 py-6 text-base font-medium sm:w-auto"
+              className="w-80 rounded-full px-8 py-6 text-base font-medium sm:w-auto"
             >
               <Star className="h-4 w-4" />
               Review us on Trustpilot
             </Button>
           </a>
-        </motion.div>
-
-        {/* Trust indicators */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 1 }}
-          className="mt-8 sm:mt-12 md:mt-16 flex flex-wrap items-center justify-center gap-4 sm:gap-6 md:gap-8 text-xs sm:text-sm text-muted-foreground"
-        >
-          <div className="flex items-center gap-2">
-            <div className="h-2 w-2 rounded-full bg-green-500" />
-            <span>99% Uptime</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <div className="h-2 w-2 rounded-full bg-primary" />
-            <span>100+ Projects</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <div className="h-2 w-2 rounded-full bg-blue-500" />
-            <span>3.9/5 Trustpilot</span>
-          </div>
         </motion.div>
       </div>
     </div>
