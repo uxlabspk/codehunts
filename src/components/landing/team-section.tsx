@@ -1,6 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
 import TeamCard from "@/components/common/team-card.tsx";
-import { Github, Globe, Linkedin, Twitter } from "lucide-react";
 import { motion } from "framer-motion";
 import { config } from "@/config/env";
 
@@ -48,27 +47,6 @@ const resolveImage = (imagePath: string) => {
 
   return `${config.app.url.replace(/\/+$/, "")}/${imagePath.replace(/^\/+/, "")}`;
 };
-
-const SocialLinks = ({ portfolioUrl }: { portfolioUrl?: string }) => (
-  <div className="flex items-center justify-center gap-3">
-    {[
-      { icon: Github, href: "https://github.com/" },
-      { icon: Linkedin, href: "https://linkedin.com/in/" },
-      { icon: Twitter, href: "https://twitter.com/" },
-      ...(portfolioUrl ? [{ icon: Globe, href: portfolioUrl }] : []),
-    ].map(({ icon: Icon, href }, i) => (
-      <a
-        key={i}
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/[0.06] text-muted-foreground transition-all duration-300 hover:bg-primary/20 hover:text-primary"
-      >
-        <Icon className="h-4 w-4" />
-      </a>
-    ))}
-  </div>
-);
 
 export default function TeamSection() {
   const [apiMembers, setApiMembers] = useState<ApiTeamMember[] | null>(null);
