@@ -143,7 +143,7 @@ export default function Header() {
                   </NavigationMenuContent>
                 </NavigationMenuItem>
 
-                {["Portfolio", "Our Team", "About Us", "Contact Us"].map((item, index) => (
+                {["Portfolio", "About Us", "Contact Us"].map((item, index) => (
                   <NavigationMenuItem key={index}>
                     <NavigationMenuLink
                       href={`/${item.toLowerCase().replace(" ", "-")}`}

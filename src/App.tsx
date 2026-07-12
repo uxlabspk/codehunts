@@ -9,7 +9,6 @@ import { AdminAuthProvider } from "@/contexts/admin-auth-context";
 // Lazy load pages for better performance
 const Home = lazy(() => import("@/pages/landing.tsx"));
 const Portfolio = lazy(() => import("@/pages/portfolio.tsx"));
-const Team = lazy(() => import("@/pages/our-team.tsx"));
 const About = lazy(() => import("@/pages/about.tsx"));
 const Contact = lazy(() => import("@/pages/contact-us.tsx"));
 const Talk = lazy(() => import("@/pages/talk.tsx"));
@@ -60,7 +59,6 @@ function App() {
                     <Route path="/cloud-solutions" element={<CloudSolutions />} />
                     <Route path="/custom-software" element={<SoftwareConsulting />} />
                     <Route path="/portfolio" element={<Portfolio />} />
-                    <Route path="/our-team" element={<Team />} />
                     <Route path="/about-us" element={<About />} />
                     <Route path="/contact-us" element={<Contact />} />
                     <Route path="/lets-talk" element={<Talk />} />
